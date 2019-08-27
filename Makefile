@@ -1,7 +1,7 @@
 default: install build
 
 install:
-	npm install
+	yarn install
 	pip install --upgrade pip
 	pip install --upgrade mkdocs mkdocs-material
 
