@@ -1,0 +1,17 @@
+{
+  "name": "docs.renovatebot.com",
+  "version": "1.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renovatebot/docs.renovatebot.com.git"
+  },
+  "devDependencies": {
+    "fs-extra": "8.0.1",
+    "markdown-table": "1.1.3"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}

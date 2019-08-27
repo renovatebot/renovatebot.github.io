@@ -1,0 +1,5 @@
+.DS_Store
+/docs
+/node_modules
+/site
+/tmp

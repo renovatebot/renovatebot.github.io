@@ -1,0 +1,71 @@
+site_name: Renovate Docs
+site_url: 'https://docs.renovatebot.com'
+
+# Theme settings
+theme:
+  name: 'material'
+  palette:
+    primary: 'blue'
+    accent: 'blue'
+  logo: 'assets/images/logo.png'
+  favicon: 'assets/images/logo.png'
+
+extra_css:
+  - 'assets/css/style.css'
+
+extra_javascript:
+  - 'assets/js/fx.js'
+
+# Extensions
+markdown_extensions:
+  - meta
+
+# Page Tree
+nav:
+  - Home: 'index.md'
+  - Getting Started:
+      - 'GitHub App Installation': 'install-github-app.md'
+      - 'GitLab App Installation': 'install-gitlab-app.md'
+      - 'Configure Renovate (Onboarding PR)': 'configure-renovate.md'
+      - 'Private npm module support': 'private-modules.md'
+      - 'Reconfiguring Renovate': 'reconfigure-renovate.md'
+  - Configuration Options: 'configuration-options.md'
+  - Self Hosted Configuration: 'self-hosted-configuration.md'
+  - Shareable Config Presets: 'config-presets.md'
+  - Language Support:
+      - 'Bazel': 'bazel.md'
+      - 'Docker': 'docker.md'
+      - 'Golang': 'golang.md'
+      - 'Java': 'java.md'
+      - 'JavaScript': 'javascript.md'
+      - 'Node.js Versions': 'node.md'
+      - 'Nuget': 'nuget.md'
+      - 'PHP': 'php.md'
+      - 'Python': 'python.md'
+      - 'Ruby': 'ruby.md'
+  - Deep Dives:
+      - 'Should you Pin your Javascript Dependencies?': 'dependency-pinning.md'
+      - 'Config Template Editing': 'configuration-templates.md'
+      - 'Updating and Rebasing Branches': 'updating-rebasing.md'
+      - 'Semantic Commit Messages': 'semantic-commits.md'
+      - 'Noise Reduction': 'noise-reduction.md'
+  - Config Presets:
+      - 'Full Config Presets': 'presets-config.md'
+      - 'Default Presets': 'presets-default.md'
+      - 'Docker Presets': 'presets-docker.md'
+      - 'Group Presets': 'presets-group.md'
+      - 'Helper Presets': 'presets-helpers.md'
+      - 'JS Presets': 'presets-js.md'
+      - 'Meteor Presets': 'presets-meteor.md'
+      - 'Monorepo Presets': 'presets-monorepo.md'
+      - 'Package Presets': 'presets-packages.md'
+      - 'Preview Presets': 'presets-preview.md'
+      - 'Schedule Presets': 'presets-schedule.md'
+  - Renovate Pro:
+      - 'Overview': 'pro/overview.md'
+      - 'Configuration (GitHub)': 'pro/configuration-github.md'
+      - 'Configuration (GitLab)': 'pro/configuration-gitlab.md'
+      - 'Advanced Details': 'pro/advanced.md'
+  - All Other:
+      - 'Data Security and Handling': 'data-security.md'
+      - 'Frequently Asked Questions (FAQ)': 'faq.md'
