@@ -2,8 +2,7 @@ default: install build
 
 install:
 	yarn install
-	pip install --upgrade pip
-	pip install --upgrade mkdocs mkdocs-material
+	pip install -r requirements.txt
 
 get-docs:
 	bash bin/get-docs.sh
