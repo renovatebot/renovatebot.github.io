@@ -18,7 +18,7 @@ cd renovate
 npm i -g yarn
 yarn install --ignore-optional
 yarn build
-cp -R website/docs/* $docs
+cp -R docs/usage/* $docs
 
 cd $tmp
 git clone --depth=1 https://github.com/renovatebot/pro
