@@ -61,7 +61,7 @@ nav:
       - 'Package Presets': 'presets-packages.md'
       - 'Preview Presets': 'presets-preview.md'
       - 'Schedule Presets': 'presets-schedule.md'
-  - Renovate Pro:
+  - WhiteSource Renovate On-Premises:
       - 'Overview': 'pro/overview.md'
       - 'Configuration (GitHub)': 'pro/configuration-github.md'
       - 'Configuration (GitLab)': 'pro/configuration-gitlab.md'
