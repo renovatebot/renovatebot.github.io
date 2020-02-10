@@ -16,7 +16,10 @@ generate-presets:
 build-docs:
 	bash bin/build-docs.sh
 
-build: get-docs generate-config generate-presets build-docs
+copy-schema:
+	cp renovate-schema.json site
+
+build: get-docs generate-config generate-presets build-docs copy-schema
 
 clean:
 	git clean -dfx

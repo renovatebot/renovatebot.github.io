@@ -19,6 +19,8 @@ npm i -g yarn
 yarn install --ignore-optional
 yarn build
 cp -R docs/usage/* $docs
+yarn create-json-schema
+cp renovate-schema.json $pwd
 
 cd $tmp
 git clone --depth=1 https://github.com/renovatebot/pro
