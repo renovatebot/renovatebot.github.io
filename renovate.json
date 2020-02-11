@@ -1,5 +1,26 @@
 {
-  "extends": [
-    "config:base"
+  "extends": ["config:base", ":rebaseStalePrs", ":masterIssue"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["at any time"],
+    "stabilityDays": 0,
+    "masterIssueApproval": true
+  },
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "semanticCommitScope": "deps",
+  "stabilityDays": 3,
+  "prCreation": "not-pending",
+  "packageRules": [
+    {
+      "updateTypes": ["major", "minor"],
+      "masterIssueApproval": true
+    },
+    {
+      "paths": ["deps/**"],
+      "managers": ["git-submodule"],
+      "automerge": true,
+      "semanticCommitScope": "docs",
+      "stabilityDays": 0
+    }
   ]
 }
