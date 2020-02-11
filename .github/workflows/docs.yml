@@ -1,9 +1,10 @@
-name: Build docs
+name: docs
 
 on:
   push:
     branches:
-      - build
+      - '**'
+      - '!master'
 
 env:
   node-version: 12.x
@@ -63,4 +64,9 @@ jobs:
         run: make prepare
 
       - name: Build docs
+        run: mkdocs build
+
+      - name: Publish docs
+        if: github.event_name == 'push' && github.ref == 'refs/heads/build'
         run: mkdocs gh-deploy --force
+
