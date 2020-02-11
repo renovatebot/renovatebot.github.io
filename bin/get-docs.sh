@@ -32,5 +32,4 @@ cd $tmp
 git clone --depth=1 https://github.com/renovatebot/renovate-config
 
 cd $pwd
-cp -R src/assets/* docs/assets
-cp -R src/index.md docs
+cp -R src/* docs/
