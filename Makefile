@@ -1,7 +1,7 @@
 default: install build
 
 install:
-	yarn install
+	yarn install --frozen-lockfile
 	pip install -r requirements.txt
 
 get-docs:
@@ -16,10 +16,9 @@ generate-presets:
 build-docs:
 	bash bin/build-docs.sh
 
-copy-schema:
-	cp renovate-schema.json site
+prepare: get-docs generate-config generate-presets
 
-build: get-docs generate-config generate-presets build-docs copy-schema
+build: prepare build-docs
 
 clean:
 	git clean -dfx

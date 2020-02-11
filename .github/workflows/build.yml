@@ -1,0 +1,63 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - build
+
+env:
+  node-version: 12.x
+  python-version: 3.x
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.node-version }}
+
+      - name: Set up Python ${{ env.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ env.python-version }}
+
+      - name: Init platform
+        id: init
+        shell: bash
+        run: |
+          echo "::set-output name=yarn_cache::$(yarn cache dir)"
+          python -c "from pip._internal.locations import USER_CACHE_DIR; print('::set-output name=pip_cache::' + USER_CACHE_DIR)"
+          git config --global core.autocrlf false
+          git config --global core.symlinks true
+          git config --global user.email 'bot@renovateapp.com'
+          git config --global user.name  'Renovate Bot'
+          python --version
+          pip --version
+
+      - uses: actions/checkout@v2
+
+      - name: Cache Yarn packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.init.outputs.yarn_cache }}
+          key: ${{ runner.os }}-yarn_cache-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn_cache-
+
+      - name: Cache pip packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.init.outputs.pip_cache }}
+          key: ${{ runner.os }}-${{ env.python-version }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.python-version }}-pip-
+
+      - name: Installing dependencies
+        run: make install
+
+      - name: Build docs
+        run: make build
