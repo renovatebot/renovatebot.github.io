@@ -20,10 +20,10 @@ order: ${order}
 }
 
 async function generatePresets() {
-  const dirs = await fs.readdir('tmp/renovate-config/packages');
+  const dirs = await fs.readdir('deps/renovate-config/packages');
   for (const [index, dir] of dirs.entries()) {
     const pj = JSON.parse(
-      await fs.readFile(`tmp/renovate-config/packages/${dir}/package.json`)
+      await fs.readFile(`deps/renovate-config/packages/${dir}/package.json`)
     );
     const filename = `${__dirname}/../docs/presets-${dir.substring(
       'renovate-config-'.length
