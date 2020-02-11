@@ -22,7 +22,7 @@
       "paths": ["deps/**"],
       "managers": ["git-submodules"],
       "automerge": true,
-      "automergeType: "branch",
+      "automergeType": "branch",
       "semanticCommitScope": "docs",
       "stabilityDays": 0
     }
