@@ -60,4 +60,4 @@ jobs:
         run: make install
 
       - name: Build docs
-        run: make build
+        run: mkdocs gh-pages
