@@ -73,6 +73,11 @@ jobs:
       - name: Build docs
         run: mkdocs build
 
+      - uses: actions/upload-artifact@v1
+        with:
+          name: site
+          path: site
+
       - name: Publish docs
         if: github.event_name == 'push' && github.ref == 'refs/heads/build'
         run: mkdocs gh-deploy --force
