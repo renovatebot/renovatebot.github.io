@@ -1,9 +1,9 @@
 [submodule "renovate"]
 	path = deps/renovate
-	url = https://github.com/renovatebot/renovate
+	url = https://github.com/renovatebot/renovate.git
 [submodule "renovate-pro"]
 	path = deps/renovate-pro
-	url = https://github.com/renovatebot/renovate-pro
+	url = https://github.com/renovatebot/renovate-pro.git
 [submodule "renovate-config"]
 	path = deps/renovate-config
-	url = https://github.com/renovatebot/renovate-config
+	url = https://github.com/renovatebot/renovate-config.git
