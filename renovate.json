@@ -10,6 +10,9 @@
   "semanticCommitScope": "deps",
   "stabilityDays": 3,
   "prCreation": "not-pending",
+  "git-submodules": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "updateTypes": ["major", "minor"],
@@ -17,7 +20,7 @@
     },
     {
       "paths": ["deps/**"],
-      "managers": ["git-submodule"],
+      "managers": ["git-submodules"],
       "automerge": true,
       "semanticCommitScope": "docs",
       "stabilityDays": 0
