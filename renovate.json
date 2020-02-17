@@ -19,7 +19,6 @@
       "masterIssueApproval": true
     },
     {
-      "paths": ["deps/**"],
       "managers": ["git-submodules"],
       "automerge": true,
       "automergeType": "branch",
