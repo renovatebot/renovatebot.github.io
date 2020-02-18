@@ -33,6 +33,11 @@ nav:
       - 'Reconfiguring Renovate': 'reconfigure-renovate.md'
   - Configuration Options: 'configuration-options.md'
   - Self Hosted Configuration: 'self-hosted-configuration.md'
+  - Renovate Modules:
+      - 'Platforms': 'modules/platform.md'
+      - 'Managers': 'modules/manager.md'
+      - 'Datasources': 'modules/datasource.md'
+      - 'Versioning': 'modules/versioning.md'
   - Shareable Config Presets: 'config-presets.md'
   - Language Support:
       - 'Bazel': 'bazel.md'
