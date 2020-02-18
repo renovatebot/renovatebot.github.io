@@ -10,13 +10,16 @@ get-docs:
 generate-config:
 	node bin/generate-config.js
 
+generate-modules:
+	node bin/generate-modules.js
+
 generate-presets:
 	node bin/generate-presets.js
 
 build-docs:
 	bash bin/build-docs.sh
 
-prepare: get-docs generate-config generate-presets
+prepare: get-docs generate-config generate-modules generate-presets
 
 build: prepare build-docs
 
