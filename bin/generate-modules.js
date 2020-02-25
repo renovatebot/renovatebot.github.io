@@ -63,7 +63,7 @@ async function generateManagers() {
     }
     const managerReadmeFile = process.env.LIVE
       ? `../renovate/lib/manager/${manager}/readme.md`
-      : `deps/renovate/dist/manager/${manager}/readme.md`;
+      : `deps/renovate/lib/manager/${manager}/readme.md`;
 
     try {
       const managerReadmeContent = await fs.readFile(managerReadmeFile, 'utf8');
