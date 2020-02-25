@@ -67,7 +67,7 @@ async function generateManagers() {
 
     try {
       const managerReadmeContent = await fs.readFile(managerReadmeFile, 'utf8');
-      managerContent += '## Description\n\n' + managerReadmeContent + '\n\n';
+      managerContent += '\n## Details\n\n' + managerReadmeContent + '\n\n';
     } catch (err) {
       // console.warn('Not found:' + moduleReadmeFile);
     }
