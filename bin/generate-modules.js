@@ -45,7 +45,7 @@ async function generateManagers() {
     const nameWithUrl = getNameWithUrl(manager, definition);
     const disabledText =
       defaultConfig.enabled === false
-        ? ', although it is disabled by default'
+        ? ', although you will need to manually enable it in order to opt-in to using its functionality.'
         : '';
     managerContent += `Renovate supports updating ${nameWithUrl} dependencies${disabledText}. `;
     if (fileMatch.length === 0) {
