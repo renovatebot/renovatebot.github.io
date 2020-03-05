@@ -43,15 +43,21 @@ async function generateManagers() {
     const displayName = getDisplayName(manager, definition);
     let managerContent = `# Automated Dependency Updates for ${displayName}\n\n`;
     const nameWithUrl = getNameWithUrl(manager, definition);
-    managerContent += `Renovate supports updating ${nameWithUrl} dependencies. `;
+    managerContent += `Renovate supports updating ${nameWithUrl} dependencies.\n\n`;
     if (defaultConfig.enabled === false) {
+      managerContent += '## Enabling\n\n';
+      managerContent += `${displayName} functionality is currently in beta testing so you must opt in to test it out. To enable it, add a configuration like this to either your bot config or your \`renovate.json\`:\n\n`;
+      managerContent += '```\n';
+      managerContent += `{\n  "${manager}": {\n    "enabled": true\n  }\n}`;
+      managerContent += '\n```\n\n';
       managerContent +=
-        'Currently in beta testing, it is disabled by default, but any user is free to try it out by simply enabling it manually. ';
+        'If you encounter any bugs, please [raise a bug report](https://github.com/renovatebot/renovate/issues/new?template=3-Bug_report.md). If you find that it works well, then feedback on that would be welcome too.\n\n';
     }
+    managerContent += '## File Matching\n\n';
     if (fileMatch.length === 0) {
       managerContent += `Because file names for \`${manager}\` cannot be easily determined automatically, Renovate will not attempt to match any \`${manager}\` files by default. `;
     } else {
-      managerContent += `By default, Renovate will scan files matching `;
+      managerContent += `By default, Renovate will check any files matching `;
       if (fileMatch.length === 1) {
         managerContent += `the following regular expression: \`${fileMatch[0]}\`.\n\n`;
       } else {
@@ -61,13 +67,16 @@ async function generateManagers() {
         managerContent += '\n```\n\n';
       }
     }
+    managerContent += `For details on how to extend a manager's \`fileMatch\` value, please follow [this link](/modules/manager/#file-matching).\n\n`;
+
     const managerReadmeFile = process.env.LIVE
       ? `../renovate/lib/manager/${manager}/readme.md`
       : `deps/renovate/lib/manager/${manager}/readme.md`;
 
     try {
       const managerReadmeContent = await fs.readFile(managerReadmeFile, 'utf8');
-      managerContent += '\n## Details\n\n' + managerReadmeContent + '\n\n';
+      managerContent +=
+        '\n## Additional Information\n\n' + managerReadmeContent + '\n\n';
     } catch (err) {
       // console.warn('Not found:' + moduleReadmeFile);
     }
