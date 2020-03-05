@@ -43,11 +43,11 @@ async function generateManagers() {
     const displayName = getDisplayName(manager, definition);
     let managerContent = `# Automated Dependency Updates for ${displayName}\n\n`;
     const nameWithUrl = getNameWithUrl(manager, definition);
-    const disabledText =
-      defaultConfig.enabled === false
-        ? ', although you will need to manually enable it in order to opt-in to using its functionality.'
-        : '';
-    managerContent += `Renovate supports updating ${nameWithUrl} dependencies${disabledText}. `;
+    managerContent += `Renovate supports updating ${nameWithUrl} dependencies. `;
+    if (defaultConfig.enabled === false) {
+      managerContent +=
+        'Currently in beta testing, it is disabled by default, but any user is free to try it out by simply enabling it manually. ';
+    }
     if (fileMatch.length === 0) {
       managerContent += `Because file names for \`${manager}\` cannot be easily determined automatically, Renovate will not attempt to match any \`${manager}\` files by default. `;
     } else {
