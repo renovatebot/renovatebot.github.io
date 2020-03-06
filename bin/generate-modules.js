@@ -53,21 +53,23 @@ async function generateManagers() {
       managerContent +=
         'If you encounter any bugs, please [raise a bug report](https://github.com/renovatebot/renovate/issues/new?template=3-Bug_report.md). If you find that it works well, then feedback on that would be welcome too.\n\n';
     }
-    managerContent += '## File Matching\n\n';
-    if (fileMatch.length === 0) {
-      managerContent += `Because file names for \`${manager}\` cannot be easily determined automatically, Renovate will not attempt to match any \`${manager}\` files by default. `;
-    } else {
-      managerContent += `By default, Renovate will check any files matching `;
-      if (fileMatch.length === 1) {
-        managerContent += `the following regular expression: \`${fileMatch[0]}\`.\n\n`;
+    if (manager !== 'custom') {
+      managerContent += '## File Matching\n\n';
+      if (fileMatch.length === 0) {
+        managerContent += `Because file names for \`${manager}\` cannot be easily determined automatically, Renovate will not attempt to match any \`${manager}\` files by default. `;
       } else {
-        managerContent += `any of the following regular expressions:\n\n`;
-        managerContent += '```\n';
-        managerContent += fileMatch.join('\n');
-        managerContent += '\n```\n\n';
+        managerContent += `By default, Renovate will check any files matching `;
+        if (fileMatch.length === 1) {
+          managerContent += `the following regular expression: \`${fileMatch[0]}\`.\n\n`;
+        } else {
+          managerContent += `any of the following regular expressions:\n\n`;
+          managerContent += '```\n';
+          managerContent += fileMatch.join('\n');
+          managerContent += '\n```\n\n';
+        }
       }
+      managerContent += `For details on how to extend a manager's \`fileMatch\` value, please follow [this link](/modules/manager/#file-matching).\n\n`;
     }
-    managerContent += `For details on how to extend a manager's \`fileMatch\` value, please follow [this link](/modules/manager/#file-matching).\n\n`;
 
     const managerReadmeFile = process.env.LIVE
       ? `../renovate/lib/manager/${manager}/readme.md`
