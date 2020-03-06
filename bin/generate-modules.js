@@ -41,37 +41,37 @@ async function generateManagers() {
     const { defaultConfig } = definition;
     const { fileMatch } = defaultConfig;
     const displayName = getDisplayName(manager, definition);
-    let managerContent = '';
+    let md = '';
     if (manager === 'regex') {
-      managerContent += `# Custom Manager Support using Regex\n\n`;
+      md += `# Custom Manager Support using Regex\n\n`;
     } else {
-      managerContent += `# Automated Dependency Updates for ${displayName}\n\n`;
+      md += `# Automated Dependency Updates for ${displayName}\n\n`;
       const nameWithUrl = getNameWithUrl(manager, definition);
-      managerContent += `Renovate supports updating ${nameWithUrl} dependencies.\n\n`;
+      md += `Renovate supports updating ${nameWithUrl} dependencies.\n\n`;
       if (defaultConfig.enabled === false) {
-        managerContent += '## Enabling\n\n';
-        managerContent += `${displayName} functionality is currently in beta testing so you must opt in to test it out. To enable it, add a configuration like this to either your bot config or your \`renovate.json\`:\n\n`;
-        managerContent += '```\n';
-        managerContent += `{\n  "${manager}": {\n    "enabled": true\n  }\n}`;
-        managerContent += '\n```\n\n';
-        managerContent +=
+        md += '## Enabling\n\n';
+        md += `${displayName} functionality is currently in beta testing so you must opt in to test it out. To enable it, add a configuration like this to either your bot config or your \`renovate.json\`:\n\n`;
+        md += '```\n';
+        md += `{\n  "${manager}": {\n    "enabled": true\n  }\n}`;
+        md += '\n```\n\n';
+        md +=
           'If you encounter any bugs, please [raise a bug report](https://github.com/renovatebot/renovate/issues/new?template=3-Bug_report.md). If you find that it works well, then feedback on that would be welcome too.\n\n';
       }
-      managerContent += '## File Matching\n\n';
+      md += '## File Matching\n\n';
       if (fileMatch.length === 0) {
-        managerContent += `Because file names for \`${manager}\` cannot be easily determined automatically, Renovate will not attempt to match any \`${manager}\` files by default. `;
+        md += `Because file names for \`${manager}\` cannot be easily determined automatically, Renovate will not attempt to match any \`${manager}\` files by default. `;
       } else {
-        managerContent += `By default, Renovate will check any files matching `;
+        md += `By default, Renovate will check any files matching `;
         if (fileMatch.length === 1) {
-          managerContent += `the following regular expression: \`${fileMatch[0]}\`.\n\n`;
+          md += `the following regular expression: \`${fileMatch[0]}\`.\n\n`;
         } else {
-          managerContent += `any of the following regular expressions:\n\n`;
-          managerContent += '```\n';
-          managerContent += fileMatch.join('\n');
-          managerContent += '\n```\n\n';
+          md += `any of the following regular expressions:\n\n`;
+          md += '```\n';
+          md += fileMatch.join('\n');
+          md += '\n```\n\n';
         }
       }
-      managerContent += `For details on how to extend a manager's \`fileMatch\` value, please follow [this link](/modules/manager/#file-matching).\n\n`;
+      md += `For details on how to extend a manager's \`fileMatch\` value, please follow [this link](/modules/manager/#file-matching).\n\n`;
     }
 
     const managerReadmeFile = process.env.LIVE
@@ -81,14 +81,14 @@ async function generateManagers() {
     try {
       const managerReadmeContent = await fs.readFile(managerReadmeFile, 'utf8');
       if (manager !== 'regex') {
-        managerContent += '\n## Additional Information\n\n';
+        md += '\n## Additional Information\n\n';
       }
-      managerContent += managerReadmeContent + '\n\n';
+      md += managerReadmeContent + '\n\n';
     } catch (err) {
       // console.warn('Not found:' + moduleReadmeFile);
     }
     const managerFileName = `${__dirname}/../docs/modules/manager/${manager}/index.md`;
-    await fs.outputFile(managerFileName, managerContent);
+    await fs.outputFile(managerFileName, md);
   }
   const languages = Object.keys(allLanguages).filter(
     language => language !== 'other'
