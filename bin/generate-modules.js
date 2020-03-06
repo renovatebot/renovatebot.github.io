@@ -41,19 +41,22 @@ async function generateManagers() {
     const { defaultConfig } = definition;
     const { fileMatch } = defaultConfig;
     const displayName = getDisplayName(manager, definition);
-    let managerContent = `# Automated Dependency Updates for ${displayName}\n\n`;
-    const nameWithUrl = getNameWithUrl(manager, definition);
-    managerContent += `Renovate supports updating ${nameWithUrl} dependencies.\n\n`;
-    if (defaultConfig.enabled === false) {
-      managerContent += '## Enabling\n\n';
-      managerContent += `${displayName} functionality is currently in beta testing so you must opt in to test it out. To enable it, add a configuration like this to either your bot config or your \`renovate.json\`:\n\n`;
-      managerContent += '```\n';
-      managerContent += `{\n  "${manager}": {\n    "enabled": true\n  }\n}`;
-      managerContent += '\n```\n\n';
-      managerContent +=
-        'If you encounter any bugs, please [raise a bug report](https://github.com/renovatebot/renovate/issues/new?template=3-Bug_report.md). If you find that it works well, then feedback on that would be welcome too.\n\n';
-    }
-    if (manager !== 'regex') {
+    let managerContent = '';
+    if (manager === 'regex') {
+      managerContent += `# Custom Manager Support using Regex\n\n`;
+    } else {
+      managerContent += `# Automated Dependency Updates for ${displayName}\n\n`;
+      const nameWithUrl = getNameWithUrl(manager, definition);
+      managerContent += `Renovate supports updating ${nameWithUrl} dependencies.\n\n`;
+      if (defaultConfig.enabled === false) {
+        managerContent += '## Enabling\n\n';
+        managerContent += `${displayName} functionality is currently in beta testing so you must opt in to test it out. To enable it, add a configuration like this to either your bot config or your \`renovate.json\`:\n\n`;
+        managerContent += '```\n';
+        managerContent += `{\n  "${manager}": {\n    "enabled": true\n  }\n}`;
+        managerContent += '\n```\n\n';
+        managerContent +=
+          'If you encounter any bugs, please [raise a bug report](https://github.com/renovatebot/renovate/issues/new?template=3-Bug_report.md). If you find that it works well, then feedback on that would be welcome too.\n\n';
+      }
       managerContent += '## File Matching\n\n';
       if (fileMatch.length === 0) {
         managerContent += `Because file names for \`${manager}\` cannot be easily determined automatically, Renovate will not attempt to match any \`${manager}\` files by default. `;
@@ -77,8 +80,10 @@ async function generateManagers() {
 
     try {
       const managerReadmeContent = await fs.readFile(managerReadmeFile, 'utf8');
-      managerContent +=
-        '\n## Additional Information\n\n' + managerReadmeContent + '\n\n';
+      if (manager !== 'regex') {
+        managerContent += '\n## Additional Information\n\n';
+      }
+      managerContent += managerReadmeContent + '\n\n';
     } catch (err) {
       // console.warn('Not found:' + moduleReadmeFile);
     }
