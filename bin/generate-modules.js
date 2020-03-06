@@ -53,7 +53,7 @@ async function generateManagers() {
       managerContent +=
         'If you encounter any bugs, please [raise a bug report](https://github.com/renovatebot/renovate/issues/new?template=3-Bug_report.md). If you find that it works well, then feedback on that would be welcome too.\n\n';
     }
-    if (manager !== 'custom') {
+    if (manager !== 'regex') {
       managerContent += '## File Matching\n\n';
       if (fileMatch.length === 0) {
         managerContent += `Because file names for \`${manager}\` cannot be easily determined automatically, Renovate will not attempt to match any \`${manager}\` files by default. `;
