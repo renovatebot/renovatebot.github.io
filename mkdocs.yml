@@ -75,5 +75,4 @@ nav:
       - 'Advanced Details': 'pro/advanced.md'
   - All Other:
       - 'Templates': 'templates.md'
-      - 'Data Security and Handling': 'data-security.md'
       - 'Frequently Asked Questions (FAQ)': 'faq.md'
