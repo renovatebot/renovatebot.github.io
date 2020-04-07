@@ -7,6 +7,12 @@ let config_options_raw;
 
 console.log('generate-config');
 
+process.on('unhandledRejection', (error) => {
+  // Will print "unhandledRejection err is not defined"
+  console.log('unhandledRejection', error.message);
+  process.exit(-1);
+});
+
 async function generate_config(bot = false) {
   let config_file = `configuration-options.md`;
   if (bot) {
@@ -18,8 +24,8 @@ async function generate_config(bot = false) {
     .split('\n');
 
   options
-    .filter(option => option.status !== 'unpublished')
-    .forEach(el => {
+    .filter((option) => option.status !== 'unpublished')
+    .forEach((el) => {
       let header_index = config_options_raw.indexOf(`## ${el.name}`);
       if (header_index === -1) {
         header_index = config_options_raw.indexOf(`### ${el.name}`);
@@ -43,7 +49,7 @@ async function generate_config(bot = false) {
   fs.writeFile(
     `${__dirname}/../docs/${config_file}`,
     config_options_raw.join('\n'),
-    function(err) {
+    function (err) {
       if (err) {
         return console.log(err);
       }
@@ -66,7 +72,7 @@ function gen_table(obj, type, def, bot = false) {
     'admin',
   ];
   // if(!bot){ ignoredKeys.push('cli', 'env') }
-  obj.forEach(el => {
+  obj.forEach((el) => {
     if (
       !ignoredKeys.includes(el[0]) ||
       (el[0] === 'default' && typeof el[1] !== 'object' && name !== 'prBody')

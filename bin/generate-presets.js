@@ -2,6 +2,12 @@ const fs = require('fs-extra');
 
 console.log('generate-presets');
 
+process.on('unhandledRejection', (error) => {
+  // Will print "unhandledRejection err is not defined"
+  console.log('unhandledRejection', error.message);
+  process.exit(-1);
+});
+
 function jsUcfirst(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }

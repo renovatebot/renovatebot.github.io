@@ -2,6 +2,12 @@ const fs = require('fs-extra');
 
 console.log('generate-modules');
 
+process.on('unhandledRejection', (error) => {
+  // Will print "unhandledRejection err is not defined"
+  console.log('unhandledRejection', error.message);
+  process.exit(-1);
+});
+
 const replaceStart =
   '<!-- Autogenerate in https://github.com/renovatebot/renovatebot.github.io -->';
 const replaceStop = '<!-- Autogenerate end -->';
@@ -12,10 +18,7 @@ function capitalize(input) {
 }
 
 function formatName(input) {
-  return input
-    .split('-')
-    .map(capitalize)
-    .join(' ');
+  return input.split('-').map(capitalize).join(' ');
 }
 
 function getDisplayName(moduleName, moduleDefinition) {
@@ -91,7 +94,7 @@ async function generateManagers() {
     await fs.outputFile(managerFileName, md);
   }
   const languages = Object.keys(allLanguages).filter(
-    language => language !== 'other'
+    (language) => language !== 'other'
   );
   languages.sort();
   languages.push('other');
@@ -115,7 +118,7 @@ async function generateVersioning() {
   const versioningList = versionIndex.getVersioningList();
   let versioningContent =
     'Supported values for `versioning` are: ' +
-    versioningList.map(v => `\`${v}\``).join(', ') +
+    versioningList.map((v) => `\`${v}\``).join(', ') +
     '.\n\n';
   for (const versioning of versioningList) {
     const definition = require(`../deps/renovate/dist/versioning/${versioning}`);
@@ -131,7 +134,7 @@ async function generateVersioning() {
     if (urls.length) {
       versioningContent +=
         `**References**:\n\n` +
-        urls.map(url => ` - [${url}](${url})`).join('\n') +
+        urls.map((url) => ` - [${url}](${url})`).join('\n') +
         '\n\n';
     }
     versioningContent += `**Ranges/Constraints:**\n\n`;
@@ -139,7 +142,7 @@ async function generateVersioning() {
       versioningContent += `✅ Ranges are supported.\n\nValid \`rangeStrategy\` values are: ${(
         supportedRangeStrategies || []
       )
-        .map(strategy => `\`${strategy}\``)
+        .map((strategy) => `\`${strategy}\``)
         .join(', ')}\n\n`;
     } else {
       versioningContent += `❌ No range support.\n\n`;
