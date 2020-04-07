@@ -34,7 +34,7 @@ async function generateManagers() {
   const managerIndex = require(`../deps/renovate/dist/manager`);
   const managers = managerIndex.getManagers();
   const allLanguages = {};
-  for (const [manager, definition] of Object.entries(managers)) {
+  for (const [manager, definition] of managers) {
     const language = definition.language || 'other';
     allLanguages[language] = allLanguages[language] || [];
     allLanguages[language].push(manager);
