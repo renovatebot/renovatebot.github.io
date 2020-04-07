@@ -16,10 +16,13 @@ generate-modules:
 generate-presets:
 	node bin/generate-presets.js
 
+generate-templates:
+	node bin/generate-templates.js
+
 build-docs:
 	bash bin/build-docs.sh
 
-prepare: get-docs generate-config generate-modules generate-presets
+prepare: get-docs generate-config generate-modules generate-presets generate-templates
 
 build: prepare build-docs
 
