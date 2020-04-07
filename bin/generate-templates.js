@@ -36,4 +36,10 @@ async function generateTemplates() {
   await fs.outputFile(templateFile, templateContent);
 }
 
+process.on('unhandledRejection', (error) => {
+  // Will print "unhandledRejection err is not defined"
+  console.log('unhandledRejection', error.message);
+  process.exit(-1);
+});
+
 generateTemplates();
