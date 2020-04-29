@@ -12,13 +12,12 @@ function jsUcfirst(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function generateFrontMatter(name, description, order) {
+function generateFrontMatter(name, order) {
   return `---
 date: 2017-12-07
 title: ${name} Presets
 categories:
     - config-presets
-description: ${description}
 type: Document
 order: ${order}
 ---
@@ -26,23 +25,20 @@ order: ${order}
 }
 
 async function generatePresets() {
-  const dirs = await fs.readdir('deps/renovate-config/packages');
-  for (const [index, dir] of dirs.entries()) {
-    const pj = JSON.parse(
-      await fs.readFile(`deps/renovate-config/packages/${dir}/package.json`)
-    );
-    const filename = `${__dirname}/../docs/presets-${dir.substring(
-      'renovate-config-'.length
-    )}.md`;
-    const name = pj.name.substring('renovate-config-'.length);
+  const presetsJson = JSON.parse(
+    await fs.readFile(`deps/presets/presets.json`)
+  );
+  let index = 0;
+  for (const [name, presetConfig] of Object.entries(presetsJson)) {
+    index += 1;
+    const filename = `${__dirname}/../docs/presets-${name}.md`;
     const formattedName = jsUcfirst(name)
       .replace('Js', 'JS')
       .replace(/s$/, '')
       .replace(/^Config$/, 'Full Config');
-    const description = pj.description;
-    const frontMatter = generateFrontMatter(formattedName, description, index);
-    let content = `\n${description}. [Source repository](https://github.com/renovatebot/renovate-config/tree/master/packages/${pj.name})\n`;
-    for (const [preset, value] of Object.entries(pj['renovate-config'])) {
+    const frontMatter = generateFrontMatter(formattedName, index);
+    let content = `\n`;
+    for (const [preset, value] of Object.entries(presetConfig)) {
       let header = `\n### ${name === 'default' ? '' : name}:${preset}`;
       let presetDescription = value.description;
       delete value.description;
