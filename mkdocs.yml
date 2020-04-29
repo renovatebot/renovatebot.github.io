@@ -62,8 +62,6 @@ nav:
       - 'Docker Presets': 'presets-docker.md'
       - 'Group Presets': 'presets-group.md'
       - 'Helper Presets': 'presets-helpers.md'
-      - 'JS Presets': 'presets-js.md'
-      - 'Meteor Presets': 'presets-meteor.md'
       - 'Monorepo Presets': 'presets-monorepo.md'
       - 'Package Presets': 'presets-packages.md'
       - 'Preview Presets': 'presets-preview.md'
