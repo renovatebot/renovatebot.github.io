@@ -4,6 +4,3 @@
 [submodule "renovate-pro"]
 	path = deps/renovate-pro
 	url = https://github.com/renovatebot/pro.git
-[submodule "deps/presets"]
-	path = deps/presets
-	url = https://github.com/renovatebot/presets.git
