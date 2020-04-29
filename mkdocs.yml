@@ -56,7 +56,7 @@ nav:
       - 'Updating and Rebasing Branches': 'updating-rebasing.md'
       - 'Semantic Commit Messages': 'semantic-commits.md'
       - 'Noise Reduction': 'noise-reduction.md'
-  - Config Presets:
+  - Included Presets:
       - 'Full Config Presets': 'presets-config.md'
       - 'Default Presets': 'presets-default.md'
       - 'Docker Presets': 'presets-docker.md'
