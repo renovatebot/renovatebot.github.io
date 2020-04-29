@@ -1,4 +1,6 @@
 const fs = require('fs-extra');
+const presetGroups = require('../deps/renovate/dist/config/presets/internal/index.js')
+  .groups;
 
 console.log('generate-presets');
 
@@ -25,11 +27,8 @@ order: ${order}
 }
 
 async function generatePresets() {
-  const presetsJson = JSON.parse(
-    await fs.readFile(`deps/presets/presets.json`)
-  );
   let index = 0;
-  for (const [name, presetConfig] of Object.entries(presetsJson)) {
+  for (const [name, presetConfig] of Object.entries(presetGroups)) {
     index += 1;
     const filename = `${__dirname}/../docs/presets-${name}.md`;
     const formattedName = jsUcfirst(name)
