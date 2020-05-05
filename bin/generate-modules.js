@@ -13,7 +13,7 @@ const replaceStart =
 const replaceStop = '<!-- Autogenerate end -->';
 
 function capitalize(input) {
-  console.log(input);
+  // console.log(input);
   return input[0].toUpperCase() + input.slice(1);
 }
 
@@ -98,7 +98,7 @@ async function generateManagers() {
   );
   languages.sort();
   languages.push('other');
-  let languageText = '';
+  let languageText = '\n';
   function getManagerLink(manager) {
     return `[${manager}](${manager}/)`;
   }
@@ -109,7 +109,12 @@ async function generateManagers() {
   }
   const indexFileName = `${__dirname}/../docs/modules/manager.md`;
   let indexContent = await fs.readFile(indexFileName, 'utf8');
-  indexContent = indexContent.replace(replaceStart, languageText);
+  const replaceStartIndex = indexContent.indexOf(replaceStart);
+  const replaceStopIndex = indexContent.indexOf(replaceStop);
+  indexContent =
+    indexContent.slice(0, replaceStartIndex + replaceStart.length) +
+    languageText +
+    indexContent.slice(replaceStopIndex);
   await fs.outputFile(indexFileName, indexContent);
 }
 
@@ -117,7 +122,7 @@ async function generateVersioning() {
   const versionIndex = require(`../deps/renovate/dist/versioning`);
   const versioningList = versionIndex.getVersioningList();
   let versioningContent =
-    'Supported values for `versioning` are: ' +
+    '\nSupported values for `versioning` are: ' +
     versioningList.map((v) => `\`${v}\``).join(', ') +
     '.\n\n';
   for (const versioning of versioningList) {
@@ -171,7 +176,63 @@ async function generateVersioning() {
   await fs.outputFile(indexFileName, indexContent);
 }
 
+async function generateDatasources() {
+  const dsIndex = require(`../deps/renovate/dist/datasource`);
+  const dsList = dsIndex.getDatasourceList();
+  let datasourceContent =
+    '\nSupported values for `datasource` are: ' +
+    dsList.map((v) => `\`${v}\``).join(', ') +
+    '.\n\n';
+  for (const datasource of dsList) {
+    /** @type {import('../deps/renovate/dist/datasource').Datasource}  */
+    const definition = require(`../deps/renovate/dist/datasource/${datasource}`);
+    const {
+      id,
+      urls,
+      defaultConfig
+    } = definition;
+    const displayName = getDisplayName(datasource, definition);
+    datasourceContent += `\n### ${displayName} Datasource\n\n`;
+    datasourceContent += `**Identifier**: \`${id}\`\n\n`;
+    if (urls && urls.length) {
+      datasourceContent +=
+        `**References**:\n\n` +
+        urls.map((url) => ` - [${url}](${url})`).join('\n') +
+        '\n\n';
+    }
+
+    const datasourceReadmeFile = `deps/renovate/lib/datasource/${datasource}/readme.md`;
+    try {
+      const datasourceReadmeContent = await fs.readFile(
+        datasourceReadmeFile,
+        'utf8'
+      );
+      datasourceContent +=
+        '**Description**:\n\n' + datasourceReadmeContent + '\n';
+    } catch (err) {
+      console.warn('Not found:' + datasourceReadmeFile);
+    }
+
+    if(defaultConfig){
+      datasourceContent +=
+        '**Default configuration**:\n\n```json\n' + JSON.stringify(defaultConfig, undefined, 2) + '\n```\n';
+    }
+
+    datasourceContent += `\n----\n\n`;
+  }
+  const indexFileName = `${__dirname}/../docs/modules/datasource.md`;
+  let indexContent = await fs.readFile(indexFileName, 'utf8');
+  const replaceStartIndex = indexContent.indexOf(replaceStart);
+  const replaceStopIndex = indexContent.indexOf(replaceStop);
+  indexContent =
+    indexContent.slice(0, replaceStartIndex + replaceStart.length) +
+    datasourceContent +
+    indexContent.slice(replaceStopIndex);
+  await fs.outputFile(indexFileName, indexContent);
+}
+
 (async () => {
   await generateManagers();
   await generateVersioning();
+  await generateDatasources();
 })();
