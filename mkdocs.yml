@@ -28,6 +28,7 @@ nav:
   - Getting Started:
       - 'GitHub App Installation': 'install-github-app.md'
       - 'GitLab App Installation': 'install-gitlab-app.md'
+      - 'Self-hosting': 'self-hosting.md'
       - 'Configure Renovate (Onboarding PR)': 'configure-renovate.md'
       - 'Private npm module support': 'private-modules.md'
       - 'Reconfiguring Renovate': 'reconfigure-renovate.md'
