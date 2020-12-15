@@ -23,12 +23,12 @@ async function generateTemplates() {
 
   const templateFile = 'docs/templates.md';
   let templateContent = await fs.readFile(templateFile, 'utf8');
-  const header1 = '## Exposed Config Options';
+  const header1 = '## Exposed config options';
   templateContent = templateContent.replace(
     header1,
     `${header1}\n\n${exposedConfigOptionsText}`
   );
-  const header2 = '## Other Available Fields';
+  const header2 = '## Other available fields';
   templateContent = templateContent.replace(
     header2,
     `${header2}\n\n${runtimeText}`
