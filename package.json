@@ -7,7 +7,7 @@
     "url": "git+https://github.com/renovatebot/docs.renovatebot.com.git"
   },
   "devDependencies": {
-    "fs-extra": "9.0.0",
+    "fs-extra": "9.1.0",
     "markdown-table": "2.0.0"
   },
   "prettier": {
