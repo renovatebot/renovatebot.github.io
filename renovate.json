@@ -1,25 +1,19 @@
 {
-  "extends": ["config:base", ":rebaseStalePrs", ":masterIssue"],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["at any time"],
-    "stabilityDays": 0,
-    "masterIssueApproval": true
-  },
-  "postUpdateOptions": ["yarnDedupeHighest"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>renovatebot/.github"],
   "semanticCommitScope": "deps",
   "stabilityDays": 3,
-  "prCreation": "not-pending",
   "git-submodules": {
     "enabled": true
   },
   "packageRules": [
     {
-      "updateTypes": ["major", "minor"],
-      "masterIssueApproval": true
+      "matchUpdateTypes": ["minor"],
+      "matchManagers": ["pip_requirements"],
+      "dependencyDashboardApproval": true
     },
     {
-      "managers": ["git-submodules"],
+      "matchManagers": ["git-submodules"],
       "automerge": true,
       "automergeType": "branch",
       "semanticCommitScope": "docs",
