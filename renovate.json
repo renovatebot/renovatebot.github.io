@@ -1,10 +1,10 @@
 {
-  "extends": ["config:base", ":rebaseStalePrs", ":masterIssue"],
+  "extends": ["config:base", ":rebaseStalePrs", ":dependencyDashboard"],
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["at any time"],
     "stabilityDays": 0,
-    "masterIssueApproval": true
+    "dependencyDashboardApproval": true
   },
   "postUpdateOptions": ["yarnDedupeHighest"],
   "semanticCommitScope": "deps",
@@ -16,7 +16,7 @@
   "packageRules": [
     {
       "updateTypes": ["major", "minor"],
-      "masterIssueApproval": true
+      "dependencyDashboardApproval": true
     },
     {
       "managers": ["git-submodules"],
