@@ -9,3 +9,7 @@ The content itself is pulled from https://github.com/renovatebot/renovate, so yo
 The website is built and hosted by GitHub Pages.
 
 To build locally, run `make` and then `mkdocs serve`.
+
+## Contributing
+
+If you would like to contribute to this repository or get a local copy running for some other reason, please see the instructions in [.github/contributing.md](.github/contributing.md).
