@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ env.node-version }}
 
       - name: Set up Python ${{ env.python-version }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2.2.1
         with:
           python-version: ${{ env.python-version }}
 
