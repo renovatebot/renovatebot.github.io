@@ -14,15 +14,6 @@
 - [ ] I have updated the documentation, or
 - [ ] No documentation update is required
 
-## How I've tested my work (please tick one)
-
-I have verified these changes via:
-
-- [ ] Code inspection only, or
-- [ ] Newly added unit tests, or
-- [ ] No new tests but ran on a real repository, or
-- [ ] Both unit tests + ran on a real repository
-
 <!-- Do you have any suggestions about this PR template? Edit it here: https://github.com/renovatebot/renovatebot.github.io/edit/build/.github/pull_request_template.md -->
 
 <!-- Please do not force push to this PR's branch after you have created this PR, as doing so makes it harder for us to review your work. -->
