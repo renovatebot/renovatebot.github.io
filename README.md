@@ -1,4 +1,6 @@
-# docs.renovatebot.com ![Build docs](https://github.com/renovatebot/renovatebot.github.io/workflows/docs/badge.svg?branch=build)
+![Build docs](https://github.com/renovatebot/renovatebot.github.io/workflows/docs/badge.svg?branch=build)
+
+# docs.renovatebot.com
 
 This repository is used to build Renovate's docs site (https://docs.renovatebot.com).
 
