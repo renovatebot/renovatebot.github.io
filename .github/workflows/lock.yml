@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: dessant/lock-threads@v2.0.3
-        if: github.repository == 'renovatebot/renovate'
+        if: github.repository == 'renovatebot/renovatebot.github.io '
         with:
           github-token: ${{ github.token }}
           issue-lock-inactive-days: 30
