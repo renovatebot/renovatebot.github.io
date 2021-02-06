@@ -1,4 +1,4 @@
-![Build docs](https://github.com/renovatebot/renovatebot.github.io/workflows/docs/badge.svg?branch=build)
+![publish-docs](https://github.com/renovatebot/renovatebot.github.io/workflows/publish-docs/badge.svg?branch=build)
 
 # docs.renovatebot.com
 
