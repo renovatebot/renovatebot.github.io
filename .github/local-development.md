@@ -13,7 +13,7 @@ You need the following dependencies for local development:
 - Git
 - Node.js `^12.13.0 || >=14.15.0`
 - Yarn `^1.17.0`
-- Python `^3.8`
+- Python `^3.9`
 - Bash shell with `make`
 
 We support Node.js versions according to the [Node.js release schedule](https://github.com/nodejs/Release#release-schedule).
