@@ -11,9 +11,9 @@ For example, if you think anything is unclear, or you think something needs to b
 You need the following dependencies for local development:
 
 - Git
-- Node.js `^12.13.0 || >=14.15.0`
+- Node.js `>=14.15.4`
 - Yarn `^1.17.0`
-- Python `^3.9`
+- Python `^3.9.1`
 - Bash shell with `make`
 
 We support Node.js versions according to the [Node.js release schedule](https://github.com/nodejs/Release#release-schedule).
@@ -23,7 +23,7 @@ _Linux_
 You can use the following commands on Ubuntu.
 
 ```sh
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update
@@ -32,28 +32,11 @@ sudo apt-get install -y git python-minimal build-essential nodejs yarn
 
 _Windows_
 
-QUESTION: Git Bash for Windows does not come with `make` by default, how should a user work around this? Or is Windows not supported for making the docs locally?
+Windows users should use Windows Subsystem for Linux version 2.
 
-Follow these steps to set up your development environment on Windows 10.
-If you already installed a component, skip the corresponding step.
+Read the [Windows Subsystem for Linux Documentation](https://docs.microsoft.com/en-us/windows/wsl/) to learn more.
 
-- Install [Git](https://git-scm.com/downloads). Make sure you've [configured your username and email](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
-- Install [Node.js LTS](https://nodejs.org/en/download/)
-- In an Administrator PowerShell prompt, run `npm install -global npm` and then `npm --add-python-to-path='true' --debug install --global windows-build-tools`
-- Install [Yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable)
-
-  Verify you're using the appropriate versions:
-
-  ```powershell
-  PS C:\Windows\system32> git --version
-  git version 2.29.0.windows.1
-  PS C:\Windows\system32> node --version
-  v14.15.0
-  PS C:\Windows\system32> yarn --version
-  1.22.4
-  PS C:\Windows\system32> python --version
-  Python 3.8.1
-  ```
+Read the [VSCode documentation, Developing in WSL](https://code.visualstudio.com/docs/remote/wsl) to learn how to use WSL and VSCode.
 
 ## Fork and Clone
 
