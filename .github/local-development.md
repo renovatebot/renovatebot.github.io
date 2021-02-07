@@ -12,7 +12,7 @@ You need the following dependencies for local development:
 
 - Git
 - Node.js `>=14.15.4`
-- Yarn `^1.17.0`
+- Yarn `^1.22.5`
 - Python `^3.9.1`
 - Bash shell with `make`
 
