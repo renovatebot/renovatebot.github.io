@@ -32,7 +32,7 @@ nav:
       - 'Configure Renovate (Onboarding PR)': 'configure-renovate.md'
       - 'Private npm module support': 'private-modules.md'
       - 'Reconfiguring Renovate': 'reconfigure-renovate.md'
-  - Frequently Asked Questions (FAQ): 'faq.md'
+  - Frequently Asked Questions: 'faq.md'
   - Configuration Options: 'configuration-options.md'
   - Self Hosted Configuration: 'self-hosted-configuration.md'
   - Renovate Modules:
