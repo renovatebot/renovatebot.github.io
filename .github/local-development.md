@@ -34,13 +34,13 @@ _Windows_
 
 Windows users should use Windows Subsystem for Linux version 2.
 
-Read the [Windows Subsystem for Linux Documentation](https://docs.microsoft.com/en-us/windows/wsl/) to learn more.
+Read the [Windows Subsystem for Linux Documentation](https://docs.microsoft.com/en-us/windows/wsl/) to learn more about WSL.
 
-Read the [VSCode documentation, Developing in WSL](https://code.visualstudio.com/docs/remote/wsl) to learn how to use WSL and VSCode.
+Read the [VSCode documentation, Developing in WSL](https://code.visualstudio.com/docs/remote/wsl) to learn how to use WSL and VS Code.
 
 ## Fork and Clone
 
-If you want to contribute to the project, you should first "fork" the main project using the GitHub Website and then clone your fork locally.
+If you want to contribute to the project, you should first "fork" the main project using the GitHub website and then clone your fork locally.
 The Renovate project uses the [Yarn](https://github.com/yarnpkg/yarn) package management system instead of npm.
 
 To ensure everything is working properly on your end, you must:
