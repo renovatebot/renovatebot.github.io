@@ -1,7 +1,7 @@
 site_name: Renovate Docs
 site_url: 'https://docs.renovatebot.com'
 
-remote_branch: master
+remote_branch: main
 
 # Theme settings
 theme:
