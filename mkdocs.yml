@@ -30,7 +30,7 @@ nav:
       - 'GitLab App Installation': 'install-gitlab-app.md'
       - 'Self-hosting': 'self-hosting.md'
       - 'Configure Renovate (Onboarding PR)': 'configure-renovate.md'
-      - 'Private npm module support': 'private-modules.md'
+      - 'Private module support': 'private-modules.md'
       - 'Reconfiguring Renovate': 'reconfigure-renovate.md'
   - Frequently Asked Questions: 'faq.md'
   - Configuration Options: 'configuration-options.md'
