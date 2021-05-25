@@ -7,7 +7,7 @@ on:
       - '!main'
 
 env:
-  node-version: 12.x
+  node-version: 14.x
   python-version: 3.x
 
 jobs:
