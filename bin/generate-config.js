@@ -1,7 +1,12 @@
 const fs = require('fs-extra');
-const options = require('../deps/renovate/dist/config/definitions').getOptions();
-let { getCliName } = require('../deps/renovate/dist/config/cli');
-let { getEnvName } = require('../deps/renovate/dist/config/env');
+const options =
+  require('../deps/renovate/dist/config/definitions').getOptions();
+let {
+  getCliName,
+} = require('../deps/renovate/dist/workers/global/config/parse/cli');
+let {
+  getEnvName,
+} = require('../deps/renovate/dist/workers/global/config/parse/env');
 let table = require('markdown-table');
 let config_options_raw;
 
