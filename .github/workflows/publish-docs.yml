@@ -73,7 +73,7 @@ jobs:
       - name: Build docs
         run: mkdocs build
 
-      - uses: actions/upload-artifact@v2.2.3
+      - uses: actions/upload-artifact@v2.2.4
         with:
           name: site
           path: site
