@@ -1,4 +1,6 @@
 .DS_Store
+__pycache__
+/.venv
 /docs
 /node_modules
 /site
