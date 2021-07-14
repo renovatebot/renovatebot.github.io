@@ -21,6 +21,14 @@ extra_javascript:
 # Extensions
 markdown_extensions:
   - meta
+  - pymdownx.superfences
+  - pymdownx.tabbed
+
+plugins:
+  - search
+  - mkdocs-simple-hooks:
+      hooks:
+        on_page_markdown: "bin.hooks:make_tabbed_codeblocks"
 
 # Page Tree
 nav:
