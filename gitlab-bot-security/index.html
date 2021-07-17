@@ -1,0 +1,1039 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/gitlab-bot-security/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>GitLab bot security - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#gitlab-bot-security" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.renovatebot.com" title="Renovate Docs" aria-label="Renovate Docs" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../assets/images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Renovate Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                GitLab bot security
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.renovatebot.com" title="Renovate Docs" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../assets/images/logo.png" width="48" height="48">
+      
+    </a>
+    Renovate Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-github-app/" title="GitHub App Installation" class="md-nav__link">
+      GitHub App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-gitlab-app/" title="GitLab App Installation" class="md-nav__link">
+      GitLab App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-hosting/" title="Self-hosting" class="md-nav__link">
+      Self-hosting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configure-renovate/" title="Configure Renovate (Onboarding PR)" class="md-nav__link">
+      Configure Renovate (Onboarding PR)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../private-modules/" title="Private module support" class="md-nav__link">
+      Private module support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reconfigure-renovate/" title="Reconfiguring Renovate" class="md-nav__link">
+      Reconfiguring Renovate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="Frequently Asked Questions" class="md-nav__link">
+      Frequently Asked Questions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../configuration-options/" title="Configuration Options" class="md-nav__link">
+      Configuration Options
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../self-hosted-configuration/" title="Self Hosted Configuration" class="md-nav__link">
+      Self Hosted Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Renovate Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Renovate Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/platform/" title="Platforms" class="md-nav__link">
+      Platforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/manager/" title="Managers" class="md-nav__link">
+      Managers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/datasource/" title="Datasources" class="md-nav__link">
+      Datasources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/versioning/" title="Versioning" class="md-nav__link">
+      Versioning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../config-presets/" title="Shareable Config Presets" class="md-nav__link">
+      Shareable Config Presets
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Language Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Language Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bazel/" title="Bazel" class="md-nav__link">
+      Bazel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../golang/" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node/" title="Node.js Versions" class="md-nav__link">
+      Node.js Versions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nuget/" title="Nuget" class="md-nav__link">
+      Nuget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../php/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ruby/" title="Ruby" class="md-nav__link">
+      Ruby
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Deep Dives
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Deep Dives
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dependency-pinning/" title="Should you Pin your Javascript Dependencies?" class="md-nav__link">
+      Should you Pin your Javascript Dependencies?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration-templates/" title="Config Template Editing" class="md-nav__link">
+      Config Template Editing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updating-rebasing/" title="Updating and Rebasing Branches" class="md-nav__link">
+      Updating and Rebasing Branches
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../semantic-commits/" title="Semantic Commit Messages" class="md-nav__link">
+      Semantic Commit Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../noise-reduction/" title="Noise Reduction" class="md-nav__link">
+      Noise Reduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../automerge-configuration/" title="Automerging Updates" class="md-nav__link">
+      Automerging Updates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Included Presets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Included Presets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-config/" title="Full Config Presets" class="md-nav__link">
+      Full Config Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-default/" title="Default Presets" class="md-nav__link">
+      Default Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-docker/" title="Docker Presets" class="md-nav__link">
+      Docker Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-group/" title="Group Presets" class="md-nav__link">
+      Group Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-helpers/" title="Helper Presets" class="md-nav__link">
+      Helper Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-monorepo/" title="Monorepo Presets" class="md-nav__link">
+      Monorepo Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-packages/" title="Package Presets" class="md-nav__link">
+      Package Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-preview/" title="Preview Presets" class="md-nav__link">
+      Preview Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-schedule/" title="Schedule Presets" class="md-nav__link">
+      Schedule Presets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      All Other
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        All Other
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../merge-confidence/" title="Merge Confidence" class="md-nav__link">
+      Merge Confidence
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ci_job_token-permissions" class="md-nav__link">
+    CI_JOB_TOKEN permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks-of-hosting-a-renovate-gitlab-appbotservice" class="md-nav__link">
+    Risks of hosting a Renovate GitLab app/bot/service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-solutions-and-workarounds" class="md-nav__link">
+    Security solutions and workarounds
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-projects-only" class="md-nav__link">
+    Public projects only
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-access-tokens" class="md-nav__link">
+    Project Access Tokens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-access-tokens" class="md-nav__link">
+    Group Access Tokens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipping-ci" class="md-nav__link">
+    Skipping CI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth" class="md-nav__link">
+    OAuth
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-migration" class="md-nav__link">
+    Recommended migration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    Acknowledgments
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="gitlab-bot-security">GitLab bot security</h1>
+<p>You should understand GitLab's security model, before deciding to run a "bot" service like Renovate on GitLab, particularly the pipeline credentials.</p>
+<p><strong>Important</strong>: If you have any doubts or concerns about this content that could affect other users, please follow our <a href="https://github.com/renovatebot/renovate/security/policy">Security Policy</a> and report them confidentially.</p>
+<h2 id="ci_job_token-permissions"><code>CI_JOB_TOKEN</code> permissions</h2>
+<p>The concept of <code>CI_JOB_TOKEN</code> permissions was <a href="https://docs.gitlab.com/ee/user/project/new_ci_build_permissions_model.html">overhauled in GitLab release 8.12</a>, jobs are now run with the permissions of the user account which <em>triggered</em> the pipeline.
+For security reasons the token was limited to read-only permissions and a limited set of API endpoints, however it’s since been extended to allow <a href="https://docs.gitlab.com/ee/api/README.html#gitlab-ci-job-token">write access to the GitLab Package Registry</a>.
+Any pipeline triggered by a user account thus has permissions to read any repository which that account has access to as well as publish packages to them.</p>
+<p>With the current GitLab CI permissions model, you should avoid committing to any project which you don’t trust completely, because that project could maliciously steal repository data, publish fake releases, or spam releases.</p>
+<h2 id="risks-of-hosting-a-renovate-gitlab-appbotservice">Risks of hosting a Renovate GitLab app/bot/service</h2>
+<p>The GitLab security model means that the risks of running a <em>public</em> bot service on GitLab are too high, which is why the existing service has been suspended until an alternate security model is ready.</p>
+<p>It's also important to remember that when accounts are invited into projects or groups on GitLab, acceptance happens automatically (which was a useful feature to leverage for a shared service).</p>
+<p>If you are running a self-hosted Renovate service, it is advisable to:</p>
+<ul>
+<li>Run a shared service only within projects which have shared visibility/security within the users, or which have a low risk that a user would try to gain access to a private project they don't otherwise have access to</li>
+<li>If running with <code>autodiscover</code>, also configure a value for <code>autodiscoverFilter</code> so that the bot can't be invited to projects or groups you don't intend</li>
+</ul>
+<h2 id="security-solutions-and-workarounds">Security solutions and workarounds</h2>
+<p>The following research notes may help you to assess the GitLab bot security risk.</p>
+<h3 id="public-projects-only">Public projects only</h3>
+<p>If a bot service is run on public projects only, then the risk of private project data being accessed by unauthorized users is zero.
+However, malicious users can still spoof or spam packages to any other public project they themselves are not a member of, so that rules out this approach for a public hosted service.</p>
+<p>A public-visibility-only bot service should be low risk for most self-hosted GitLab instances.
+There is still a small problem that you can't <em>prevent</em> users from inviting the bot into private projects if they are not aware of the risks of doing so.</p>
+<h3 id="project-access-tokens">Project Access Tokens</h3>
+<p><a href="https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html">Project Access Tokens</a> are a recently added feature for GitLab.
+The main downsides to their use for a shared bot service are:</p>
+<ul>
+<li>It is not yet possible to <a href="https://gitlab.com/gitlab-org/gitlab/-/issues/238991">provision them through the API</a>, so project maintainers would need to provision a project bot account and then save it to Renovate manually and per-project</li>
+<li>Project Access Tokens are a paid-only feature for gitlab.com, which excludes a large percentage of the public service user base</li>
+<li>At the time of writing, there are still some issues with getting Project Access Tokens to trigger and authenticate CI</li>
+<li>Any service using such tokens would get MRs from a user like <code>@project_123_bot</code> which is less intuitive than <code>@renovate-bot</code></li>
+</ul>
+<p>The big benefit of Project Access Tokens is their limited scope, users with write access to one project cannot read/write to other projects.</p>
+<h3 id="group-access-tokens">Group Access Tokens</h3>
+<p>Group Access Tokens are still in the planning stage, but may offer a more scalable way to manage a Renovate service.
+Tokens could be provisioned into Renovate per-group and permissions/visibility would need to be kept uniform throughout the group to ensure escalation of privileges is not possible.</p>
+<p>It should be noted though that many GitLab users <em>do not</em> have uniform permissions/visibility throughout groups today, so this is a risk of Group Access Tokens in general.
+Even <a href="https://gitlab.com/gitlab-org">https://gitlab.com/gitlab-org</a> is a good example of how common it is to mix project visibility within a same group.</p>
+<p>Similarly with Project Access Tokens, if they are a paid-only feature then it would exclude free users from using such a service.</p>
+<h3 id="skipping-ci">Skipping CI</h3>
+<p>The security problem described above is that if a user triggers a malicious pipeline then they can be exploited, so skipping CI altogether would seem to be a way to avoid that.
+If Renovate can <em>reliably</em> force CI skipping for both (a) branch push, and (b) MR creation/updating then there should be no security exploit risk, but of course then there are no tests run instead.
+A possibility in future could be to combine this with a force push from a user or project token to trigger tests.</p>
+<p>The above solution/workaround will be actively researched in collaboration with GitLab.</p>
+<h3 id="oauth">OAuth</h3>
+<p>An alternative to a bot service running with a bot PAT would be to have it run using user OAuth tokens.
+In this scenario, an OAuth app would be needed to allow users to "install" the bot into projects with members they trust not to exploit them, and then commits and Merge Requests would appear to be authored by the <em>user</em>, not any bot.
+Bot services are better if they are provisioned with a "bot identity" so that users can quickly distinguish bot activity from real user activity.</p>
+<h2 id="recommended-migration">Recommended migration</h2>
+<p>Until the hosted app can be reactivated, we recommend users migrate to use self-hosted pipelines to run Renovate.
+Please see the <a href="https://gitlab.com/renovate-bot/renovate-runner/-/blob/HEAD/README.md">renovate-bot/renovate-runner README on GitLab</a> for instructions on how to set this up as easily as possible.</p>
+<p>The Renovate team is working to find a feasible design for the app so that we can reactive it securely in future.
+We welcome any ideas you may have.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>Thank you to Nejc Habjan for bringing this security challenge to our attention, and also to his colleagues at Siemens for their assistance researching the risks.
+Thanks also to the GitLab security team for being responsive to our questions.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../assets/js/fx.js"></script>
+      
+    
+  </body>
+</html>

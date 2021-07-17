@@ -1,0 +1,1692 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/modules/versioning/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Versioning - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#versioning" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.renovatebot.com" title="Renovate Docs" aria-label="Renovate Docs" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../assets/images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Renovate Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Versioning
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.renovatebot.com" title="Renovate Docs" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../assets/images/logo.png" width="48" height="48">
+      
+    </a>
+    Renovate Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../install-github-app/" title="GitHub App Installation" class="md-nav__link">
+      GitHub App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../install-gitlab-app/" title="GitLab App Installation" class="md-nav__link">
+      GitLab App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-hosting/" title="Self-hosting" class="md-nav__link">
+      Self-hosting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configure-renovate/" title="Configure Renovate (Onboarding PR)" class="md-nav__link">
+      Configure Renovate (Onboarding PR)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../private-modules/" title="Private module support" class="md-nav__link">
+      Private module support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reconfigure-renovate/" title="Reconfiguring Renovate" class="md-nav__link">
+      Reconfiguring Renovate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="Frequently Asked Questions" class="md-nav__link">
+      Frequently Asked Questions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../configuration-options/" title="Configuration Options" class="md-nav__link">
+      Configuration Options
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../self-hosted-configuration/" title="Self Hosted Configuration" class="md-nav__link">
+      Self Hosted Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Renovate Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Renovate Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../platform/" title="Platforms" class="md-nav__link">
+      Platforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../manager/" title="Managers" class="md-nav__link">
+      Managers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../datasource/" title="Datasources" class="md-nav__link">
+      Datasources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Versioning
+      </label>
+    
+    <a href="./" title="Versioning" class="md-nav__link md-nav__link--active">
+      Versioning
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-you-might-need-to-manually-configure-versioning" class="md-nav__link">
+    Why you might need to manually configure versioning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-concepts-behind-overriding-versioning" class="md-nav__link">
+    General concepts behind overriding versioning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-versioning-overrides" class="md-nav__link">
+    Examples of versioning overrides
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overriding-docker-versioning-to-use-a-versioning-specific-for-a-package" class="md-nav__link">
+    Overriding Docker versioning to use a versioning specific for a package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-custom-regex-versioning-scheme" class="md-nav__link">
+    Using a custom regex versioning scheme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-versioning" class="md-nav__link">
+    Supported Versioning
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cargo-versioning" class="md-nav__link">
+    Cargo Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composer-versioning" class="md-nav__link">
+    Composer Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-versioning" class="md-nav__link">
+    Docker Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-versioning" class="md-nav__link">
+    git Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-versioning" class="md-nav__link">
+    Gradle Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashicorp-versioning" class="md-nav__link">
+    Hashicorp Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hex-versioning" class="md-nav__link">
+    Hex Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ivy-versioning" class="md-nav__link">
+    Ivy Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loose-versioning" class="md-nav__link">
+    Loose Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-versioning" class="md-nav__link">
+    Maven Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs-versioning" class="md-nav__link">
+    Node.js Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npm-versioning" class="md-nav__link">
+    npm Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nuget-versioning" class="md-nav__link">
+    NuGet Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pep440-versioning" class="md-nav__link">
+    PEP440 Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poetry-versioning" class="md-nav__link">
+    Poetry Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expression-versioning" class="md-nav__link">
+    Regular Expression Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby-versioning" class="md-nav__link">
+    Ruby Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-versioning" class="md-nav__link">
+    Semantic Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swift-versioning" class="md-nav__link">
+    Swift Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-versioning" class="md-nav__link">
+    Ubuntu Versioning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../config-presets/" title="Shareable Config Presets" class="md-nav__link">
+      Shareable Config Presets
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Language Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Language Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bazel/" title="Bazel" class="md-nav__link">
+      Bazel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../golang/" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/" title="Node.js Versions" class="md-nav__link">
+      Node.js Versions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nuget/" title="Nuget" class="md-nav__link">
+      Nuget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ruby/" title="Ruby" class="md-nav__link">
+      Ruby
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Deep Dives
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Deep Dives
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dependency-pinning/" title="Should you Pin your Javascript Dependencies?" class="md-nav__link">
+      Should you Pin your Javascript Dependencies?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configuration-templates/" title="Config Template Editing" class="md-nav__link">
+      Config Template Editing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updating-rebasing/" title="Updating and Rebasing Branches" class="md-nav__link">
+      Updating and Rebasing Branches
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../semantic-commits/" title="Semantic Commit Messages" class="md-nav__link">
+      Semantic Commit Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../noise-reduction/" title="Noise Reduction" class="md-nav__link">
+      Noise Reduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../automerge-configuration/" title="Automerging Updates" class="md-nav__link">
+      Automerging Updates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Included Presets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Included Presets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-config/" title="Full Config Presets" class="md-nav__link">
+      Full Config Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-default/" title="Default Presets" class="md-nav__link">
+      Default Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-docker/" title="Docker Presets" class="md-nav__link">
+      Docker Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-group/" title="Group Presets" class="md-nav__link">
+      Group Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-helpers/" title="Helper Presets" class="md-nav__link">
+      Helper Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-monorepo/" title="Monorepo Presets" class="md-nav__link">
+      Monorepo Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-packages/" title="Package Presets" class="md-nav__link">
+      Package Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-preview/" title="Preview Presets" class="md-nav__link">
+      Preview Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-schedule/" title="Schedule Presets" class="md-nav__link">
+      Schedule Presets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      All Other
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        All Other
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../merge-confidence/" title="Merge Confidence" class="md-nav__link">
+      Merge Confidence
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-you-might-need-to-manually-configure-versioning" class="md-nav__link">
+    Why you might need to manually configure versioning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-concepts-behind-overriding-versioning" class="md-nav__link">
+    General concepts behind overriding versioning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-versioning-overrides" class="md-nav__link">
+    Examples of versioning overrides
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overriding-docker-versioning-to-use-a-versioning-specific-for-a-package" class="md-nav__link">
+    Overriding Docker versioning to use a versioning specific for a package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-custom-regex-versioning-scheme" class="md-nav__link">
+    Using a custom regex versioning scheme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-versioning" class="md-nav__link">
+    Supported Versioning
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cargo-versioning" class="md-nav__link">
+    Cargo Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composer-versioning" class="md-nav__link">
+    Composer Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-versioning" class="md-nav__link">
+    Docker Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-versioning" class="md-nav__link">
+    git Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-versioning" class="md-nav__link">
+    Gradle Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashicorp-versioning" class="md-nav__link">
+    Hashicorp Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hex-versioning" class="md-nav__link">
+    Hex Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ivy-versioning" class="md-nav__link">
+    Ivy Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loose-versioning" class="md-nav__link">
+    Loose Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-versioning" class="md-nav__link">
+    Maven Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs-versioning" class="md-nav__link">
+    Node.js Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npm-versioning" class="md-nav__link">
+    npm Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nuget-versioning" class="md-nav__link">
+    NuGet Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pep440-versioning" class="md-nav__link">
+    PEP440 Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poetry-versioning" class="md-nav__link">
+    Poetry Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expression-versioning" class="md-nav__link">
+    Regular Expression Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby-versioning" class="md-nav__link">
+    Ruby Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-versioning" class="md-nav__link">
+    Semantic Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swift-versioning" class="md-nav__link">
+    Swift Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-versioning" class="md-nav__link">
+    Ubuntu Versioning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="versioning">Versioning</h1>
+<p>Once Managers have extracted dependencies, and Datasources have located available versions, then Renovate will use a "Versioning" scheme to perform sorting and filtering of results.
+The "versioning" is different for each package manager, because different package managers use different versioning schemes.
+For example, <code>npm</code> uses<code>1.0.0-beta.1</code> and <code>pip</code> uses <code>1.0.0b1</code>.</p>
+<h2 id="why-you-might-need-to-manually-configure-versioning">Why you might need to manually configure versioning</h2>
+<p>Renovate interprets versions correctly out-of-the-box most of the time.
+It's impossible to automatically detect <strong>all</strong> versioning schemes, so sometimes you need to tell the bot what versioning scheme it should use.</p>
+<p>You can manually configure/override the <code>versioning</code> value for a particular dependency.
+You generally won't need to override the defaults for ecosystems which enforce a strict version scheme like <code>npm</code>.</p>
+<p>Configuring or overriding the default <code>versionScheme</code> can be particularly helpful for ecosystems like Docker/Kubernetes/Helm, where versioning is barely a "convention".</p>
+<h2 id="general-concepts-behind-overriding-versioning">General concepts behind overriding versioning</h2>
+<ul>
+<li>Although you can reconfigure versioning per-manager or per-datasource, it's unlikely that such a broad change would ever be needed</li>
+<li>More commonly you would need to configure <code>versionScheme</code> for individual packages or potentially package patterns</li>
+<li>The best way to do this is with <code>packageRules</code>, with a combination of <code>matchManagers</code>, <code>matchDatasources</code>, <code>matchPackageNames</code> and <code>matchPackagePatterns</code></li>
+</ul>
+<h2 id="examples-of-versioning-overrides">Examples of versioning overrides</h2>
+<h3 id="overriding-docker-versioning-to-use-a-versioning-specific-for-a-package">Overriding Docker versioning to use a versioning specific for a package</h3>
+<p>The configuration below overrides Renovate's default <code>docker</code> versioning for the <code>python</code> Docker image and instead uses the <code>pep440</code> versioning scheme to evaluate versions.</p>
+<pre><code class="json">{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDatasources&quot;: [&quot;docker&quot;],
+      &quot;matchPackageNames&quot;: [&quot;python&quot;],
+      &quot;versioning&quot;: &quot;pep440&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="using-a-custom-regex-versioning-scheme">Using a custom regex versioning scheme</h3>
+<pre><code class="json">{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackageNames&quot;: [&quot;foo/bar&quot;],
+      &quot;versionScheme&quot;: &quot;regex:^(?&lt;compatibility&gt;.*)-v?(?&lt;major&gt;\\d+)\\.(?&lt;minor&gt;\\d+)\\.(?&lt;patch&gt;\\d+)?$&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="supported-versioning">Supported Versioning</h2>
+<!-- Autogenerate in https://github.com/renovatebot/renovatebot.github.io -->
+
+<p>Supported values for <code>versioning</code> are: <code>cargo</code>, <code>composer</code>, <code>docker</code>, <code>git</code>, <code>gradle</code>, <code>hashicorp</code>, <code>hex</code>, <code>ivy</code>, <code>loose</code>, <code>maven</code>, <code>node</code>, <code>npm</code>, <code>nuget</code>, <code>pep440</code>, <code>poetry</code>, <code>regex</code>, <code>ruby</code>, <code>semver</code>, <code>swift</code>, <code>ubuntu</code>.</p>
+<h3 id="cargo-versioning">Cargo Versioning</h3>
+<p><strong>Identifier</strong>: <code>cargo</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html">https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<p><strong>Description</strong>:</p>
+<p>Cargo versioning uses <a href="https://semver.org">Semantic Versioning 2.0</a>.</p>
+<p>Cargo supports ranges in a similar manner to npm, but not identical. The important differences are:</p>
+<p><strong>Use of commas</strong></p>
+<p>Multiple version requirements can also be separated with a comma, e.g. <code>&gt;= 1.2, &lt; 1.5</code>. We interpret this to mean AND.</p>
+<p><strong>No exact versions unless using equals =</strong></p>
+<p>In Cargo, <code>1.2.3</code> doesn't mean "exactly 1.2.3", it actually means <code>&gt;=1.2.3 &lt;2.0.0</code>. So this is like the equivalent of <code>^1.2.3</code> in npm.</p>
+<hr />
+<h3 id="composer-versioning">Composer Versioning</h3>
+<p><strong>Identifier</strong>: <code>composer</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://getcomposer.org/doc/articles/versions.md">https://getcomposer.org/doc/articles/versions.md</a></li>
+<li><a href="https://packagist.org/packages/composer/semver">https://packagist.org/packages/composer/semver</a></li>
+<li><a href="https://madewithlove.be/tilde-and-caret-constraints/">https://madewithlove.be/tilde-and-caret-constraints/</a></li>
+<li><a href="https://semver.mwl.be">https://semver.mwl.be</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<p><strong>Description</strong>:</p>
+<p>Composer uses Semver-like versioning, however some package authors may use versions that are not completely valid, e.g. <code>1.2</code> instead of <code>1.2.0</code>.</p>
+<p>Composer supports ranges in a similar manner to npm, but not identical. The main difference is with tilde ranges.</p>
+<p>Tilde ranges with "short" versions are different to npm. e.g.</p>
+<p><code>~4</code> is equivalent to <code>^4</code> in npm
+<code>~4.1</code> is equivalent to <code>^4.1</code> in npm
+<code>~0.4</code> is equivalent to <code>&gt;=0.4 &lt;1</code> in npm</p>
+<hr />
+<h3 id="docker-versioning">Docker Versioning</h3>
+<p><strong>Identifier</strong>: <code>docker</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/commandline/tag/">https://docs.docker.com/engine/reference/commandline/tag/</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>❌ No range support.</p>
+<p><strong>Description</strong>:</p>
+<p>Docker doesn't really have <em>versioning</em>, instead it supports "tags" and these are usually used by Docker image authors as a form of versioning.</p>
+<p>This Docker versioning implementation in Renovate is designed to handle the most common <em>conventions</em> used in tagging images. In particular, it treats the text after the first hyphen as a type of platform/compatibility indicator.</p>
+<p>For example, many images include images with the "-alpine" suffix, e.g. the official <code>node</code> Docker image includes tags like <code>12.15.0-alpine</code> which is <em>not</em> compatible with <code>12.15.0</code> or <code>12.15.0-stretch</code>. This means users only want/expect upgrades to <code>12.16.0-alpine</code> and not <code>12.16.0</code> or <code>12.16.0-stretch</code>.</p>
+<p>Similarly, a user with <code>12.14</code> expects to be upgraded to <code>12.15</code> and not <code>12.15.0</code>.</p>
+<p><strong>What type of versioning is used?</strong></p>
+<p>It's pretty "wild west" for tagging and not always compliant with SemVer. Docker versioning in Renovate should do a best effort to accept and sort SemVer-like versions.</p>
+<p><strong>Are ranges supported?</strong></p>
+<p>No. Although a tag like <code>12.15</code> might seem like it means <code>12.15.x</code>, it is a tag of its own and may or may not point to an of the available <code>12.15.x</code> tags, including <code>12.15.0</code>.</p>
+<p><strong>Are commit hashes supported?</strong></p>
+<p>No. An image tag that looks like a Git commit hash should be ignored by Renovate.</p>
+<hr />
+<h3 id="git-versioning">git Versioning</h3>
+<p><strong>Identifier</strong>: <code>git</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://git-scm.com/">https://git-scm.com/</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>❌ No range support.</p>
+<p><strong>Description</strong>:</p>
+<p>Renovate's Git versioning is a kind of hack to support Git submodule updating.</p>
+<hr />
+<h3 id="gradle-versioning">Gradle Versioning</h3>
+<p><strong>Identifier</strong>: <code>gradle</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://docs.gradle.org/current/userguide/single_versions.html#version_ordering">https://docs.gradle.org/current/userguide/single_versions.html#version_ordering</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>pin</code></p>
+<hr />
+<h3 id="hashicorp-versioning">Hashicorp Versioning</h3>
+<p><strong>Identifier</strong>: <code>hashicorp</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://www.terraform.io/docs/configuration/terraform.html#specifying-a-required-terraform-version">https://www.terraform.io/docs/configuration/terraform.html#specifying-a-required-terraform-version</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<p><strong>Description</strong>:</p>
+<p>Hashicorp versioning syntax is used for Terraform.</p>
+<p>It is based off <a href="https://semver.org">Semantic Versioning 2.0</a> but with a subset of npm's range syntax.</p>
+<hr />
+<h3 id="hex-versioning">Hex Versioning</h3>
+<p><strong>Identifier</strong>: <code>hex</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://hexdocs.pm/elixir/Version.html">https://hexdocs.pm/elixir/Version.html</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<p><strong>Description</strong>:</p>
+<p>Hex versioning syntax is used for Elixir and Erlang hex dependencies. It is based on <a href="https://semver.org">Semantic Versioning 2.0</a> and supports a subset of npm's range syntax.</p>
+<hr />
+<h3 id="ivy-versioning">Ivy Versioning</h3>
+<p><strong>Identifier</strong>: <code>ivy</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://ant.apache.org/ivy/">https://ant.apache.org/ivy/</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<hr />
+<h3 id="loose-versioning">Loose Versioning</h3>
+<p><strong>Identifier</strong>: <code>loose</code></p>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>❌ No range support.</p>
+<p><strong>Description</strong>:</p>
+<p>Renovate's "loose" versioning was created for cases where no strict versioning is in place. It works like SemVer if SemVer-compliant versions are supplied, but otherwise is "best effort". Essentially it just does its best to sort versions and ignore versions that are not sortable.</p>
+<hr />
+<h3 id="maven-versioning">Maven Versioning</h3>
+<p><strong>Identifier</strong>: <code>maven</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://maven.apache.org/pom.html#Dependency_Version_Requirement_Specification">https://maven.apache.org/pom.html#Dependency_Version_Requirement_Specification</a></li>
+<li><a href="https://octopus.com/blog/maven-versioning-explained">https://octopus.com/blog/maven-versioning-explained</a></li>
+<li><a href="https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<p><strong>Description</strong>:</p>
+<p>Maven versioning is similar to SemVer but also very different in places. It's specified by Maven itself.</p>
+<p>Ranges are supported using Maven's special syntax.</p>
+<hr />
+<h3 id="nodejs-versioning">Node.js Versioning</h3>
+<p><strong>Identifier</strong>: <code>node</code></p>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>❌ No range support.</p>
+<p><strong>Description</strong>:</p>
+<p>Renovate's Node.js versioning is a wrapper around npm's versioning, except that it makes sure to strip "v" prefixes from exact versions when replacing.</p>
+<p>It is planned to extend it one day to support "stability" awareness, because Node.js's version stability does not follow the SemVer approach.</p>
+<hr />
+<h3 id="npm-versioning">npm Versioning</h3>
+<p><strong>Identifier</strong>: <code>npm</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://semver.org/">https://semver.org/</a></li>
+<li><a href="https://www.npmjs.com/package/semver">https://www.npmjs.com/package/semver</a></li>
+<li><a href="https://docs.npmjs.com/about-semantic-versioning">https://docs.npmjs.com/about-semantic-versioning</a></li>
+<li><a href="https://semver.npmjs.com/">https://semver.npmjs.com/</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<p><strong>Description</strong>:</p>
+<p>npm versioning is the most well known/widely-used implementation of <a href="https://semver.org">Semantic Versioning 2.0</a>.</p>
+<p>It's important to understand that "npm" versioning scheme is not the same as "semver" versioning. SemVer's spec does not define ranges at all - so all range/constraint syntax in npm is npm-specific and not part of the spec.</p>
+<hr />
+<h3 id="nuget-versioning">NuGet Versioning</h3>
+<p><strong>Identifier</strong>: <code>nuget</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/nuget/concepts/package-versioning">https://docs.microsoft.com/en-us/nuget/concepts/package-versioning</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>❌ No range support.</p>
+<p><strong>Description</strong>:</p>
+<p>NuGet versioning matches as closely as possible to the version comparison that NuGet itself uses.</p>
+<p>NuGet supports SemVer 2.0.0, but permits versions with differing numbers of version parts.</p>
+<p>Ranges are not yet supported by this versioning, but they are defined in NuGet and could be supported in the future.</p>
+<hr />
+<h3 id="pep440-versioning">PEP440 Versioning</h3>
+<p><strong>Identifier</strong>: <code>pep440</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://www.python.org/dev/peps/pep-0440/">https://www.python.org/dev/peps/pep-0440/</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<p><strong>Description</strong>:</p>
+<p>PEP 440 is defined as part of the Python project, and its versioning is independent of others such as SemVer.</p>
+<p>Ranges are supported using the syntax defined as part of the PEP440 spec.</p>
+<hr />
+<h3 id="poetry-versioning">Poetry Versioning</h3>
+<p><strong>Identifier</strong>: <code>poetry</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://python-poetry.org/docs/versions/">https://python-poetry.org/docs/versions/</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<p><strong>Description</strong>:</p>
+<p>Poetry versioning is a little like a mix of PEP440 and SemVer.</p>
+<p>Currently Renovate's implementation is based off npm versioning, but it is being migrated to be based off PEP440 to be more compatible with Poetry's behavior.</p>
+<hr />
+<h3 id="regular-expression-versioning">Regular Expression Versioning</h3>
+<p><strong>Identifier</strong>: <code>regex</code></p>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>❌ No range support.</p>
+<p><strong>Description</strong>:</p>
+<p>Regular Expression Versioning is designed to be like a flexible fallback versioning approach is Renovate's other versioning schemes don't do the job.</p>
+<p>The <code>regex</code> scheme makes use of Regular Express capture groups. The valid capture groups for <code>regex</code> versioning are:</p>
+<ul>
+<li><code>major</code>, <code>minor</code>, and <code>patch</code>: at least one of these must be provided. When determining whether a package has updated, these values will be compared in the standard semantic versioning fashion. If any of these fields are omitted, they will be treated as if they were <code>0</code> -- in this way, you can describe versioning schemes with up to three incrementing values.</li>
+<li><code>prerelease</code>: this value, if captured, will mark a given release as a prerelease (eg. unstable). If this value is captured and you have configured <code>"ignoreUnstable": true</code>, the given release will be skipped.</li>
+<li><code>compatibility</code>: this value defines the "build compatibility" of a given dependency. A proposed Renovate update will never change the specified compatibility value. For example, if you are pinning to <code>1.2.3-linux</code> (and <code>linux</code> is captured as the compatibility value), Renovate will not update you to <code>1.2.4-osx</code>.</li>
+</ul>
+<p>The compatibility concept was originally introduced for Docker versioning but sometimes package authors may use/misuse suffixes to mean compatibility in other versioning schemes.</p>
+<p>Here is an example of using <code>regex</code> versioning to correct behavior of the <code>guava</code> Maven package, which misuses suffixes as compatibility indicators:</p>
+<pre><code class="json">{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackageNames&quot;: [&quot;com.google.guava:guava&quot;],
+      &quot;versioning&quot;: &quot;regex:^(?&lt;major&gt;\\d+)(\\.(?&lt;minor&gt;\\d+))?(\\.(?&lt;patch&gt;\\d+))?(-(?&lt;compatibility&gt;.*))?$&quot;
+    }
+  ]
+}
+</code></pre>
+
+<p>Here is another example, this time for handling <code>python</code> Docker images, which use both pre-release indicators as well as version suffixes for compatibility:</p>
+<pre><code class="json">{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDatasources&quot;: [&quot;docker&quot;],
+      &quot;matchPackageNames&quot;: [&quot;python&quot;],
+      &quot;versioning&quot;: &quot;regex:^(?&lt;major&gt;\\d+)\\.(?&lt;minor&gt;\\d+)\\.(?&lt;patch&gt;\\d+)(?&lt;prerelease&gt;[^.-]+)?(-(?&lt;compatibility&gt;.*))?$&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="ruby-versioning">Ruby Versioning</h3>
+<p><strong>Identifier</strong>: <code>ruby</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://guides.rubygems.org/patterns/">https://guides.rubygems.org/patterns/</a></li>
+<li><a href="https://bundler.io/v1.5/gemfile.html">https://bundler.io/v1.5/gemfile.html</a></li>
+<li><a href="https://www.devalot.com/articles/2012/04/gem-versions.html">https://www.devalot.com/articles/2012/04/gem-versions.html</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<p><strong>Description</strong>:</p>
+<p>The RubyGems team urges gem developers to follow the Semantic Versioning standard for their gem’s versions, but it is not enforced.</p>
+<p>Range syntax is similar to npm's but not identical. The main difference is the use of "pessimistic" greater than or equals: <code>~&gt;</code></p>
+<hr />
+<h3 id="semantic-versioning">Semantic Versioning</h3>
+<p><strong>Identifier</strong>: <code>semver</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://semver.org/">https://semver.org/</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>❌ No range support.</p>
+<p><strong>Description</strong>:</p>
+<p>Renovate's Semantic Versioning is a strict/independent implementation of <a href="https://semver.org">Semantic Versioning 2.0</a>. It has been developed to be used in situations where exact-only SemVer support is needed and not npm's extended semver implementation including ranges.</p>
+<p>Ranges are not supported, as per the specification.</p>
+<hr />
+<h3 id="swift-versioning">Swift Versioning</h3>
+<p><strong>Identifier</strong>: <code>swift</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://swift.org/package-manager/">https://swift.org/package-manager/</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>✅ Ranges are supported.</p>
+<p>Valid <code>rangeStrategy</code> values are: <code>bump</code>, <code>extend</code>, <code>pin</code>, <code>replace</code></p>
+<p><strong>Description</strong>:</p>
+<p>Swift versioning was developed to support the Swift Package Manager. It's based on Semantic versioning but includes its own concept of ranges.</p>
+<hr />
+<h3 id="ubuntu-versioning">Ubuntu Versioning</h3>
+<p><strong>Identifier</strong>: <code>ubuntu</code></p>
+<p><strong>References</strong>:</p>
+<ul>
+<li><a href="https://changelogs.ubuntu.com/meta-release">https://changelogs.ubuntu.com/meta-release</a></li>
+</ul>
+<p><strong>Ranges/Constraints:</strong></p>
+<p>❌ No range support.</p>
+<hr />
+<!-- Autogenerate end -->
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../datasource/" title="Datasources" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Datasources
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../config-presets/" title="Shareable Config Presets" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Shareable Config Presets
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../assets/js/fx.js"></script>
+      
+    
+  </body>
+</html>

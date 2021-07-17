@@ -1,0 +1,1241 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/modules/manager/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Managers - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#managers" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.renovatebot.com" title="Renovate Docs" aria-label="Renovate Docs" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../assets/images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Renovate Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Managers
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.renovatebot.com" title="Renovate Docs" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../assets/images/logo.png" width="48" height="48">
+      
+    </a>
+    Renovate Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../install-github-app/" title="GitHub App Installation" class="md-nav__link">
+      GitHub App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../install-gitlab-app/" title="GitLab App Installation" class="md-nav__link">
+      GitLab App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-hosting/" title="Self-hosting" class="md-nav__link">
+      Self-hosting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configure-renovate/" title="Configure Renovate (Onboarding PR)" class="md-nav__link">
+      Configure Renovate (Onboarding PR)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../private-modules/" title="Private module support" class="md-nav__link">
+      Private module support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reconfigure-renovate/" title="Reconfiguring Renovate" class="md-nav__link">
+      Reconfiguring Renovate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="Frequently Asked Questions" class="md-nav__link">
+      Frequently Asked Questions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../configuration-options/" title="Configuration Options" class="md-nav__link">
+      Configuration Options
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../self-hosted-configuration/" title="Self Hosted Configuration" class="md-nav__link">
+      Self Hosted Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Renovate Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Renovate Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../platform/" title="Platforms" class="md-nav__link">
+      Platforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Managers
+      </label>
+    
+    <a href="./" title="Managers" class="md-nav__link md-nav__link--active">
+      Managers
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-managers" class="md-nav__link">
+    Supported Managers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-managers" class="md-nav__link">
+    Configuring Managers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-matching" class="md-nav__link">
+    File Matching
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managers-with-no-default-filematch" class="md-nav__link">
+    Managers with no default fileMatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extending-a-managers-default-filematch" class="md-nav__link">
+    Extending a manager's default fileMatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignoring-files-that-match-the-default-filematch" class="md-nav__link">
+    Ignoring files that match the default fileMatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-and-disabling-managers" class="md-nav__link">
+    Enabling and disabling managers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-experimental-managers" class="md-nav__link">
+    Enabling experimental managers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-managers" class="md-nav__link">
+    Disabling managers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limiting-enabled-managers" class="md-nav__link">
+    Limiting enabled managers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../datasource/" title="Datasources" class="md-nav__link">
+      Datasources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../versioning/" title="Versioning" class="md-nav__link">
+      Versioning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../config-presets/" title="Shareable Config Presets" class="md-nav__link">
+      Shareable Config Presets
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Language Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Language Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bazel/" title="Bazel" class="md-nav__link">
+      Bazel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../golang/" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/" title="Node.js Versions" class="md-nav__link">
+      Node.js Versions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nuget/" title="Nuget" class="md-nav__link">
+      Nuget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ruby/" title="Ruby" class="md-nav__link">
+      Ruby
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Deep Dives
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Deep Dives
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dependency-pinning/" title="Should you Pin your Javascript Dependencies?" class="md-nav__link">
+      Should you Pin your Javascript Dependencies?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configuration-templates/" title="Config Template Editing" class="md-nav__link">
+      Config Template Editing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updating-rebasing/" title="Updating and Rebasing Branches" class="md-nav__link">
+      Updating and Rebasing Branches
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../semantic-commits/" title="Semantic Commit Messages" class="md-nav__link">
+      Semantic Commit Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../noise-reduction/" title="Noise Reduction" class="md-nav__link">
+      Noise Reduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../automerge-configuration/" title="Automerging Updates" class="md-nav__link">
+      Automerging Updates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Included Presets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Included Presets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-config/" title="Full Config Presets" class="md-nav__link">
+      Full Config Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-default/" title="Default Presets" class="md-nav__link">
+      Default Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-docker/" title="Docker Presets" class="md-nav__link">
+      Docker Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-group/" title="Group Presets" class="md-nav__link">
+      Group Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-helpers/" title="Helper Presets" class="md-nav__link">
+      Helper Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-monorepo/" title="Monorepo Presets" class="md-nav__link">
+      Monorepo Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-packages/" title="Package Presets" class="md-nav__link">
+      Package Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-preview/" title="Preview Presets" class="md-nav__link">
+      Preview Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-schedule/" title="Schedule Presets" class="md-nav__link">
+      Schedule Presets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      All Other
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        All Other
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../merge-confidence/" title="Merge Confidence" class="md-nav__link">
+      Merge Confidence
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-managers" class="md-nav__link">
+    Supported Managers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-managers" class="md-nav__link">
+    Configuring Managers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-matching" class="md-nav__link">
+    File Matching
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managers-with-no-default-filematch" class="md-nav__link">
+    Managers with no default fileMatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extending-a-managers-default-filematch" class="md-nav__link">
+    Extending a manager's default fileMatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignoring-files-that-match-the-default-filematch" class="md-nav__link">
+    Ignoring files that match the default fileMatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-and-disabling-managers" class="md-nav__link">
+    Enabling and disabling managers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-experimental-managers" class="md-nav__link">
+    Enabling experimental managers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-managers" class="md-nav__link">
+    Disabling managers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limiting-enabled-managers" class="md-nav__link">
+    Limiting enabled managers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="managers">Managers</h1>
+<p>Renovate is based around the concept of "package managers", or "managers" for short.
+These range from traditional package managers like npm, Bundler and Composer through to less traditional concepts like CircleCI or Travis config files.</p>
+<p>The goal of Renovate is to detect and maintain all third party dependencies in your repositories, through the use of managers.</p>
+<h2 id="supported-managers">Supported Managers</h2>
+<!-- Autogenerate in https://github.com/renovatebot/renovatebot.github.io -->
+
+<p><strong>docker</strong>: <a href="ansible/">ansible</a>, <a href="docker-compose/">docker-compose</a>, <a href="dockerfile/">dockerfile</a>, <a href="droneci/">droneci</a>, <a href="github-actions/">github-actions</a>, <a href="gitlabci/">gitlabci</a>, <a href="kubernetes/">kubernetes</a></p>
+<p><strong>dotnet</strong>: <a href="cake/">cake</a>, <a href="nuget/">nuget</a></p>
+<p><strong>elixir</strong>: <a href="mix/">mix</a></p>
+<p><strong>golang</strong>: <a href="gomod/">gomod</a></p>
+<p><strong>java</strong>: <a href="gradle/">gradle</a>, <a href="maven/">maven</a></p>
+<p><strong>js</strong>: <a href="meteor/">meteor</a>, <a href="npm/">npm</a></p>
+<p><strong>node</strong>: <a href="nodenv/">nodenv</a>, <a href="nvm/">nvm</a>, <a href="travis/">travis</a></p>
+<p><strong>php</strong>: <a href="composer/">composer</a></p>
+<p><strong>python</strong>: <a href="pip-compile/">pip-compile</a>, <a href="pip_requirements/">pip_requirements</a>, <a href="pip_setup/">pip_setup</a>, <a href="pipenv/">pipenv</a>, <a href="poetry/">poetry</a>, <a href="pyenv/">pyenv</a>, <a href="setup-cfg/">setup-cfg</a></p>
+<p><strong>ruby</strong>: <a href="bundler/">bundler</a>, <a href="ruby-version/">ruby-version</a></p>
+<p><strong>rust</strong>: <a href="cargo/">cargo</a></p>
+<p><strong>other</strong>: <a href="ansible-galaxy/">ansible-galaxy</a>, <a href="argocd/">argocd</a>, <a href="azure-pipelines/">azure-pipelines</a>, <a href="batect/">batect</a>, <a href="batect-wrapper/">batect-wrapper</a>, <a href="bazel/">bazel</a>, <a href="buildkite/">buildkite</a>, <a href="cdnurl/">cdnurl</a>, <a href="circleci/">circleci</a>, <a href="cloudbuild/">cloudbuild</a>, <a href="cocoapods/">cocoapods</a>, <a href="deps-edn/">deps-edn</a>, <a href="git-submodules/">git-submodules</a>, <a href="gitlabci-include/">gitlabci-include</a>, <a href="gradle-lite/">gradle-lite</a>, <a href="gradle-wrapper/">gradle-wrapper</a>, <a href="helm-requirements/">helm-requirements</a>, <a href="helm-values/">helm-values</a>, <a href="helmfile/">helmfile</a>, <a href="helmv3/">helmv3</a>, <a href="homebrew/">homebrew</a>, <a href="html/">html</a>, <a href="jenkins/">jenkins</a>, <a href="kustomize/">kustomize</a>, <a href="leiningen/">leiningen</a>, <a href="pre-commit/">pre-commit</a>, <a href="pub/">pub</a>, <a href="regex/">regex</a>, <a href="sbt/">sbt</a>, <a href="swift/">swift</a>, <a href="terraform/">terraform</a>, <a href="terraform-version/">terraform-version</a>, <a href="terragrunt/">terragrunt</a>, <a href="terragrunt-version/">terragrunt-version</a></p>
+<!-- Autogenerate end -->
+
+<h2 id="configuring-managers">Configuring Managers</h2>
+<h3 id="file-matching">File Matching</h3>
+<p>Most managers have a default <code>fileMatch</code> array.
+The <code>fileMatch</code> array contains regular expression strings that match against the repository file list.</p>
+<h4 id="managers-with-no-default-filematch">Managers with no default fileMatch</h4>
+<p>Some managers have no default <code>fileMatch</code> regular expression, because they have no filename convention that would let Renovate intelligently filter them.
+In such a case, the manager will be disabled until you create a <code>fileMatch</code> regular expression, e.g. like the following:</p>
+<pre><code class="json">{
+  &quot;kubernetes&quot;: {
+    &quot;fileMatch&quot;: [&quot;^config/.*\\.yaml$&quot;]
+  }
+}
+</code></pre>
+
+<h4 id="extending-a-managers-default-filematch">Extending a manager's default fileMatch</h4>
+<p>If the default <code>fileMatch</code> regular expression for a manager does not match against one of your relevant files, you can <em>extend</em> the existing regular expression(s) by configuring a manager's <code>fileMatch</code> like in this example:</p>
+<pre><code class="json">{
+  &quot;dockerfile&quot;: {
+    &quot;fileMatch&quot;: [&quot;does-not-look-like-a-docker-file&quot;]
+  }
+}
+</code></pre>
+
+<h4 id="ignoring-files-that-match-the-default-filematch">Ignoring files that match the default fileMatch</h4>
+<p>Renovate will <em>extend</em> the existing <code>fileMatch</code>, meaning you don't need to include the default regular expressions like <code>Dockerfile</code> in your own array.
+In other words, the regular expression are "additive".
+If a manager matches a file that you <em>don't</em> want it to, ignore it using the <code>ignorePaths</code> configuration option.
+Also, if you ever find that Renovate is <em>not</em> matching a file name that you're certain it should, check your preset config isn't the cause of it.
+The <code>config:base</code> preset ignores common test and example directory names, for example.</p>
+<h3 id="enabling-and-disabling-managers">Enabling and disabling managers</h3>
+<h4 id="enabling-experimental-managers">Enabling experimental managers</h4>
+<p>Most managers are enabled by default.
+For those that aren't, typically because they are considered experimental, you can opt-in manually.
+If there was a manager called <code>some-new-manager</code> you would enable it like this:</p>
+<pre><code class="json">{
+  &quot;some-new-manager&quot;: {
+    &quot;enabled&quot;: true
+  }
+}
+</code></pre>
+
+<h4 id="disabling-managers">Disabling managers</h4>
+<p>To disable a specific manager like <code>gradle</code>, do this:</p>
+<pre><code class="json">{
+  &quot;gradle&quot;: {
+    &quot;enabled&quot;: false
+  }
+}
+</code></pre>
+
+<p>To disable all managers within a language like <code>python</code>, do this:</p>
+<pre><code class="json">{
+  &quot;python&quot;: {
+    &quot;enabled&quot;: false
+  }
+}
+</code></pre>
+
+<p>Only languages declared by a Renovate manager are supported.
+Please check the <a href="https://docs.renovatebot.com/modules/manager/#supported-managers">list of supported managers</a>.</p>
+<h4 id="limiting-enabled-managers">Limiting enabled managers</h4>
+<p>Say you only want to use Renovate for JavaScript packages, and to update your Dockerfile, and don't want any other updates.
+You can use the <code>enabledManagers</code> array, to list the managers you want to use (<code>npm</code>, <code>dockerfile</code>):</p>
+<pre><code class="json">{
+  &quot;enabledManagers&quot;: [&quot;npm&quot;, &quot;dockerfile&quot;]
+}
+</code></pre>
+
+<p>Using the <code>enabledManager</code> array disables all other managers, this includes Bundler, Composer, Docker Compose, etc.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../platform/" title="Platforms" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Platforms
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../datasource/" title="Datasources" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Datasources
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../assets/js/fx.js"></script>
+      
+    
+  </body>
+</html>

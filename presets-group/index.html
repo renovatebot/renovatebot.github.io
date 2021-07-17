@@ -1,0 +1,6694 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/presets-group/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Group Presets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#groupall" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.renovatebot.com" title="Renovate Docs" aria-label="Renovate Docs" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../assets/images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Renovate Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Group Presets
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.renovatebot.com" title="Renovate Docs" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../assets/images/logo.png" width="48" height="48">
+      
+    </a>
+    Renovate Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-github-app/" title="GitHub App Installation" class="md-nav__link">
+      GitHub App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-gitlab-app/" title="GitLab App Installation" class="md-nav__link">
+      GitLab App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-hosting/" title="Self-hosting" class="md-nav__link">
+      Self-hosting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configure-renovate/" title="Configure Renovate (Onboarding PR)" class="md-nav__link">
+      Configure Renovate (Onboarding PR)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../private-modules/" title="Private module support" class="md-nav__link">
+      Private module support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reconfigure-renovate/" title="Reconfiguring Renovate" class="md-nav__link">
+      Reconfiguring Renovate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="Frequently Asked Questions" class="md-nav__link">
+      Frequently Asked Questions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../configuration-options/" title="Configuration Options" class="md-nav__link">
+      Configuration Options
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../self-hosted-configuration/" title="Self Hosted Configuration" class="md-nav__link">
+      Self Hosted Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Renovate Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Renovate Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/platform/" title="Platforms" class="md-nav__link">
+      Platforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/manager/" title="Managers" class="md-nav__link">
+      Managers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/datasource/" title="Datasources" class="md-nav__link">
+      Datasources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/versioning/" title="Versioning" class="md-nav__link">
+      Versioning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../config-presets/" title="Shareable Config Presets" class="md-nav__link">
+      Shareable Config Presets
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Language Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Language Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bazel/" title="Bazel" class="md-nav__link">
+      Bazel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../golang/" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node/" title="Node.js Versions" class="md-nav__link">
+      Node.js Versions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nuget/" title="Nuget" class="md-nav__link">
+      Nuget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../php/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ruby/" title="Ruby" class="md-nav__link">
+      Ruby
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Deep Dives
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Deep Dives
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dependency-pinning/" title="Should you Pin your Javascript Dependencies?" class="md-nav__link">
+      Should you Pin your Javascript Dependencies?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration-templates/" title="Config Template Editing" class="md-nav__link">
+      Config Template Editing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updating-rebasing/" title="Updating and Rebasing Branches" class="md-nav__link">
+      Updating and Rebasing Branches
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../semantic-commits/" title="Semantic Commit Messages" class="md-nav__link">
+      Semantic Commit Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../noise-reduction/" title="Noise Reduction" class="md-nav__link">
+      Noise Reduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../automerge-configuration/" title="Automerging Updates" class="md-nav__link">
+      Automerging Updates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+    
+    <label class="md-nav__link" for="nav-10">
+      Included Presets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Included Presets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-config/" title="Full Config Presets" class="md-nav__link">
+      Full Config Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-default/" title="Default Presets" class="md-nav__link">
+      Default Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-docker/" title="Docker Presets" class="md-nav__link">
+      Docker Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Group Presets
+      </label>
+    
+    <a href="./" title="Group Presets" class="md-nav__link md-nav__link--active">
+      Group Presets
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#groupall" class="md-nav__link">
+    group:all
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupallnonmajor" class="md-nav__link">
+    group:allNonMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnodejs" class="md-nav__link">
+    group:nodeJs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouprecommended" class="md-nav__link">
+    group:recommended
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupallapollographql" class="md-nav__link">
+    group:allApollographql
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdefinitelytyped" class="md-nav__link">
+    group:definitelyTyped
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdotnetcore" class="md-nav__link">
+    group:dotNetCore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfortawesome" class="md-nav__link">
+    group:fortawesome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfusionjs" class="md-nav__link">
+    group:fusionjs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupglimmer" class="md-nav__link">
+    group:glimmer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupilluminate" class="md-nav__link">
+    group:illuminate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsymfony" class="md-nav__link">
+    group:symfony
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppolymer" class="md-nav__link">
+    group:polymer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphibernatecore" class="md-nav__link">
+    group:hibernateCore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphibernatevalidator" class="md-nav__link">
+    group:hibernateValidator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphibernateogm" class="md-nav__link">
+    group:hibernateOgm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphibernatecommons" class="md-nav__link">
+    group:hibernateCommons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupresilience4j" class="md-nav__link">
+    group:resilience4j
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringamqp" class="md-nav__link">
+    group:springAmqp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringandroid" class="md-nav__link">
+    group:springAndroid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringbatch" class="md-nav__link">
+    group:springBatch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringboot" class="md-nav__link">
+    group:springBoot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringcloud" class="md-nav__link">
+    group:springCloud
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringcore" class="md-nav__link">
+    group:springCore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringdata" class="md-nav__link">
+    group:springData
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringhateoas" class="md-nav__link">
+    group:springHateoas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringintegration" class="md-nav__link">
+    group:springIntegration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringkafka" class="md-nav__link">
+    group:springKafka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringldap" class="md-nav__link">
+    group:springLdap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringmobile" class="md-nav__link">
+    group:springMobile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringosgi" class="md-nav__link">
+    group:springOsgi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringrestdocs" class="md-nav__link">
+    group:springRestDocs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringroo" class="md-nav__link">
+    group:springRoo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringscala" class="md-nav__link">
+    group:springScala
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringsecurity" class="md-nav__link">
+    group:springSecurity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringsession" class="md-nav__link">
+    group:springSession
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringshell" class="md-nav__link">
+    group:springShell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringsocial" class="md-nav__link">
+    group:springSocial
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringstatemachine" class="md-nav__link">
+    group:springStatemachine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringwebflow" class="md-nav__link">
+    group:springWebflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringws" class="md-nav__link">
+    group:springWs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsocketio" class="md-nav__link">
+    group:socketio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppostcss" class="md-nav__link">
+    group:postcss
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjekyllecosystem" class="md-nav__link">
+    group:jekyllEcosystem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouprubyomniauth" class="md-nav__link">
+    group:rubyOmniauth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgoopenapi" class="md-nav__link">
+    group:goOpenapi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgoogleapis" class="md-nav__link">
+    group:googleapis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouplinters" class="md-nav__link">
+    group:linters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjsunittest" class="md-nav__link">
+    group:jsUnitTest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjsunittestnonmajor" class="md-nav__link">
+    group:jsUnitTestNonMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupunittest" class="md-nav__link">
+    group:unitTest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupunittestnonmajor" class="md-nav__link">
+    group:unitTestNonMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjstest" class="md-nav__link">
+    group:jsTest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjstestmonmajor" class="md-nav__link">
+    group:jsTestMonMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptest" class="md-nav__link">
+    group:test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptestnonmajor" class="md-nav__link">
+    group:testNonMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjestplustsjest" class="md-nav__link">
+    group:jestPlusTSJest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupag-gridmonorepo" class="md-nav__link">
+    group:ag-gridMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-event-gridmonorepo" class="md-nav__link">
+    group:arcus event-gridMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-securitymonorepo" class="md-nav__link">
+    group:arcus securityMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-messagingmonorepo" class="md-nav__link">
+    group:arcus messagingMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-observabilitymonorepo" class="md-nav__link">
+    group:arcus observabilityMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-webapimonorepo" class="md-nav__link">
+    group:arcus webapiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-background-jobsmonorepo" class="md-nav__link">
+    group:arcus background-jobsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupalgolia-react-instantsearchmonorepo" class="md-nav__link">
+    group:algolia-react-instantsearchMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangular-eslintmonorepo" class="md-nav__link">
+    group:angular-eslintMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupapollo-servermonorepo" class="md-nav__link">
+    group:apollo-serverMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaspnet-api-versioningmonorepo" class="md-nav__link">
+    group:aspnet-api-versioningMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaspnet-aspnetwebstackmonorepo" class="md-nav__link">
+    group:aspnet AspNetWebStackMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaspnet-extensionsmonorepo" class="md-nav__link">
+    group:aspnet ExtensionsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaws-cdkmonorepo" class="md-nav__link">
+    group:aws-cdkMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaws-sdk-js-v3monorepo" class="md-nav__link">
+    group:aws-sdk-js-v3Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaws-sdk-netmonorepo" class="md-nav__link">
+    group:aws-sdk-netMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupazure-azure-libraries-for-netmonorepo" class="md-nav__link">
+    group:azure azure-libraries-for-netMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupazure-azure-sdk-for-netmonorepo" class="md-nav__link">
+    group:azure azure-sdk-for-netMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupazure-azure-storage-netmonorepo" class="md-nav__link">
+    group:azure azure-storage-netMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupbugsnag-jsmonorepo" class="md-nav__link">
+    group:bugsnag-jsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupchakra-uimonorepo" class="md-nav__link">
+    group:chakra-uiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupcontentful-rich-textmonorepo" class="md-nav__link">
+    group:contentful-rich-textMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdate-iomonorepo" class="md-nav__link">
+    group:date-ioMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdevextreme-reactivemonorepo" class="md-nav__link">
+    group:devextreme-reactiveMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupelectron-forgemonorepo" class="md-nav__link">
+    group:electron-forgeMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfeathers-databasesmonorepo" class="md-nav__link">
+    group:feathers-databasesMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupember-decoratorsmonorepo" class="md-nav__link">
+    group:ember-decoratorsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgraphql-modulesmonorepo" class="md-nav__link">
+    group:graphql-modulesMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupionic-nativemonorepo" class="md-nav__link">
+    group:ionic-nativeMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmdc-reactmonorepo" class="md-nav__link">
+    group:mdc-reactMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupngx-formlymonorepo" class="md-nav__link">
+    group:ngx-formlyMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupngxs-storemonorepo" class="md-nav__link">
+    group:ngxs-storeMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreach-uimonorepo" class="md-nav__link">
+    group:reach-uiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreact-apollomonorepo" class="md-nav__link">
+    group:react-apolloMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreact-dndmonorepo" class="md-nav__link">
+    group:react-dndMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreact-navigationmonorepo" class="md-nav__link">
+    group:react-navigationMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreactivestack-cookiesmonorepo" class="md-nav__link">
+    group:reactivestack-cookiesMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreg-suitmonorepo" class="md-nav__link">
+    group:reg-suitMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsemantic-releasemonorepo" class="md-nav__link">
+    group:semantic-releaseMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupshopify-app-bridgemonorepo" class="md-nav__link">
+    group:shopify-app-bridgeMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsystemioabstractionsmonorepo" class="md-nav__link">
+    group:System.IO.AbstractionsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptelus-tdsmonorepo" class="md-nav__link">
+    group:telus-tdsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptheme-uimonorepo" class="md-nav__link">
+    group:theme-uiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptypescript-eslintmonorepo" class="md-nav__link">
+    group:typescript-eslintMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptypography-jsmonorepo" class="md-nav__link">
+    group:typography-jsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupvue-climonorepo" class="md-nav__link">
+    group:vue-cliMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaccountsmonorepo" class="md-nav__link">
+    group:accountsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangular1monorepo" class="md-nav__link">
+    group:angular1Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangularmonorepo" class="md-nav__link">
+    group:angularMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangularclimonorepo" class="md-nav__link">
+    group:angularcliMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangularfiremonorepo" class="md-nav__link">
+    group:angularfireMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupapolloclientmonorepo" class="md-nav__link">
+    group:apolloclientMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupapollolinkmonorepo" class="md-nav__link">
+    group:apollolinkMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupawsappsyncmonorepo" class="md-nav__link">
+    group:awsappsyncMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupbabelmonorepo" class="md-nav__link">
+    group:babelMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupbasetmonorepo" class="md-nav__link">
+    group:basetMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupbravemonorepo" class="md-nav__link">
+    group:braveMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupcapacitormonorepo" class="md-nav__link">
+    group:capacitorMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupchromelymonorepo" class="md-nav__link">
+    group:chromelyMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupclaritymonorepo" class="md-nav__link">
+    group:clarityMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupcommitlintmonorepo" class="md-nav__link">
+    group:commitlintMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdocusaurusmonorepo" class="md-nav__link">
+    group:docusaurusMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdotnetmonorepo" class="md-nav__link">
+    group:dotnetMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdropwizardmonorepo" class="md-nav__link">
+    group:dropwizardMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupemotionmonorepo" class="md-nav__link">
+    group:emotionMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupexpomonorepo" class="md-nav__link">
+    group:expoMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfeathersmonorepo" class="md-nav__link">
+    group:feathersMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfimbullintermonorepo" class="md-nav__link">
+    group:fimbullinterMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupflopflipmonorepo" class="md-nav__link">
+    group:flopflipMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfontsourcemonorepo" class="md-nav__link">
+    group:FontsourceMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupformatjsmonorepo" class="md-nav__link">
+    group:formatjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupframework7monorepo" class="md-nav__link">
+    group:framework7Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgatsbymonorepo" class="md-nav__link">
+    group:gatsbyMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgraphqlcodegeneratormonorepo" class="md-nav__link">
+    group:graphqlcodegeneratorMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgraphql-meshmonorepo" class="md-nav__link">
+    group:graphql-meshMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgraphql-toolkitmonorepo" class="md-nav__link">
+    group:graphql-toolkitMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgraphql-toolsmonorepo" class="md-nav__link">
+    group:graphql-toolsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphamcrestmonorepo" class="md-nav__link">
+    group:hamcrestMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphangfiremonorepo" class="md-nav__link">
+    group:HangfireMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphapijsmonorepo" class="md-nav__link">
+    group:hapijsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphotchocolatemonorepo" class="md-nav__link">
+    group:HotChocolateMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupinfrastructuremonorepo" class="md-nav__link">
+    group:infrastructureMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupistanbuljsmonorepo" class="md-nav__link">
+    group:istanbuljsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjasminemonorepo" class="md-nav__link">
+    group:jasmineMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjerseymonorepo" class="md-nav__link">
+    group:jerseyMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjestmonorepo" class="md-nav__link">
+    group:jestMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjunit5monorepo" class="md-nav__link">
+    group:junit5Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouplernamonorepo" class="md-nav__link">
+    group:lernaMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouplinguimonorepo" class="md-nav__link">
+    group:linguiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouplodashmonorepo" class="md-nav__link">
+    group:lodashMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouploopbackmonorepo" class="md-nav__link">
+    group:loopbackMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouplrnwebcomponentsmonorepo" class="md-nav__link">
+    group:lrnwebcomponentsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmasstransitmonorepo" class="md-nav__link">
+    group:MassTransitMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmaterialmonorepo" class="md-nav__link">
+    group:materialMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmdxmonorepo" class="md-nav__link">
+    group:mdxMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmstestmonorepo" class="md-nav__link">
+    group:mstestMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmuimonorepo" class="md-nav__link">
+    group:muiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnestmonorepo" class="md-nav__link">
+    group:nestMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupneutrinomonorepo" class="md-nav__link">
+    group:neutrinoMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnextjsmonorepo" class="md-nav__link">
+    group:nextjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnivomonorepo" class="md-nav__link">
+    group:nivoMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupngrxmonorepo" class="md-nav__link">
+    group:ngrxMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnrwlmonorepo" class="md-nav__link">
+    group:nrwlMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnuxtjsmonorepo" class="md-nav__link">
+    group:nuxtjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupopenfeignmonorepo" class="md-nav__link">
+    group:openfeignMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupopentelemetrymonorepo" class="md-nav__link">
+    group:opentelemetryMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupopentelemetrydotnetmonorepo" class="md-nav__link">
+    group:OpenTelemetryDotnetMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouporleansmonorepo" class="md-nav__link">
+    group:orleansMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppicassomonorepo" class="md-nav__link">
+    group:picassoMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppnpjsmonorepo" class="md-nav__link">
+    group:pnpjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupplaywrightmonorepo" class="md-nav__link">
+    group:playwrightMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppollyjsmonorepo" class="md-nav__link">
+    group:pollyjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppouchdbmonorepo" class="md-nav__link">
+    group:pouchdbMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupprismamonorepo" class="md-nav__link">
+    group:prismaMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreactmonorepo" class="md-nav__link">
+    group:reactMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreactroutermonorepo" class="md-nav__link">
+    group:reactrouterMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreakitmonorepo" class="md-nav__link">
+    group:reakitMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupredwoodmonorepo" class="md-nav__link">
+    group:redwoodMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupremarkmonorepo" class="md-nav__link">
+    group:remarkMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouprouter5monorepo" class="md-nav__link">
+    group:router5Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsentrymonorepo" class="md-nav__link">
+    group:sentryMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringfoxmonorepo" class="md-nav__link">
+    group:springfoxMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsanitymonorepo" class="md-nav__link">
+    group:sanityMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsteeltoemonorepo" class="md-nav__link">
+    group:SteeltoeMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupstorybookmonorepo" class="md-nav__link">
+    group:storybookMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupstrapimonorepo" class="md-nav__link">
+    group:strapiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupstrykermonorepo" class="md-nav__link">
+    group:strykerMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsurveyjsmonorepo" class="md-nav__link">
+    group:surveyjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupswashbucklemonorepo" class="md-nav__link">
+    group:SwashbuckleMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptreatmonorepo" class="md-nav__link">
+    group:treatMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptypefacesmonorepo" class="md-nav__link">
+    group:typefacesMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupuppymonorepo" class="md-nav__link">
+    group:uppyMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupvuemonorepo" class="md-nav__link">
+    group:vueMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupvuepressmonorepo" class="md-nav__link">
+    group:vuepressMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupwebdriveriomonorepo" class="md-nav__link">
+    group:webdriverioMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupworkboxmonorepo" class="md-nav__link">
+    group:workboxMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupbabel6monorepo" class="md-nav__link">
+    group:babel6Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupwordpressmonorepo" class="md-nav__link">
+    group:wordpressMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangularmaterialmonorepo" class="md-nav__link">
+    group:angularmaterialMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaws-java-sdkmonorepo" class="md-nav__link">
+    group:aws-java-sdkMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupembroidermonorepo" class="md-nav__link">
+    group:embroiderMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfullcalendarmonorepo" class="md-nav__link">
+    group:fullcalendarMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmonorepos" class="md-nav__link">
+    group:monorepos
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-helpers/" title="Helper Presets" class="md-nav__link">
+      Helper Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-monorepo/" title="Monorepo Presets" class="md-nav__link">
+      Monorepo Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-packages/" title="Package Presets" class="md-nav__link">
+      Package Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-preview/" title="Preview Presets" class="md-nav__link">
+      Preview Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-schedule/" title="Schedule Presets" class="md-nav__link">
+      Schedule Presets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      All Other
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        All Other
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../merge-confidence/" title="Merge Confidence" class="md-nav__link">
+      Merge Confidence
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#groupall" class="md-nav__link">
+    group:all
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupallnonmajor" class="md-nav__link">
+    group:allNonMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnodejs" class="md-nav__link">
+    group:nodeJs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouprecommended" class="md-nav__link">
+    group:recommended
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupallapollographql" class="md-nav__link">
+    group:allApollographql
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdefinitelytyped" class="md-nav__link">
+    group:definitelyTyped
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdotnetcore" class="md-nav__link">
+    group:dotNetCore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfortawesome" class="md-nav__link">
+    group:fortawesome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfusionjs" class="md-nav__link">
+    group:fusionjs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupglimmer" class="md-nav__link">
+    group:glimmer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupilluminate" class="md-nav__link">
+    group:illuminate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsymfony" class="md-nav__link">
+    group:symfony
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppolymer" class="md-nav__link">
+    group:polymer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphibernatecore" class="md-nav__link">
+    group:hibernateCore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphibernatevalidator" class="md-nav__link">
+    group:hibernateValidator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphibernateogm" class="md-nav__link">
+    group:hibernateOgm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphibernatecommons" class="md-nav__link">
+    group:hibernateCommons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupresilience4j" class="md-nav__link">
+    group:resilience4j
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringamqp" class="md-nav__link">
+    group:springAmqp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringandroid" class="md-nav__link">
+    group:springAndroid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringbatch" class="md-nav__link">
+    group:springBatch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringboot" class="md-nav__link">
+    group:springBoot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringcloud" class="md-nav__link">
+    group:springCloud
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringcore" class="md-nav__link">
+    group:springCore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringdata" class="md-nav__link">
+    group:springData
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringhateoas" class="md-nav__link">
+    group:springHateoas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringintegration" class="md-nav__link">
+    group:springIntegration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringkafka" class="md-nav__link">
+    group:springKafka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringldap" class="md-nav__link">
+    group:springLdap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringmobile" class="md-nav__link">
+    group:springMobile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringosgi" class="md-nav__link">
+    group:springOsgi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringrestdocs" class="md-nav__link">
+    group:springRestDocs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringroo" class="md-nav__link">
+    group:springRoo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringscala" class="md-nav__link">
+    group:springScala
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringsecurity" class="md-nav__link">
+    group:springSecurity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringsession" class="md-nav__link">
+    group:springSession
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringshell" class="md-nav__link">
+    group:springShell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringsocial" class="md-nav__link">
+    group:springSocial
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringstatemachine" class="md-nav__link">
+    group:springStatemachine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringwebflow" class="md-nav__link">
+    group:springWebflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringws" class="md-nav__link">
+    group:springWs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsocketio" class="md-nav__link">
+    group:socketio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppostcss" class="md-nav__link">
+    group:postcss
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjekyllecosystem" class="md-nav__link">
+    group:jekyllEcosystem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouprubyomniauth" class="md-nav__link">
+    group:rubyOmniauth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgoopenapi" class="md-nav__link">
+    group:goOpenapi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgoogleapis" class="md-nav__link">
+    group:googleapis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouplinters" class="md-nav__link">
+    group:linters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjsunittest" class="md-nav__link">
+    group:jsUnitTest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjsunittestnonmajor" class="md-nav__link">
+    group:jsUnitTestNonMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupunittest" class="md-nav__link">
+    group:unitTest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupunittestnonmajor" class="md-nav__link">
+    group:unitTestNonMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjstest" class="md-nav__link">
+    group:jsTest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjstestmonmajor" class="md-nav__link">
+    group:jsTestMonMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptest" class="md-nav__link">
+    group:test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptestnonmajor" class="md-nav__link">
+    group:testNonMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjestplustsjest" class="md-nav__link">
+    group:jestPlusTSJest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupag-gridmonorepo" class="md-nav__link">
+    group:ag-gridMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-event-gridmonorepo" class="md-nav__link">
+    group:arcus event-gridMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-securitymonorepo" class="md-nav__link">
+    group:arcus securityMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-messagingmonorepo" class="md-nav__link">
+    group:arcus messagingMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-observabilitymonorepo" class="md-nav__link">
+    group:arcus observabilityMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-webapimonorepo" class="md-nav__link">
+    group:arcus webapiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparcus-background-jobsmonorepo" class="md-nav__link">
+    group:arcus background-jobsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupalgolia-react-instantsearchmonorepo" class="md-nav__link">
+    group:algolia-react-instantsearchMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangular-eslintmonorepo" class="md-nav__link">
+    group:angular-eslintMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupapollo-servermonorepo" class="md-nav__link">
+    group:apollo-serverMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaspnet-api-versioningmonorepo" class="md-nav__link">
+    group:aspnet-api-versioningMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaspnet-aspnetwebstackmonorepo" class="md-nav__link">
+    group:aspnet AspNetWebStackMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaspnet-extensionsmonorepo" class="md-nav__link">
+    group:aspnet ExtensionsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaws-cdkmonorepo" class="md-nav__link">
+    group:aws-cdkMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaws-sdk-js-v3monorepo" class="md-nav__link">
+    group:aws-sdk-js-v3Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaws-sdk-netmonorepo" class="md-nav__link">
+    group:aws-sdk-netMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupazure-azure-libraries-for-netmonorepo" class="md-nav__link">
+    group:azure azure-libraries-for-netMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupazure-azure-sdk-for-netmonorepo" class="md-nav__link">
+    group:azure azure-sdk-for-netMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupazure-azure-storage-netmonorepo" class="md-nav__link">
+    group:azure azure-storage-netMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupbugsnag-jsmonorepo" class="md-nav__link">
+    group:bugsnag-jsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupchakra-uimonorepo" class="md-nav__link">
+    group:chakra-uiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupcontentful-rich-textmonorepo" class="md-nav__link">
+    group:contentful-rich-textMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdate-iomonorepo" class="md-nav__link">
+    group:date-ioMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdevextreme-reactivemonorepo" class="md-nav__link">
+    group:devextreme-reactiveMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupelectron-forgemonorepo" class="md-nav__link">
+    group:electron-forgeMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfeathers-databasesmonorepo" class="md-nav__link">
+    group:feathers-databasesMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupember-decoratorsmonorepo" class="md-nav__link">
+    group:ember-decoratorsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgraphql-modulesmonorepo" class="md-nav__link">
+    group:graphql-modulesMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupionic-nativemonorepo" class="md-nav__link">
+    group:ionic-nativeMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmdc-reactmonorepo" class="md-nav__link">
+    group:mdc-reactMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupngx-formlymonorepo" class="md-nav__link">
+    group:ngx-formlyMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupngxs-storemonorepo" class="md-nav__link">
+    group:ngxs-storeMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreach-uimonorepo" class="md-nav__link">
+    group:reach-uiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreact-apollomonorepo" class="md-nav__link">
+    group:react-apolloMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreact-dndmonorepo" class="md-nav__link">
+    group:react-dndMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreact-navigationmonorepo" class="md-nav__link">
+    group:react-navigationMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreactivestack-cookiesmonorepo" class="md-nav__link">
+    group:reactivestack-cookiesMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreg-suitmonorepo" class="md-nav__link">
+    group:reg-suitMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsemantic-releasemonorepo" class="md-nav__link">
+    group:semantic-releaseMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupshopify-app-bridgemonorepo" class="md-nav__link">
+    group:shopify-app-bridgeMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsystemioabstractionsmonorepo" class="md-nav__link">
+    group:System.IO.AbstractionsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptelus-tdsmonorepo" class="md-nav__link">
+    group:telus-tdsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptheme-uimonorepo" class="md-nav__link">
+    group:theme-uiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptypescript-eslintmonorepo" class="md-nav__link">
+    group:typescript-eslintMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptypography-jsmonorepo" class="md-nav__link">
+    group:typography-jsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupvue-climonorepo" class="md-nav__link">
+    group:vue-cliMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaccountsmonorepo" class="md-nav__link">
+    group:accountsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangular1monorepo" class="md-nav__link">
+    group:angular1Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangularmonorepo" class="md-nav__link">
+    group:angularMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangularclimonorepo" class="md-nav__link">
+    group:angularcliMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangularfiremonorepo" class="md-nav__link">
+    group:angularfireMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupapolloclientmonorepo" class="md-nav__link">
+    group:apolloclientMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupapollolinkmonorepo" class="md-nav__link">
+    group:apollolinkMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupawsappsyncmonorepo" class="md-nav__link">
+    group:awsappsyncMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupbabelmonorepo" class="md-nav__link">
+    group:babelMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupbasetmonorepo" class="md-nav__link">
+    group:basetMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupbravemonorepo" class="md-nav__link">
+    group:braveMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupcapacitormonorepo" class="md-nav__link">
+    group:capacitorMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupchromelymonorepo" class="md-nav__link">
+    group:chromelyMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupclaritymonorepo" class="md-nav__link">
+    group:clarityMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupcommitlintmonorepo" class="md-nav__link">
+    group:commitlintMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdocusaurusmonorepo" class="md-nav__link">
+    group:docusaurusMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdotnetmonorepo" class="md-nav__link">
+    group:dotnetMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupdropwizardmonorepo" class="md-nav__link">
+    group:dropwizardMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupemotionmonorepo" class="md-nav__link">
+    group:emotionMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupexpomonorepo" class="md-nav__link">
+    group:expoMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfeathersmonorepo" class="md-nav__link">
+    group:feathersMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfimbullintermonorepo" class="md-nav__link">
+    group:fimbullinterMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupflopflipmonorepo" class="md-nav__link">
+    group:flopflipMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfontsourcemonorepo" class="md-nav__link">
+    group:FontsourceMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupformatjsmonorepo" class="md-nav__link">
+    group:formatjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupframework7monorepo" class="md-nav__link">
+    group:framework7Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgatsbymonorepo" class="md-nav__link">
+    group:gatsbyMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgraphqlcodegeneratormonorepo" class="md-nav__link">
+    group:graphqlcodegeneratorMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgraphql-meshmonorepo" class="md-nav__link">
+    group:graphql-meshMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgraphql-toolkitmonorepo" class="md-nav__link">
+    group:graphql-toolkitMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupgraphql-toolsmonorepo" class="md-nav__link">
+    group:graphql-toolsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphamcrestmonorepo" class="md-nav__link">
+    group:hamcrestMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphangfiremonorepo" class="md-nav__link">
+    group:HangfireMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphapijsmonorepo" class="md-nav__link">
+    group:hapijsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouphotchocolatemonorepo" class="md-nav__link">
+    group:HotChocolateMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupinfrastructuremonorepo" class="md-nav__link">
+    group:infrastructureMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupistanbuljsmonorepo" class="md-nav__link">
+    group:istanbuljsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjasminemonorepo" class="md-nav__link">
+    group:jasmineMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjerseymonorepo" class="md-nav__link">
+    group:jerseyMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjestmonorepo" class="md-nav__link">
+    group:jestMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupjunit5monorepo" class="md-nav__link">
+    group:junit5Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouplernamonorepo" class="md-nav__link">
+    group:lernaMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouplinguimonorepo" class="md-nav__link">
+    group:linguiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouplodashmonorepo" class="md-nav__link">
+    group:lodashMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouploopbackmonorepo" class="md-nav__link">
+    group:loopbackMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouplrnwebcomponentsmonorepo" class="md-nav__link">
+    group:lrnwebcomponentsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmasstransitmonorepo" class="md-nav__link">
+    group:MassTransitMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmaterialmonorepo" class="md-nav__link">
+    group:materialMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmdxmonorepo" class="md-nav__link">
+    group:mdxMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmstestmonorepo" class="md-nav__link">
+    group:mstestMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmuimonorepo" class="md-nav__link">
+    group:muiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnestmonorepo" class="md-nav__link">
+    group:nestMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupneutrinomonorepo" class="md-nav__link">
+    group:neutrinoMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnextjsmonorepo" class="md-nav__link">
+    group:nextjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnivomonorepo" class="md-nav__link">
+    group:nivoMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupngrxmonorepo" class="md-nav__link">
+    group:ngrxMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnrwlmonorepo" class="md-nav__link">
+    group:nrwlMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupnuxtjsmonorepo" class="md-nav__link">
+    group:nuxtjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupopenfeignmonorepo" class="md-nav__link">
+    group:openfeignMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupopentelemetrymonorepo" class="md-nav__link">
+    group:opentelemetryMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupopentelemetrydotnetmonorepo" class="md-nav__link">
+    group:OpenTelemetryDotnetMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouporleansmonorepo" class="md-nav__link">
+    group:orleansMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppicassomonorepo" class="md-nav__link">
+    group:picassoMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppnpjsmonorepo" class="md-nav__link">
+    group:pnpjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupplaywrightmonorepo" class="md-nav__link">
+    group:playwrightMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppollyjsmonorepo" class="md-nav__link">
+    group:pollyjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouppouchdbmonorepo" class="md-nav__link">
+    group:pouchdbMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupprismamonorepo" class="md-nav__link">
+    group:prismaMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreactmonorepo" class="md-nav__link">
+    group:reactMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreactroutermonorepo" class="md-nav__link">
+    group:reactrouterMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupreakitmonorepo" class="md-nav__link">
+    group:reakitMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupredwoodmonorepo" class="md-nav__link">
+    group:redwoodMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupremarkmonorepo" class="md-nav__link">
+    group:remarkMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouprouter5monorepo" class="md-nav__link">
+    group:router5Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsentrymonorepo" class="md-nav__link">
+    group:sentryMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupspringfoxmonorepo" class="md-nav__link">
+    group:springfoxMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsanitymonorepo" class="md-nav__link">
+    group:sanityMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsteeltoemonorepo" class="md-nav__link">
+    group:SteeltoeMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupstorybookmonorepo" class="md-nav__link">
+    group:storybookMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupstrapimonorepo" class="md-nav__link">
+    group:strapiMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupstrykermonorepo" class="md-nav__link">
+    group:strykerMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsurveyjsmonorepo" class="md-nav__link">
+    group:surveyjsMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupswashbucklemonorepo" class="md-nav__link">
+    group:SwashbuckleMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptreatmonorepo" class="md-nav__link">
+    group:treatMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouptypefacesmonorepo" class="md-nav__link">
+    group:typefacesMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupuppymonorepo" class="md-nav__link">
+    group:uppyMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupvuemonorepo" class="md-nav__link">
+    group:vueMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupvuepressmonorepo" class="md-nav__link">
+    group:vuepressMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupwebdriveriomonorepo" class="md-nav__link">
+    group:webdriverioMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupworkboxmonorepo" class="md-nav__link">
+    group:workboxMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupbabel6monorepo" class="md-nav__link">
+    group:babel6Monorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupwordpressmonorepo" class="md-nav__link">
+    group:wordpressMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupangularmaterialmonorepo" class="md-nav__link">
+    group:angularmaterialMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupaws-java-sdkmonorepo" class="md-nav__link">
+    group:aws-java-sdkMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupembroidermonorepo" class="md-nav__link">
+    group:embroiderMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupfullcalendarmonorepo" class="md-nav__link">
+    group:fullcalendarMonorepo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupmonorepos" class="md-nav__link">
+    group:monorepos
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Group Presets</h1>
+                
+                <h3 id="groupall">group:all</h3>
+<p>Group all updates together</p>
+<pre><code>{
+  &quot;groupName&quot;: &quot;all dependencies&quot;,
+  &quot;separateMajorMinor&quot;: false,
+  &quot;groupSlug&quot;: &quot;all&quot;,
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePatterns&quot;: [
+        &quot;*&quot;
+      ],
+      &quot;groupName&quot;: &quot;all dependencies&quot;,
+      &quot;groupSlug&quot;: &quot;all&quot;
+    }
+  ],
+  &quot;lockFileMaintenance&quot;: {
+    &quot;enabled&quot;: false
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="groupallnonmajor">group:allNonMajor</h3>
+<p>Group all minor and patch updates together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePatterns&quot;: [
+        &quot;*&quot;
+      ],
+      &quot;matchUpdateTypes&quot;: [
+        &quot;minor&quot;,
+        &quot;patch&quot;
+      ],
+      &quot;groupName&quot;: &quot;all non-major dependencies&quot;,
+      &quot;groupSlug&quot;: &quot;all-minor-patch&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupnodejs">group:nodeJs</h3>
+<p>Group anything that looks like Node.js together so that it's updated together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDatasources&quot;: [
+        &quot;docker&quot;
+      ],
+      &quot;matchPackageNames&quot;: [
+        &quot;node&quot;
+      ],
+      &quot;matchPackagePatterns&quot;: [
+        &quot;/node$&quot;
+      ],
+      &quot;excludePackageNames&quot;: [
+        &quot;calico/node&quot;
+      ],
+      &quot;commitMessageTopic&quot;: &quot;Node.js&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouprecommended">group:recommended</h3>
+<p>Use curated list of recommended non-monorepo package groupings</p>
+<pre><code>{
+  &quot;extends&quot;: [
+    &quot;group:nodeJs&quot;,
+    &quot;group:allApollographql&quot;,
+    &quot;group:fortawesome&quot;,
+    &quot;group:fusionjs&quot;,
+    &quot;group:glimmer&quot;,
+    &quot;group:goOpenapi&quot;,
+    &quot;group:hibernateCore&quot;,
+    &quot;group:hibernateValidator&quot;,
+    &quot;group:hibernateOgm&quot;,
+    &quot;group:hibernateCommons&quot;,
+    &quot;group:illuminate&quot;,
+    &quot;group:jekyllEcosystem&quot;,
+    &quot;group:jestPlusTSJest&quot;,
+    &quot;group:polymer&quot;,
+    &quot;group:resilience4j&quot;,
+    &quot;group:rubyOmniauth&quot;,
+    &quot;group:socketio&quot;,
+    &quot;group:springAmqp&quot;,
+    &quot;group:springAndroid&quot;,
+    &quot;group:springBatch&quot;,
+    &quot;group:springBoot&quot;,
+    &quot;group:springCloud&quot;,
+    &quot;group:springCore&quot;,
+    &quot;group:springData&quot;,
+    &quot;group:springHateoas&quot;,
+    &quot;group:springIntegration&quot;,
+    &quot;group:springKafka&quot;,
+    &quot;group:springLdap&quot;,
+    &quot;group:springMobile&quot;,
+    &quot;group:springOsgi&quot;,
+    &quot;group:springRestDocs&quot;,
+    &quot;group:springRoo&quot;,
+    &quot;group:springScala&quot;,
+    &quot;group:springSecurity&quot;,
+    &quot;group:springSession&quot;,
+    &quot;group:springShell&quot;,
+    &quot;group:springSocial&quot;,
+    &quot;group:springStatemachine&quot;,
+    &quot;group:springWebflow&quot;,
+    &quot;group:springWs&quot;,
+    &quot;group:symfony&quot;
+  ],
+  &quot;ignoreDeps&quot;: []
+}
+</code></pre>
+
+<hr />
+<h3 id="groupallapollographql">group:allApollographql</h3>
+<p>Group all packages published by Apollo GraphQL together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:apollographql&quot;,
+      &quot;groupName&quot;: &quot;Apollo GraphQL packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupdefinitelytyped">group:definitelyTyped</h3>
+<p>Group all @types packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;definitelyTyped&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;@types/&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupdotnetcore">group:dotNetCore</h3>
+<p>.NET Core Docker containers</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDatasources&quot;: [
+        &quot;docker&quot;
+      ],
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;mcr.microsoft.com/dotnet/core/&quot;
+      ],
+      &quot;groupName&quot;: &quot;.NET Core Docker containers&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupfortawesome">group:fortawesome</h3>
+<p>Group all packages by Font Awesome together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;Font Awesome&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;@fortawesome/&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupfusionjs">group:fusionjs</h3>
+<p>Fusion.js packages</p>
+<pre><code>{
+  &quot;matchPackageNames&quot;: [
+    &quot;fusion-cli&quot;,
+    &quot;fusion-core&quot;,
+    &quot;fusion-test-utils&quot;,
+    &quot;fusion-tokens&quot;
+  ],
+  &quot;matchPackagePrefixes&quot;: [
+    &quot;fusion-plugin-&quot;,
+    &quot;fusion-react&quot;,
+    &quot;^usion-apollo&quot;
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupglimmer">group:glimmer</h3>
+<p>Group Glimmer.js packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;Glimmer.js packages&quot;,
+      &quot;groupSlug&quot;: &quot;glimmer&quot;,
+      &quot;matchPackageNames&quot;: [
+        &quot;@glimmer/component&quot;,
+        &quot;@glimmer/tracking&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupilluminate">group:illuminate</h3>
+<p>Group PHP illuminate packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;illuminate/&quot;
+      ],
+      &quot;groupName&quot;: &quot;illuminate packages&quot;,
+      &quot;groupSlug&quot;: &quot;illuminate&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupsymfony">group:symfony</h3>
+<p>Group PHP symfony packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;symfony/&quot;
+      ],
+      &quot;groupName&quot;: &quot;symfony packages&quot;,
+      &quot;groupSlug&quot;: &quot;symfony&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouppolymer">group:polymer</h3>
+<p>Group all @polymer packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;polymer packages&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;@polymer/&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouphibernatecore">group:hibernateCore</h3>
+<p>Group Java Hibernate Core packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.hibernate:&quot;
+      ],
+      &quot;groupName&quot;: &quot;hibernate core&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouphibernatevalidator">group:hibernateValidator</h3>
+<p>Group Java Hibernate Validator packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.hibernate.validator:&quot;
+      ],
+      &quot;groupName&quot;: &quot;hibernate validator&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouphibernateogm">group:hibernateOgm</h3>
+<p>Group Java Hibernate OGM packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.hibernate.ogm:&quot;
+      ],
+      &quot;groupName&quot;: &quot;hibernate ogm&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouphibernatecommons">group:hibernateCommons</h3>
+<p>Group Java Hibernate Commons packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.hibernate.common:&quot;
+      ],
+      &quot;groupName&quot;: &quot;hibernate commons&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupresilience4j">group:resilience4j</h3>
+<p>Group Java Resilience4j packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;io.github.resilience4j:&quot;
+      ],
+      &quot;groupName&quot;: &quot;resilience4j&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringamqp">group:springAmqp</h3>
+<p>Group Java Spring AMQP packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring amqp&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.amqp:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringandroid">group:springAndroid</h3>
+<p>Group Java Spring Android packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring android&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.android:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringbatch">group:springBatch</h3>
+<p>Group Java Spring Batch packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring batch&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.batch:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringboot">group:springBoot</h3>
+<p>Group Java Spring Boot packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring boot&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.boot:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringcloud">group:springCloud</h3>
+<p>Group Java Spring Cloud packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring cloud&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.cloud:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringcore">group:springCore</h3>
+<p>Group Java Spring Core packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring core&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringdata">group:springData</h3>
+<p>Group Java Spring Data packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring data&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.data:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringhateoas">group:springHateoas</h3>
+<p>Group Java Spring HATEOAS packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring hateoas&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.hateoas:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringintegration">group:springIntegration</h3>
+<p>Group Java Spring Integration packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring integration&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.integration:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringkafka">group:springKafka</h3>
+<p>Group Java Spring Kafka packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring kafka&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.kafka:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringldap">group:springLdap</h3>
+<p>Group Java Spring LDAP packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring ldap&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.ldap:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringmobile">group:springMobile</h3>
+<p>Group Java Spring Mobile packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring mobile&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.mobile:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringosgi">group:springOsgi</h3>
+<p>Group Java Spring OSGi packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring osgi&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.osgi:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringrestdocs">group:springRestDocs</h3>
+<p>Group Java Spring REST Docs packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring restdocs&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.restdocs:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringroo">group:springRoo</h3>
+<p>Group Java Spring Roo packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring roo&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.roo:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringscala">group:springScala</h3>
+<p>Group Java Spring Scala packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring scala&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.scala:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringsecurity">group:springSecurity</h3>
+<p>Group Java Spring Security packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring security&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.security:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringsession">group:springSession</h3>
+<p>Group Java Spring Session packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring session&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.session:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringshell">group:springShell</h3>
+<p>Group Java Spring Shell packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring shell&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.shell:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringsocial">group:springSocial</h3>
+<p>Group Java Spring Social packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring social&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.social:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringstatemachine">group:springStatemachine</h3>
+<p>Group Java Spring Statemachine packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring statemachine&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.statemachine:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringwebflow">group:springWebflow</h3>
+<p>Group Java Spring WebFlow packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring webflow&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.webflow:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringws">group:springWs</h3>
+<p>Group Java Spring WS packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;spring ws&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;org.springframework.ws:&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupsocketio">group:socketio</h3>
+<p>Group socket.io packages</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;groupName&quot;: &quot;socket.io packages&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;socket.io&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouppostcss">group:postcss</h3>
+<p>Group postcss packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:postcss&quot;,
+      &quot;groupName&quot;: &quot;postcss packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupjekyllecosystem">group:jekyllEcosystem</h3>
+<p>Group jekyll and related ruby packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchSourceUrlPrefixes&quot;: [
+        &quot;https://github.com/jekyll/&quot;,
+        &quot;https://github.com/github/pages-gem&quot;
+      ],
+      &quot;groupName&quot;: &quot;jekyll ecosystem packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouprubyomniauth">group:rubyOmniauth</h3>
+<p>Group omniauth packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDatasources&quot;: [
+        &quot;rubygems&quot;
+      ],
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;omniauth&quot;
+      ],
+      &quot;groupName&quot;: &quot;omniauth packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupgoopenapi">group:goOpenapi</h3>
+<p>Group go-openapi packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDatasources&quot;: [
+        &quot;go&quot;
+      ],
+      &quot;groupName&quot;: &quot;go-openapi packages&quot;,
+      &quot;groupSlug&quot;: &quot;go-openapi&quot;,
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;github.com/go-openapi/&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupgoogleapis">group:googleapis</h3>
+<p>Group googleapis packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:googleapis&quot;,
+      &quot;groupName&quot;: &quot;googleapis packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouplinters">group:linters</h3>
+<p>Group various lint packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:linters&quot;,
+      &quot;groupName&quot;: &quot;linters&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupjsunittest">group:jsUnitTest</h3>
+<p>Group JS unit test packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:jsUnitTest&quot;,
+      &quot;groupName&quot;: &quot;JS unit test packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupjsunittestnonmajor">group:jsUnitTestNonMajor</h3>
+<p>Group JS unit test packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:jsUnitTest&quot;,
+      &quot;matchUpdateTypes&quot;: [
+        &quot;minor&quot;,
+        &quot;patch&quot;
+      ],
+      &quot;groupName&quot;: &quot;JS unit test packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupunittest">group:unitTest</h3>
+<p>Group all unit test packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:unitTest&quot;,
+      &quot;groupName&quot;: &quot;unit test packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupunittestnonmajor">group:unitTestNonMajor</h3>
+<p>Group all unit test packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:unitTest&quot;,
+      &quot;matchUpdateTypes&quot;: [
+        &quot;minor&quot;,
+        &quot;patch&quot;
+      ],
+      &quot;groupName&quot;: &quot;unit test packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupjstest">group:jsTest</h3>
+<p>Group JS test packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:jsTest&quot;,
+      &quot;groupName&quot;: &quot;JS test packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupjstestmonmajor">group:jsTestMonMajor</h3>
+<p>Group non-major JS test package updates together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:jsTest&quot;,
+      &quot;matchUpdateTypes&quot;: [
+        &quot;minor&quot;,
+        &quot;patch&quot;
+      ],
+      &quot;groupName&quot;: &quot;JS test packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouptest">group:test</h3>
+<p>Group all test packages together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:test&quot;,
+      &quot;groupName&quot;: &quot;test packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouptestnonmajor">group:testNonMajor</h3>
+<p>Group all non-major test package updates together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;packages:test&quot;,
+      &quot;matchUpdateTypes&quot;: [
+        &quot;minor&quot;,
+        &quot;patch&quot;
+      ],
+      &quot;groupName&quot;: &quot;test packages&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupjestplustsjest">group:jestPlusTSJest</h3>
+<p>Add ts-jest major update to jest monorepo</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchSourceUrlPrefixes&quot;: [
+        &quot;https://github.com/kulshekhar/ts-jest&quot;
+      ],
+      &quot;matchUpdateTypes&quot;: [
+        &quot;major&quot;
+      ],
+      &quot;groupName&quot;: &quot;jest monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupag-gridmonorepo">group:ag-gridMonorepo</h3>
+<p>Group packages from ag-grid monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:ag-grid&quot;,
+      &quot;groupName&quot;: &quot;ag-grid monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouparcus-event-gridmonorepo">group:arcus event-gridMonorepo</h3>
+<p>Group packages from arcus event-grid monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:arcus event-grid&quot;,
+      &quot;groupName&quot;: &quot;arcus event-grid monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouparcus-securitymonorepo">group:arcus securityMonorepo</h3>
+<p>Group packages from arcus security monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:arcus security&quot;,
+      &quot;groupName&quot;: &quot;arcus security monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouparcus-messagingmonorepo">group:arcus messagingMonorepo</h3>
+<p>Group packages from arcus messaging monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:arcus messaging&quot;,
+      &quot;groupName&quot;: &quot;arcus messaging monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouparcus-observabilitymonorepo">group:arcus observabilityMonorepo</h3>
+<p>Group packages from arcus observability monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:arcus observability&quot;,
+      &quot;groupName&quot;: &quot;arcus observability monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouparcus-webapimonorepo">group:arcus webapiMonorepo</h3>
+<p>Group packages from arcus webapi monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:arcus webapi&quot;,
+      &quot;groupName&quot;: &quot;arcus webapi monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouparcus-background-jobsmonorepo">group:arcus background-jobsMonorepo</h3>
+<p>Group packages from arcus background-jobs monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:arcus background-jobs&quot;,
+      &quot;groupName&quot;: &quot;arcus background-jobs monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupalgolia-react-instantsearchmonorepo">group:algolia-react-instantsearchMonorepo</h3>
+<p>Group packages from algolia-react-instantsearch monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:algolia-react-instantsearch&quot;,
+      &quot;groupName&quot;: &quot;algolia-react-instantsearch monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupangular-eslintmonorepo">group:angular-eslintMonorepo</h3>
+<p>Group packages from angular-eslint monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:angular-eslint&quot;,
+      &quot;groupName&quot;: &quot;angular-eslint monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupapollo-servermonorepo">group:apollo-serverMonorepo</h3>
+<p>Group packages from apollo-server monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:apollo-server&quot;,
+      &quot;groupName&quot;: &quot;apollo-server monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupaspnet-api-versioningmonorepo">group:aspnet-api-versioningMonorepo</h3>
+<p>Group packages from aspnet-api-versioning monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:aspnet-api-versioning&quot;,
+      &quot;groupName&quot;: &quot;aspnet-api-versioning monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupaspnet-aspnetwebstackmonorepo">group:aspnet AspNetWebStackMonorepo</h3>
+<p>Group packages from aspnet AspNetWebStack monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:aspnet AspNetWebStack&quot;,
+      &quot;groupName&quot;: &quot;aspnet AspNetWebStack monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupaspnet-extensionsmonorepo">group:aspnet ExtensionsMonorepo</h3>
+<p>Group packages from aspnet Extensions monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:aspnet Extensions&quot;,
+      &quot;groupName&quot;: &quot;aspnet Extensions monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupaws-cdkmonorepo">group:aws-cdkMonorepo</h3>
+<p>Group packages from aws-cdk monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:aws-cdk&quot;,
+      &quot;groupName&quot;: &quot;aws-cdk monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupaws-sdk-js-v3monorepo">group:aws-sdk-js-v3Monorepo</h3>
+<p>Group packages from aws-sdk-js-v3 monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:aws-sdk-js-v3&quot;,
+      &quot;groupName&quot;: &quot;aws-sdk-js-v3 monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupaws-sdk-netmonorepo">group:aws-sdk-netMonorepo</h3>
+<p>Group packages from aws-sdk-net monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:aws-sdk-net&quot;,
+      &quot;groupName&quot;: &quot;aws-sdk-net monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupazure-azure-libraries-for-netmonorepo">group:azure azure-libraries-for-netMonorepo</h3>
+<p>Group packages from azure azure-libraries-for-net monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:azure azure-libraries-for-net&quot;,
+      &quot;groupName&quot;: &quot;azure azure-libraries-for-net monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupazure-azure-sdk-for-netmonorepo">group:azure azure-sdk-for-netMonorepo</h3>
+<p>Group packages from azure azure-sdk-for-net monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:azure azure-sdk-for-net&quot;,
+      &quot;groupName&quot;: &quot;azure azure-sdk-for-net monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupazure-azure-storage-netmonorepo">group:azure azure-storage-netMonorepo</h3>
+<p>Group packages from azure azure-storage-net monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:azure azure-storage-net&quot;,
+      &quot;groupName&quot;: &quot;azure azure-storage-net monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupbugsnag-jsmonorepo">group:bugsnag-jsMonorepo</h3>
+<p>Group packages from bugsnag-js monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:bugsnag-js&quot;,
+      &quot;groupName&quot;: &quot;bugsnag-js monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupchakra-uimonorepo">group:chakra-uiMonorepo</h3>
+<p>Group packages from chakra-ui monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:chakra-ui&quot;,
+      &quot;groupName&quot;: &quot;chakra-ui monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupcontentful-rich-textmonorepo">group:contentful-rich-textMonorepo</h3>
+<p>Group packages from contentful-rich-text monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:contentful-rich-text&quot;,
+      &quot;groupName&quot;: &quot;contentful-rich-text monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupdate-iomonorepo">group:date-ioMonorepo</h3>
+<p>Group packages from date-io monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:date-io&quot;,
+      &quot;groupName&quot;: &quot;date-io monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupdevextreme-reactivemonorepo">group:devextreme-reactiveMonorepo</h3>
+<p>Group packages from devextreme-reactive monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:devextreme-reactive&quot;,
+      &quot;groupName&quot;: &quot;devextreme-reactive monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupelectron-forgemonorepo">group:electron-forgeMonorepo</h3>
+<p>Group packages from electron-forge monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:electron-forge&quot;,
+      &quot;groupName&quot;: &quot;electron-forge monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupfeathers-databasesmonorepo">group:feathers-databasesMonorepo</h3>
+<p>Group packages from feathers-databases monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:feathers-databases&quot;,
+      &quot;groupName&quot;: &quot;feathers-databases monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupember-decoratorsmonorepo">group:ember-decoratorsMonorepo</h3>
+<p>Group packages from ember-decorators monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:ember-decorators&quot;,
+      &quot;groupName&quot;: &quot;ember-decorators monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupgraphql-modulesmonorepo">group:graphql-modulesMonorepo</h3>
+<p>Group packages from graphql-modules monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:graphql-modules&quot;,
+      &quot;groupName&quot;: &quot;graphql-modules monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupionic-nativemonorepo">group:ionic-nativeMonorepo</h3>
+<p>Group packages from ionic-native monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:ionic-native&quot;,
+      &quot;groupName&quot;: &quot;ionic-native monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupmdc-reactmonorepo">group:mdc-reactMonorepo</h3>
+<p>Group packages from mdc-react monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:mdc-react&quot;,
+      &quot;groupName&quot;: &quot;mdc-react monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupngx-formlymonorepo">group:ngx-formlyMonorepo</h3>
+<p>Group packages from ngx-formly monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:ngx-formly&quot;,
+      &quot;groupName&quot;: &quot;ngx-formly monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupngxs-storemonorepo">group:ngxs-storeMonorepo</h3>
+<p>Group packages from ngxs-store monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:ngxs-store&quot;,
+      &quot;groupName&quot;: &quot;ngxs-store monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupreach-uimonorepo">group:reach-uiMonorepo</h3>
+<p>Group packages from reach-ui monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:reach-ui&quot;,
+      &quot;groupName&quot;: &quot;reach-ui monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupreact-apollomonorepo">group:react-apolloMonorepo</h3>
+<p>Group packages from react-apollo monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:react-apollo&quot;,
+      &quot;groupName&quot;: &quot;react-apollo monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupreact-dndmonorepo">group:react-dndMonorepo</h3>
+<p>Group packages from react-dnd monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:react-dnd&quot;,
+      &quot;groupName&quot;: &quot;react-dnd monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupreact-navigationmonorepo">group:react-navigationMonorepo</h3>
+<p>Group packages from react-navigation monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:react-navigation&quot;,
+      &quot;groupName&quot;: &quot;react-navigation monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupreactivestack-cookiesmonorepo">group:reactivestack-cookiesMonorepo</h3>
+<p>Group packages from reactivestack-cookies monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:reactivestack-cookies&quot;,
+      &quot;groupName&quot;: &quot;reactivestack-cookies monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupreg-suitmonorepo">group:reg-suitMonorepo</h3>
+<p>Group packages from reg-suit monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:reg-suit&quot;,
+      &quot;groupName&quot;: &quot;reg-suit monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupsemantic-releasemonorepo">group:semantic-releaseMonorepo</h3>
+<p>Group packages from semantic-release monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:semantic-release&quot;,
+      &quot;groupName&quot;: &quot;semantic-release monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupshopify-app-bridgemonorepo">group:shopify-app-bridgeMonorepo</h3>
+<p>Group packages from shopify-app-bridge monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:shopify-app-bridge&quot;,
+      &quot;groupName&quot;: &quot;shopify-app-bridge monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupsystemioabstractionsmonorepo">group:System.IO.AbstractionsMonorepo</h3>
+<p>Group packages from System.IO.Abstractions monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:System.IO.Abstractions&quot;,
+      &quot;groupName&quot;: &quot;System.IO.Abstractions monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouptelus-tdsmonorepo">group:telus-tdsMonorepo</h3>
+<p>Group packages from telus-tds monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:telus-tds&quot;,
+      &quot;groupName&quot;: &quot;telus-tds monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouptheme-uimonorepo">group:theme-uiMonorepo</h3>
+<p>Group packages from theme-ui monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:theme-ui&quot;,
+      &quot;groupName&quot;: &quot;theme-ui monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouptypescript-eslintmonorepo">group:typescript-eslintMonorepo</h3>
+<p>Group packages from typescript-eslint monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:typescript-eslint&quot;,
+      &quot;groupName&quot;: &quot;typescript-eslint monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouptypography-jsmonorepo">group:typography-jsMonorepo</h3>
+<p>Group packages from typography-js monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:typography-js&quot;,
+      &quot;groupName&quot;: &quot;typography-js monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupvue-climonorepo">group:vue-cliMonorepo</h3>
+<p>Group packages from vue-cli monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:vue-cli&quot;,
+      &quot;groupName&quot;: &quot;vue-cli monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupaccountsmonorepo">group:accountsMonorepo</h3>
+<p>Group packages from accounts monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:accounts&quot;,
+      &quot;groupName&quot;: &quot;accounts monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupangular1monorepo">group:angular1Monorepo</h3>
+<p>Group packages from angular1 monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:angular1&quot;,
+      &quot;groupName&quot;: &quot;angular1 monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupangularmonorepo">group:angularMonorepo</h3>
+<p>Group packages from angular monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:angular&quot;,
+      &quot;groupName&quot;: &quot;angular monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupangularclimonorepo">group:angularcliMonorepo</h3>
+<p>Group packages from angularcli monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:angularcli&quot;,
+      &quot;groupName&quot;: &quot;angularcli monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupangularfiremonorepo">group:angularfireMonorepo</h3>
+<p>Group packages from angularfire monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:angularfire&quot;,
+      &quot;groupName&quot;: &quot;angularfire monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupapolloclientmonorepo">group:apolloclientMonorepo</h3>
+<p>Group packages from apolloclient monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:apolloclient&quot;,
+      &quot;groupName&quot;: &quot;apolloclient monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupapollolinkmonorepo">group:apollolinkMonorepo</h3>
+<p>Group packages from apollolink monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:apollolink&quot;,
+      &quot;groupName&quot;: &quot;apollolink monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupawsappsyncmonorepo">group:awsappsyncMonorepo</h3>
+<p>Group packages from awsappsync monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:awsappsync&quot;,
+      &quot;groupName&quot;: &quot;awsappsync monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupbabelmonorepo">group:babelMonorepo</h3>
+<p>Group packages from babel monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:babel&quot;,
+      &quot;groupName&quot;: &quot;babel monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupbasetmonorepo">group:basetMonorepo</h3>
+<p>Group packages from baset monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:baset&quot;,
+      &quot;groupName&quot;: &quot;baset monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupbravemonorepo">group:braveMonorepo</h3>
+<p>Group packages from brave monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:brave&quot;,
+      &quot;groupName&quot;: &quot;brave monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupcapacitormonorepo">group:capacitorMonorepo</h3>
+<p>Group packages from capacitor monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:capacitor&quot;,
+      &quot;groupName&quot;: &quot;capacitor monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupchromelymonorepo">group:chromelyMonorepo</h3>
+<p>Group packages from chromely monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:chromely&quot;,
+      &quot;groupName&quot;: &quot;chromely monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupclaritymonorepo">group:clarityMonorepo</h3>
+<p>Group packages from clarity monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:clarity&quot;,
+      &quot;groupName&quot;: &quot;clarity monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupcommitlintmonorepo">group:commitlintMonorepo</h3>
+<p>Group packages from commitlint monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:commitlint&quot;,
+      &quot;groupName&quot;: &quot;commitlint monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupdocusaurusmonorepo">group:docusaurusMonorepo</h3>
+<p>Group packages from docusaurus monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:docusaurus&quot;,
+      &quot;groupName&quot;: &quot;docusaurus monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupdotnetmonorepo">group:dotnetMonorepo</h3>
+<p>Group packages from dotnet monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:dotnet&quot;,
+      &quot;groupName&quot;: &quot;dotnet monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupdropwizardmonorepo">group:dropwizardMonorepo</h3>
+<p>Group packages from dropwizard monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:dropwizard&quot;,
+      &quot;groupName&quot;: &quot;dropwizard monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupemotionmonorepo">group:emotionMonorepo</h3>
+<p>Group packages from emotion monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:emotion&quot;,
+      &quot;groupName&quot;: &quot;emotion monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupexpomonorepo">group:expoMonorepo</h3>
+<p>Group packages from expo monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:expo&quot;,
+      &quot;groupName&quot;: &quot;expo monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupfeathersmonorepo">group:feathersMonorepo</h3>
+<p>Group packages from feathers monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:feathers&quot;,
+      &quot;groupName&quot;: &quot;feathers monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupfimbullintermonorepo">group:fimbullinterMonorepo</h3>
+<p>Group packages from fimbullinter monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:fimbullinter&quot;,
+      &quot;groupName&quot;: &quot;fimbullinter monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupflopflipmonorepo">group:flopflipMonorepo</h3>
+<p>Group packages from flopflip monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:flopflip&quot;,
+      &quot;groupName&quot;: &quot;flopflip monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupfontsourcemonorepo">group:FontsourceMonorepo</h3>
+<p>Group packages from Fontsource monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:Fontsource&quot;,
+      &quot;groupName&quot;: &quot;Fontsource monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupformatjsmonorepo">group:formatjsMonorepo</h3>
+<p>Group packages from formatjs monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:formatjs&quot;,
+      &quot;groupName&quot;: &quot;formatjs monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupframework7monorepo">group:framework7Monorepo</h3>
+<p>Group packages from framework7 monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:framework7&quot;,
+      &quot;groupName&quot;: &quot;framework7 monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupgatsbymonorepo">group:gatsbyMonorepo</h3>
+<p>Group packages from gatsby monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:gatsby&quot;,
+      &quot;groupName&quot;: &quot;gatsby monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupgraphqlcodegeneratormonorepo">group:graphqlcodegeneratorMonorepo</h3>
+<p>Group packages from graphqlcodegenerator monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:graphqlcodegenerator&quot;,
+      &quot;groupName&quot;: &quot;graphqlcodegenerator monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupgraphql-meshmonorepo">group:graphql-meshMonorepo</h3>
+<p>Group packages from graphql-mesh monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:graphql-mesh&quot;,
+      &quot;groupName&quot;: &quot;graphql-mesh monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupgraphql-toolkitmonorepo">group:graphql-toolkitMonorepo</h3>
+<p>Group packages from graphql-toolkit monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:graphql-toolkit&quot;,
+      &quot;groupName&quot;: &quot;graphql-toolkit monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupgraphql-toolsmonorepo">group:graphql-toolsMonorepo</h3>
+<p>Group packages from graphql-tools monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:graphql-tools&quot;,
+      &quot;groupName&quot;: &quot;graphql-tools monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouphamcrestmonorepo">group:hamcrestMonorepo</h3>
+<p>Group packages from hamcrest monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:hamcrest&quot;,
+      &quot;groupName&quot;: &quot;hamcrest monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouphangfiremonorepo">group:HangfireMonorepo</h3>
+<p>Group packages from Hangfire monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:Hangfire&quot;,
+      &quot;groupName&quot;: &quot;Hangfire monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouphapijsmonorepo">group:hapijsMonorepo</h3>
+<p>Group packages from hapijs monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:hapijs&quot;,
+      &quot;groupName&quot;: &quot;hapijs monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouphotchocolatemonorepo">group:HotChocolateMonorepo</h3>
+<p>Group packages from HotChocolate monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:HotChocolate&quot;,
+      &quot;groupName&quot;: &quot;HotChocolate monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupinfrastructuremonorepo">group:infrastructureMonorepo</h3>
+<p>Group packages from infrastructure monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:infrastructure&quot;,
+      &quot;groupName&quot;: &quot;infrastructure monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupistanbuljsmonorepo">group:istanbuljsMonorepo</h3>
+<p>Group packages from istanbuljs monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:istanbuljs&quot;,
+      &quot;groupName&quot;: &quot;istanbuljs monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupjasminemonorepo">group:jasmineMonorepo</h3>
+<p>Group packages from jasmine monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:jasmine&quot;,
+      &quot;groupName&quot;: &quot;jasmine monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupjerseymonorepo">group:jerseyMonorepo</h3>
+<p>Group packages from jersey monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:jersey&quot;,
+      &quot;groupName&quot;: &quot;jersey monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupjestmonorepo">group:jestMonorepo</h3>
+<p>Group packages from jest monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:jest&quot;,
+      &quot;groupName&quot;: &quot;jest monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupjunit5monorepo">group:junit5Monorepo</h3>
+<p>Group packages from junit5 monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:junit5&quot;,
+      &quot;groupName&quot;: &quot;junit5 monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouplernamonorepo">group:lernaMonorepo</h3>
+<p>Group packages from lerna monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:lerna&quot;,
+      &quot;groupName&quot;: &quot;lerna monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouplinguimonorepo">group:linguiMonorepo</h3>
+<p>Group packages from lingui monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:lingui&quot;,
+      &quot;groupName&quot;: &quot;lingui monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouplodashmonorepo">group:lodashMonorepo</h3>
+<p>Group packages from lodash monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:lodash&quot;,
+      &quot;groupName&quot;: &quot;lodash monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouploopbackmonorepo">group:loopbackMonorepo</h3>
+<p>Group packages from loopback monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:loopback&quot;,
+      &quot;groupName&quot;: &quot;loopback monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouplrnwebcomponentsmonorepo">group:lrnwebcomponentsMonorepo</h3>
+<p>Group packages from lrnwebcomponents monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:lrnwebcomponents&quot;,
+      &quot;groupName&quot;: &quot;lrnwebcomponents monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupmasstransitmonorepo">group:MassTransitMonorepo</h3>
+<p>Group packages from MassTransit monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:MassTransit&quot;,
+      &quot;groupName&quot;: &quot;MassTransit monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupmaterialmonorepo">group:materialMonorepo</h3>
+<p>Group packages from material monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:material&quot;,
+      &quot;groupName&quot;: &quot;material monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupmdxmonorepo">group:mdxMonorepo</h3>
+<p>Group packages from mdx monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:mdx&quot;,
+      &quot;groupName&quot;: &quot;mdx monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupmstestmonorepo">group:mstestMonorepo</h3>
+<p>Group packages from mstest monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:mstest&quot;,
+      &quot;groupName&quot;: &quot;mstest monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupmuimonorepo">group:muiMonorepo</h3>
+<p>Group packages from mui monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:mui&quot;,
+      &quot;groupName&quot;: &quot;mui monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupnestmonorepo">group:nestMonorepo</h3>
+<p>Group packages from nest monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:nest&quot;,
+      &quot;groupName&quot;: &quot;nest monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupneutrinomonorepo">group:neutrinoMonorepo</h3>
+<p>Group packages from neutrino monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:neutrino&quot;,
+      &quot;groupName&quot;: &quot;neutrino monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupnextjsmonorepo">group:nextjsMonorepo</h3>
+<p>Group packages from nextjs monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:nextjs&quot;,
+      &quot;groupName&quot;: &quot;nextjs monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupnivomonorepo">group:nivoMonorepo</h3>
+<p>Group packages from nivo monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:nivo&quot;,
+      &quot;groupName&quot;: &quot;nivo monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupngrxmonorepo">group:ngrxMonorepo</h3>
+<p>Group packages from ngrx monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:ngrx&quot;,
+      &quot;groupName&quot;: &quot;ngrx monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupnrwlmonorepo">group:nrwlMonorepo</h3>
+<p>Group packages from nrwl monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:nrwl&quot;,
+      &quot;groupName&quot;: &quot;nrwl monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupnuxtjsmonorepo">group:nuxtjsMonorepo</h3>
+<p>Group packages from nuxtjs monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:nuxtjs&quot;,
+      &quot;groupName&quot;: &quot;nuxtjs monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupopenfeignmonorepo">group:openfeignMonorepo</h3>
+<p>Group packages from openfeign monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:openfeign&quot;,
+      &quot;groupName&quot;: &quot;openfeign monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupopentelemetrymonorepo">group:opentelemetryMonorepo</h3>
+<p>Group packages from opentelemetry monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:opentelemetry&quot;,
+      &quot;groupName&quot;: &quot;opentelemetry monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupopentelemetrydotnetmonorepo">group:OpenTelemetryDotnetMonorepo</h3>
+<p>Group packages from OpenTelemetryDotnet monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:OpenTelemetryDotnet&quot;,
+      &quot;groupName&quot;: &quot;OpenTelemetryDotnet monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouporleansmonorepo">group:orleansMonorepo</h3>
+<p>Group packages from orleans monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:orleans&quot;,
+      &quot;groupName&quot;: &quot;orleans monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouppicassomonorepo">group:picassoMonorepo</h3>
+<p>Group packages from picasso monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:picasso&quot;,
+      &quot;groupName&quot;: &quot;picasso monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouppnpjsmonorepo">group:pnpjsMonorepo</h3>
+<p>Group packages from pnpjs monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:pnpjs&quot;,
+      &quot;groupName&quot;: &quot;pnpjs monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupplaywrightmonorepo">group:playwrightMonorepo</h3>
+<p>Group packages from playwright monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:playwright&quot;,
+      &quot;groupName&quot;: &quot;playwright monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouppollyjsmonorepo">group:pollyjsMonorepo</h3>
+<p>Group packages from pollyjs monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:pollyjs&quot;,
+      &quot;groupName&quot;: &quot;pollyjs monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouppouchdbmonorepo">group:pouchdbMonorepo</h3>
+<p>Group packages from pouchdb monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:pouchdb&quot;,
+      &quot;groupName&quot;: &quot;pouchdb monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupprismamonorepo">group:prismaMonorepo</h3>
+<p>Group packages from prisma monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:prisma&quot;,
+      &quot;groupName&quot;: &quot;prisma monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupreactmonorepo">group:reactMonorepo</h3>
+<p>Group packages from react monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:react&quot;,
+      &quot;groupName&quot;: &quot;react monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupreactroutermonorepo">group:reactrouterMonorepo</h3>
+<p>Group packages from reactrouter monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:reactrouter&quot;,
+      &quot;groupName&quot;: &quot;reactrouter monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupreakitmonorepo">group:reakitMonorepo</h3>
+<p>Group packages from reakit monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:reakit&quot;,
+      &quot;groupName&quot;: &quot;reakit monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupredwoodmonorepo">group:redwoodMonorepo</h3>
+<p>Group packages from redwood monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:redwood&quot;,
+      &quot;groupName&quot;: &quot;redwood monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupremarkmonorepo">group:remarkMonorepo</h3>
+<p>Group packages from remark monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:remark&quot;,
+      &quot;groupName&quot;: &quot;remark monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouprouter5monorepo">group:router5Monorepo</h3>
+<p>Group packages from router5 monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:router5&quot;,
+      &quot;groupName&quot;: &quot;router5 monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupsentrymonorepo">group:sentryMonorepo</h3>
+<p>Group packages from sentry monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:sentry&quot;,
+      &quot;groupName&quot;: &quot;sentry monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupspringfoxmonorepo">group:springfoxMonorepo</h3>
+<p>Group packages from springfox monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:springfox&quot;,
+      &quot;groupName&quot;: &quot;springfox monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupsanitymonorepo">group:sanityMonorepo</h3>
+<p>Group packages from sanity monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:sanity&quot;,
+      &quot;groupName&quot;: &quot;sanity monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupsteeltoemonorepo">group:SteeltoeMonorepo</h3>
+<p>Group packages from Steeltoe monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:Steeltoe&quot;,
+      &quot;groupName&quot;: &quot;Steeltoe monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupstorybookmonorepo">group:storybookMonorepo</h3>
+<p>Group packages from storybook monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:storybook&quot;,
+      &quot;groupName&quot;: &quot;storybook monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupstrapimonorepo">group:strapiMonorepo</h3>
+<p>Group packages from strapi monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:strapi&quot;,
+      &quot;groupName&quot;: &quot;strapi monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupstrykermonorepo">group:strykerMonorepo</h3>
+<p>Group packages from stryker monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:stryker&quot;,
+      &quot;groupName&quot;: &quot;stryker monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupsurveyjsmonorepo">group:surveyjsMonorepo</h3>
+<p>Group packages from surveyjs monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:surveyjs&quot;,
+      &quot;groupName&quot;: &quot;surveyjs monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupswashbucklemonorepo">group:SwashbuckleMonorepo</h3>
+<p>Group packages from Swashbuckle monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:Swashbuckle&quot;,
+      &quot;groupName&quot;: &quot;Swashbuckle monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouptreatmonorepo">group:treatMonorepo</h3>
+<p>Group packages from treat monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:treat&quot;,
+      &quot;groupName&quot;: &quot;treat monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="grouptypefacesmonorepo">group:typefacesMonorepo</h3>
+<p>Group packages from typefaces monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:typefaces&quot;,
+      &quot;groupName&quot;: &quot;typefaces monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupuppymonorepo">group:uppyMonorepo</h3>
+<p>Group packages from uppy monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:uppy&quot;,
+      &quot;groupName&quot;: &quot;uppy monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupvuemonorepo">group:vueMonorepo</h3>
+<p>Group packages from vue monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:vue&quot;,
+      &quot;groupName&quot;: &quot;vue monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupvuepressmonorepo">group:vuepressMonorepo</h3>
+<p>Group packages from vuepress monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:vuepress&quot;,
+      &quot;groupName&quot;: &quot;vuepress monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupwebdriveriomonorepo">group:webdriverioMonorepo</h3>
+<p>Group packages from webdriverio monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:webdriverio&quot;,
+      &quot;groupName&quot;: &quot;webdriverio monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupworkboxmonorepo">group:workboxMonorepo</h3>
+<p>Group packages from workbox monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:workbox&quot;,
+      &quot;groupName&quot;: &quot;workbox monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupbabel6monorepo">group:babel6Monorepo</h3>
+<p>Group packages from babel6 monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:babel6&quot;,
+      &quot;groupName&quot;: &quot;babel6 monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupwordpressmonorepo">group:wordpressMonorepo</h3>
+<p>Group packages from wordpress monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:wordpress&quot;,
+      &quot;groupName&quot;: &quot;wordpress monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupangularmaterialmonorepo">group:angularmaterialMonorepo</h3>
+<p>Group packages from angularmaterial monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:angularmaterial&quot;,
+      &quot;groupName&quot;: &quot;angularmaterial monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupaws-java-sdkmonorepo">group:aws-java-sdkMonorepo</h3>
+<p>Group packages from aws-java-sdk monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:aws-java-sdk&quot;,
+      &quot;groupName&quot;: &quot;aws-java-sdk monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupembroidermonorepo">group:embroiderMonorepo</h3>
+<p>Group packages from embroider monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:embroider&quot;,
+      &quot;groupName&quot;: &quot;embroider monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupfullcalendarmonorepo">group:fullcalendarMonorepo</h3>
+<p>Group packages from fullcalendar monorepo together</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: &quot;monorepo:fullcalendar&quot;,
+      &quot;groupName&quot;: &quot;fullcalendar monorepo&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="groupmonorepos">group:monorepos</h3>
+<p>Group known monorepo packages together</p>
+<pre><code>{
+  &quot;ignoreDeps&quot;: [],
+  &quot;extends&quot;: [
+    &quot;group:ag-gridMonorepo&quot;,
+    &quot;group:arcus event-gridMonorepo&quot;,
+    &quot;group:arcus securityMonorepo&quot;,
+    &quot;group:arcus messagingMonorepo&quot;,
+    &quot;group:arcus observabilityMonorepo&quot;,
+    &quot;group:arcus webapiMonorepo&quot;,
+    &quot;group:arcus background-jobsMonorepo&quot;,
+    &quot;group:algolia-react-instantsearchMonorepo&quot;,
+    &quot;group:angular-eslintMonorepo&quot;,
+    &quot;group:apollo-serverMonorepo&quot;,
+    &quot;group:aspnet-api-versioningMonorepo&quot;,
+    &quot;group:aspnet AspNetWebStackMonorepo&quot;,
+    &quot;group:aspnet ExtensionsMonorepo&quot;,
+    &quot;group:aws-cdkMonorepo&quot;,
+    &quot;group:aws-sdk-js-v3Monorepo&quot;,
+    &quot;group:aws-sdk-netMonorepo&quot;,
+    &quot;group:azure azure-libraries-for-netMonorepo&quot;,
+    &quot;group:azure azure-sdk-for-netMonorepo&quot;,
+    &quot;group:azure azure-storage-netMonorepo&quot;,
+    &quot;group:bugsnag-jsMonorepo&quot;,
+    &quot;group:chakra-uiMonorepo&quot;,
+    &quot;group:contentful-rich-textMonorepo&quot;,
+    &quot;group:date-ioMonorepo&quot;,
+    &quot;group:devextreme-reactiveMonorepo&quot;,
+    &quot;group:electron-forgeMonorepo&quot;,
+    &quot;group:feathers-databasesMonorepo&quot;,
+    &quot;group:ember-decoratorsMonorepo&quot;,
+    &quot;group:graphql-modulesMonorepo&quot;,
+    &quot;group:ionic-nativeMonorepo&quot;,
+    &quot;group:mdc-reactMonorepo&quot;,
+    &quot;group:ngx-formlyMonorepo&quot;,
+    &quot;group:ngxs-storeMonorepo&quot;,
+    &quot;group:reach-uiMonorepo&quot;,
+    &quot;group:react-apolloMonorepo&quot;,
+    &quot;group:react-dndMonorepo&quot;,
+    &quot;group:react-navigationMonorepo&quot;,
+    &quot;group:reactivestack-cookiesMonorepo&quot;,
+    &quot;group:reg-suitMonorepo&quot;,
+    &quot;group:semantic-releaseMonorepo&quot;,
+    &quot;group:shopify-app-bridgeMonorepo&quot;,
+    &quot;group:System.IO.AbstractionsMonorepo&quot;,
+    &quot;group:telus-tdsMonorepo&quot;,
+    &quot;group:theme-uiMonorepo&quot;,
+    &quot;group:typescript-eslintMonorepo&quot;,
+    &quot;group:typography-jsMonorepo&quot;,
+    &quot;group:vue-cliMonorepo&quot;,
+    &quot;group:accountsMonorepo&quot;,
+    &quot;group:angular1Monorepo&quot;,
+    &quot;group:angularMonorepo&quot;,
+    &quot;group:angularcliMonorepo&quot;,
+    &quot;group:angularfireMonorepo&quot;,
+    &quot;group:apolloclientMonorepo&quot;,
+    &quot;group:apollolinkMonorepo&quot;,
+    &quot;group:awsappsyncMonorepo&quot;,
+    &quot;group:babelMonorepo&quot;,
+    &quot;group:basetMonorepo&quot;,
+    &quot;group:braveMonorepo&quot;,
+    &quot;group:capacitorMonorepo&quot;,
+    &quot;group:chromelyMonorepo&quot;,
+    &quot;group:clarityMonorepo&quot;,
+    &quot;group:commitlintMonorepo&quot;,
+    &quot;group:docusaurusMonorepo&quot;,
+    &quot;group:dotnetMonorepo&quot;,
+    &quot;group:dropwizardMonorepo&quot;,
+    &quot;group:emotionMonorepo&quot;,
+    &quot;group:expoMonorepo&quot;,
+    &quot;group:feathersMonorepo&quot;,
+    &quot;group:fimbullinterMonorepo&quot;,
+    &quot;group:flopflipMonorepo&quot;,
+    &quot;group:FontsourceMonorepo&quot;,
+    &quot;group:formatjsMonorepo&quot;,
+    &quot;group:framework7Monorepo&quot;,
+    &quot;group:gatsbyMonorepo&quot;,
+    &quot;group:graphqlcodegeneratorMonorepo&quot;,
+    &quot;group:graphql-meshMonorepo&quot;,
+    &quot;group:graphql-toolkitMonorepo&quot;,
+    &quot;group:graphql-toolsMonorepo&quot;,
+    &quot;group:hamcrestMonorepo&quot;,
+    &quot;group:HangfireMonorepo&quot;,
+    &quot;group:hapijsMonorepo&quot;,
+    &quot;group:HotChocolateMonorepo&quot;,
+    &quot;group:infrastructureMonorepo&quot;,
+    &quot;group:istanbuljsMonorepo&quot;,
+    &quot;group:jasmineMonorepo&quot;,
+    &quot;group:jerseyMonorepo&quot;,
+    &quot;group:jestMonorepo&quot;,
+    &quot;group:junit5Monorepo&quot;,
+    &quot;group:lernaMonorepo&quot;,
+    &quot;group:linguiMonorepo&quot;,
+    &quot;group:lodashMonorepo&quot;,
+    &quot;group:loopbackMonorepo&quot;,
+    &quot;group:lrnwebcomponentsMonorepo&quot;,
+    &quot;group:MassTransitMonorepo&quot;,
+    &quot;group:materialMonorepo&quot;,
+    &quot;group:mdxMonorepo&quot;,
+    &quot;group:mstestMonorepo&quot;,
+    &quot;group:muiMonorepo&quot;,
+    &quot;group:nestMonorepo&quot;,
+    &quot;group:neutrinoMonorepo&quot;,
+    &quot;group:nextjsMonorepo&quot;,
+    &quot;group:nivoMonorepo&quot;,
+    &quot;group:ngrxMonorepo&quot;,
+    &quot;group:nrwlMonorepo&quot;,
+    &quot;group:nuxtjsMonorepo&quot;,
+    &quot;group:openfeignMonorepo&quot;,
+    &quot;group:opentelemetryMonorepo&quot;,
+    &quot;group:OpenTelemetryDotnetMonorepo&quot;,
+    &quot;group:orleansMonorepo&quot;,
+    &quot;group:picassoMonorepo&quot;,
+    &quot;group:pnpjsMonorepo&quot;,
+    &quot;group:playwrightMonorepo&quot;,
+    &quot;group:pollyjsMonorepo&quot;,
+    &quot;group:pouchdbMonorepo&quot;,
+    &quot;group:prismaMonorepo&quot;,
+    &quot;group:reactMonorepo&quot;,
+    &quot;group:reactrouterMonorepo&quot;,
+    &quot;group:reakitMonorepo&quot;,
+    &quot;group:redwoodMonorepo&quot;,
+    &quot;group:remarkMonorepo&quot;,
+    &quot;group:router5Monorepo&quot;,
+    &quot;group:sentryMonorepo&quot;,
+    &quot;group:springfoxMonorepo&quot;,
+    &quot;group:sanityMonorepo&quot;,
+    &quot;group:SteeltoeMonorepo&quot;,
+    &quot;group:storybookMonorepo&quot;,
+    &quot;group:strapiMonorepo&quot;,
+    &quot;group:strykerMonorepo&quot;,
+    &quot;group:surveyjsMonorepo&quot;,
+    &quot;group:SwashbuckleMonorepo&quot;,
+    &quot;group:treatMonorepo&quot;,
+    &quot;group:typefacesMonorepo&quot;,
+    &quot;group:uppyMonorepo&quot;,
+    &quot;group:vueMonorepo&quot;,
+    &quot;group:vuepressMonorepo&quot;,
+    &quot;group:webdriverioMonorepo&quot;,
+    &quot;group:workboxMonorepo&quot;,
+    &quot;group:babel6Monorepo&quot;,
+    &quot;group:wordpressMonorepo&quot;,
+    &quot;group:angularmaterialMonorepo&quot;,
+    &quot;group:aws-java-sdkMonorepo&quot;,
+    &quot;group:embroiderMonorepo&quot;,
+    &quot;group:fullcalendarMonorepo&quot;
+  ]
+}
+</code></pre>
+
+<hr />
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../presets-docker/" title="Docker Presets" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Docker Presets
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../presets-helpers/" title="Helper Presets" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Helper Presets
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../assets/js/fx.js"></script>
+      
+    
+  </body>
+</html>

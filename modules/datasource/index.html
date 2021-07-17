@@ -1,0 +1,1625 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/modules/datasource/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Datasources - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#datasources" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.renovatebot.com" title="Renovate Docs" aria-label="Renovate Docs" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../assets/images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Renovate Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Datasources
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.renovatebot.com" title="Renovate Docs" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../assets/images/logo.png" width="48" height="48">
+      
+    </a>
+    Renovate Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../install-github-app/" title="GitHub App Installation" class="md-nav__link">
+      GitHub App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../install-gitlab-app/" title="GitLab App Installation" class="md-nav__link">
+      GitLab App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../self-hosting/" title="Self-hosting" class="md-nav__link">
+      Self-hosting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configure-renovate/" title="Configure Renovate (Onboarding PR)" class="md-nav__link">
+      Configure Renovate (Onboarding PR)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../private-modules/" title="Private module support" class="md-nav__link">
+      Private module support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reconfigure-renovate/" title="Reconfiguring Renovate" class="md-nav__link">
+      Reconfiguring Renovate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="Frequently Asked Questions" class="md-nav__link">
+      Frequently Asked Questions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../configuration-options/" title="Configuration Options" class="md-nav__link">
+      Configuration Options
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../self-hosted-configuration/" title="Self Hosted Configuration" class="md-nav__link">
+      Self Hosted Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Renovate Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Renovate Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../platform/" title="Platforms" class="md-nav__link">
+      Platforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../manager/" title="Managers" class="md-nav__link">
+      Managers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Datasources
+      </label>
+    
+    <a href="./" title="Datasources" class="md-nav__link md-nav__link--active">
+      Datasources
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-datasources" class="md-nav__link">
+    Supported Datasources
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bitbucket-tags-datasource" class="md-nav__link">
+    Bitbucket Tags Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdnjs-datasource" class="md-nav__link">
+    Cdnjs Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clojure-datasource" class="md-nav__link">
+    Clojure Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crate-datasource" class="md-nav__link">
+    Crate Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dart-datasource" class="md-nav__link">
+    Dart Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-datasource" class="md-nav__link">
+    Docker Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#galaxy-datasource" class="md-nav__link">
+    Galaxy Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#galaxy-collection-datasource" class="md-nav__link">
+    Galaxy Collection Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-refs-datasource" class="md-nav__link">
+    Git Refs Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-tags-datasource" class="md-nav__link">
+    Git Tags Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-releases-datasource" class="md-nav__link">
+    Github Releases Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-tags-datasource" class="md-nav__link">
+    Github Tags Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab-tags-datasource" class="md-nav__link">
+    Gitlab Tags Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go-datasource" class="md-nav__link">
+    Go Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-version-datasource" class="md-nav__link">
+    Gradle Version Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helm-datasource" class="md-nav__link">
+    Helm Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hex-datasource" class="md-nav__link">
+    Hex Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jenkins-plugins-datasource" class="md-nav__link">
+    Jenkins Plugins Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-datasource" class="md-nav__link">
+    Maven Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npm-datasource" class="md-nav__link">
+    Npm Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nuget-datasource" class="md-nav__link">
+    Nuget Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orb-datasource" class="md-nav__link">
+    Orb Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packagist-datasource" class="md-nav__link">
+    Packagist Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pod-datasource" class="md-nav__link">
+    Pod Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pypi-datasource" class="md-nav__link">
+    Pypi Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repology-datasource" class="md-nav__link">
+    Repology Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby-version-datasource" class="md-nav__link">
+    Ruby Version Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubygems-datasource" class="md-nav__link">
+    Rubygems Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbt-package-datasource" class="md-nav__link">
+    Sbt Package Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbt-plugin-datasource" class="md-nav__link">
+    Sbt Plugin Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-module-datasource" class="md-nav__link">
+    Terraform Module Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-provider-datasource" class="md-nav__link">
+    Terraform Provider Datasource
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../versioning/" title="Versioning" class="md-nav__link">
+      Versioning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../config-presets/" title="Shareable Config Presets" class="md-nav__link">
+      Shareable Config Presets
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Language Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Language Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bazel/" title="Bazel" class="md-nav__link">
+      Bazel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../golang/" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/" title="Node.js Versions" class="md-nav__link">
+      Node.js Versions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nuget/" title="Nuget" class="md-nav__link">
+      Nuget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ruby/" title="Ruby" class="md-nav__link">
+      Ruby
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Deep Dives
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Deep Dives
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dependency-pinning/" title="Should you Pin your Javascript Dependencies?" class="md-nav__link">
+      Should you Pin your Javascript Dependencies?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configuration-templates/" title="Config Template Editing" class="md-nav__link">
+      Config Template Editing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updating-rebasing/" title="Updating and Rebasing Branches" class="md-nav__link">
+      Updating and Rebasing Branches
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../semantic-commits/" title="Semantic Commit Messages" class="md-nav__link">
+      Semantic Commit Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../noise-reduction/" title="Noise Reduction" class="md-nav__link">
+      Noise Reduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../automerge-configuration/" title="Automerging Updates" class="md-nav__link">
+      Automerging Updates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Included Presets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Included Presets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-config/" title="Full Config Presets" class="md-nav__link">
+      Full Config Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-default/" title="Default Presets" class="md-nav__link">
+      Default Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-docker/" title="Docker Presets" class="md-nav__link">
+      Docker Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-group/" title="Group Presets" class="md-nav__link">
+      Group Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-helpers/" title="Helper Presets" class="md-nav__link">
+      Helper Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-monorepo/" title="Monorepo Presets" class="md-nav__link">
+      Monorepo Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-packages/" title="Package Presets" class="md-nav__link">
+      Package Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-preview/" title="Preview Presets" class="md-nav__link">
+      Preview Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../presets-schedule/" title="Schedule Presets" class="md-nav__link">
+      Schedule Presets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      All Other
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        All Other
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../merge-confidence/" title="Merge Confidence" class="md-nav__link">
+      Merge Confidence
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-datasources" class="md-nav__link">
+    Supported Datasources
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bitbucket-tags-datasource" class="md-nav__link">
+    Bitbucket Tags Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdnjs-datasource" class="md-nav__link">
+    Cdnjs Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clojure-datasource" class="md-nav__link">
+    Clojure Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crate-datasource" class="md-nav__link">
+    Crate Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dart-datasource" class="md-nav__link">
+    Dart Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-datasource" class="md-nav__link">
+    Docker Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#galaxy-datasource" class="md-nav__link">
+    Galaxy Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#galaxy-collection-datasource" class="md-nav__link">
+    Galaxy Collection Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-refs-datasource" class="md-nav__link">
+    Git Refs Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-tags-datasource" class="md-nav__link">
+    Git Tags Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-releases-datasource" class="md-nav__link">
+    Github Releases Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-tags-datasource" class="md-nav__link">
+    Github Tags Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab-tags-datasource" class="md-nav__link">
+    Gitlab Tags Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go-datasource" class="md-nav__link">
+    Go Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-version-datasource" class="md-nav__link">
+    Gradle Version Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helm-datasource" class="md-nav__link">
+    Helm Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hex-datasource" class="md-nav__link">
+    Hex Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jenkins-plugins-datasource" class="md-nav__link">
+    Jenkins Plugins Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-datasource" class="md-nav__link">
+    Maven Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npm-datasource" class="md-nav__link">
+    Npm Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nuget-datasource" class="md-nav__link">
+    Nuget Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orb-datasource" class="md-nav__link">
+    Orb Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packagist-datasource" class="md-nav__link">
+    Packagist Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pod-datasource" class="md-nav__link">
+    Pod Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pypi-datasource" class="md-nav__link">
+    Pypi Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repology-datasource" class="md-nav__link">
+    Repology Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby-version-datasource" class="md-nav__link">
+    Ruby Version Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubygems-datasource" class="md-nav__link">
+    Rubygems Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbt-package-datasource" class="md-nav__link">
+    Sbt Package Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbt-plugin-datasource" class="md-nav__link">
+    Sbt Plugin Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-module-datasource" class="md-nav__link">
+    Terraform Module Datasource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-provider-datasource" class="md-nav__link">
+    Terraform Provider Datasource
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="datasources">Datasources</h1>
+<p>Once Renovate's manager is done scanning files and extracting dependencies, it will assign a <code>datasource</code> to each extracted package file and/or dependency so that Renovate then knows how to search for new versions.
+You do not need to ever configure/override datasources directly, but you may use them in a <code>packageRules</code> array to configure other aspects of Renovate's behavior, e.g.</p>
+<pre><code class="json">{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDatasources&quot;: [&quot;npm&quot;],
+      &quot;matchPackageNames&quot;: [&quot;lodash&quot;],
+      &quot;automerge&quot;: true
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="supported-datasources">Supported Datasources</h2>
+<!-- Autogenerate in https://github.com/renovatebot/renovatebot.github.io -->
+
+<p>Supported values for <code>datasource</code> are: <code>bitbucket-tags</code>, <code>cdnjs</code>, <code>clojure</code>, <code>crate</code>, <code>dart</code>, <code>docker</code>, <code>galaxy</code>, <code>galaxy-collection</code>, <code>git-refs</code>, <code>git-tags</code>, <code>github-releases</code>, <code>github-tags</code>, <code>gitlab-tags</code>, <code>go</code>, <code>gradle-version</code>, <code>helm</code>, <code>hex</code>, <code>jenkins-plugins</code>, <code>maven</code>, <code>npm</code>, <code>nuget</code>, <code>orb</code>, <code>packagist</code>, <code>pod</code>, <code>pypi</code>, <code>repology</code>, <code>ruby-version</code>, <code>rubygems</code>, <code>sbt-package</code>, <code>sbt-plugin</code>, <code>terraform-module</code>, <code>terraform-provider</code>.</p>
+<h3 id="bitbucket-tags-datasource">Bitbucket Tags Datasource</h3>
+<p><strong>Identifier</strong>: <code>bitbucket-tags</code></p>
+<hr />
+<h3 id="cdnjs-datasource">Cdnjs Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="clojure-datasource">Clojure Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="crate-datasource">Crate Datasource</h3>
+<p><strong>Identifier</strong>: <code>crate</code></p>
+<hr />
+<h3 id="dart-datasource">Dart Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="docker-datasource">Docker Datasource</h3>
+<p><strong>Identifier</strong>: <code>docker</code></p>
+<p><strong>Default configuration</strong>:</p>
+<pre><code class="json">{
+  &quot;commitMessageTopic&quot;: &quot;{{{depName}}} Docker tag&quot;,
+  &quot;commitMessageExtra&quot;: &quot;to v{{#if isMajor}}{{{newMajor}}}{{else}}{{{newVersion}}}{{/if}}&quot;,
+  &quot;digest&quot;: {
+    &quot;branchTopic&quot;: &quot;{{{depNameSanitized}}}-{{{currentValue}}}&quot;,
+    &quot;commitMessageExtra&quot;: &quot;to {{newDigestShort}}&quot;,
+    &quot;commitMessageTopic&quot;: &quot;{{{depName}}}{{#if currentValue}}:{{{currentValue}}}{{/if}} Docker digest&quot;,
+    &quot;group&quot;: {
+      &quot;commitMessageTopic&quot;: &quot;{{{groupName}}}&quot;,
+      &quot;commitMessageExtra&quot;: &quot;&quot;
+    }
+  },
+  &quot;pin&quot;: {
+    &quot;commitMessageExtra&quot;: &quot;&quot;,
+    &quot;groupName&quot;: &quot;Docker digests&quot;,
+    &quot;group&quot;: {
+      &quot;commitMessageTopic&quot;: &quot;{{{groupName}}}&quot;,
+      &quot;branchTopic&quot;: &quot;digests-pin&quot;
+    }
+  },
+  &quot;group&quot;: {
+    &quot;commitMessageTopic&quot;: &quot;{{{groupName}}} Docker tags&quot;
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="galaxy-datasource">Galaxy Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="galaxy-collection-datasource">Galaxy Collection Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="git-refs-datasource">Git Refs Datasource</h3>
+<p><strong>Identifier</strong>: <code>git-refs</code></p>
+<hr />
+<h3 id="git-tags-datasource">Git Tags Datasource</h3>
+<p><strong>Identifier</strong>: <code>git-tags</code></p>
+<hr />
+<h3 id="github-releases-datasource">Github Releases Datasource</h3>
+<p><strong>Identifier</strong>: <code>github-releases</code></p>
+<hr />
+<h3 id="github-tags-datasource">Github Tags Datasource</h3>
+<p><strong>Identifier</strong>: <code>github-tags</code></p>
+<hr />
+<h3 id="gitlab-tags-datasource">Gitlab Tags Datasource</h3>
+<p><strong>Identifier</strong>: <code>gitlab-tags</code></p>
+<hr />
+<h3 id="go-datasource">Go Datasource</h3>
+<p><strong>Identifier</strong>: <code>go</code></p>
+<hr />
+<h3 id="gradle-version-datasource">Gradle Version Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="helm-datasource">Helm Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="hex-datasource">Hex Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="jenkins-plugins-datasource">Jenkins Plugins Datasource</h3>
+<p><strong>Identifier</strong>: <code>jenkins-plugins</code></p>
+<hr />
+<h3 id="maven-datasource">Maven Datasource</h3>
+<p><strong>Identifier</strong>: <code>maven</code></p>
+<hr />
+<h3 id="npm-datasource">Npm Datasource</h3>
+<p><strong>Identifier</strong>: <code>npm</code></p>
+<hr />
+<h3 id="nuget-datasource">Nuget Datasource</h3>
+<p><strong>Identifier</strong>: <code>nuget</code></p>
+<hr />
+<h3 id="orb-datasource">Orb Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="packagist-datasource">Packagist Datasource</h3>
+<p><strong>Identifier</strong>: <code>packagist</code></p>
+<hr />
+<h3 id="pod-datasource">Pod Datasource</h3>
+<p><strong>Identifier</strong>: <code>pod</code></p>
+<hr />
+<h3 id="pypi-datasource">Pypi Datasource</h3>
+<p><strong>Identifier</strong>: <code>pypi</code></p>
+<hr />
+<h3 id="repology-datasource">Repology Datasource</h3>
+<p><strong>Identifier</strong>: <code>repology</code></p>
+<p><strong>Description</strong>:</p>
+<p><a href="https://repology.org/">Repology</a> supports looking up package versions from a wide variety of package repositories and can be used in combination with <a href="https://docs.renovatebot.com/modules/manager/regex/">regex managers</a> to keep dependencies up-to-date which are not specifically supported by Renovate.</p>
+<p>To specify which specific repository should be queried when looking up a package, the <code>lookupName</code> has to contain the repository identifier and the package name itself, separated by a slash. As an example, <code>alpine_3_12/gcc</code> would look for a binary or source package called <code>gcc</code> within the <code>alpine_3_12</code> repository.</p>
+<p>A <a href="https://repology.org/repositories/statistics">list of all supported repositories</a> can be found on the Repology homepage. To determine the correct identifier, click on a repository of your choice and make note of the identifier in the URL: <code>https://repology.org/repository/&lt;identifier&gt;</code></p>
+<p>As an example, the <code>Alpine Linux 3.12</code> repository points to <code>https://repology.org/repository/alpine_3_12</code> and therefor has the repository identifier <code>alpine_3_12</code>.</p>
+<p><strong>Usage Example</strong></p>
+<p>A real world example for this specific datasource would be maintaining system packages within a Dockerfile, as this allows to specifically pin each dependency without having to manually keep the versions up-to-date. This can be achieved by configuring a generic regex manager in <code>renovate.json</code> for files named <code>Dockerfile</code>:</p>
+<pre><code class="json">{
+  &quot;regexManagers&quot;: [
+    {
+      &quot;fileMatch&quot;: [&quot;^Dockerfile$&quot;],
+      &quot;matchStrings&quot;: [
+        &quot;#\\s*renovate:\\s*datasource=(?&lt;datasource&gt;.*?) depName=(?&lt;depName&gt;.*?)( versioning=(?&lt;versioning&gt;.*?))?\\sENV .*?_VERSION=(?&lt;currentValue&gt;.*)\\s&quot;
+      ],
+      &quot;versioningTemplate&quot;: &quot;{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}&quot;
+    }
+  ]
+}
+</code></pre>
+
+<p>Now you may use regular comments in your Dockerfile to automatically update dependencies, which could look like this:</p>
+<pre><code class="docker">FROM alpine:3.12.0@sha256:a15790640a6690aa1730c38cf0a440e2aa44aaca9b0e8931a9f2b0d7cc90fd65
+
+# renovate: datasource=repology depName=alpine_3_12/gcc versioning=loose
+ENV GCC_VERSION=&quot;9.3.0-r2&quot;
+# renovate: datasource=repology depName=alpine_3_12/musl-dev versioning=loose
+ENV MUSL_DEV_VERSION=&quot;1.1.24-r8&quot;
+
+RUN apk add --no-cache \
+    gcc=&quot;${GCC_VERSION}&quot; \
+    musl-dev=&quot;${MUSL_DEV_VERSION}&quot;
+</code></pre>
+
+<p>It is often wise to use the <code>loose</code> versioning for distribution packages as the version number usually does not strictly match the <code>semver</code> specification which is used by default. Now whenever the OS package for <code>gcc</code> of <code>Alpine Linux 3.12</code> is being updated, Renovate will automatically adjust the value of the environment variable to the newest version.</p>
+<hr />
+<h3 id="ruby-version-datasource">Ruby Version Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="rubygems-datasource">Rubygems Datasource</h3>
+<p><strong>Identifier</strong>: <code>rubygems</code></p>
+<hr />
+<h3 id="sbt-package-datasource">Sbt Package Datasource</h3>
+<p><strong>Identifier</strong>: <code>sbt-package</code></p>
+<hr />
+<h3 id="sbt-plugin-datasource">Sbt Plugin Datasource</h3>
+<p><strong>Identifier</strong>: <code>sbt-plugin</code></p>
+<hr />
+<h3 id="terraform-module-datasource">Terraform Module Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<h3 id="terraform-provider-datasource">Terraform Provider Datasource</h3>
+<p><strong>Identifier</strong>: <code>undefined</code></p>
+<hr />
+<!-- Autogenerate end -->
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../manager/" title="Managers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Managers
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../versioning/" title="Versioning" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Versioning
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../assets/js/fx.js"></script>
+      
+    
+  </body>
+</html>

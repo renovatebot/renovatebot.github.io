@@ -1,0 +1,2941 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Self-Hosted configuration usable in config file, CLI or environment variables">
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/self-hosted-configuration/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Self-Hosted configuration</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#self-hosted-configuration-options" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.renovatebot.com" title="Renovate Docs" aria-label="Renovate Docs" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../assets/images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Renovate Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Self-Hosted configuration
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.renovatebot.com" title="Renovate Docs" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../assets/images/logo.png" width="48" height="48">
+      
+    </a>
+    Renovate Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-github-app/" title="GitHub App Installation" class="md-nav__link">
+      GitHub App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-gitlab-app/" title="GitLab App Installation" class="md-nav__link">
+      GitLab App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-hosting/" title="Self-hosting" class="md-nav__link">
+      Self-hosting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configure-renovate/" title="Configure Renovate (Onboarding PR)" class="md-nav__link">
+      Configure Renovate (Onboarding PR)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../private-modules/" title="Private module support" class="md-nav__link">
+      Private module support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reconfigure-renovate/" title="Reconfiguring Renovate" class="md-nav__link">
+      Reconfiguring Renovate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="Frequently Asked Questions" class="md-nav__link">
+      Frequently Asked Questions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../configuration-options/" title="Configuration Options" class="md-nav__link">
+      Configuration Options
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Self Hosted Configuration
+      </label>
+    
+    <a href="./" title="Self Hosted Configuration" class="md-nav__link md-nav__link--active">
+      Self Hosted Configuration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#allowcustomcrateregistries" class="md-nav__link">
+    allowCustomCrateRegistries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowpostupgradecommandtemplating" class="md-nav__link">
+    allowPostUpgradeCommandTemplating
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowscripts" class="md-nav__link">
+    allowScripts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowedpostupgradecommands" class="md-nav__link">
+    allowedPostUpgradeCommands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autodiscover" class="md-nav__link">
+    autodiscover
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autodiscoverfilter" class="md-nav__link">
+    autodiscoverFilter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basedir" class="md-nav__link">
+    baseDir
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binarysource" class="md-nav__link">
+    binarySource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cachedir" class="md-nav__link">
+    cacheDir
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composerignoreplatformreqs" class="md-nav__link">
+    composerIgnorePlatformReqs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customenvvariables" class="md-nav__link">
+    customEnvVariables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerchildprefix" class="md-nav__link">
+    dockerChildPrefix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerimageprefix" class="md-nav__link">
+    dockerImagePrefix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockeruser" class="md-nav__link">
+    dockerUser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dryrun" class="md-nav__link">
+    dryRun
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    endpoint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exposeallenv" class="md-nav__link">
+    exposeAllEnv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force" class="md-nav__link">
+    force
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forcecli" class="md-nav__link">
+    forceCli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forkmode" class="md-nav__link">
+    forkMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forktoken" class="md-nav__link">
+    forkToken
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitauthor" class="md-nav__link">
+    gitAuthor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitnoverify" class="md-nav__link">
+    gitNoVerify
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitprivatekey" class="md-nav__link">
+    gitPrivateKey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logcontext" class="md-nav__link">
+    logContext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logfile" class="md-nav__link">
+    logFile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logfilelevel" class="md-nav__link">
+    logFileLevel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migratepresets" class="md-nav__link">
+    migratePresets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding" class="md-nav__link">
+    onboarding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboardingbranch" class="md-nav__link">
+    onboardingBranch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboardingcommitmessage" class="md-nav__link">
+    onboardingCommitMessage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboardingconfig" class="md-nav__link">
+    onboardingConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboardingconfigfilename" class="md-nav__link">
+    onboardingConfigFileName
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboardingprtitle" class="md-nav__link">
+    onboardingPrTitle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizefordisabled" class="md-nav__link">
+    optimizeForDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistrepodata" class="md-nav__link">
+    persistRepoData
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    platform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prcommitsperrunlimit" class="md-nav__link">
+    prCommitsPerRunLimit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printconfig" class="md-nav__link">
+    printConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privatekey" class="md-nav__link">
+    privateKey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privatekeypath" class="md-nav__link">
+    privateKeyPath
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#productlinks" class="md-nav__link">
+    productLinks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redisurl" class="md-nav__link">
+    redisUrl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositories" class="md-nav__link">
+    repositories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorycache" class="md-nav__link">
+    repositoryCache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requireconfig" class="md-nav__link">
+    requireConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    secrets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipinstalls" class="md-nav__link">
+    skipInstalls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#username" class="md-nav__link">
+    username
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Renovate Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Renovate Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/platform/" title="Platforms" class="md-nav__link">
+      Platforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/manager/" title="Managers" class="md-nav__link">
+      Managers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/datasource/" title="Datasources" class="md-nav__link">
+      Datasources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/versioning/" title="Versioning" class="md-nav__link">
+      Versioning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../config-presets/" title="Shareable Config Presets" class="md-nav__link">
+      Shareable Config Presets
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Language Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Language Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bazel/" title="Bazel" class="md-nav__link">
+      Bazel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../golang/" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node/" title="Node.js Versions" class="md-nav__link">
+      Node.js Versions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nuget/" title="Nuget" class="md-nav__link">
+      Nuget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../php/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ruby/" title="Ruby" class="md-nav__link">
+      Ruby
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Deep Dives
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Deep Dives
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dependency-pinning/" title="Should you Pin your Javascript Dependencies?" class="md-nav__link">
+      Should you Pin your Javascript Dependencies?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration-templates/" title="Config Template Editing" class="md-nav__link">
+      Config Template Editing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updating-rebasing/" title="Updating and Rebasing Branches" class="md-nav__link">
+      Updating and Rebasing Branches
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../semantic-commits/" title="Semantic Commit Messages" class="md-nav__link">
+      Semantic Commit Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../noise-reduction/" title="Noise Reduction" class="md-nav__link">
+      Noise Reduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../automerge-configuration/" title="Automerging Updates" class="md-nav__link">
+      Automerging Updates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Included Presets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Included Presets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-config/" title="Full Config Presets" class="md-nav__link">
+      Full Config Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-default/" title="Default Presets" class="md-nav__link">
+      Default Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-docker/" title="Docker Presets" class="md-nav__link">
+      Docker Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-group/" title="Group Presets" class="md-nav__link">
+      Group Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-helpers/" title="Helper Presets" class="md-nav__link">
+      Helper Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-monorepo/" title="Monorepo Presets" class="md-nav__link">
+      Monorepo Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-packages/" title="Package Presets" class="md-nav__link">
+      Package Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-preview/" title="Preview Presets" class="md-nav__link">
+      Preview Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-schedule/" title="Schedule Presets" class="md-nav__link">
+      Schedule Presets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      All Other
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        All Other
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../merge-confidence/" title="Merge Confidence" class="md-nav__link">
+      Merge Confidence
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#allowcustomcrateregistries" class="md-nav__link">
+    allowCustomCrateRegistries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowpostupgradecommandtemplating" class="md-nav__link">
+    allowPostUpgradeCommandTemplating
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowscripts" class="md-nav__link">
+    allowScripts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowedpostupgradecommands" class="md-nav__link">
+    allowedPostUpgradeCommands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autodiscover" class="md-nav__link">
+    autodiscover
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autodiscoverfilter" class="md-nav__link">
+    autodiscoverFilter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basedir" class="md-nav__link">
+    baseDir
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binarysource" class="md-nav__link">
+    binarySource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cachedir" class="md-nav__link">
+    cacheDir
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composerignoreplatformreqs" class="md-nav__link">
+    composerIgnorePlatformReqs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customenvvariables" class="md-nav__link">
+    customEnvVariables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerchildprefix" class="md-nav__link">
+    dockerChildPrefix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerimageprefix" class="md-nav__link">
+    dockerImagePrefix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockeruser" class="md-nav__link">
+    dockerUser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dryrun" class="md-nav__link">
+    dryRun
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    endpoint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exposeallenv" class="md-nav__link">
+    exposeAllEnv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force" class="md-nav__link">
+    force
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forcecli" class="md-nav__link">
+    forceCli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forkmode" class="md-nav__link">
+    forkMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forktoken" class="md-nav__link">
+    forkToken
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitauthor" class="md-nav__link">
+    gitAuthor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitnoverify" class="md-nav__link">
+    gitNoVerify
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitprivatekey" class="md-nav__link">
+    gitPrivateKey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logcontext" class="md-nav__link">
+    logContext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logfile" class="md-nav__link">
+    logFile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logfilelevel" class="md-nav__link">
+    logFileLevel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migratepresets" class="md-nav__link">
+    migratePresets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding" class="md-nav__link">
+    onboarding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboardingbranch" class="md-nav__link">
+    onboardingBranch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboardingcommitmessage" class="md-nav__link">
+    onboardingCommitMessage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboardingconfig" class="md-nav__link">
+    onboardingConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboardingconfigfilename" class="md-nav__link">
+    onboardingConfigFileName
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboardingprtitle" class="md-nav__link">
+    onboardingPrTitle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizefordisabled" class="md-nav__link">
+    optimizeForDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistrepodata" class="md-nav__link">
+    persistRepoData
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    platform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prcommitsperrunlimit" class="md-nav__link">
+    prCommitsPerRunLimit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printconfig" class="md-nav__link">
+    printConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privatekey" class="md-nav__link">
+    privateKey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privatekeypath" class="md-nav__link">
+    privateKeyPath
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#productlinks" class="md-nav__link">
+    productLinks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redisurl" class="md-nav__link">
+    redisUrl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositories" class="md-nav__link">
+    repositories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorycache" class="md-nav__link">
+    repositoryCache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requireconfig" class="md-nav__link">
+    requireConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    secrets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipinstalls" class="md-nav__link">
+    skipInstalls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#username" class="md-nav__link">
+    username
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="self-hosted-configuration-options">Self-Hosted configuration options</h1>
+<p>The configuration options listed in this document are applicable to self-hosted instances of Renovate ("the bot").</p>
+<p>Please also see <a href="../self-hosted-experimental/">Self-Hosted Experimental Options</a>.</p>
+<h2 id="allowcustomcrateregistries">allowCustomCrateRegistries</h2>
+<p>Configure this to true if custom crate registries are allowed.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="allowpostupgradecommandtemplating">allowPostUpgradeCommandTemplating</h2>
+<p>If true allow templating for post-upgrade commands.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>Set to true to allow templating of dependency level post-upgrade commands.</p>
+<p>Let's look at an example of configuring packages with existing Angular migrations.</p>
+<p>Add two properties to <code>config.js</code>: <code>allowPostUpgradeCommandTemplating</code> and <code>allowedPostUpgradeCommands</code>:</p>
+<pre><code class="javascript">module.exports = {
+  allowPostUpgradeCommandTemplating: true,
+  allowedPostUpgradeCommands: ['^npm ci --ignore-scripts$', '^npx ng update'],
+};
+</code></pre>
+
+<p>In the <code>renovate.json</code> file, define the commands and files to be included in the final commit.</p>
+<p>The command to install dependencies (<code>npm ci --ignore-scripts</code>) is necessary because, by default, the installation of dependencies is skipped (see the <code>skipInstalls</code> admin option).</p>
+<pre><code class="json">{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackageNames&quot;: [&quot;@angular/core&quot;],
+      &quot;postUpgradeTasks&quot;: {
+        &quot;commands&quot;: [
+          &quot;npm ci --ignore-scripts&quot;,
+          &quot;npx ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force&quot;
+        ],
+        &quot;fileFilters&quot;: [&quot;**/**&quot;]
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p>With this configuration, the executable command for <code>@angular/core</code> looks like this:</p>
+<pre><code class="bash">npm ci --ignore-scripts
+npx ng update @angular/core --from=10.0.0 --to=11.0.0 --migrate-only --allow-dirty --force
+</code></pre>
+
+<h2 id="allowscripts">allowScripts</h2>
+<p>Configure this to true if repositories are allowed to run install scripts.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="allowedpostupgradecommands">allowedPostUpgradeCommands</h2>
+<p>A list of regular expressions that determine which post-upgrade tasks are allowed.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>array</td>
+</tr>
+<tr>
+<td>subType</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p>A list of regular expressions that determine which commands in <code>postUpgradeTasks</code> are allowed to be executed.
+If this list is empty then no tasks will be executed.</p>
+<p>e.g.</p>
+<pre><code class="json">{
+  &quot;allowedPostUpgradeCommands&quot;: [&quot;^tslint --fix$&quot;, &quot;^tslint --[a-z]+$&quot;]
+}
+</code></pre>
+
+<h2 id="autodiscover">autodiscover</h2>
+<p>Autodiscover all repositories.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>When you enable <code>autodiscover</code>, by default, Renovate will run on <em>every</em> repository that the bot account can access.
+If you want Renovate to run on only a subset of those, use the <code>autodiscoverFilter</code> option to limit the bot to only the wanted repositories.</p>
+<h2 id="autodiscoverfilter">autodiscoverFilter</h2>
+<p>Filter the list of autodiscovered repositories.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p>You can use this option to filter the list of repositories that the Renovate bot account can access through <code>autodiscover</code>.
+It takes a <a href="https://www.npmjs.com/package/minimatch">minimatch</a> glob-style pattern.</p>
+<p>e.g.</p>
+<pre><code class="json">{
+  &quot;autodiscoverFilter&quot;: &quot;project/*&quot;
+}
+</code></pre>
+
+<h2 id="basedir">baseDir</h2>
+<p>The base directory for Renovate to store local files, including repository files and cache. If left empty, Renovate will create its own temporary directory to use.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>By default Renovate uses a temporary directory like <code>/tmp/renovate</code> to store its data.
+You can override this default with the <code>baseDir</code> option.</p>
+<p>e.g.</p>
+<pre><code class="json">{
+  &quot;baseDir&quot;: &quot;/my-own-different-temporary-folder&quot;
+}
+</code></pre>
+
+<h2 id="binarysource">binarySource</h2>
+<p>Controls whether third party tools like npm or Gradle are called directly, or via Docker sidecar containers.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>allowedValues</td>
+<td>global,docker</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>"global"</code></td>
+</tr>
+</tbody>
+</table>
+<p>Renovate often needs to use third party binaries in its PRs, e.g. <code>npm</code> to update <code>package-lock.json</code> or <code>go</code> to update <code>go.sum</code>.
+By default, Renovate will use a child process to run such tools, so they need to be pre-installed before running Renovate and available in the path.</p>
+<p>As an alternative, Renovate can use "sidecar" containers for third party tools.
+If configured, Renovate will use <code>docker run</code> to create containers such as Node.js or Python to run tools within as-needed.
+For this to work, <code>docker</code> needs to be installed and the Docker socket available to Renovate.</p>
+<h2 id="cachedir">cacheDir</h2>
+<p>The directory for Renovate for storing caches. If left empty, Renovate will create a subdirectory within <code>baseDir</code> to use.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>By default Renovate uses a temporary directory like <code>/tmp/renovate/cache</code> to store cache data.
+Use the <code>cacheDir</code> option to override this default.</p>
+<p>The <code>baseDir</code> and <code>cacheDir</code> option do not need to point to the same directory.
+You can use one directory for the repo data, and another for the the cache data.</p>
+<p>e.g.</p>
+<pre><code class="json">{
+  &quot;baseDir&quot;: &quot;/my-own-different-temporary-folder&quot;,
+  &quot;cacheDir&quot;: &quot;/my-own-different-cache-folder&quot;
+}
+</code></pre>
+
+<h2 id="composerignoreplatformreqs">composerIgnorePlatformReqs</h2>
+<p>Enable / disable use of --ignore-platform-reqs in the Composer package manager.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>Set to <code>false</code> to prevent usage of <code>--ignore-platform-reqs</code> in the Composer package manager.s</p>
+<h2 id="customenvvariables">customEnvVariables</h2>
+<p>Custom environment variables for child processes and sidecar Docker containers.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>object</td>
+</tr>
+</tbody>
+</table>
+<p>This configuration will be applied after all other environment variables so that it can be used to override defaults.</p>
+<h2 id="dockerchildprefix">dockerChildPrefix</h2>
+<p>Change this value in order to add a prefix to the Renovate Docker sidecar container names and labels.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>"renovate_"</code></td>
+</tr>
+</tbody>
+</table>
+<p>Adds a custom prefix to the default Renovate sidecar Docker containers name and label.</p>
+<p>If this is set to <code>myprefix_</code> the final container created from <code>renovate/node</code> image would be named <code>myprefix_node</code> instead of currently used <code>renovate_node</code> and be labeled <code>myprefix_child</code> instead of <code>renovate_child</code>.</p>
+<p>Note that dangling containers will not be removed until Renovate is run with the same prefix again.</p>
+<h2 id="dockerimageprefix">dockerImagePrefix</h2>
+<p>Change this value in order to override the default Renovate Docker sidecar image name prefix.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>"docker.io/renovate"</code></td>
+</tr>
+</tbody>
+</table>
+<p>By default Renovate pulls the sidecar Docker containers from <code>docker.io/renovate</code>.
+You can use the <code>dockerImagePrefix</code> option to override this default.</p>
+<p>Say you want to pull your images from <code>ghcr.io/renovatebot</code> instead of <code>docker.io/renovate</code>.
+You would use put this in your configuration file:</p>
+<pre><code class="json">{
+  &quot;dockerImagePrefix&quot;: &quot;ghcr.io/renovatebot&quot;
+}
+</code></pre>
+
+<p>If you pulled a new <code>node</code> image, the final image would be <code>ghcr.io/renovatebot/node</code> instead of <code>docker.io/renovate/node</code>.</p>
+<h2 id="dockeruser">dockerUser</h2>
+<p>Specify UID and GID for Docker-based binaries when binarySource=docker is used.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>Override default user and group used by Docker-based binaries.
+The user-id (UID) and group-id (GID) should match the user that executes Renovate.</p>
+<p>Read the <a href="https://docs.docker.com/engine/reference/run/#user">Docker run reference</a> for more information on user and group syntax.
+Set this to <code>1001:1002</code> to use UID 1001 and GID 1002.
+e.g.</p>
+<pre><code class="json">{
+  &quot;dockerUser&quot;: &quot;1001:1002&quot;
+}
+</code></pre>
+
+<h2 id="dryrun">dryRun</h2>
+<p>If enabled, perform a dry run by logging messages instead of creating/updating/deleting branches and PRs.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="endpoint">endpoint</h2>
+<p>Custom endpoint to use.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exposeallenv">exposeAllEnv</h2>
+<p>Configure this to true to allow passing of all env variables to package managers.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>By default, Renovate only passes a limited set of environment variables to package managers.
+Confidential data can be leaked if a malicious script enumerates all environment variables.
+Set <code>exposeAllEnv</code> to <code>true</code> only if you have reviewed (and trust) the repositories which Renovate bot runs against.</p>
+<p>Setting this to <code>true</code> will also allow for variable substitution in <code>.npmrc</code> files.</p>
+<h2 id="force">force</h2>
+<p>Any configuration defined within this object will force override existing settings.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>object</td>
+</tr>
+</tbody>
+</table>
+<p>This object is used as a "force override" when you need to make sure certain configuration overrides whatever is configured in the repository.
+For example, forcing a null (no) schedule to make sure Renovate raises PRs on a run even if the repository itself or its preset defines a schedule that's currently inactive.</p>
+<p>In practice, it is implemented by converting the <code>force</code> configuration into a <code>packageRule</code> that matches all packages.</p>
+<h2 id="forcecli">forceCli</h2>
+<p>Whether CLI configuration options should be moved to the <code>force</code> config section.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>This is set to true by default, meaning that any settings (such as <code>schedule</code>) take maximum priority even against custom settings existing inside individual repositories.
+It will also override any settings in <code>packageRules</code>.</p>
+<h2 id="forkmode">forkMode</h2>
+<p>Set to true to fork the source repository and create branches there instead.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>You probably have no need for this option - it is an experimental setting for the Renovate hosted GitHub App.
+If this is set to <code>true</code> then Renovate will fork the repository into the personal space of the person owning the Personal Access Token.</p>
+<h2 id="forktoken">forkToken</h2>
+<p>Will be used on GitHub when <code>forkMode</code> is set to <code>true</code> to clone the repositories.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>""</code></td>
+</tr>
+</tbody>
+</table>
+<p>You probably have no need for this option - it is an experimental setting for the Renovate hosted GitHub App.
+This should be set to a Personal Access Token (GitHub only) when <code>forkMode</code> is set to <code>true</code>.
+Renovate will use this token to fork the repository into the personal space of the person owning the Personal Access Token.
+Renovate will then create branches on the fork and opens Pull Requests on the parent repository.</p>
+<h2 id="gitauthor">gitAuthor</h2>
+<p>Author to use for Git commits. Must conform to RFC5322.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>You can customize the Git author that's used whenever Renovate creates a commit.
+The <code>gitAuthor</code> option accepts a RFC5322-compliant string.</p>
+<p><strong>Note</strong> We strongly recommend that the Git author email you use is unique to Renovate.
+Otherwise, if another bot or human shares the same email and pushes to one of Renovate's branches then Renovate will mistake the branch as unmodified and potentially force push over the changes.</p>
+<h2 id="gitnoverify">gitNoVerify</h2>
+<p>Which git commands will be run with the <code>--no-verify</code> option.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>array</td>
+</tr>
+<tr>
+<td>subType</td>
+<td>string</td>
+</tr>
+<tr>
+<td>allowedValues</td>
+<td>commit,push</td>
+</tr>
+</tbody>
+</table>
+<p>Controls when Renovate passes the <code>--no-verify</code> flag to <code>git</code>.
+The flag can be passed to <code>git commit</code> and/or <code>git push</code>.
+Read the documentation for <a href="https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---no-verify">git commit --no-verify</a> and <a href="https://git-scm.com/docs/git-push#Documentation/git-push.txt---no-verify">git push --no-verify</a> to learn exactly what each flag does.
+To learn more about Git hooks, read the <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">Pro Git 2 book, section on Git Hooks</a>.</p>
+<h2 id="gitprivatekey">gitPrivateKey</h2>
+<p>PGP key to use for signing Git commits.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>This should be an armored private key, e.g. the type you get from running <code>gpg --export-secret-keys --armor 92066A17F0D1707B4E96863955FEF5171C45FAE5 &gt; private.key</code>.
+Replace the newlines with <code>\n</code> before adding the resulting single-line value to your bot's config.</p>
+<p>It will be loaded <em>lazily</em>.
+Before the first commit in a repository, Renovate will:</p>
+<ol>
+<li>Run <code>gpg import</code> (if it hasn't been run before)</li>
+<li>Run <code>git config user.signingkey</code> and <code>git config commit.gpgsign true</code></li>
+</ol>
+<p>The <code>git</code> commands are run locally in the cloned repo instead of globally.
+This reduces the chance of unintended consequences with global Git configs on shared systems.</p>
+<h2 id="logcontext">logContext</h2>
+<p>Add a global or per-repo log context to each log entry.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><code>logContext</code> is included with each log entry only if <code>logFormat="json"</code> - it is not included in the pretty log output.
+If left as default (null), a random short ID will be selected.</p>
+<h2 id="logfile">logFile</h2>
+<p>Log file path.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="logfilelevel">logFileLevel</h2>
+<p>Log file log level.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>"debug"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="migratepresets">migratePresets</h2>
+<p>Define presets here which have been removed or renamed and should be migrated automatically.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>additionalProperties</td>
+<td>[object Object]</td>
+</tr>
+</tbody>
+</table>
+<p>Use this if you have repositories that extend from a particular preset, which has now been renamed or removed.
+This is handy if you have a large number of repositories that all extend from a particular preset which you want to rename, without the hassle of manually updating every repository individually.
+Use an empty string to indicate that the preset should be ignored rather than replaced.</p>
+<p>Example:</p>
+<pre><code class="js">modules.exports = {
+  migratePresets: {
+    '@company': 'local&gt;org/renovate-config',
+  },
+};
+</code></pre>
+
+<p>In the above example any reference to the <code>@company</code> preset will be replaced with <code>local&gt;org/renovate-config</code>.</p>
+<h2 id="onboarding">onboarding</h2>
+<p>Require a Configuration PR first.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>Set this to <code>false</code> only if all three statements are true:</p>
+<ul>
+<li>You've configured Renovate entirely on the bot side (e.g. empty <code>renovate.json</code> in repositories)</li>
+<li>You want to run Renovate on every repository the bot has access to</li>
+<li>You want to skip all onboarding PRs</li>
+</ul>
+<h2 id="onboardingbranch">onboardingBranch</h2>
+<p>Change this value in order to override the default onboarding branch name.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>"renovate/configure"</code></td>
+</tr>
+</tbody>
+</table>
+<p>Note that this setting is independent of <code>branchPrefix</code>.
+For example, if you configure <code>branchPrefix</code> to be <code>renovate-</code> then you'd still have the onboarding PR created with branch <code>renovate/configure</code> until you configure <code>onboardingBranch=renovate-configure</code> or similar.
+If you have an existing Renovate installation and you change <code>onboardingBranch</code> then it's possible that you'll get onboarding PRs for repositories that had previously closed the onboarding PR unmerged.</p>
+<h2 id="onboardingcommitmessage">onboardingCommitMessage</h2>
+<p>Change this value in order to override the default onboarding commit message.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p>Note that if <code>commitMessagePrefix</code> or <code>semanticCommits</code> values are defined then they will be prepended to the commit message using the same logic that is used for adding them to non-onboarding commit messages.</p>
+<h2 id="onboardingconfig">onboardingConfig</h2>
+<p>Configuration to use in onboarding PRs.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>mergeable</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h2 id="onboardingconfigfilename">onboardingConfigFileName</h2>
+<p>Change this value in order to override the default onboarding config file name.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>"renovate.json"</code></td>
+</tr>
+</tbody>
+</table>
+<p>If set to one of the valid <a href="https://docs.renovatebot.com/configuration-options/">config file names</a>, the onboarding PR will create a configuration file with the provided name instead of <code>renovate.json</code>.
+Falls back to <code>renovate.json</code> if the name provided is not valid.</p>
+<h2 id="onboardingprtitle">onboardingPrTitle</h2>
+<p>Change this value in order to override the default onboarding PR title.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>"Configure Renovate"</code></td>
+</tr>
+</tbody>
+</table>
+<p>Similarly to <code>onboardingBranch</code>, if you have an existing Renovate installation and you change <code>onboardingPrTitle</code> then it's possible that you'll get onboarding PRs for repositories that had previously closed the onboarding PR unmerged.</p>
+<h2 id="optimizefordisabled">optimizeForDisabled</h2>
+<p>Set to true to first check for disabling in config before cloning.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="password">password</h2>
+<p>Password for authentication. Currently Bitbucket only (AppPassword).</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="persistrepodata">persistRepoData</h2>
+<p>If set to true, repository data will preserved between runs instead of deleted.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>Set this to true if you want Renovate to persist repo data between runs.
+The intention is that this allows Renovate to do a faster <code>git fetch</code> between runs rather than <code>git clone</code>.
+It also may mean that ignored directories like <code>node_modules</code> can be preserved and save time on operations like <code>npm install</code>.</p>
+<h2 id="platform">platform</h2>
+<p>Platform type of repository.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>allowedValues</td>
+<td>azure,bitbucket,bitbucket-server,gitea,github,gitlab</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>"github"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="prcommitsperrunlimit">prCommitsPerRunLimit</h2>
+<p>Set a maximum number of commits per Renovate run. Default is no limit.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>default</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Parameter to reduce CI load.
+CI jobs are usually triggered by these events: pull-request creation, pull-request update, automerge events.
+Set as an integer.
+Default is no limit.</p>
+<h2 id="printconfig">printConfig</h2>
+<p>If enabled, log the full resolved config for each repo, including resolved presets.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>This option is useful for troubleshooting, particularly if using presets.
+e.g. run <code>renovate foo/bar --print-config &gt; config.log</code> and the fully-resolved config will be included in the log file.</p>
+<h2 id="privatekey">privateKey</h2>
+<p>Server-side private key.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>replaceLineReturns</td>
+<td>true</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>This private key is used to decrypt config files.</p>
+<p>The corresponding public key can be used to create encrypted values for config files.
+If you want a simple UI to encrypt values you can put the public key in a HTML page similar to <a href="https://renovatebot.com/encrypt">https://renovatebot.com/encrypt</a>.</p>
+<p>To create the key pair with OpenSSL use the following commands:</p>
+<ul>
+<li><code>openssl genrsa -out rsa_priv.pem 4096</code> for generating the private key</li>
+<li><code>openssl rsa -pubout -in rsa_priv.pem -out rsa_pub.pem</code> for extracting the public key</li>
+</ul>
+<p>To encrypt a secret with OpenSSL use the following command:</p>
+<pre><code class="bash">echo 'actual-secret' | openssl rsautl -encrypt -pubin -inkey rsa_pub.pem | base64
+</code></pre>
+
+<p>Replace <code>actual-secret</code> with the secret to encrypt.</p>
+<h2 id="privatekeypath">privateKeyPath</h2>
+<p>Path to the Server-side private key.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>Used as an alternative to <code>privateKey</code>, if you wish for the key to be read from disk instead.</p>
+<h2 id="productlinks">productLinks</h2>
+<p>Links which are embedded within PRs, issues, etc.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>mergeable</td>
+<td>true</td>
+</tr>
+<tr>
+<td>additionalProperties</td>
+<td>[object Object]</td>
+</tr>
+</tbody>
+</table>
+<p>Override this object if you wish to change the URLs that Renovate links to, e.g. if you have an internal forum for asking for help.</p>
+<h2 id="redisurl">redisUrl</h2>
+<p>If defined, this Redis URL will be used for caching instead of the file system.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>If this value is set then Renovate will use Redis for its global cache instead of the local file system.
+The global cache is used to store lookup results (e.g. dependency versions and release notes) between repositories and runs.
+Example url: <code>redis://localhost</code>.</p>
+<h2 id="repositories">repositories</h2>
+<p>List of Repositories.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>array</td>
+</tr>
+</tbody>
+</table>
+<h2 id="repositorycache">repositoryCache</h2>
+<p>Option to do repository extract caching.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>allowedValues</td>
+<td>disabled,enabled,reset</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>"disabled"</code></td>
+</tr>
+</tbody>
+</table>
+<p>Set this to <code>"enabled"</code> to have Renovate maintain a JSON file cache per-repository to speed up extractions.
+Set to <code>"reset"</code> if you ever need to bypass the cache and have it overwritten.
+JSON files will be stored inside the <code>cacheDir</code> beside the existing file-based package cache.</p>
+<p>Warning: this is an experimental feature and may be modified or removed in a future non-major release.</p>
+<h2 id="requireconfig">requireConfig</h2>
+<p>Set to false if it is optional for repositories to contain a config.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>If this is set to <code>false</code>, it means that Renovate won't require a config file such as <code>renovate.json</code> to be present in each repository and will run even if one is missing.</p>
+<h2 id="secrets">secrets</h2>
+<p>Object containing secret name/value pairs</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>mergeable</td>
+<td>true</td>
+</tr>
+<tr>
+<td>additionalProperties</td>
+<td>[object Object]</td>
+</tr>
+</tbody>
+</table>
+<p>Secrets may be configured by a bot admin in <code>config.js</code>, which will then make them available for templating within repository configs.
+For example, to configure a <code>GOOGLE_TOKEN</code> to be accessible by all repositories:</p>
+<pre><code class="js">module.exports = {
+  secrets: {
+    GOOGLE_TOKEN: 'abc123',
+  },
+};
+</code></pre>
+
+<p>They can also be configured per repository, e.g.</p>
+<pre><code class="js">module.exports = {
+  repositories: [
+    {
+      repository: 'abc/def',
+      secrets: {
+        GOOGLE_TOKEN: 'abc123',
+      },
+    },
+  ],
+};
+</code></pre>
+
+<p>It could then be used in a repository config or preset like so:</p>
+<pre><code class="json">{
+  &quot;hostRules&quot;: [
+    {
+      &quot;matchHost&quot;: &quot;google.com&quot;,
+      &quot;token&quot;: &quot;{{ secrets.GOOGLE_TOKEN }}&quot;
+    }
+  ]
+}
+</code></pre>
+
+<p>Secret names must start with a upper or lower case character and can contain only characters, digits, or underscores.</p>
+<h2 id="skipinstalls">skipInstalls</h2>
+<p>Skip installing modules/dependencies if lock file updating is possible alone.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>By default, Renovate will use the most efficient approach to updating package files and lock files, which in most cases skips the need to perform a full module install by the bot.
+If this is set to false, then a full install of modules will be done.
+This is currently applicable to <code>npm</code> and <code>lerna</code>/<code>npm</code> only, and only used in cases where bugs in <code>npm</code> result in incorrect lock files being updated.</p>
+<h2 id="token">token</h2>
+<p>Repository Auth Token.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="username">username</h2>
+<p>Username for authentication. Currently Bitbucket only.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>Mandatory if a GitHub app token is in use using the CLI.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../configuration-options/" title="Configuration Options" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Configuration Options
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../modules/platform/" title="Platforms" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Platforms
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../assets/js/fx.js"></script>
+      
+    
+  </body>
+</html>

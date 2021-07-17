@@ -1,0 +1,1743 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/self-hosting/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Self-hosting - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#self-hosting-renovate" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.renovatebot.com" title="Renovate Docs" aria-label="Renovate Docs" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../assets/images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Renovate Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Self-hosting
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.renovatebot.com" title="Renovate Docs" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../assets/images/logo.png" width="48" height="48">
+      
+    </a>
+    Renovate Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-github-app/" title="GitHub App Installation" class="md-nav__link">
+      GitHub App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-gitlab-app/" title="GitLab App Installation" class="md-nav__link">
+      GitLab App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Self-hosting
+      </label>
+    
+    <a href="./" title="Self-hosting" class="md-nav__link md-nav__link--active">
+      Self-hosting
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-renovate-oss-cli" class="md-nav__link">
+    Installing Renovate OSS CLI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#npmjs" class="md-nav__link">
+    npmjs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    Kubernetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circleci" class="md-nav__link">
+    CircleCI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab-cicd-pipeline" class="md-nav__link">
+    GitLab CI/CD pipeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-enterprise-server" class="md-nav__link">
+    GitHub (Enterprise Server)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-as-a-github-app" class="md-nav__link">
+    Running as a GitHub App
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab-ceee" class="md-nav__link">
+    GitLab CE/EE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitbucket-cloud" class="md-nav__link">
+    Bitbucket Cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitbucket-server" class="md-nav__link">
+    Bitbucket Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-devops" class="md-nav__link">
+    Azure DevOps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitea" class="md-nav__link">
+    Gitea
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubcom-token-for-release-notes" class="md-nav__link">
+    GitHub.com token for release notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filedirectory-usage" class="md-nav__link">
+    File/directory usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-for-gitlab-using-git-over-ssh" class="md-nav__link">
+    Kubernetes for GitLab, using Git over SSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    Logging
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-the-log-level-numbers" class="md-nav__link">
+    About the log level numbers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configure-renovate/" title="Configure Renovate (Onboarding PR)" class="md-nav__link">
+      Configure Renovate (Onboarding PR)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../private-modules/" title="Private module support" class="md-nav__link">
+      Private module support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reconfigure-renovate/" title="Reconfiguring Renovate" class="md-nav__link">
+      Reconfiguring Renovate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="Frequently Asked Questions" class="md-nav__link">
+      Frequently Asked Questions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../configuration-options/" title="Configuration Options" class="md-nav__link">
+      Configuration Options
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../self-hosted-configuration/" title="Self Hosted Configuration" class="md-nav__link">
+      Self Hosted Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Renovate Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Renovate Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/platform/" title="Platforms" class="md-nav__link">
+      Platforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/manager/" title="Managers" class="md-nav__link">
+      Managers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/datasource/" title="Datasources" class="md-nav__link">
+      Datasources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/versioning/" title="Versioning" class="md-nav__link">
+      Versioning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../config-presets/" title="Shareable Config Presets" class="md-nav__link">
+      Shareable Config Presets
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Language Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Language Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bazel/" title="Bazel" class="md-nav__link">
+      Bazel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../golang/" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node/" title="Node.js Versions" class="md-nav__link">
+      Node.js Versions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nuget/" title="Nuget" class="md-nav__link">
+      Nuget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../php/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ruby/" title="Ruby" class="md-nav__link">
+      Ruby
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Deep Dives
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Deep Dives
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dependency-pinning/" title="Should you Pin your Javascript Dependencies?" class="md-nav__link">
+      Should you Pin your Javascript Dependencies?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration-templates/" title="Config Template Editing" class="md-nav__link">
+      Config Template Editing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updating-rebasing/" title="Updating and Rebasing Branches" class="md-nav__link">
+      Updating and Rebasing Branches
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../semantic-commits/" title="Semantic Commit Messages" class="md-nav__link">
+      Semantic Commit Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../noise-reduction/" title="Noise Reduction" class="md-nav__link">
+      Noise Reduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../automerge-configuration/" title="Automerging Updates" class="md-nav__link">
+      Automerging Updates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Included Presets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Included Presets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-config/" title="Full Config Presets" class="md-nav__link">
+      Full Config Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-default/" title="Default Presets" class="md-nav__link">
+      Default Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-docker/" title="Docker Presets" class="md-nav__link">
+      Docker Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-group/" title="Group Presets" class="md-nav__link">
+      Group Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-helpers/" title="Helper Presets" class="md-nav__link">
+      Helper Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-monorepo/" title="Monorepo Presets" class="md-nav__link">
+      Monorepo Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-packages/" title="Package Presets" class="md-nav__link">
+      Package Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-preview/" title="Preview Presets" class="md-nav__link">
+      Preview Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-schedule/" title="Schedule Presets" class="md-nav__link">
+      Schedule Presets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      All Other
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        All Other
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../merge-confidence/" title="Merge Confidence" class="md-nav__link">
+      Merge Confidence
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-renovate-oss-cli" class="md-nav__link">
+    Installing Renovate OSS CLI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#npmjs" class="md-nav__link">
+    npmjs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    Kubernetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circleci" class="md-nav__link">
+    CircleCI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab-cicd-pipeline" class="md-nav__link">
+    GitLab CI/CD pipeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-enterprise-server" class="md-nav__link">
+    GitHub (Enterprise Server)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-as-a-github-app" class="md-nav__link">
+    Running as a GitHub App
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab-ceee" class="md-nav__link">
+    GitLab CE/EE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitbucket-cloud" class="md-nav__link">
+    Bitbucket Cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitbucket-server" class="md-nav__link">
+    Bitbucket Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-devops" class="md-nav__link">
+    Azure DevOps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitea" class="md-nav__link">
+    Gitea
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubcom-token-for-release-notes" class="md-nav__link">
+    GitHub.com token for release notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filedirectory-usage" class="md-nav__link">
+    File/directory usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-for-gitlab-using-git-over-ssh" class="md-nav__link">
+    Kubernetes for GitLab, using Git over SSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    Logging
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-the-log-level-numbers" class="md-nav__link">
+    About the log level numbers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="self-hosting-renovate">Self-Hosting Renovate</h1>
+<h2 id="installing-renovate-oss-cli">Installing Renovate OSS CLI</h2>
+<h3 id="npmjs">npmjs</h3>
+<pre><code class="sh">npm install -g renovate
+</code></pre>
+
+<p>Renovate does not embed <code>npm</code>, <code>pnpm</code> and <code>yarn</code> as its own dependencies.
+If you want to use these package managers to update your lockfiles, you must ensure that the correct versions are already installed globally.</p>
+<pre><code class="sh">npm install -g yarn pnpm
+</code></pre>
+
+<p>The same goes for any other third party binary tool like <code>gradle</code> or <code>poetry</code> - you need to make sure they are installed and the appropriate version before running Renovate.</p>
+<h3 id="docker">Docker</h3>
+<p>Renovate is available for Docker via an automated build <a href="https://hub.docker.com/r/renovate/renovate/">renovate/renovate</a>.
+It builds <code>latest</code> based on the <code>main</code> branch and all semver tags are published too.
+For example, all the following are valid tags:</p>
+<pre><code class="sh">docker run --rm renovate/renovate
+docker run --rm renovate/renovate:25.53.3
+docker run --rm renovate/renovate:25.53
+docker run --rm renovate/renovate:25
+</code></pre>
+
+<p>Do not use the example tags listed above, as they will be out-of-date.
+Go to <a href="https://hub.docker.com/r/renovate/renovate/tags">renovate/renovate tags</a> to grab the latest tagged release from Renovate.</p>
+<p>If you want to configure Renovate using a <code>config.js</code> file then map it to <code>/usr/src/app/config.js</code> using Docker volumes.
+For example:</p>
+<pre><code class="sh">docker run --rm -v &quot;/path/to/your/config.js:/usr/src/app/config.js&quot; renovate/renovate
+</code></pre>
+
+<h3 id="kubernetes">Kubernetes</h3>
+<p>Renovate's official Docker image is compatible with Kubernetes.
+The following is an example manifest of running Renovate against a GitHub Enterprise server.
+First the Kubernetes manifest:</p>
+<pre><code class="yaml">apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: renovate
+spec:
+  schedule: '@hourly'
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: renovate
+              # Update this to the latest available and then enable Renovate on
+              # the manifest
+              image: renovate/renovate:25.53.3
+              args:
+                - user/repo
+              # Environment Variables
+              env:
+                - name: LOG_LEVEL
+                  value: debug
+              envFrom:
+                - secretRef:
+                    name: renovate-env
+          restartPolicy: Never
+</code></pre>
+
+<p>And also this accompanying <code>secret.yaml</code>:</p>
+<pre><code class="yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: renovate-env
+type: Opaque
+stringData:
+  GITHUB_COM_TOKEN: 'any-personal-user-token-for-github-com-for-fetching-changelogs'
+  # You can set RENOVATE_AUTODISCOVER to true to run Renovate on all repos you have push access to
+  RENOVATE_AUTODISCOVER: 'false'
+  RENOVATE_ENDPOINT: 'https://github.company.com/api/v3'
+  RENOVATE_GIT_AUTHOR: 'Renovate Bot &lt;bot@renovateapp.com&gt;'
+  RENOVATE_PLATFORM: 'github'
+  RENOVATE_TOKEN: 'your-github-enterprise-renovate-user-token'
+</code></pre>
+
+<p>A <code>config.js</code> file can be added to the manifest using a <code>ConfigMap</code> as shown in the following example (using a "dry run" in github.com):</p>
+<pre><code class="yaml">---
+ apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: renovate-config
+data:
+  config.json: |-
+    {
+      &quot;repositories&quot;: [&quot;orgname/repo&quot;,&quot;username/repo&quot;],
+      &quot;dryRun&quot; : &quot;true&quot;
+    }
+
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: renovate-bot
+spec:
+  schedule: '@hourly'
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - image: renovate/renovate:25.53.3
+              name: renovate-bot
+              env: # For illustration purposes, please use secrets.
+                - name: RENOVATE_PLATFORM
+                  value: 'github'
+                - name: RENOVATE_TOKEN
+                  value: 'some-token'
+                - name: RENOVATE_AUTODISCOVER
+                  value: 'false'
+                - name: RENOVATE_BASE_DIR
+                  value: '/tmp/renovate/'
+                - name: RENOVATE_CONFIG_FILE
+                  value: '/opt/renovate/config.json'
+                - name: LOG_LEVEL
+                  value: debug
+              volumeMounts:
+                - name: config-volume
+                  mountPath: /opt/renovate/
+                - name: work-volume
+                  mountPath: /tmp/renovate/
+          restartPolicy: Never
+          volumes:
+            - name: config-volume
+              configMap:
+                name: renovate-config
+            - name: work-volume
+              emptyDir: {}
+</code></pre>
+
+<h3 id="circleci">CircleCI</h3>
+<p>If you are using CircleCI, you can use the third-party <a href="https://circleci.com/developer/orbs/orb/daniel-shuy/renovate">daniel-shuy/renovate</a> orb to run a self-hosted instance of Renovate on CircleCI.</p>
+<p>By default, the orb looks for the self-hosted configuration file in the project root, but you can specify another path to the configuration file with the <code>config_file_path</code> parameter.</p>
+<p>Secrets should be configured using environment variables (eg. <code>RENOVATE_TOKEN</code>, <code>GITHUB_COM_TOKEN</code>).</p>
+<p><a href="https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project">Configure environment variables in CircleCI Project Settings</a>.
+To share environment variables across projects, use CircleCI <a href="https://circleci.com/docs/2.0/contexts/">Contexts</a>.</p>
+<p>The following example runs Renovate hourly, and looks for the self-hosted configuration file at <code>renovate-config.js</code>:</p>
+<pre><code class="yml">version: '2.1'
+orbs:
+  renovate: daniel-shuy/renovate@2.1.1
+workflows:
+  renovate:
+    jobs:
+      - renovate/self-hosted:
+          config_file_path: renovate-config.js
+    nightly:
+      triggers:
+        - schedule:
+            cron: 0 * * * *
+            filters:
+              branches:
+                only:
+                  - main
+</code></pre>
+
+<h3 id="gitlab-cicd-pipeline">GitLab CI/CD pipeline</h3>
+<p>For GitLab pipelines we recommend you use the <a href="https://gitlab.com/renovate-bot/renovate-runner">renovate-runner project on GitLab</a>.
+We've prepared some pipeline templates to run Renovate on pipeline schedules in an easy way.
+You can also find the configuration steps there.</p>
+<p>For self-hosted GitLab clone/import the <a href="https://gitlab.com/renovate-bot/renovate-runner">renovate-runner</a> project to your instance.</p>
+<h2 id="configuration">Configuration</h2>
+<p>Self-hosted Renovate can be configured using any of the following (or a combination):</p>
+<ul>
+<li>A <code>config.js</code> file (can also be named <code>config.json</code>, but you can't have both at the same time)</li>
+<li>CLI parameters</li>
+<li>Environment variables</li>
+</ul>
+<p>Note that some Renovate configuration options are <em>only</em> available for self-hosting, and so can only be configured using one of the above methods.
+These are described in the <a href="../self-hosted-configuration/">Self-hosted Configuration</a> doc.</p>
+<p>If you are configuring using environment variables, there are two possibilities:</p>
+<ul>
+<li>Upper-cased, camel-cased, <code>RENOVATE_</code>-prefixed single config options like <code>RENOVATE_TOKEN=abc123</code> or <code>RENOVATE_GIT_AUTHOR=a@b.com</code></li>
+<li>Set <code>RENOVATE_CONFIG</code> to a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">stringified</a> version of the full JSON config, e.g. <code>RENOVATE_CONFIG='{"token":"abc123","gitAuthor":"a@b.com"}'</code></li>
+</ul>
+<p>If you combine both of the above then any single config option in the environment variable will override what's in <code>RENOVATE_CONFIG</code>.</p>
+<p>Note: it's also possible to change the default prefix from <code>RENOVATE_</code> using <code>ENV_PREFIX</code>. e.g. <code>ENV_PREFIX=RNV_ RNV_TOKEN=abc123 renovate</code>.</p>
+<h2 id="authentication">Authentication</h2>
+<p>Regardless of platform, you need to select a user account for <code>renovate</code> to assume the identity of, and generate a Personal Access Token.
+It is recommended to be <code>@renovate-bot</code> if you are using a self-hosted server with free choice of usernames.
+It is also recommended that you configure <code>config.gitAuthor</code> with the same identity as your Renovate user, e.g. like <code>"gitAuthor": "Renovate Bot &lt;renovate@whitesourcesoftware.com&gt;"</code>.</p>
+<h3 id="github-enterprise-server">GitHub (Enterprise Server)</h3>
+<p>First, <a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">create a personal access token</a> for the bot account (select "repo" permissions).
+Configure it either as <code>token</code> in your <code>config.js</code> file, or in environment variable <code>RENOVATE_TOKEN</code>, or via CLI <code>--token=</code>.</p>
+<p>For GitHub Enterprise Server set the <code>endpoint</code> in your <code>config.js</code> to <code>https://github.enterprise.com/api/v3/</code>.</p>
+<h4 id="running-as-a-github-app">Running as a GitHub App</h4>
+<p>Instead of a bot account and a personal access token you can run <code>renovate</code> as a self-hosted <a href="https://docs.github.com/en/developers/apps/getting-started-with-apps">GitHub App</a>.</p>
+<p>When creating the GitHub App give it the following permissions:</p>
+<ul>
+<li>Checks: Read &amp; write</li>
+<li>Contents: Read &amp; write</li>
+<li>Issues: Read &amp; write</li>
+<li>Metadata: Read-only</li>
+<li>Pull requests: Read &amp; write</li>
+<li>Commit statuses: Read &amp; write</li>
+<li>Dependabot alerts: Read-only</li>
+<li>Workflows: Read &amp; write</li>
+</ul>
+<p>Other values like Homepage URL, User authorization callback URL and webhooks can be disabled or filled with dummy values.</p>
+<p>Inside your <code>config.js</code> you need to set the following values, assuming the name of your app is <code>self-hosted-renovate</code>:</p>
+<p><strong><code>username:"self-hosted-renovate[bot]"</code></strong></p>
+<p>The slug name of your app with <code>[bot]</code> appended</p>
+<p><strong><code>gitAuthor:"Self-hosted Renovate Bot &lt;123456+self-hosted-renovate[bot]@users.noreply.github.enterprise.com&gt;"</code></strong></p>
+<p>The <a href="https://github.community/t/logging-into-git-as-a-github-app/115916/2">GitHub App associated email</a> to match commits to the bot.
+It needs to contain the user id <em>and</em> the username followed by the <code>users.noreply.</code>-domain of either github.com or the GitHub Enterprise Server.
+A way to get the user id of a GitHub app is to <a href="https://docs.github.com/en/rest/reference/users#get-a-user">query the user API</a> at <code>api.github.com/user/self-hosted-renovate[bot]</code> (github.com) or <code>github.enterprise.com/api/v3/uer/self-hosted-renovate[bot]</code> (GitHub Enterprise Server).</p>
+<p><strong><code>token:"x-access-token:${github-app-installation}"</code></strong></p>
+<p>The token needs to be prefixed with <code>x-access-token</code> and be a <a href="https://docs.github.com/en/developers/apps/building-github-apps/authenticating-with-github-apps#authenticating-as-an-installation">GitHub App Installation token</a>.
+<strong>Note</strong> The installation tokens expire after 1 hour and need to be regenerated regularly.
+Alternatively as environment variable <code>RENOVATE_TOKEN</code>, or via CLI <code>--token=</code>.</p>
+<p><strong><code>repositories: ["orgname/repo-1","orgname/repo-2"]</code></strong></p>
+<p>List of repositories to run on.
+Auto discovery does not work with a GitHub App.
+Alternatively as comma-seperated environment variable <code>RENOVATE_REPOSITORIES</code>.
+The GitHub App installation token is scoped at most to a single organization and running on multiple organizations requires multiple invocations of <code>renovate</code> with different <code>token</code> and <code>repositories</code> parameters.</p>
+<h3 id="gitlab-ceee">GitLab CE/EE</h3>
+<p>First, <a href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html">create a personal access token</a> for the bot account (select <code>read_user</code>, <code>api</code> and <code>write_repository</code> scopes).
+Configure it either as <code>token</code> in your <code>config.js</code> file, or in environment variable <code>RENOVATE_TOKEN</code>, or via CLI <code>--token=</code>.
+Don't forget to configure <code>platform=gitlab</code> somewhere in config.</p>
+<h3 id="bitbucket-cloud">Bitbucket Cloud</h3>
+<p>First, <a href="https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html">create an AppPassword</a> for the bot account.
+Configure it as <code>password</code> in your <code>config.js</code> file, or in environment variable <code>RENOVATE_PASSWORD</code>, or via CLI <code>--password=</code>.
+Also be sure to configure the <code>username</code> for your bot account too.
+Don't forget to configure <code>platform=bitbucket</code> somewhere in config.</p>
+<h3 id="bitbucket-server">Bitbucket Server</h3>
+<p>Create a <a href="https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html">Personal Access Token</a> for your bot account.
+Configure it as <code>password</code> in your <code>config.js</code> file, or in environment variable <code>RENOVATE_PASSWORD</code>, or via CLI <code>--password=</code>.
+Also configure the <code>username</code> for your bot account too, if you decided not to name it <code>@renovate-bot</code>.
+Don't forget to configure <code>platform=bitbucket-server</code> somewhere in config.</p>
+<p>If you use MySQL or MariaDB you must set <code>unicodeEmoji</code> to <code>false</code> in the bot config (<code>RENOVATE_CONFIG_FILE</code>) to prevent issues with emojis.</p>
+<h3 id="azure-devops">Azure DevOps</h3>
+<p>First, <a href="https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/pats">create a personal access token</a> for the bot account.
+Configure it either as <code>token</code> in your <code>config.js</code> file, or in environment variable <code>RENOVATE_TOKEN</code>, or via CLI <code>--token=</code>.
+Don't forget to configure <code>platform=azure</code> somewhere in config.</p>
+<h3 id="gitea">Gitea</h3>
+<p>First, <a href="https://docs.gitea.io/en-us/api-usage/#authentication-via-the-api">create a access token</a> for your bot account.
+Configure it as <code>token</code> in your <code>config.js</code> file, or in environment variable <code>RENOVATE_TOKEN</code>, or via CLI <code>--token=</code>.
+Don't forget to configure <code>platform=gitea</code> somewhere in config.</p>
+<h2 id="githubcom-token-for-release-notes">GitHub.com token for release notes</h2>
+<p>If you are running on any platform except github.com, it's important to also configure the environment variable <code>GITHUB_COM_TOKEN</code> containing a personal access token for github.com.
+This account can actually be <em>any</em> account on GitHub, and needs only read-only access.
+It's used when fetching release notes for repositories in order to increase the hourly API limit.
+It's also OK to configure the same as a host rule instead, if you prefer that.</p>
+<p><strong>Note:</strong> If you're using Renovate in a project where dependencies are loaded from github.com (such as Go modules hosted on GitHub) it is highly recommended to add a token as you will run in the rate limit from the github.com API, which will lead to Renovate closing and reopening PRs because it could not get reliable info on updated dependencies.</p>
+<h2 id="filedirectory-usage">File/directory usage</h2>
+<p>By default, Renovate stores all files in the <code>renovate/</code> subdirectory of the operating system's temporary directory, e.g. <code>/tmp/renovate/</code>.</p>
+<p>Repository data is copied or cloned into unique subdirectories under <code>repos/</code>, e.g. <code>/tmp/renovate/repos/github/owner1/repo-a/</code>.</p>
+<p>Renovate's own cache, as well as the caches(s) for npm, Yarn, Composer etc, is stored in <code>/tmp/renovate/cache</code>.</p>
+<p>To use another directory as the base directory, instead of <code>tmp/renovate</code>:</p>
+<ul>
+<li>Configure a value for <code>baseDir</code> in <code>config.js</code></li>
+<li>Use an environment variable <code>RENOVATE_BASE_DIR</code></li>
+<li>Use the CLI to pass a base directory: <code>--base-dir=</code></li>
+</ul>
+<p>If you want to override the cache location then configure a value for <code>cacheDir</code> instead.</p>
+<h2 id="usage">Usage</h2>
+<p>The following example uses the Renovate CLI tool, which can be installed by running <code>npm i -g renovate</code>.</p>
+<p>If running your own Renovate bot then you will need a user account that Renovate will run as.
+It's recommended to use a dedicated account for the bot, e.g. name it <code>renovate-bot</code> if on your own instance.
+Create and save a Personal Access Token for this account.</p>
+<p>Create a Renovate config file, e.g. here is an example:</p>
+<pre><code class="js">module.exports = {
+  endpoint: 'https://self-hosted.gitlab/api/v4/',
+  token: '**gitlab_token**',
+  platform: 'gitlab',
+  onboardingConfig: {
+    extends: ['config:base'],
+  },
+  repositories: ['username/repo', 'orgname/repo'],
+};
+</code></pre>
+
+<p>Here change the <code>logFile</code> and <code>repositories</code> to something appropriate.
+Also replace <code>gitlab-token</code> value with the one created during the previous step.</p>
+<p>If running against GitHub Enterprise, change the above <code>gitlab</code> values to the equivalent GitHub ones.</p>
+<p>You can save this file as anything you want and then use <code>RENOVATE_CONFIG_FILE</code> env variable to tell Renovate where to find it.</p>
+<p>Most people will run Renovate via cron, e.g. once per hour.
+Here is an example bash script that you can point <code>cron</code> to:</p>
+<pre><code class="sh">#!/bin/bash
+
+export PATH=&quot;/home/user/.yarn/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH&quot;
+export RENOVATE_CONFIG_FILE=&quot;/home/user/renovate-config.js&quot;
+export RENOVATE_TOKEN=&quot;**some-token**&quot; # GitHub, GitLab, Azure DevOps
+export GITHUB_COM_TOKEN=&quot;**github-token**&quot; # Delete this if using github.com
+
+# Renovate
+renovate
+</code></pre>
+
+<p>Note: the GitHub.com token in env is necessary in order to retrieve Release Notes that are usually hosted on github.com.
+You don't need to add it if you are already running the bot against github.com, but you do need to add it if you're using GitHub Enterprise, GitLab, Azure DevOps, or Bitbucket.</p>
+<p>You should save and test out this script manually first, and add it to cron once you've verified it.</p>
+<h2 id="kubernetes-for-gitlab-using-git-over-ssh">Kubernetes for GitLab, using Git over SSH</h2>
+<p>This section describes how to use Git binary with SSH for Gitlab, to avoid API shortcomings.</p>
+<p>You need to first create a SSH key, then add the public part to Gitlab (see this <a href="https://docs.gitlab.com/ee/ssh/">guide</a>)</p>
+<p>Then, you need to create the secret to add the SSH key, and the following config to your container</p>
+<pre><code>host gitlab.com
+  HostName gitlab.com
+  StrictHostKeyChecking no
+  IdentityFile ~/.ssh/id_rsa
+  User git
+</code></pre>
+
+<p>To easily create the secret, you can do the following (see <a href="https://kubernetes.io/docs/concepts/configuration/secret/#use-case-pod-with-ssh-keys">docs</a>)</p>
+<pre><code class="sh">kubectl create secret generic ssh-key-secret --from-file=config=/path/to/config --from-file=id_rsa=/path/to/.ssh/id_rsa --from-file=id_rsa.pub=/path/to/.ssh/id_rsa.pub
+</code></pre>
+
+<p>It creates something like this</p>
+<pre><code class="yml">apiVersion: v1
+data:
+  config: aG9zdCBnaXRsYWIuY29tCiAgSG9zdE5hbWUgZ2l0bGFiLmNvbQogIFN0cmljdEhvc3RLZXlDaGVja2luZyBubwogIElkZW50aXR5RmlsZSB+Ly5zc2gvaWRfcnNhCiAgVXNlciBnaXQ=
+  id_rsa: &lt;base64String&gt;
+  id_rsa.pub: &lt;base64String&gt;
+kind: Secret
+metadata:
+  name: ssh-key-secret
+  namespace: &lt;namespace&gt;
+</code></pre>
+
+<p>Then you just need to add Git author, and mount volumes.
+The final configuration should look something like this:</p>
+<pre><code class="yml">---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: &lt;namespace, for example renovate&gt;
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: renovate-env
+  namespace: &lt;namespace&gt;
+type: Opaque
+stringData:
+  GITHUB_COM_TOKEN: 'any-personal-user-token-for-github-com-for-fetching-changelogs'
+  RENOVATE_AUTODISCOVER: 'false'
+  RENOVATE_ENDPOINT: 'https://github.company.com/api/v3'
+  RENOVATE_GIT_AUTHOR: 'Renovate Bot &lt;bot@renovateapp.com&gt;'
+  RENOVATE_PLATFORM: 'github'
+  RENOVATE_TOKEN: 'your-github-enterprise-renovate-user-token'
+---
+apiVersion: v1
+data:
+  config: aG9zdCBnaXRsYWIuY29tCiAgSG9zdE5hbWUgZ2l0bGFiLmNvbQogIFN0cmljdEhvc3RLZXlDaGVja2luZyBubwogIElkZW50aXR5RmlsZSB+Ly5zc2gvaWRfcnNhCiAgVXNlciBnaXQ=
+  id_rsa: &lt;base64String&gt;
+  id_rsa.pub: &lt;base64String&gt;
+kind: Secret
+metadata:
+  name: ssh-key-secret
+  namespace: &lt;namespace&gt;
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: renovate
+  namespace: &lt;namespace&gt;
+spec:
+  schedule: '@hourly'
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          volumes:
+            - name: ssh-key-volume
+              secret:
+                secretName: ssh-key-secret
+          containers:
+            - name: renovate
+              # Update this to the latest available and then enable Renovate on the manifest
+              image: renovate/renovate:25.53.3
+              volumeMounts:
+                - name: ssh-key-volume
+                  readOnly: true
+                  mountPath: '/home/ubuntu/.ssh'
+              args:
+                - &lt;repository&gt;
+              # Environment Variables
+              envFrom:
+                - secretRef:
+                    name: renovate-env
+          restartPolicy: Never
+</code></pre>
+
+<h2 id="logging">Logging</h2>
+<p>It's recommended to configure <code>LOG_LEVEL=debug</code> and <code>LOG_FORMAT=json</code> in environment if you are ingesting/parsing logs into another system.
+Debug logging is usually necessary for any debugging, while JSON format will mean that the output is parseable.</p>
+<h3 id="about-the-log-level-numbers">About the log level numbers</h3>
+<p>When you use <code>LOG_LEVEL=debug</code> and <code>LOG_FORMAT=json</code>, Renovate uses numbers in the <code>level</code> field.</p>
+<p>The logging level output is controlled by the Bunyan logging library.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Level</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">10</td>
+<td>trace</td>
+</tr>
+<tr>
+<td align="right">20</td>
+<td>debug</td>
+</tr>
+<tr>
+<td align="right">30</td>
+<td>info</td>
+</tr>
+<tr>
+<td align="right">40</td>
+<td>warn</td>
+</tr>
+<tr>
+<td align="right">50</td>
+<td>error</td>
+</tr>
+<tr>
+<td align="right">60</td>
+<td>fatal</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../install-gitlab-app/" title="GitLab App Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                GitLab App Installation
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../configure-renovate/" title="Configure Renovate (Onboarding PR)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Configure Renovate (Onboarding PR)
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../assets/js/fx.js"></script>
+      
+    
+  </body>
+</html>

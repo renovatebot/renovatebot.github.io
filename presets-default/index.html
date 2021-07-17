@@ -1,0 +1,3224 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/presets-default/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Default Presets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#enablerenovate" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.renovatebot.com" title="Renovate Docs" aria-label="Renovate Docs" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../assets/images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Renovate Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Default Presets
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.renovatebot.com" title="Renovate Docs" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../assets/images/logo.png" width="48" height="48">
+      
+    </a>
+    Renovate Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-github-app/" title="GitHub App Installation" class="md-nav__link">
+      GitHub App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-gitlab-app/" title="GitLab App Installation" class="md-nav__link">
+      GitLab App Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../self-hosting/" title="Self-hosting" class="md-nav__link">
+      Self-hosting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configure-renovate/" title="Configure Renovate (Onboarding PR)" class="md-nav__link">
+      Configure Renovate (Onboarding PR)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../private-modules/" title="Private module support" class="md-nav__link">
+      Private module support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reconfigure-renovate/" title="Reconfiguring Renovate" class="md-nav__link">
+      Reconfiguring Renovate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="Frequently Asked Questions" class="md-nav__link">
+      Frequently Asked Questions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../configuration-options/" title="Configuration Options" class="md-nav__link">
+      Configuration Options
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../self-hosted-configuration/" title="Self Hosted Configuration" class="md-nav__link">
+      Self Hosted Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Renovate Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Renovate Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/platform/" title="Platforms" class="md-nav__link">
+      Platforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/manager/" title="Managers" class="md-nav__link">
+      Managers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/datasource/" title="Datasources" class="md-nav__link">
+      Datasources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modules/versioning/" title="Versioning" class="md-nav__link">
+      Versioning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../config-presets/" title="Shareable Config Presets" class="md-nav__link">
+      Shareable Config Presets
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Language Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Language Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bazel/" title="Bazel" class="md-nav__link">
+      Bazel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../golang/" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node/" title="Node.js Versions" class="md-nav__link">
+      Node.js Versions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nuget/" title="Nuget" class="md-nav__link">
+      Nuget
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../php/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ruby/" title="Ruby" class="md-nav__link">
+      Ruby
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Deep Dives
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Deep Dives
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dependency-pinning/" title="Should you Pin your Javascript Dependencies?" class="md-nav__link">
+      Should you Pin your Javascript Dependencies?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration-templates/" title="Config Template Editing" class="md-nav__link">
+      Config Template Editing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updating-rebasing/" title="Updating and Rebasing Branches" class="md-nav__link">
+      Updating and Rebasing Branches
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../semantic-commits/" title="Semantic Commit Messages" class="md-nav__link">
+      Semantic Commit Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../noise-reduction/" title="Noise Reduction" class="md-nav__link">
+      Noise Reduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../automerge-configuration/" title="Automerging Updates" class="md-nav__link">
+      Automerging Updates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+    
+    <label class="md-nav__link" for="nav-10">
+      Included Presets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Included Presets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-config/" title="Full Config Presets" class="md-nav__link">
+      Full Config Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Default Presets
+      </label>
+    
+    <a href="./" title="Default Presets" class="md-nav__link md-nav__link--active">
+      Default Presets
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enablerenovate" class="md-nav__link">
+    :enableRenovate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablerenovate" class="md-nav__link">
+    :disableRenovate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablemajorupdates" class="md-nav__link">
+    :disableMajorUpdates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledomainltarg0gt" class="md-nav__link">
+    :disableDomain(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablehostltarg0gt" class="md-nav__link">
+    :disableHost(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoremodulesandtests" class="md-nav__link">
+    :ignoreModulesAndTests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#includenodemodules" class="md-nav__link">
+    :includeNodeModules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinversions" class="md-nav__link">
+    :pinVersions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preservesemverranges" class="md-nav__link">
+    :preserveSemverRanges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinallexceptpeerdependencies" class="md-nav__link">
+    :pinAllExceptPeerDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindependencies" class="md-nav__link">
+    :pinDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindevdependencies" class="md-nav__link">
+    :pinDevDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinonlydevdependencies" class="md-nav__link">
+    :pinOnlyDevDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autodetectpinversions" class="md-nav__link">
+    :autodetectPinVersions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatemajorreleases" class="md-nav__link">
+    :separateMajorReleases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatemultiplemajorreleases" class="md-nav__link">
+    :separateMultipleMajorReleases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatepatchreleases" class="md-nav__link">
+    :separatePatchReleases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combinepatchminorreleases" class="md-nav__link">
+    :combinePatchMinorReleases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renovateprefix" class="md-nav__link">
+    :renovatePrefix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommittypeltarg0gt" class="md-nav__link">
+    :semanticCommitType(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixchore" class="md-nav__link">
+    :semanticPrefixChore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixfix" class="md-nav__link">
+    :semanticPrefixFix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablepeerdependencies" class="md-nav__link">
+    :disablePeerDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledevdependencies" class="md-nav__link">
+    :disableDevDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledigestupdates" class="md-nav__link">
+    :disableDigestUpdates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixfixdepschoreothers" class="md-nav__link">
+    :semanticPrefixFixDepsChoreOthers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommittypeallltarg0gt" class="md-nav__link">
+    :semanticCommitTypeAll(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebasestaleprs" class="md-nav__link">
+    :rebaseStalePrs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primmediately" class="md-nav__link">
+    :prImmediately
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prnotpending" class="md-nav__link">
+    :prNotPending
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimitnone" class="md-nav__link">
+    :prHourlyLimitNone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit1" class="md-nav__link">
+    :prHourlyLimit1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit2" class="md-nav__link">
+    :prHourlyLimit2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit4" class="md-nav__link">
+    :prHourlyLimit4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimitnone" class="md-nav__link">
+    :prConcurrentLimitNone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimit10" class="md-nav__link">
+    :prConcurrentLimit10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimit20" class="md-nav__link">
+    :prConcurrentLimit20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disableratelimiting" class="md-nav__link">
+    :disableRateLimiting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergedisabled" class="md-nav__link">
+    :automergeDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergedigest" class="md-nav__link">
+    :automergeDigest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergepatch" class="md-nav__link">
+    :automergePatch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergeminor" class="md-nav__link">
+    :automergeMinor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergemajor" class="md-nav__link">
+    :automergeMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergeall" class="md-nav__link">
+    :automergeAll
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergebranch" class="md-nav__link">
+    :automergeBranch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergepr" class="md-nav__link">
+    :automergePr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergerequireallstatuschecks" class="md-nav__link">
+    :automergeRequireAllStatusChecks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipstatuschecks" class="md-nav__link">
+    :skipStatusChecks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesdisabled" class="md-nav__link">
+    :maintainLockFilesDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindigestsdisabled" class="md-nav__link">
+    :pinDigestsDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesweekly" class="md-nav__link">
+    :maintainLockFilesWeekly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesmonthly" class="md-nav__link">
+    :maintainLockFilesMonthly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoreunstable" class="md-nav__link">
+    :ignoreUnstable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#respectlatest" class="md-nav__link">
+    :respectLatest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatenotscheduled" class="md-nav__link">
+    :updateNotScheduled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nounscheduledupdates" class="md-nav__link">
+    :noUnscheduledUpdates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergelinters" class="md-nav__link">
+    :automergeLinters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergetesters" class="md-nav__link">
+    :automergeTesters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergetypes" class="md-nav__link">
+    :automergeTypes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donotpinpackageltarg0gt" class="md-nav__link">
+    :doNotPinPackage(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinskipci" class="md-nav__link">
+    :pinSkipCi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitsignoff" class="md-nav__link">
+    :gitSignOff
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#npm" class="md-nav__link">
+    :npm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gomod" class="md-nav__link">
+    :gomod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onlynpm" class="md-nav__link">
+    :onlyNpm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    :docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meteor" class="md-nav__link">
+    :meteor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupltarg0gt-ltarg1gt" class="md-nav__link">
+    :group(&lt;arg0&gt;, &lt;arg1&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelltarg0gt" class="md-nav__link">
+    :label(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelsltarg0gt-ltarg1gt" class="md-nav__link">
+    :labels(&lt;arg0&gt;, &lt;arg1&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assigneeltarg0gt" class="md-nav__link">
+    :assignee(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reviewerltarg0gt" class="md-nav__link">
+    :reviewer(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assignandreviewltarg0gt" class="md-nav__link">
+    :assignAndReview(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablevulnerabilityalerts" class="md-nav__link">
+    :enableVulnerabilityAlerts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablevulnerabilityalertswithlabelltarg0gt" class="md-nav__link">
+    :enableVulnerabilityAlertsWithLabel(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablevulnerabilityalerts" class="md-nav__link">
+    :disableVulnerabilityAlerts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommits" class="md-nav__link">
+    :semanticCommits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitsdisabled" class="md-nav__link">
+    :semanticCommitsDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablelockfiles" class="md-nav__link">
+    :disableLockFiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitscopeltarg0gt" class="md-nav__link">
+    :semanticCommitScope(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitscopedisabled" class="md-nav__link">
+    :semanticCommitScopeDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widenpeerdependencies" class="md-nav__link">
+    :widenPeerDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencydashboard" class="md-nav__link">
+    :dependencyDashboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencydashboardapproval" class="md-nav__link">
+    :dependencyDashboardApproval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezoneltarg0gt" class="md-nav__link">
+    :timezone(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pathsemanticcommittypeltarg0gt-ltarg1gt" class="md-nav__link">
+    :pathSemanticCommitType(&lt;arg0&gt;, &lt;arg1&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#followtagltarg0gt-ltarg1gt" class="md-nav__link">
+    :followTag(&lt;arg0&gt;, &lt;arg1&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubcomtokenltarg0gt" class="md-nav__link">
+    :githubComToken(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disableprcontrols" class="md-nav__link">
+    :disablePrControls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablegradlelite" class="md-nav__link">
+    :enableGradleLite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switchtogradlelite" class="md-nav__link">
+    :switchToGradleLite
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-docker/" title="Docker Presets" class="md-nav__link">
+      Docker Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-group/" title="Group Presets" class="md-nav__link">
+      Group Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-helpers/" title="Helper Presets" class="md-nav__link">
+      Helper Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-monorepo/" title="Monorepo Presets" class="md-nav__link">
+      Monorepo Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-packages/" title="Package Presets" class="md-nav__link">
+      Package Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-preview/" title="Preview Presets" class="md-nav__link">
+      Preview Presets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../presets-schedule/" title="Schedule Presets" class="md-nav__link">
+      Schedule Presets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      All Other
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        All Other
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../merge-confidence/" title="Merge Confidence" class="md-nav__link">
+      Merge Confidence
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enablerenovate" class="md-nav__link">
+    :enableRenovate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablerenovate" class="md-nav__link">
+    :disableRenovate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablemajorupdates" class="md-nav__link">
+    :disableMajorUpdates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledomainltarg0gt" class="md-nav__link">
+    :disableDomain(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablehostltarg0gt" class="md-nav__link">
+    :disableHost(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoremodulesandtests" class="md-nav__link">
+    :ignoreModulesAndTests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#includenodemodules" class="md-nav__link">
+    :includeNodeModules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinversions" class="md-nav__link">
+    :pinVersions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preservesemverranges" class="md-nav__link">
+    :preserveSemverRanges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinallexceptpeerdependencies" class="md-nav__link">
+    :pinAllExceptPeerDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindependencies" class="md-nav__link">
+    :pinDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindevdependencies" class="md-nav__link">
+    :pinDevDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinonlydevdependencies" class="md-nav__link">
+    :pinOnlyDevDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autodetectpinversions" class="md-nav__link">
+    :autodetectPinVersions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatemajorreleases" class="md-nav__link">
+    :separateMajorReleases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatemultiplemajorreleases" class="md-nav__link">
+    :separateMultipleMajorReleases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatepatchreleases" class="md-nav__link">
+    :separatePatchReleases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combinepatchminorreleases" class="md-nav__link">
+    :combinePatchMinorReleases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renovateprefix" class="md-nav__link">
+    :renovatePrefix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommittypeltarg0gt" class="md-nav__link">
+    :semanticCommitType(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixchore" class="md-nav__link">
+    :semanticPrefixChore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixfix" class="md-nav__link">
+    :semanticPrefixFix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablepeerdependencies" class="md-nav__link">
+    :disablePeerDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledevdependencies" class="md-nav__link">
+    :disableDevDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledigestupdates" class="md-nav__link">
+    :disableDigestUpdates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixfixdepschoreothers" class="md-nav__link">
+    :semanticPrefixFixDepsChoreOthers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommittypeallltarg0gt" class="md-nav__link">
+    :semanticCommitTypeAll(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebasestaleprs" class="md-nav__link">
+    :rebaseStalePrs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primmediately" class="md-nav__link">
+    :prImmediately
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prnotpending" class="md-nav__link">
+    :prNotPending
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimitnone" class="md-nav__link">
+    :prHourlyLimitNone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit1" class="md-nav__link">
+    :prHourlyLimit1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit2" class="md-nav__link">
+    :prHourlyLimit2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit4" class="md-nav__link">
+    :prHourlyLimit4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimitnone" class="md-nav__link">
+    :prConcurrentLimitNone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimit10" class="md-nav__link">
+    :prConcurrentLimit10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimit20" class="md-nav__link">
+    :prConcurrentLimit20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disableratelimiting" class="md-nav__link">
+    :disableRateLimiting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergedisabled" class="md-nav__link">
+    :automergeDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergedigest" class="md-nav__link">
+    :automergeDigest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergepatch" class="md-nav__link">
+    :automergePatch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergeminor" class="md-nav__link">
+    :automergeMinor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergemajor" class="md-nav__link">
+    :automergeMajor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergeall" class="md-nav__link">
+    :automergeAll
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergebranch" class="md-nav__link">
+    :automergeBranch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergepr" class="md-nav__link">
+    :automergePr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergerequireallstatuschecks" class="md-nav__link">
+    :automergeRequireAllStatusChecks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipstatuschecks" class="md-nav__link">
+    :skipStatusChecks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesdisabled" class="md-nav__link">
+    :maintainLockFilesDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindigestsdisabled" class="md-nav__link">
+    :pinDigestsDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesweekly" class="md-nav__link">
+    :maintainLockFilesWeekly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesmonthly" class="md-nav__link">
+    :maintainLockFilesMonthly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoreunstable" class="md-nav__link">
+    :ignoreUnstable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#respectlatest" class="md-nav__link">
+    :respectLatest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatenotscheduled" class="md-nav__link">
+    :updateNotScheduled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nounscheduledupdates" class="md-nav__link">
+    :noUnscheduledUpdates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergelinters" class="md-nav__link">
+    :automergeLinters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergetesters" class="md-nav__link">
+    :automergeTesters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergetypes" class="md-nav__link">
+    :automergeTypes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donotpinpackageltarg0gt" class="md-nav__link">
+    :doNotPinPackage(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinskipci" class="md-nav__link">
+    :pinSkipCi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitsignoff" class="md-nav__link">
+    :gitSignOff
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#npm" class="md-nav__link">
+    :npm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gomod" class="md-nav__link">
+    :gomod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onlynpm" class="md-nav__link">
+    :onlyNpm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    :docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meteor" class="md-nav__link">
+    :meteor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupltarg0gt-ltarg1gt" class="md-nav__link">
+    :group(&lt;arg0&gt;, &lt;arg1&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelltarg0gt" class="md-nav__link">
+    :label(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelsltarg0gt-ltarg1gt" class="md-nav__link">
+    :labels(&lt;arg0&gt;, &lt;arg1&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assigneeltarg0gt" class="md-nav__link">
+    :assignee(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reviewerltarg0gt" class="md-nav__link">
+    :reviewer(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assignandreviewltarg0gt" class="md-nav__link">
+    :assignAndReview(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablevulnerabilityalerts" class="md-nav__link">
+    :enableVulnerabilityAlerts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablevulnerabilityalertswithlabelltarg0gt" class="md-nav__link">
+    :enableVulnerabilityAlertsWithLabel(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablevulnerabilityalerts" class="md-nav__link">
+    :disableVulnerabilityAlerts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommits" class="md-nav__link">
+    :semanticCommits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitsdisabled" class="md-nav__link">
+    :semanticCommitsDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablelockfiles" class="md-nav__link">
+    :disableLockFiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitscopeltarg0gt" class="md-nav__link">
+    :semanticCommitScope(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitscopedisabled" class="md-nav__link">
+    :semanticCommitScopeDisabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widenpeerdependencies" class="md-nav__link">
+    :widenPeerDependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencydashboard" class="md-nav__link">
+    :dependencyDashboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencydashboardapproval" class="md-nav__link">
+    :dependencyDashboardApproval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezoneltarg0gt" class="md-nav__link">
+    :timezone(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pathsemanticcommittypeltarg0gt-ltarg1gt" class="md-nav__link">
+    :pathSemanticCommitType(&lt;arg0&gt;, &lt;arg1&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#followtagltarg0gt-ltarg1gt" class="md-nav__link">
+    :followTag(&lt;arg0&gt;, &lt;arg1&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubcomtokenltarg0gt" class="md-nav__link">
+    :githubComToken(&lt;arg0&gt;)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disableprcontrols" class="md-nav__link">
+    :disablePrControls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablegradlelite" class="md-nav__link">
+    :enableGradleLite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switchtogradlelite" class="md-nav__link">
+    :switchToGradleLite
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Default Presets</h1>
+                
+                <h3 id="enablerenovate">:enableRenovate</h3>
+<p>Enable renovate</p>
+<pre><code>{
+  &quot;enabled&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="disablerenovate">:disableRenovate</h3>
+<p>Disable renovate</p>
+<pre><code>{
+  &quot;enabled&quot;: false
+}
+</code></pre>
+
+<hr />
+<h3 id="disablemajorupdates">:disableMajorUpdates</h3>
+<p>Disables major updates</p>
+<pre><code>{
+  &quot;major&quot;: {
+    &quot;enabled&quot;: false
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="disabledomainltarg0gt">:disableDomain(<code>&lt;arg0&gt;</code>)</h3>
+<p>Disable requests to a particular domain</p>
+<pre><code>{
+  &quot;hostRules&quot;: [
+    {
+      &quot;matchHost&quot;: &quot;arg0&quot;,
+      &quot;enabled&quot;: false
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="disablehostltarg0gt">:disableHost(<code>&lt;arg0&gt;</code>)</h3>
+<p>Disable requests to a particular host</p>
+<pre><code>{
+  &quot;hostRules&quot;: [
+    {
+      &quot;matchHost&quot;: &quot;https://arg0&quot;,
+      &quot;enabled&quot;: false
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="ignoremodulesandtests">:ignoreModulesAndTests</h3>
+<p>Ignore <code>node_modules</code>, <code>bower_components</code>, <code>vendor</code> and various test/tests directories</p>
+<pre><code>{
+  &quot;ignorePaths&quot;: [
+    &quot;**/node_modules/**&quot;,
+    &quot;**/bower_components/**&quot;,
+    &quot;**/vendor/**&quot;,
+    &quot;**/examples/**&quot;,
+    &quot;**/__tests__/**&quot;,
+    &quot;**/test/**&quot;,
+    &quot;**/tests/**&quot;,
+    &quot;**/__fixtures__/**&quot;
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="includenodemodules">:includeNodeModules</h3>
+<p>Include <code>package.json</code> files found within <code>node_modules</code> folders or <code>bower_components</code>.</p>
+<pre><code>{
+  &quot;ignorePaths&quot;: []
+}
+</code></pre>
+
+<hr />
+<h3 id="pinversions">:pinVersions</h3>
+<p>Use version pinning (maintain a single version only and not semver ranges)</p>
+<pre><code>{
+  &quot;rangeStrategy&quot;: &quot;pin&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="preservesemverranges">:preserveSemverRanges</h3>
+<p>Preserve (but continue to upgrade) any existing semver ranges</p>
+<pre><code>{
+  &quot;rangeStrategy&quot;: &quot;replace&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="pinallexceptpeerdependencies">:pinAllExceptPeerDependencies</h3>
+<p>Pin dependency versions for all except <code>peerDependencies</code></p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePatterns&quot;: [
+        &quot;*&quot;
+      ],
+      &quot;rangeStrategy&quot;: &quot;pin&quot;
+    },
+    {
+      &quot;matchDepTypes&quot;: [
+        &quot;engines&quot;,
+        &quot;peerDependencies&quot;
+      ],
+      &quot;rangeStrategy&quot;: &quot;auto&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="pindependencies">:pinDependencies</h3>
+<p>Pin dependency versions for <code>dependencies</code></p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDepTypes&quot;: [
+        &quot;dependencies&quot;
+      ],
+      &quot;rangeStrategy&quot;: &quot;pin&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="pindevdependencies">:pinDevDependencies</h3>
+<p>Pin dependency versions for <code>devDependencies</code></p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDepTypes&quot;: [
+        &quot;devDependencies&quot;
+      ],
+      &quot;rangeStrategy&quot;: &quot;pin&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="pinonlydevdependencies">:pinOnlyDevDependencies</h3>
+<p>Pin dependency versions for <code>devDependencies</code> and retain semver ranges for others</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePatterns&quot;: [
+        &quot;*&quot;
+      ],
+      &quot;rangeStrategy&quot;: &quot;replace&quot;
+    },
+    {
+      &quot;matchDepTypes&quot;: [
+        &quot;devDependencies&quot;
+      ],
+      &quot;rangeStrategy&quot;: &quot;pin&quot;
+    },
+    {
+      &quot;matchDepTypes&quot;: [
+        &quot;peerDependencies&quot;
+      ],
+      &quot;rangeStrategy&quot;: &quot;widen&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="autodetectpinversions">:autodetectPinVersions</h3>
+<p>Autodetect whether to pin dependencies or maintain ranges</p>
+<pre><code>{
+  &quot;rangeStrategy&quot;: &quot;auto&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="separatemajorreleases">:separateMajorReleases</h3>
+<p>Separate major versions of dependencies into individual branches/PRs</p>
+<pre><code>{
+  &quot;separateMajorMinor&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="separatemultiplemajorreleases">:separateMultipleMajorReleases</h3>
+<p>Separate each available major versions of dependencies into individual branches/PRs</p>
+<pre><code>{
+  &quot;separateMajorMinor&quot;: true,
+  &quot;separateMultipleMajor&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="separatepatchreleases">:separatePatchReleases</h3>
+<p>Separate patch and minor releases of dependencies into separate PRs</p>
+<pre><code>{
+  &quot;separateMinorPatch&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="combinepatchminorreleases">:combinePatchMinorReleases</h3>
+<p>Do not separate patch and minor upgrades into separate PRs for the same dependency</p>
+<pre><code>{
+  &quot;separateMinorPatch&quot;: false
+}
+</code></pre>
+
+<hr />
+<h3 id="renovateprefix">:renovatePrefix</h3>
+<p>Use <code>renovate/</code> as prefix for all branch names</p>
+<pre><code>{
+  &quot;branchPrefix&quot;: &quot;renovate/&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="semanticcommittypeltarg0gt">:semanticCommitType(<code>&lt;arg0&gt;</code>)</h3>
+<p>Use <code>arg0</code> as semantic commit type for commit messages and PR titles</p>
+<pre><code>{
+  &quot;semanticCommitType&quot;: &quot;arg0&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="semanticprefixchore">:semanticPrefixChore</h3>
+<p>Use <code>chore</code> as semantic commit type for commit messages and PR titles</p>
+<pre><code>{
+  &quot;extends&quot;: [
+    &quot;:semanticCommitType(chore)&quot;
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="semanticprefixfix">:semanticPrefixFix</h3>
+<p>Use <code>fix</code> as semantic commit type for commit messages and PR titles</p>
+<pre><code>{
+  &quot;extends&quot;: [
+    &quot;:semanticCommitType(fix)&quot;
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="disablepeerdependencies">:disablePeerDependencies</h3>
+<p>Do not renovate <code>peerDependencies</code> versions/ranges</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDepTypes&quot;: [
+        &quot;peerDependencies&quot;
+      ],
+      &quot;enabled&quot;: false
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="disabledevdependencies">:disableDevDependencies</h3>
+<p>Do not renovate <code>devDependencies</code> versions/ranges</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDepTypes&quot;: [
+        &quot;devDependencies&quot;
+      ],
+      &quot;enabled&quot;: false
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="disabledigestupdates">:disableDigestUpdates</h3>
+<p>Disable digest and git hash updates</p>
+<pre><code>{
+  &quot;digest&quot;: {
+    &quot;enabled&quot;: false
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="semanticprefixfixdepschoreothers">:semanticPrefixFixDepsChoreOthers</h3>
+<p>If semantic commits detected, use semantic commit type <code>fix</code> for dependencies and <code>chore</code> for all others</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePatterns&quot;: [
+        &quot;*&quot;
+      ],
+      &quot;semanticCommitType&quot;: &quot;chore&quot;
+    },
+    {
+      &quot;matchDepTypes&quot;: [
+        &quot;dependencies&quot;,
+        &quot;require&quot;
+      ],
+      &quot;semanticCommitType&quot;: &quot;fix&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="semanticcommittypeallltarg0gt">:semanticCommitTypeAll(<code>&lt;arg0&gt;</code>)</h3>
+<p>If semantic commits detected, use semantic commit type <code>arg0</code> for all</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePatterns&quot;: [
+        &quot;*&quot;
+      ],
+      &quot;semanticCommitType&quot;: &quot;arg0&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="rebasestaleprs">:rebaseStalePrs</h3>
+<p>Rebase existing PRs any time the base branch has been updated</p>
+<pre><code>{
+  &quot;rebaseWhen&quot;: &quot;behind-base-branch&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="primmediately">:prImmediately</h3>
+<p>Raise PRs immediately (after branch is created)</p>
+<pre><code>{
+  &quot;prCreation&quot;: &quot;immediate&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="prnotpending">:prNotPending</h3>
+<p>Wait until branch tests have passed or failed before creating the PR</p>
+<pre><code>{
+  &quot;prCreation&quot;: &quot;not-pending&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="prhourlylimitnone">:prHourlyLimitNone</h3>
+<p>Removes rate limit for PR creation per hour</p>
+<pre><code>{
+  &quot;prHourlyLimit&quot;: 0
+}
+</code></pre>
+
+<hr />
+<h3 id="prhourlylimit1">:prHourlyLimit1</h3>
+<p>Rate limit PR creation to a maximum of one per hour</p>
+<pre><code>{
+  &quot;prHourlyLimit&quot;: 1
+}
+</code></pre>
+
+<hr />
+<h3 id="prhourlylimit2">:prHourlyLimit2</h3>
+<p>Rate limit PR creation to a maximum of two per hour</p>
+<pre><code>{
+  &quot;prHourlyLimit&quot;: 2
+}
+</code></pre>
+
+<hr />
+<h3 id="prhourlylimit4">:prHourlyLimit4</h3>
+<p>Rate limit PR creation to a maximum of four per hour</p>
+<pre><code>{
+  &quot;prHourlyLimit&quot;: 4
+}
+</code></pre>
+
+<hr />
+<h3 id="prconcurrentlimitnone">:prConcurrentLimitNone</h3>
+<p>Remove limit for open PRs</p>
+<pre><code>{
+  &quot;prConcurrentLimit&quot;: 0
+}
+</code></pre>
+
+<hr />
+<h3 id="prconcurrentlimit10">:prConcurrentLimit10</h3>
+<p>Limit to maximum 10 open PRs</p>
+<pre><code>{
+  &quot;prConcurrentLimit&quot;: 10
+}
+</code></pre>
+
+<hr />
+<h3 id="prconcurrentlimit20">:prConcurrentLimit20</h3>
+<p>Limit to maximum 20 open PRs at any time</p>
+<pre><code>{
+  &quot;prConcurrentLimit&quot;: 20
+}
+</code></pre>
+
+<hr />
+<h3 id="disableratelimiting">:disableRateLimiting</h3>
+<p>Remove hourly and concurrent rate limits</p>
+<pre><code>{
+  &quot;prConcurrentLimit&quot;: 0,
+  &quot;prHourlyLimit&quot;: 0
+}
+</code></pre>
+
+<hr />
+<h3 id="automergedisabled">:automergeDisabled</h3>
+<p>Disable automerging feature - wait for humans to merge all PRs</p>
+<pre><code>{
+  &quot;automerge&quot;: false
+}
+</code></pre>
+
+<hr />
+<h3 id="automergedigest">:automergeDigest</h3>
+<p>Automerge digest upgrades if they pass tests</p>
+<pre><code>{
+  &quot;digest&quot;: {
+    &quot;automerge&quot;: true
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="automergepatch">:automergePatch</h3>
+<p>Automerge patch upgrades if they pass tests</p>
+<pre><code>{
+  &quot;separateMinorPatch&quot;: true,
+  &quot;patch&quot;: {
+    &quot;automerge&quot;: true
+  },
+  &quot;pin&quot;: {
+    &quot;automerge&quot;: true
+  },
+  &quot;lockFileMaintenance&quot;: {
+    &quot;automerge&quot;: true
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="automergeminor">:automergeMinor</h3>
+<p>Automerge patch and minor upgrades if they pass tests</p>
+<pre><code>{
+  &quot;minor&quot;: {
+    &quot;automerge&quot;: true
+  },
+  &quot;patch&quot;: {
+    &quot;automerge&quot;: true
+  },
+  &quot;pin&quot;: {
+    &quot;automerge&quot;: true
+  },
+  &quot;lockFileMaintenance&quot;: {
+    &quot;automerge&quot;: true
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="automergemajor">:automergeMajor</h3>
+<p>Automerge all upgrades (including major) if they pass tests</p>
+<pre><code>{
+  &quot;automerge&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="automergeall">:automergeAll</h3>
+<p>Automerge all upgrades (including major) if they pass tests</p>
+<pre><code>{
+  &quot;automerge&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="automergebranch">:automergeBranch</h3>
+<p>If automerging, push the new commit directly to base branch (no PR)</p>
+<pre><code>{
+  &quot;automergeType&quot;: &quot;branch&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="automergepr">:automergePr</h3>
+<p>Raise a PR first before any automerging</p>
+<pre><code>{
+  &quot;automergeType&quot;: &quot;pr&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="automergerequireallstatuschecks">:automergeRequireAllStatusChecks</h3>
+<p>Require all status checks to pass before any automerging</p>
+<pre><code>{
+  &quot;requiredStatusChecks&quot;: []
+}
+</code></pre>
+
+<hr />
+<h3 id="skipstatuschecks">:skipStatusChecks</h3>
+<p>Skip status checks and automerge right away</p>
+<pre><code>{
+  &quot;requiredStatusChecks&quot;: null
+}
+</code></pre>
+
+<hr />
+<h3 id="maintainlockfilesdisabled">:maintainLockFilesDisabled</h3>
+<p>Update existing lock files only when <code>package.json</code> is modified</p>
+<pre><code>{
+  &quot;lockFileMaintenance&quot;: {
+    &quot;enabled&quot;: false
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="pindigestsdisabled">:pinDigestsDisabled</h3>
+<p>Disable pinning of docker dependency digests</p>
+<pre><code>{
+  &quot;pinDigests&quot;: false
+}
+</code></pre>
+
+<hr />
+<h3 id="maintainlockfilesweekly">:maintainLockFilesWeekly</h3>
+<p>Run lock file maintenance (updates) early Monday mornings</p>
+<pre><code>{
+  &quot;lockFileMaintenance&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;extends&quot;: [
+      &quot;schedule:weekly&quot;
+    ]
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="maintainlockfilesmonthly">:maintainLockFilesMonthly</h3>
+<p>Run lock file maintenance (updates) on the first day of each month</p>
+<pre><code>{
+  &quot;lockFileMaintenance&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;extends&quot;: [
+      &quot;schedule:monthly&quot;
+    ]
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="ignoreunstable">:ignoreUnstable</h3>
+<p>Upgrade to unstable versions only if the existing version is unstable</p>
+<pre><code>{
+  &quot;ignoreUnstable&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="respectlatest">:respectLatest</h3>
+<p>Upgrade versions up to the "latest" tag in npm registry</p>
+<pre><code>{
+  &quot;respectLatest&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="updatenotscheduled">:updateNotScheduled</h3>
+<p>Keep existing branches updated even when not scheduled</p>
+<pre><code>{
+  &quot;updateNotScheduled&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="nounscheduledupdates">:noUnscheduledUpdates</h3>
+<p>Make no updates to branches when not scheduled</p>
+<pre><code>{
+  &quot;updateNotScheduled&quot;: false
+}
+</code></pre>
+
+<hr />
+<h3 id="automergelinters">:automergeLinters</h3>
+<p>Update lint packages automatically if tests pass</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: [
+        &quot;packages:linters&quot;
+      ],
+      &quot;automerge&quot;: true
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="automergetesters">:automergeTesters</h3>
+<p>Update testing packages automatically if tests pass</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: [
+        &quot;packages:test&quot;
+      ],
+      &quot;automerge&quot;: true
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="automergetypes">:automergeTypes</h3>
+<p>Update @types/* packages automatically if tests pass</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackagePrefixes&quot;: [
+        &quot;@types/&quot;
+      ],
+      &quot;automerge&quot;: true
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="donotpinpackageltarg0gt">:doNotPinPackage(<code>&lt;arg0&gt;</code>)</h3>
+<p>Disable version pinning for <code>arg0</code></p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackageNames&quot;: [
+        &quot;arg0&quot;
+      ],
+      &quot;rangeStrategy&quot;: &quot;replace&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="pinskipci">:pinSkipCi</h3>
+<p>Add [skip ci] to commit message body whenever pinning</p>
+<pre><code>{
+  &quot;pin&quot;: {
+    &quot;commitBody&quot;: &quot;[skip ci]&quot;
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="gitsignoff">:gitSignOff</h3>
+<p>Append git Signed-off-by signature to git commits.</p>
+<pre><code>{
+  &quot;commitBody&quot;: &quot;Signed-off-by: {{{gitAuthor}}}&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="npm">:npm</h3>
+<p>Keep package.json npm dependencies updated</p>
+<pre><code>{
+  &quot;npm&quot;: {
+    &quot;enabled&quot;: true
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="gomod">:gomod</h3>
+<p>Enable Go modules support</p>
+<pre><code>{
+  &quot;gomod&quot;: {
+    &quot;enabled&quot;: true
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="onlynpm">:onlyNpm</h3>
+<p>Renovate only npm dependencies</p>
+<pre><code>{
+  &quot;docker&quot;: {
+    &quot;enabled&quot;: false
+  },
+  &quot;meteor&quot;: {
+    &quot;enabled&quot;: false
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="docker">:docker</h3>
+<p>Keep Dockerfile FROM sources updated</p>
+<pre><code>{
+  &quot;docker&quot;: {
+    &quot;enabled&quot;: true
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="meteor">:meteor</h3>
+<p>Keep Meteor Npm.depends packages updated</p>
+<pre><code>{
+  &quot;meteor&quot;: {
+    &quot;enabled&quot;: true
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="groupltarg0gt-ltarg1gt">:group(<code>&lt;arg0&gt;</code>, <code>&lt;arg1&gt;</code>)</h3>
+<p>Group arg1 packages into same branch/PR</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;extends&quot;: [
+        &quot;arg0&quot;
+      ],
+      &quot;groupName&quot;: &quot;arg1&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="labelltarg0gt">:label(<code>&lt;arg0&gt;</code>)</h3>
+<p>Apply label <code>arg0</code> to PRs</p>
+<pre><code>{
+  &quot;labels&quot;: [
+    &quot;arg0&quot;
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="labelsltarg0gt-ltarg1gt">:labels(<code>&lt;arg0&gt;</code>, <code>&lt;arg1&gt;</code>)</h3>
+<p>Apply labels <code>arg0</code> and <code>arg1</code> to PRs</p>
+<pre><code>{
+  &quot;labels&quot;: [
+    &quot;arg0&quot;,
+    &quot;arg1&quot;
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="assigneeltarg0gt">:assignee(<code>&lt;arg0&gt;</code>)</h3>
+<p>Assign PRs to <code>arg0</code></p>
+<pre><code>{
+  &quot;assignees&quot;: [
+    &quot;arg0&quot;
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="reviewerltarg0gt">:reviewer(<code>&lt;arg0&gt;</code>)</h3>
+<p>Add <code>arg0</code> as reviewer for PRs</p>
+<pre><code>{
+  &quot;reviewers&quot;: [
+    &quot;arg0&quot;
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="assignandreviewltarg0gt">:assignAndReview(<code>&lt;arg0&gt;</code>)</h3>
+<p>Set <code>arg0</code> as assignee and reviewer of PRs</p>
+<pre><code>{
+  &quot;extends&quot;: [
+    &quot;:assignee(arg0)&quot;,
+    &quot;:reviewer(arg0)&quot;
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="enablevulnerabilityalerts">:enableVulnerabilityAlerts</h3>
+<p>Raise PR when vulnerability alerts are detected</p>
+<pre><code>{
+  &quot;vulnerabilityAlerts&quot;: {
+    &quot;enabled&quot;: true
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="enablevulnerabilityalertswithlabelltarg0gt">:enableVulnerabilityAlertsWithLabel(<code>&lt;arg0&gt;</code>)</h3>
+<p>Raise PR when vulnerability alerts are detected with label <code>arg0</code></p>
+<pre><code>{
+  &quot;vulnerabilityAlerts&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;labels&quot;: [
+      &quot;arg0&quot;
+    ]
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="disablevulnerabilityalerts">:disableVulnerabilityAlerts</h3>
+<p>Disable vulnerability alerts completely</p>
+<pre><code>{
+  &quot;vulnerabilityAlerts&quot;: {
+    &quot;enabled&quot;: false
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="semanticcommits">:semanticCommits</h3>
+<p>Use semantic prefixes for commit messages and PR titles</p>
+<pre><code>{
+  &quot;semanticCommits&quot;: &quot;enabled&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="semanticcommitsdisabled">:semanticCommitsDisabled</h3>
+<p>Disable semantic prefixes for commit messages and PR titles</p>
+<pre><code>{
+  &quot;semanticCommits&quot;: &quot;disabled&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="disablelockfiles">:disableLockFiles</h3>
+<p>Disable lock file updates</p>
+<pre><code>{
+  &quot;updateLockFiles&quot;: false
+}
+</code></pre>
+
+<hr />
+<h3 id="semanticcommitscopeltarg0gt">:semanticCommitScope(<code>&lt;arg0&gt;</code>)</h3>
+<p>Use semantic commit scope <code>arg0</code> for all commits and PR titles</p>
+<pre><code>{
+  &quot;semanticCommitScope&quot;: &quot;arg0&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="semanticcommitscopedisabled">:semanticCommitScopeDisabled</h3>
+<p>Disable semantic commit scope for all commits and PR titles</p>
+<pre><code>{
+  &quot;semanticCommitScope&quot;: null
+}
+</code></pre>
+
+<hr />
+<h3 id="widenpeerdependencies">:widenPeerDependencies</h3>
+<p>Always widen peerDependencies semver ranges when updating, instead of replacing</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchDepTypes&quot;: [
+        &quot;peerDependencies&quot;
+      ],
+      &quot;rangeStrategy&quot;: &quot;widen&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="dependencydashboard">:dependencyDashboard</h3>
+<p>Enable Renovate Dependency Dashboard creation</p>
+<pre><code>{
+  &quot;dependencyDashboard&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="dependencydashboardapproval">:dependencyDashboardApproval</h3>
+<p>Enable Renovate Dependency Dashboard approval workflow</p>
+<pre><code>{
+  &quot;dependencyDashboardApproval&quot;: true
+}
+</code></pre>
+
+<hr />
+<h3 id="timezoneltarg0gt">:timezone(<code>&lt;arg0&gt;</code>)</h3>
+<p>Evaluate schedules according to timezone arg0</p>
+<pre><code>{
+  &quot;timezone&quot;: &quot;arg0&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="pathsemanticcommittypeltarg0gt-ltarg1gt">:pathSemanticCommitType(<code>&lt;arg0&gt;</code>, <code>&lt;arg1&gt;</code>)</h3>
+<p>Use semanticCommitType arg0 for all package files matching path arg1</p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPaths&quot;: [
+        &quot;arg0&quot;
+      ],
+      &quot;semanticCommitType&quot;: &quot;arg1&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="followtagltarg0gt-ltarg1gt">:followTag(<code>&lt;arg0&gt;</code>, <code>&lt;arg1&gt;</code>)</h3>
+<p>For package <code>arg0</code>, strictly follow release tag <code>arg1</code></p>
+<pre><code>{
+  &quot;packageRules&quot;: [
+    {
+      &quot;matchPackageNames&quot;: [
+        &quot;arg0&quot;
+      ],
+      &quot;followTag&quot;: &quot;arg1&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="githubcomtokenltarg0gt">:githubComToken(<code>&lt;arg0&gt;</code>)</h3>
+<p>Use provided token for github.com lookups. Do not configure this if you are already running on github.com</p>
+<pre><code>{
+  &quot;hostRules&quot;: [
+    {
+      &quot;matchHost&quot;: &quot;github.com&quot;,
+      &quot;encrypted&quot;: {
+        &quot;token&quot;: &quot;arg0&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h3 id="disableprcontrols">:disablePrControls</h3>
+<p>Remove the checkbox controls from PRs</p>
+<pre><code>{
+  &quot;prBodyTemplate&quot;: &quot;{{{header}}}{{{table}}}{{{notes}}}{{{changelogs}}}{{{configDescription}}}{{{footer}}}&quot;
+}
+</code></pre>
+
+<hr />
+<h3 id="enablegradlelite">:enableGradleLite</h3>
+<p>Enable the gradle-lite manager</p>
+<pre><code>{
+  &quot;gradle-lite&quot;: {
+    &quot;enabled&quot;: true
+  }
+}
+</code></pre>
+
+<hr />
+<h3 id="switchtogradlelite">:switchToGradleLite</h3>
+<p>Enable the gradle-lite manager and disable gradle</p>
+<pre><code>{
+  &quot;gradle&quot;: {
+    &quot;enabled&quot;: false
+  },
+  &quot;gradle-lite&quot;: {
+    &quot;enabled&quot;: true
+  }
+}
+</code></pre>
+
+<hr />
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../presets-config/" title="Full Config Presets" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Full Config Presets
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../presets-docker/" title="Docker Presets" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Docker Presets
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../assets/js/fx.js"></script>
+      
+    
+  </body>
+</html>
