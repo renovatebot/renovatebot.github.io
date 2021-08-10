@@ -2,8 +2,6 @@
 
 # Renovate Documentation
 
-## What Renovate Does
-
 Renovate (often referred to as "Renovate Bot") is an Open Source tool designed to automate the process of:
 
 - Detecting dependencies in a repository (including both Open Source as well as private/closed source)
