@@ -24,7 +24,7 @@ Renovate's automation capabilities mean that projects which previously fell behi
 Renovate source is available ([renovatebot/renovate](https://github.com/renovatebot/renovate) on GitHub), where most of the development is done.
 Renovate was created by [WhiteSource](https://whitesourcesoftware.com) staff and they continue to push Renovate forward, but is also made possible through more than 400 outside contributors.
 
-Renovate is distributed as [an Open Source npm package](https://npmjs.com/packages/renovate), as [pre-built Open Source images on Docker Hub](https://hub.docker.com/repository/docker/renovate/renovate), or as a [free GitHub App](https://github.com/marketplace/renovate) hosted by WhiteSource.
+Renovate is distributed as [an Open Source npm package](https://npmjs.com/package/renovate), as [pre-built Open Source images on Docker Hub](https://hub.docker.com/repository/docker/renovate/renovate), or as a [free GitHub App](https://github.com/marketplace/renovate) hosted by WhiteSource.
 
 ## About These Docs
 
