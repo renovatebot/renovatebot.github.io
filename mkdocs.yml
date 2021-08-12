@@ -26,21 +26,19 @@ markdown_extensions:
 nav:
   - Home: 'index.md'
   - Getting Started:
-      - 'GitHub App Installation': 'install-github-app.md'
-      - 'GitLab App Installation': 'install-gitlab-app.md'
-      - 'Self-hosting': 'self-hosting.md'
-      - 'Configure Renovate (Onboarding PR)': 'configure-renovate.md'
-      - 'Private module support': 'private-modules.md'
-      - 'Reconfiguring Renovate': 'reconfigure-renovate.md'
-  - Frequently Asked Questions: 'faq.md'
-  - Configuration Options: 'configuration-options.md'
-  - Self Hosted Configuration: 'self-hosted-configuration.md'
+      - 'Use Cases': 'getting-started/use-cases.md'
+      - 'Running Renovate': 'getting-started/running.md'
+      - 'Installing & Onboarding': 'getting-started/installing-onboarding.md'
+      - 'Private Packages': 'getting-started/private-packages.md'
+  - Configuration:
+      - 'Self-hosted': 'self-hosted-configuration.md'
+      - 'Repository': 'configuration-options.md'
+      - 'Presets': 'config-presets.md'
   - Renovate Modules:
       - 'Platforms': 'modules/platform.md'
       - 'Managers': 'modules/manager.md'
       - 'Datasources': 'modules/datasource.md'
       - 'Versioning': 'modules/versioning.md'
-  - Shareable Config Presets: 'config-presets.md'
   - Language Support:
       - 'Bazel': 'bazel.md'
       - 'Docker': 'docker.md'
@@ -72,3 +70,4 @@ nav:
   - All Other:
       - 'Merge Confidence': 'merge-confidence.md'
       - 'Templates': 'templates.md'
+      - 'Frequently Asked Questions': 'faq.md'
