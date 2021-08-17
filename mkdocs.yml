@@ -34,6 +34,8 @@ nav:
       - 'Self-hosted': 'self-hosted-configuration.md'
       - 'Repository': 'configuration-options.md'
       - 'Presets': 'config-presets.md'
+  - Key Concepts:
+      - 'Dependency Dashboard': 'key-concepts/dashboard.md'
   - Renovate Modules:
       - 'Platforms': 'modules/platform.md'
       - 'Managers': 'modules/manager.md'
