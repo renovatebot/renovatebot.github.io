@@ -1,6 +1,5 @@
 const fs = require('fs-extra');
-const options =
-  require('../deps/renovate/dist/config/definitions').getOptions();
+const options = require('../deps/renovate/dist/config/options').getOptions();
 let {
   getCliName,
 } = require('../deps/renovate/dist/workers/global/config/parse/cli');
