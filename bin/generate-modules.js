@@ -178,22 +178,19 @@ async function generateVersioning() {
 
 async function generateDatasources() {
   const dsIndex = require(`../deps/renovate/dist/datasource`);
-  const dsList = dsIndex.getDatasourceList();
+  const dsList = dsIndex.getDatasources();
   let datasourceContent =
     '\nSupported values for `datasource` are: ' +
-    dsList.map((v) => `\`${v}\``).join(', ') +
+    [...dsList.keys()].map((v) => `\`${v}\``).join(', ') +
     '.\n\n';
-  for (const datasource of dsList) {
-    /** @type {import('../deps/renovate/dist/datasource').Datasource}  */
-    const definition = require(`../deps/renovate/dist/datasource/${datasource}`);
+  for (const [datasource, definition] of dsList) {
     const {
-      id,
       urls,
       defaultConfig
     } = definition;
     const displayName = getDisplayName(datasource, definition);
     datasourceContent += `\n### ${displayName} Datasource\n\n`;
-    datasourceContent += `**Identifier**: \`${id}\`\n\n`;
+    datasourceContent += `**Identifier**: \`${datasource}\`\n\n`;
     if (urls && urls.length) {
       datasourceContent +=
         `**References**:\n\n` +
