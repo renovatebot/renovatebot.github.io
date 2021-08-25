@@ -1,10 +1,18 @@
-const fs = require('fs-extra');
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs-extra';
+import { getDatasources } from '../deps/renovate/dist/datasource/index.js';
+import { getManagers } from '../deps/renovate/dist/manager/index.js';
+import { getVersioningList } from '../deps/renovate/dist/versioning/index.js';
+
+// https://stackoverflow.com/a/50052194/10109857
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 console.log('generate-modules');
 
 process.on('unhandledRejection', (error) => {
   // Will print "unhandledRejection err is not defined"
-  console.log('unhandledRejection', error.message);
+  console.log('unhandledRejection', error);
   process.exit(-1);
 });
 
@@ -34,8 +42,7 @@ function getNameWithUrl(moduleName, moduleDefinition) {
 }
 
 async function generateManagers() {
-  const managerIndex = require(`../deps/renovate/dist/manager`);
-  const managers = managerIndex.getManagers();
+  const managers = getManagers();
   const allLanguages = {};
   for (const [manager, definition] of managers) {
     const language = definition.language || 'other';
@@ -119,24 +126,17 @@ async function generateManagers() {
 }
 
 async function generateVersioning() {
-  const versionIndex = require(`../deps/renovate/dist/versioning`);
-  const versioningList = versionIndex.getVersioningList();
+  const versioningList = getVersioningList();
   let versioningContent =
     '\nSupported values for `versioning` are: ' +
     versioningList.map((v) => `\`${v}\``).join(', ') +
     '.\n\n';
   for (const versioning of versioningList) {
-    const definition = require(`../deps/renovate/dist/versioning/${versioning}`);
-    const {
-      id,
-      displayName,
-      urls,
-      supportsRanges,
-      supportedRangeStrategies,
-    } = definition;
+    const { id, displayName, urls, supportsRanges, supportedRangeStrategies } =
+      await import(`../deps/renovate/dist/versioning/${versioning}/index.js`);
     versioningContent += `\n### ${displayName} Versioning\n\n`;
     versioningContent += `**Identifier**: \`${id}\`\n\n`;
-    if (urls.length) {
+    if (urls?.length) {
       versioningContent +=
         `**References**:\n\n` +
         urls.map((url) => ` - [${url}](${url})`).join('\n') +
@@ -177,20 +177,16 @@ async function generateVersioning() {
 }
 
 async function generateDatasources() {
-  const dsIndex = require(`../deps/renovate/dist/datasource`);
-  const dsList = dsIndex.getDatasources();
+  const dsList = getDatasources();
   let datasourceContent =
     '\nSupported values for `datasource` are: ' +
     [...dsList.keys()].map((v) => `\`${v}\``).join(', ') +
     '.\n\n';
   for (const [datasource, definition] of dsList) {
-    const {
-      urls,
-      defaultConfig
-    } = definition;
+    const { id, urls, defaultConfig } = definition;
     const displayName = getDisplayName(datasource, definition);
     datasourceContent += `\n### ${displayName} Datasource\n\n`;
-    datasourceContent += `**Identifier**: \`${datasource}\`\n\n`;
+    datasourceContent += `**Identifier**: \`${id}\`\n\n`;
     if (urls && urls.length) {
       datasourceContent +=
         `**References**:\n\n` +
@@ -210,9 +206,11 @@ async function generateDatasources() {
       console.warn('Not found:' + datasourceReadmeFile);
     }
 
-    if(defaultConfig){
+    if (defaultConfig) {
       datasourceContent +=
-        '**Default configuration**:\n\n```json\n' + JSON.stringify(defaultConfig, undefined, 2) + '\n```\n';
+        '**Default configuration**:\n\n```json\n' +
+        JSON.stringify(defaultConfig, undefined, 2) +
+        '\n```\n';
     }
 
     datasourceContent += `\n----\n\n`;
