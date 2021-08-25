@@ -113,7 +113,9 @@ async function generateManagers() {
   let languageText = '\n';
   for (const language of languages) {
     languageText += `**${language}**: `;
-    languageText += allLanguages[language].map(getModuleLink).join(', ');
+    languageText += allLanguages[language]
+      .map((v) => getModuleLink(v, `\`${v}\``))
+      .join(', ');
     languageText += '\n\n';
   }
   const indexFileName = `${__dirname}/../docs/modules/manager.md`;
