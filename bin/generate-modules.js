@@ -181,7 +181,7 @@ async function generateDatasources() {
   const dsList = dsIndex.getDatasources();
   let datasourceContent =
     '\nSupported values for `datasource` are: ' +
-    dsList.map((v) => `\`${v}\``).join(', ') +
+    [...dsList.keys()].map((v) => `\`${v}\``).join(', ') +
     '.\n\n';
   for (const [datasource, definition] of dsList) {
     const {
