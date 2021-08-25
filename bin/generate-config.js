@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import { getOptions } from '../deps/renovate/dist/config/options/index.js';
 import { getCliName } from '../deps/renovate/dist/workers/global/config/parse/cli.js';
 import { getEnvName } from '../deps/renovate/dist/workers/global/config/parse/env.js';
-import table from 'markdown-table';
+import { markdownTable as table } from 'markdown-table';
 
 // https://stackoverflow.com/a/50052194/10109857
 const __dirname = dirname(fileURLToPath(import.meta.url));
