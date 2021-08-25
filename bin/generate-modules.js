@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import { getDatasources } from '../deps/renovate/dist/datasource/index.js';
 import { getManagers } from '../deps/renovate/dist/manager/index.js';
 import { getVersioningList } from '../deps/renovate/dist/versioning/index.js';
+import { getPlatformList } from '../deps/renovate/dist/platform/index.js';
 
 // https://stackoverflow.com/a/50052194/10109857
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -39,6 +40,10 @@ function getNameWithUrl(moduleName, moduleDefinition) {
     return `[${displayName}](${moduleDefinition.url})`;
   }
   return displayName;
+}
+
+function getModuleLink(module, title) {
+  return `[${title ?? module}](${module}/)`;
 }
 
 async function generateManagers() {
@@ -106,12 +111,9 @@ async function generateManagers() {
   languages.sort();
   languages.push('other');
   let languageText = '\n';
-  function getManagerLink(manager) {
-    return `[${manager}](${manager}/)`;
-  }
   for (const language of languages) {
     languageText += `**${language}**: `;
-    languageText += allLanguages[language].map(getManagerLink).join(', ');
+    languageText += allLanguages[language].map(getModuleLink).join(', ');
     languageText += '\n\n';
   }
   const indexFileName = `${__dirname}/../docs/modules/manager.md`;
@@ -226,7 +228,39 @@ async function generateDatasources() {
   await fs.outputFile(indexFileName, indexContent);
 }
 
+async function generatePlatforms() {
+  let platformContent = 'Supported values for `platform` are: ';
+  const platforms = getPlatformList();
+  for (const platform of platforms) {
+    const readme = await fs.readFile(
+      `deps/renovate/lib/platform/${platform}/index.md`,
+      'utf8'
+    );
+    await fs.outputFile(`docs/modules/platform/${platform}/index.md`, readme);
+  }
+
+  platformContent += platforms
+    .map((v) => getModuleLink(v, `\`${v}\``))
+    .join(', ');
+
+  platformContent += '.\n';
+
+  const indexFileName = `docs/modules/platform.md`;
+  let indexContent = await fs.readFile(indexFileName, 'utf8');
+  const replaceStartIndex = indexContent.indexOf(replaceStart);
+  const replaceStopIndex = indexContent.indexOf(replaceStop);
+  if (replaceStartIndex < 0) {
+    return;
+  }
+  indexContent =
+    indexContent.slice(0, replaceStartIndex + replaceStart.length) +
+    platformContent +
+    indexContent.slice(replaceStopIndex);
+  await fs.outputFile(indexFileName, indexContent);
+}
+
 (async () => {
+  await generatePlatforms();
   await generateManagers();
   await generateVersioning();
   await generateDatasources();
