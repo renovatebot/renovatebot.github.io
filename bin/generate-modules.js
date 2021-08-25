@@ -190,7 +190,7 @@ async function generateDatasources() {
     } = definition;
     const displayName = getDisplayName(datasource, definition);
     datasourceContent += `\n### ${displayName} Datasource\n\n`;
-    datasourceContent += `**Identifier**: \`${id}\`\n\n`;
+    datasourceContent += `**Identifier**: \`${datasource}\`\n\n`;
     if (urls && urls.length) {
       datasourceContent +=
         `**References**:\n\n` +
