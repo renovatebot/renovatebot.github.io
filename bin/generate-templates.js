@@ -1,8 +1,13 @@
-const fs = require('fs-extra');
-let {
-  allowedFields,
-  exposedConfigOptions,
-} = require('../deps/renovate/dist/util/template');
+import fs from 'fs-extra';
+import { allowedFields, exposedConfigOptions } from '../deps/renovate/dist/util/template/index.js';
+
+console.log('generate-templates');
+
+process.on('unhandledRejection', (error) => {
+  // Will print "unhandledRejection err is not defined"
+  console.log('unhandledRejection', error);
+  process.exit(-1);
+});
 
 async function generateTemplates() {
   let exposedConfigOptionsText =
@@ -35,11 +40,5 @@ async function generateTemplates() {
   );
   await fs.outputFile(templateFile, templateContent);
 }
-
-process.on('unhandledRejection', (error) => {
-  // Will print "unhandledRejection err is not defined"
-  console.log('unhandledRejection', error.message);
-  process.exit(-1);
-});
 
 generateTemplates();

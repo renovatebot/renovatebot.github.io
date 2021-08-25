@@ -21,4 +21,4 @@ cd $pwd
 cp -R src/* docs/
 
 echo '---\ntitle: Merge Confidence\ndescription: Node versions support in Renovate\n---\n' > docs/merge-confidence.md
-curl https://raw.githubusercontent.com/whitesource/merge-confidence/main/README.md >> docs/merge-confidence.md
+curl -sSLf https://raw.githubusercontent.com/whitesource/merge-confidence/main/README.md >> docs/merge-confidence.md

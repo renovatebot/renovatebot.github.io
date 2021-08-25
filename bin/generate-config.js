@@ -1,19 +1,22 @@
-const fs = require('fs-extra');
-const options = require('../deps/renovate/dist/config/options').getOptions();
-let {
-  getCliName,
-} = require('../deps/renovate/dist/workers/global/config/parse/cli');
-let {
-  getEnvName,
-} = require('../deps/renovate/dist/workers/global/config/parse/env');
-let table = require('markdown-table');
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs-extra';
+import { getOptions } from '../deps/renovate/dist/config/options/index.js';
+import { getCliName } from '../deps/renovate/dist/workers/global/config/parse/cli.js';
+import { getEnvName } from '../deps/renovate/dist/workers/global/config/parse/env.js';
+import table from 'markdown-table';
+
+// https://stackoverflow.com/a/50052194/10109857
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 let config_options_raw;
+const options = getOptions();
 
 console.log('generate-config');
 
 process.on('unhandledRejection', (error) => {
   // Will print "unhandledRejection err is not defined"
-  console.log('unhandledRejection', error.message);
+  console.log('unhandledRejection', error);
   process.exit(-1);
 });
 
@@ -23,9 +26,9 @@ async function generate_config(bot = false) {
     config_file = `self-hosted-configuration.md`;
   }
 
-  config_options_raw = fs
-    .readFileSync(`${__dirname}/../docs/${config_file}`, 'utf8')
-    .split('\n');
+  config_options_raw = (
+    await fs.readFile(`${__dirname}/../docs/${config_file}`, 'utf8')
+  ).split('\n');
 
   options
     .filter((option) => option.status !== 'unpublished')
@@ -50,16 +53,12 @@ async function generate_config(bot = false) {
         gen_table(Object.entries(el), el.type, el.default, bot);
     });
 
-  fs.writeFile(
+  await fs.writeFile(
     `${__dirname}/../docs/${config_file}`,
-    config_options_raw.join('\n'),
-    function (err) {
-      if (err) {
-        return console.log(err);
-      }
-      console.log('The configuration doc was successfuly created!');
-    }
+    config_options_raw.join('\n')
   );
+
+  console.log(`${config_file} doc created`);
 }
 
 function gen_table(obj, type, def, bot = false) {
