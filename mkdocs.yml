@@ -36,6 +36,7 @@ nav:
       - 'Presets': 'config-presets.md'
   - Key Concepts:
       - 'Dependency Dashboard': 'key-concepts/dashboard.md'
+      - 'Renovate Scheduling': 'key-concepts/scheduling.md'
   - Renovate Modules:
       - 'Platforms': 'modules/platform.md'
       - 'Managers': 'modules/manager.md'
