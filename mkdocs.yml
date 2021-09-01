@@ -37,6 +37,7 @@ nav:
   - Key Concepts:
       - 'Dependency Dashboard': 'key-concepts/dashboard.md'
       - 'Renovate Scheduling': 'key-concepts/scheduling.md'
+      - 'Automerge': 'key-concepts/automerge.md'
   - Renovate Modules:
       - 'Platforms': 'modules/platform.md'
       - 'Managers': 'modules/manager.md'
@@ -59,7 +60,6 @@ nav:
       - 'Updating and Rebasing Branches': 'updating-rebasing.md'
       - 'Semantic Commit Messages': 'semantic-commits.md'
       - 'Noise Reduction': 'noise-reduction.md'
-      - 'Automerging Updates': 'automerge-configuration.md'
   - Included Presets:
       - 'Full Config Presets': 'presets-config.md'
       - 'Default Presets': 'presets-default.md'
