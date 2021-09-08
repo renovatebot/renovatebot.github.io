@@ -18,10 +18,6 @@
       "automergeType": "branch",
       "semanticCommitScope": "docs",
       "stabilityDays": 0
-    },
-    {
-      "packagePatterns": ["^@docusaurus"],
-      "allowedVersions": "/^\\d+\\.\\d+\\.\\d+(-alpha\\.(\\d+))?$/"
     }
   ]
 }
