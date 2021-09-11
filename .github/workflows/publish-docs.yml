@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - '**'
-      - '!master'
+      - '!main'
 
 env:
-  node-version: 12.x
+  node-version: 14.x
   python-version: 3.x
 
 jobs:
@@ -17,12 +17,12 @@ jobs:
 
     steps:
       - name: Set up Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@25316bbc1f10ac9d8798711f44914b1cf3c4e954 # renovate: tag=v2.4.0
         with:
           node-version: ${{ env.node-version }}
 
       - name: Set up Python ${{ env.python-version }}
-        uses: actions/setup-python@v2.2.1
+        uses: actions/setup-python@dc73133d4da04e56a135ae2246682783cc7c7cb6 # renovate: tag=v2.2.2
         with:
           python-version: ${{ env.python-version }}
 
@@ -39,7 +39,7 @@ jobs:
           python --version
           pip --version
 
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # renovate: tag=v2.3.4
 
       - name: Checkout submodules
         shell: bash
@@ -49,7 +49,7 @@ jobs:
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
       - name: Cache Yarn packages
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
         with:
           path: ${{ steps.init.outputs.yarn_cache }}
           key: ${{ runner.os }}-yarn_cache-${{ hashFiles('**/yarn.lock') }}
@@ -57,7 +57,7 @@ jobs:
             ${{ runner.os }}-yarn_cache-
 
       - name: Cache pip packages
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
         with:
           path: ${{ steps.init.outputs.pip_cache }}
           key: ${{ runner.os }}-${{ env.python-version }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -73,7 +73,7 @@ jobs:
       - name: Build docs
         run: mkdocs build
 
-      - uses: actions/upload-artifact@v2.2.2
+      - uses: actions/upload-artifact@27121b0bdffd731efa15d66772be8dc71245d074 # renovate: tag=v2.2.4
         with:
           name: site
           path: site
@@ -81,4 +81,3 @@ jobs:
       - name: Publish docs
         if: github.event_name == 'push' && github.ref == 'refs/heads/build'
         run: mkdocs gh-deploy --force
-

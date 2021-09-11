@@ -2,13 +2,14 @@
   "name": "docs.renovatebot.com",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/renovatebot/docs.renovatebot.com.git"
   },
   "devDependencies": {
-    "fs-extra": "9.1.0",
-    "markdown-table": "2.0.0"
+    "fs-extra": "10.0.0",
+    "markdown-table": "3.0.1"
   },
   "prettier": {
     "singleQuote": true,

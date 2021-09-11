@@ -1,12 +1,16 @@
-const fs = require('fs-extra');
-const presetGroups = require('../deps/renovate/dist/config/presets/internal/index.js')
-  .groups;
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs-extra';
+import { groups as presetGroups } from '../deps/renovate/dist/config/presets/internal/index.js';
+
+// https://stackoverflow.com/a/50052194/10109857
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 console.log('generate-presets');
 
 process.on('unhandledRejection', (error) => {
   // Will print "unhandledRejection err is not defined"
-  console.log('unhandledRejection', error.message);
+  console.log('unhandledRejection', error);
   process.exit(-1);
 });
 

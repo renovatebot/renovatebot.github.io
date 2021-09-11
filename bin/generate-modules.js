@@ -1,10 +1,19 @@
-const fs = require('fs-extra');
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs-extra';
+import { getDatasources } from '../deps/renovate/dist/datasource/index.js';
+import { getManagers } from '../deps/renovate/dist/manager/index.js';
+import { getVersioningList } from '../deps/renovate/dist/versioning/index.js';
+import { getPlatformList } from '../deps/renovate/dist/platform/index.js';
+
+// https://stackoverflow.com/a/50052194/10109857
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 console.log('generate-modules');
 
 process.on('unhandledRejection', (error) => {
   // Will print "unhandledRejection err is not defined"
-  console.log('unhandledRejection', error.message);
+  console.log('unhandledRejection', error);
   process.exit(-1);
 });
 
@@ -33,9 +42,12 @@ function getNameWithUrl(moduleName, moduleDefinition) {
   return displayName;
 }
 
+function getModuleLink(module, title) {
+  return `[${title ?? module}](${module}/)`;
+}
+
 async function generateManagers() {
-  const managerIndex = require(`../deps/renovate/dist/manager`);
-  const managers = managerIndex.getManagers();
+  const managers = getManagers();
   const allLanguages = {};
   for (const [manager, definition] of managers) {
     const language = definition.language || 'other';
@@ -99,12 +111,11 @@ async function generateManagers() {
   languages.sort();
   languages.push('other');
   let languageText = '\n';
-  function getManagerLink(manager) {
-    return `[${manager}](${manager}/)`;
-  }
   for (const language of languages) {
     languageText += `**${language}**: `;
-    languageText += allLanguages[language].map(getManagerLink).join(', ');
+    languageText += allLanguages[language]
+      .map((v) => getModuleLink(v, `\`${v}\``))
+      .join(', ');
     languageText += '\n\n';
   }
   const indexFileName = `${__dirname}/../docs/modules/manager.md`;
@@ -119,24 +130,17 @@ async function generateManagers() {
 }
 
 async function generateVersioning() {
-  const versionIndex = require(`../deps/renovate/dist/versioning`);
-  const versioningList = versionIndex.getVersioningList();
+  const versioningList = getVersioningList();
   let versioningContent =
     '\nSupported values for `versioning` are: ' +
     versioningList.map((v) => `\`${v}\``).join(', ') +
     '.\n\n';
   for (const versioning of versioningList) {
-    const definition = require(`../deps/renovate/dist/versioning/${versioning}`);
-    const {
-      id,
-      displayName,
-      urls,
-      supportsRanges,
-      supportedRangeStrategies,
-    } = definition;
+    const { id, displayName, urls, supportsRanges, supportedRangeStrategies } =
+      await import(`../deps/renovate/dist/versioning/${versioning}/index.js`);
     versioningContent += `\n### ${displayName} Versioning\n\n`;
     versioningContent += `**Identifier**: \`${id}\`\n\n`;
-    if (urls.length) {
+    if (urls?.length) {
       versioningContent +=
         `**References**:\n\n` +
         urls.map((url) => ` - [${url}](${url})`).join('\n') +
@@ -177,20 +181,13 @@ async function generateVersioning() {
 }
 
 async function generateDatasources() {
-  const dsIndex = require(`../deps/renovate/dist/datasource`);
-  const dsList = dsIndex.getDatasourceList();
+  const dsList = getDatasources();
   let datasourceContent =
     '\nSupported values for `datasource` are: ' +
-    dsList.map((v) => `\`${v}\``).join(', ') +
+    [...dsList.keys()].map((v) => `\`${v}\``).join(', ') +
     '.\n\n';
-  for (const datasource of dsList) {
-    /** @type {import('../deps/renovate/dist/datasource').Datasource}  */
-    const definition = require(`../deps/renovate/dist/datasource/${datasource}`);
-    const {
-      id,
-      urls,
-      defaultConfig
-    } = definition;
+  for (const [datasource, definition] of dsList) {
+    const { id, urls, defaultConfig } = definition;
     const displayName = getDisplayName(datasource, definition);
     datasourceContent += `\n### ${displayName} Datasource\n\n`;
     datasourceContent += `**Identifier**: \`${id}\`\n\n`;
@@ -213,9 +210,11 @@ async function generateDatasources() {
       console.warn('Not found:' + datasourceReadmeFile);
     }
 
-    if(defaultConfig){
+    if (defaultConfig) {
       datasourceContent +=
-        '**Default configuration**:\n\n```json\n' + JSON.stringify(defaultConfig, undefined, 2) + '\n```\n';
+        '**Default configuration**:\n\n```json\n' +
+        JSON.stringify(defaultConfig, undefined, 2) +
+        '\n```\n';
     }
 
     datasourceContent += `\n----\n\n`;
@@ -231,7 +230,39 @@ async function generateDatasources() {
   await fs.outputFile(indexFileName, indexContent);
 }
 
+async function generatePlatforms() {
+  let platformContent = 'Supported values for `platform` are: ';
+  const platforms = getPlatformList();
+  for (const platform of platforms) {
+    const readme = await fs.readFile(
+      `deps/renovate/lib/platform/${platform}/index.md`,
+      'utf8'
+    );
+    await fs.outputFile(`docs/modules/platform/${platform}/index.md`, readme);
+  }
+
+  platformContent += platforms
+    .map((v) => getModuleLink(v, `\`${v}\``))
+    .join(', ');
+
+  platformContent += '.\n';
+
+  const indexFileName = `docs/modules/platform.md`;
+  let indexContent = await fs.readFile(indexFileName, 'utf8');
+  const replaceStartIndex = indexContent.indexOf(replaceStart);
+  const replaceStopIndex = indexContent.indexOf(replaceStop);
+  if (replaceStartIndex < 0) {
+    return;
+  }
+  indexContent =
+    indexContent.slice(0, replaceStartIndex + replaceStart.length) +
+    platformContent +
+    indexContent.slice(replaceStopIndex);
+  await fs.outputFile(indexFileName, indexContent);
+}
+
 (async () => {
+  await generatePlatforms();
   await generateManagers();
   await generateVersioning();
   await generateDatasources();
