@@ -6,11 +6,42 @@ remote_branch: main
 # Theme settings
 theme:
   name: 'material'
+
+  # Setup colors for Light and Dark mode
+
   palette:
-    primary: 'blue'
-    accent: 'blue'
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      primary: 'blue'
+      accent: 'blue'
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+      primary: 'cyan'
+      accent: 'cyan'
+
   logo: 'assets/images/logo.png'
   favicon: 'assets/images/logo.png'
+
+  icon:
+    repo: fontawesome/brands/github # Use better icon for GitHub icon in header
+
+  features:
+    - navigation.top # Add back to top button
+
+# Setup button to edit page on GitHub.
+# Works correctly for most pages, but will be wrong in some cases.
+
+repo_name: renovatebot/renovate
+repo_url: https://github.com/renovatebot/renovate
+edit_uri: edit/main/docs/usage/
+
+# CSS and JavaScript customizations
 
 extra_css:
   - 'assets/css/style.css'
