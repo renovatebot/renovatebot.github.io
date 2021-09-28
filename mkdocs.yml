@@ -29,8 +29,9 @@ nav:
       - 'Use Cases': 'getting-started/use-cases.md'
       - 'Running Renovate': 'getting-started/running.md'
       - 'Installing & Onboarding': 'getting-started/installing-onboarding.md'
-      - 'Troubleshooting': 'getting-started/troubleshooting.md'
       - 'Private Packages': 'getting-started/private-packages.md'
+  - Troubleshooting:
+      - 'Troubleshooting': 'troubleshooting.md'
   - Configuration:
       - 'Self-hosted': 'self-hosted-configuration.md'
       - 'Repository': 'configuration-options.md'
