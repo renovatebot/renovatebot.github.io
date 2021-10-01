@@ -102,6 +102,10 @@ nav:
       - 'Package Presets': 'presets-packages.md'
       - 'Preview Presets': 'presets-preview.md'
       - 'Schedule Presets': 'presets-schedule.md'
+      - 'Workaround Presets': 'presets-workarounds.md'
+      - 'Compatibility Presets': 'presets-compatibility.md'
+      - 'npm Presets': 'presets-npm.md'
+      - 'Regex Manager Presets': 'presets-regexManagers.md'
   - All Other:
       - 'Merge Confidence': 'merge-confidence.md'
       - 'Templates': 'templates.md'
