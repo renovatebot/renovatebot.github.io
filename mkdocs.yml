@@ -31,7 +31,6 @@ nav:
       - 'Installing & Onboarding': 'getting-started/installing-onboarding.md'
       - 'Private Packages': 'getting-started/private-packages.md'
   - Troubleshooting: 'troubleshooting.md'
-  - Known Limitations: 'known-limitations.md'
   - Configuration:
       - 'Self-hosted': 'self-hosted-configuration.md'
       - 'Repository': 'configuration-options.md'
@@ -76,3 +75,4 @@ nav:
       - 'Merge Confidence': 'merge-confidence.md'
       - 'Templates': 'templates.md'
       - 'Frequently Asked Questions': 'faq.md'
+      - 'Known Limitations': 'known-limitations.md'
