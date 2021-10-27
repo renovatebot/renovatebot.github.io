@@ -62,6 +62,7 @@ nav:
   - Getting Started:
       - 'Use Cases': 'getting-started/use-cases.md'
       - 'Running Renovate': 'getting-started/running.md'
+      - 'Self-Hosting Examples': 'examples/self-hosting.md'
       - 'Installing & Onboarding': 'getting-started/installing-onboarding.md'
       - 'Private Packages': 'getting-started/private-packages.md'
   - Troubleshooting: 'troubleshooting.md'
