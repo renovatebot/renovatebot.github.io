@@ -110,6 +110,7 @@ nav:
       - 'Compatibility Presets': 'presets-compatibility.md'
       - 'npm Presets': 'presets-npm.md'
       - 'Regex Manager Presets': 'presets-regexManagers.md'
+      - 'Replacement Presets': 'presets-replacements.md'
   - All Other:
       - 'Merge Confidence': 'merge-confidence.md'
       - 'Templates': 'templates.md'
