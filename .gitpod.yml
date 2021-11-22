@@ -1,0 +1,11 @@
+tasks:
+  - init: >
+      nvm install 14 &&
+      nvm use 14 &&
+      make
+    command: mkdocs serve
+
+ports:
+  - port: 8000
+    onOpen: open-browser
+    visibility: private
