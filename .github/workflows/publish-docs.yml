@@ -49,7 +49,7 @@ jobs:
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
       - name: Cache Yarn packages
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
+        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed # renovate: tag=v2.1.7
         with:
           path: ${{ steps.init.outputs.yarn_cache }}
           key: ${{ runner.os }}-yarn_cache-${{ hashFiles('**/yarn.lock') }}
@@ -57,7 +57,7 @@ jobs:
             ${{ runner.os }}-yarn_cache-
 
       - name: Cache pip packages
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
+        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed # renovate: tag=v2.1.7
         with:
           path: ${{ steps.init.outputs.pip_cache }}
           key: ${{ runner.os }}-${{ env.python-version }}-pip-${{ hashFiles('**/requirements.txt') }}
