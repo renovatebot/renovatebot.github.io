@@ -1,5 +1,8 @@
 import fs from 'fs-extra';
-import { allowedFields, exposedConfigOptions } from '../deps/renovate/dist/util/template/index.js';
+import {
+  allowedFields,
+  exposedConfigOptions,
+} from '../deps/renovate/dist/util/template/index.js';
 
 console.log('generate-templates');
 
