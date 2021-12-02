@@ -7,9 +7,14 @@
     "type": "git",
     "url": "git+https://github.com/renovatebot/docs.renovatebot.com.git"
   },
+  "scripts": {
+    "prettier": "prettier --check \"**/*.{ts,js,mjs,json,md,yml}\"",
+    "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md,yml}\""
+  },
   "devDependencies": {
     "fs-extra": "10.0.0",
-    "markdown-table": "3.0.1"
+    "markdown-table": "3.0.1",
+    "prettier": "2.5.0"
   },
   "prettier": {
     "singleQuote": true,
