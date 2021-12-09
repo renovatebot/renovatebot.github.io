@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - '**'
-      - !gh-pages
+      - '!gh-pages'
 
 env:
   node-version: 14.x
