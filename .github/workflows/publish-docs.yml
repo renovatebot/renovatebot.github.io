@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - '**'
-      - '!main'
+      - '!gh-pages'
 
 env:
   node-version: 14.x
@@ -79,5 +79,5 @@ jobs:
           path: site
 
       - name: Publish docs
-        if: github.event_name == 'push' && github.ref == 'refs/heads/build'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: mkdocs gh-deploy --force
