@@ -2,7 +2,7 @@ site_name: Renovate Docs
 site_url: 'https://docs.renovatebot.com'
 site_description: 'Renovate documentation.'
 
-remote_branch: main
+remote_branch: gh-pages
 
 strict: true
 
