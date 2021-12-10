@@ -10,7 +10,7 @@ get-docs:
 build-docs:
 	bash bin/build-docs.sh
 
-prepare: get-docs generate-config generate-modules generate-presets generate-templates
+prepare: get-docs
 
 build: prepare build-docs
 
