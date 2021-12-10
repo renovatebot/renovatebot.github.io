@@ -73,7 +73,7 @@ jobs:
       - name: Build docs
         run: mkdocs build
 
-      - uses: actions/upload-artifact@27121b0bdffd731efa15d66772be8dc71245d074 # renovate: tag=v2.2.4
+      - uses: actions/upload-artifact@da838ae9595ac94171fa2d4de5a2f117b3e7ac32 # renovate: tag=v2.3.0
         with:
           name: site
           path: site
