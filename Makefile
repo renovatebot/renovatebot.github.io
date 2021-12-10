@@ -7,18 +7,6 @@ install:
 get-docs:
 	bash bin/get-docs.sh
 
-generate-config:
-	node bin/generate-config.js
-
-generate-modules:
-	node bin/generate-modules.js
-
-generate-presets:
-	node bin/generate-presets.js
-
-generate-templates:
-	node bin/generate-templates.js
-
 build-docs:
 	bash bin/build-docs.sh
 

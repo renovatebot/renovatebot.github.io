@@ -14,12 +14,10 @@ cd $deps/renovate
 
 if [ -z $SKIP_BUILD ]; then
   yarn install --frozen-lockfile
-  yarn build
-  yarn create-json-schema
+  yarn build:docs
 fi
 
-cp -R docs/usage/* $docs
-cp renovate-schema.json $docs
+cp -R tmp/docs/* $docs
 
 cd $pwd
 cp -R src/* docs/
