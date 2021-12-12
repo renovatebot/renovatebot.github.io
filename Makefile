@@ -5,7 +5,7 @@ install:
 	pip install -r requirements.txt
 
 shellcheck:
-	shellcheck bin/*.sh
+	shellcheck bin/*.sh -f gcc
 
 get-docs:
 	bash bin/get-docs.sh
