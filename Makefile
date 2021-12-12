@@ -4,6 +4,9 @@ install:
 	yarn install --frozen-lockfile
 	pip install -r requirements.txt
 
+shellcheck:
+	shellcheck bin/*.sh
+
 get-docs:
 	bash bin/get-docs.sh
 
