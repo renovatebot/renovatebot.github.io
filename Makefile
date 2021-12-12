@@ -5,7 +5,7 @@ install:
 	pip install -r requirements.txt
 
 shellcheck:
-	shellcheck bin/*.sh -f checkstyle
+	shellcheck bin/*.sh
 
 get-docs:
 	bash bin/get-docs.sh
