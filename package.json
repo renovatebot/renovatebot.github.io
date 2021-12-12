@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "fs-extra": "10.0.0",
-    "markdown-table": "3.0.1"
+    "markdown-table": "3.0.2"
   },
   "prettier": {
     "singleQuote": true,
