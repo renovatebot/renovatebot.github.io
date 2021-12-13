@@ -20,11 +20,13 @@ jobs:
         uses: actions/setup-node@04c56d2f954f1e4c69436aa54cfef261a018f458 # renovate: tag=v2.5.0
         with:
           node-version: ${{ env.node-version }}
+          cache: 'yarn'
 
       - name: Set up Python ${{ env.python-version }}
         uses: actions/setup-python@f38219332975fe8f9c04cca981d674bf22aea1d3 # renovate: tag=v2.3.1
         with:
           python-version: ${{ env.python-version }}
+          cache: 'pip'
 
       - name: Init platform
         id: init
@@ -47,22 +49,6 @@ jobs:
           auth_header="$(git config --local --get http.https://github.com/.extraheader)"
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
-
-      - name: Cache Yarn packages
-        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed # renovate: tag=v2.1.7
-        with:
-          path: ${{ steps.init.outputs.yarn_cache }}
-          key: ${{ runner.os }}-yarn_cache-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn_cache-
-
-      - name: Cache pip packages
-        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed # renovate: tag=v2.1.7
-        with:
-          path: ${{ steps.init.outputs.pip_cache }}
-          key: ${{ runner.os }}-${{ env.python-version }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.python-version }}-pip-
 
       - name: Installing dependencies
         run: make install
