@@ -66,6 +66,7 @@ jobs:
         with:
           name: site
           path: site
+          if-no-files-found: error
 
       - name: Publish docs
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
