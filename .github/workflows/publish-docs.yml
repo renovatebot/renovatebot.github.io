@@ -5,6 +5,9 @@ on:
     branches:
       - '**'
       - '!gh-pages'
+  pull_request:
+    branches:
+      - 'main'
 
 env:
   node-version: 14.x
