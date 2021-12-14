@@ -56,7 +56,6 @@ jobs:
         run: make install
 
       - name: Run shellcheck on incoming PRs
-        if: github.event_name == 'pull_request' && github.base_ref == 'main'
         run: make shellcheck
 
       - name: Prepare docs
