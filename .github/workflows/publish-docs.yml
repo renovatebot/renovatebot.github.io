@@ -55,7 +55,7 @@ jobs:
       - name: Installing dependencies
         run: make install
 
-      - name: Run shellcheck on incoming PRs
+      - name: Run shellcheck
         run: make shellcheck
 
       - name: Prepare docs
