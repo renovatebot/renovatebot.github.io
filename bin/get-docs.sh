@@ -5,22 +5,22 @@ set -e
 pwd=$PWD
 
 docs=$pwd/docs
-rm -rf $docs
-mkdir -p $docs
+rm -rf "$docs"
+mkdir -p "$docs"
 
 deps=$pwd/deps
 
-cd $deps/renovate
+cd "$deps/renovate"
 
-if [ -z $SKIP_BUILD ]; then
+if [ -z "$SKIP_BUILD" ]; then
   yarn install --frozen-lockfile
   yarn build:docs
 fi
 
-cp -R tmp/docs/* $docs
+cp -R tmp/docs/* "$docs"
 
-cd $pwd
+cd "$pwd"
 cp -R src/* docs/
 
-echo '---\ntitle: Merge Confidence\ndescription: Node versions support in Renovate\n---\n' > docs/merge-confidence.md
+printf '---\ntitle: Merge Confidence\ndescription: Node versions support in Renovate\n---\n' > docs/merge-confidence.md
 curl -sSLf https://raw.githubusercontent.com/whitesource/merge-confidence/main/README.md >> docs/merge-confidence.md
