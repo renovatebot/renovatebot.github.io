@@ -17,7 +17,7 @@ The quickest way to get started is to use Gitpod.
 
 ### Pull request workflow
 
-1. Make sure the `build` branch of your fork is up-to-date with the upstream repository, you can sync your fork with a button in the GitHub interface
+1. Make sure the `main` branch of your fork is up-to-date with the upstream repository, you can sync your fork with a button in the GitHub interface
 1. Open your forks "homepage", and prefix the current URL with `https://gitpod.io/#`, for example: `https://gitpod.io/#https://github.com/your-user-name/renovatebot.github.io` and press <kbd>Enter</kbd>
 1. Gitpod will open in the same browser window and ask you to login
 1. Create a new Git branch in the Gitpod workspace and switch to it
@@ -52,14 +52,14 @@ To ensure everything is working properly on your end, you must:
 
 Before you submit a pull request you should:
 
-1. Ensure your feature branch is up-to-date with the upstream `build` branch
+1. Ensure your feature branch is up-to-date with the upstream `main` branch
 1. Run `make` to install all dependencies and make a build
 1. Serve the build of the website locally with `mkdocs serve`
 
 ## Keeping your Renovate fork up to date
 
-First of all, never commit to `build` of your fork - always use a branch like `style/fix-css-error`.
+First of all, never commit to `main` of your fork - always use a branch like `style/fix-css-error`.
 
-Make sure your fork's `build` branch is up to date with the upstream `build` before creating a new branch, read the [GitHub docs, syncing a fork](https://help.github.com/articles/syncing-a-fork/).
+Make sure your fork's `main` branch is up to date with the upstream `main` before creating a new branch, read the [GitHub docs, syncing a fork](https://help.github.com/articles/syncing-a-fork/).
 
 If you're working with Git locally, you need to configure the remote branch correctly, read the[GitHub docs, configuring a remote for a fork](https://help.github.com/articles/configuring-a-remote-for-a-fork/) to learn how to do this.
