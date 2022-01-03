@@ -2,26 +2,26 @@
 
 # Renovate documentation
 
-Renovate (often referred to as "Renovate Bot") is an Open Source tool designed to automate the process of:
+Renovate (often referred to as "Renovate Bot") is an Open Source tool to automate:
 
-- Detecting dependencies in a repository (including both Open Source as well as private/closed source)
+- Detecting dependencies in a repository (Open Source and private/closed source)
 - Checking if there are newer versions which can be updated to
-- Creating commits and Merge/Pull Requests to apply such changes, and include Release Notes if available
+- Creating commits and Merge/Pull Requests to apply such changes, and show the Release Notes (if available)
 
 ## Renovate's purpose
 
 Renovate was created to address the problem of stale/out-of-date dependencies in software projects.
-Most projects start out on fully up-to-date dependencies, but over time fall further and further behind.
-Not only are such projects missing out on bug fixes or new features, but they also suffer from the following indirect consequences too:
+Most projects start with up-to-date dependencies, but fall behind over time.
+Not only are such projects missing out on bug fixes or new features, but they also suffer from the following indirect consequences:
 
 - Getting further into "technical debt" by increasing the amount of custom code using deprecated APIs
 - Increasing the time-to-resolution of vulnerabilities due to the risk of performing large jumps of dependency versions under stress
 
-Renovate's automation capabilities mean that projects which previously fell behind with dependency versions can now stay up-to-date, while diligent developers who had previously kept dependencies up-to-date manually are now free to focus that saved time on more important duties.
+Renovate's automation capabilities mean that projects which previously fell behind with dependency versions can stay up-to-date, while diligent developers who  previously kept dependencies up-to-date manually are now free to focus that saved time on more important duties.
 
 ## Renovate development and use
 
-Renovate source is available ([renovatebot/renovate](https://github.com/renovatebot/renovate) on GitHub), where most of the development is done.
+The source code for Renovate is available on GitHub ([renovatebot/renovate](https://github.com/renovatebot/renovate)), where most of the development is done.
 Renovate was created by [WhiteSource](https://www.whitesourcesoftware.com/) staff and they continue to push Renovate forward, but is also made possible through more than 500 outside contributors.
 
 Renovate is distributed as [an Open Source npm package](https://www.npmjs.com/package/renovate), as [pre-built Open Source images on Docker Hub](https://hub.docker.com/repository/docker/renovate/renovate), or as a [free GitHub App](https://github.com/marketplace/renovate) hosted by WhiteSource.
