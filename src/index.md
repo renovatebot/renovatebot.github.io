@@ -17,7 +17,7 @@ Not only are such projects missing out on bug fixes or new features, but they al
 - Getting further into "technical debt" by increasing the amount of custom code using deprecated APIs
 - Increasing the time-to-resolution of vulnerabilities due to the risk of performing large jumps of dependency versions under stress
 
-Renovate's automation capabilities mean that projects which previously fell behind with dependency versions can stay up-to-date, while diligent developers who  previously kept dependencies up-to-date manually are now free to focus that saved time on more important duties.
+Renovate's automation capabilities mean that projects which previously fell behind with dependency versions can stay up-to-date, while diligent developers who previously kept dependencies up-to-date manually are now free to focus that saved time on more important duties.
 
 ## Renovate development and use
 
