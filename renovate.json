@@ -10,7 +10,7 @@
     {
       "matchUpdateTypes": ["minor"],
       "automerge": false,
-      "matchManagers": ["pip_requirements"],
+      "matchManagers": ["pip_requirements"]
     },
     {
       "matchManagers": ["git-submodules"],
