@@ -9,8 +9,8 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["minor"],
-      "matchManagers": ["pip_requirements"],
-      "dependencyDashboardApproval": true
+      "automerge": false,
+      "matchManagers": ["pip_requirements"]
     },
     {
       "matchManagers": ["git-submodules"],
