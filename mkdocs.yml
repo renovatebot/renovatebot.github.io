@@ -55,6 +55,8 @@ extra_javascript:
 # Extensions
 markdown_extensions:
   - meta
+  - pymdownx.highlight
+  - pymdownx.superfences
 
 # Page Tree
 nav:
