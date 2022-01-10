@@ -36,6 +36,7 @@ theme:
 
   features:
     - navigation.top # Add back to top button
+    - navigation.instant
 
 # Setup button to edit page on GitHub.
 # Works correctly for most pages, but will be wrong in some cases.
