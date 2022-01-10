@@ -36,8 +36,8 @@ theme:
 
   features:
     - navigation.top # Add back to top button
-    - navigation.instant # Use instant loading for internal links
     - toc.integrate # Integrate table of contents into left sidebar
+    - navigation.instant # Use instant loading for internal links
 
 # Setup button to edit page on GitHub.
 # Works correctly for most pages, but will be wrong in some cases.
