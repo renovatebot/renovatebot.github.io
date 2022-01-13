@@ -1,16 +1,49 @@
-site_name: Renovate Docs
-site_url: 'https://docs.renovatebot.com'
-site_description: 'Renovate documentation.'
+# Build settings
 
+# Halt processing when a warning is raised when building the docs.
+# https://www.mkdocs.org/user-guide/configuration/#strict
+strict: true
+
+# Set the remote branch to commit to when using `gh-deploy` to deploy to GitHub Pages.
+# https://www.mkdocs.org/user-guide/configuration/#remote_branch
 remote_branch: gh-pages
 
-strict: true
+# General site info
+
+# Metadata
+
+# Set the main title for the project.
+# Required setting.
+# https://www.mkdocs.org/user-guide/configuration/#site_name
+site_name: Renovate Docs
+
+# Set the canonical URL of the site.
+# https://www.mkdocs.org/user-guide/configuration/#site_url
+site_url: 'https://docs.renovatebot.com'
+
+# Set the site description, this will add a meta tag to the generated HTML header.
+# https://www.mkdocs.org/user-guide/configuration/#site_description
+site_description: 'Renovate documentation.'
+
+# Upstream Git repository information
+# https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/
+repo_name: renovatebot/renovate
+repo_url: https://github.com/renovatebot/renovate
+edit_uri: edit/main/docs/usage/
 
 # Theme settings
 theme:
   name: 'material'
 
-  # Setup colors for Light and Dark mode
+  logo: 'assets/images/logo.png'
+  favicon: 'assets/images/logo.png'
+
+  icon:
+    repo: fontawesome/brands/github # Custom icon for link to GitHub repository in header
+
+  # Setup colorscheme for Light and Dark mode
+  # Setup icon set for the light/dark mode toggle
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
 
   palette:
     - media: '(prefers-color-scheme: light)'
@@ -28,23 +61,18 @@ theme:
       primary: 'cyan'
       accent: 'cyan'
 
-  logo: 'assets/images/logo.png'
-  favicon: 'assets/images/logo.png'
-
-  icon:
-    repo: fontawesome/brands/github # Use better icon for GitHub icon in header
-
   features:
-    - navigation.top # Add back to top button
-    - toc.integrate # Integrate table of contents into left sidebar
-    - navigation.instant # Use instant loading for internal links
+    # Back to top button
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=back+to+top#back-to-top-button
+    - navigation.top
 
-# Setup button to edit page on GitHub.
-# Works correctly for most pages, but will be wrong in some cases.
+    # Integrate table of contents into left sidebar
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=integrate#integrated-table-of-contents
+    - toc.integrate
 
-repo_name: renovatebot/renovate
-repo_url: https://github.com/renovatebot/renovate
-edit_uri: edit/main/docs/usage/
+    # Use instant loading for internal links
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=instant#instant-loading
+    - navigation.instant
 
 # CSS and JavaScript customizations
 
@@ -56,11 +84,23 @@ extra_javascript:
 
 # Extensions
 markdown_extensions:
+  # Adds the ability to attach arbitrary key-value pairs to a document
+  # via front matter written in YAML syntax before the Markdown.
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/?h=meta#metadata
   - meta
+
+  # The Highlight extension adds support for syntax highlighting of code blocks (with the help of SuperFences)
+  # and inline code blocks (with the help of InlineHilite).
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=highlig#highlight
   - pymdownx.highlight
+
+  # The SuperFences extension allows for arbitrary nesting of code and content blocks inside each other,
+  # including admonitions, tabs, lists and all other elements.
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=superfence#superfences
   - pymdownx.superfences
 
-# Page Tree
+# Page Tree/Sidebar
+# https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
 nav:
   - Home: 'index.md'
   - Getting Started:
