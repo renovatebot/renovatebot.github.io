@@ -99,6 +99,11 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=superfence#superfences
   - pymdownx.superfences
 
+  # The Admonition extension adds support for admonitions,
+  # more commonly known as call-outs, which can be defined in Markdown by using a simple syntax.
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#admonition
+  - admonition
+
 # Page Tree/Sidebar
 # https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
 nav:
