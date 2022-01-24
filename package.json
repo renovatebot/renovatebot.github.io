@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "fs-extra": "10.0.0",
-    "husky": "7.0.0",
+    "husky": "7.0.4",
     "markdown-table": "3.0.2",
     "prettier": "2.5.1"
   },
