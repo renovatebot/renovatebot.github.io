@@ -55,6 +55,9 @@ jobs:
       - name: Installing dependencies
         run: make install
 
+      - name: Run Prettier
+        run: yarn prettier
+
       - name: Run shellcheck
         run: make shellcheck
 

@@ -6,6 +6,7 @@ install:
 
 shellcheck:
 	shellcheck bin/*.sh
+	shellcheck .husky/pre-commit
 
 get-docs:
 	bash bin/get-docs.sh

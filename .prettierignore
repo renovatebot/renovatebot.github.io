@@ -1,0 +1,12 @@
+# copy/paste of the .gitignore
+
+.DS_Store
+/docs
+/node_modules
+/site
+/tmp
+/renovate-schema.json
+/dist
+
+# Ignore the git submodule that pulls in the Renovate content
+/deps

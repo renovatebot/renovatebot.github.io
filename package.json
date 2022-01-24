@@ -9,10 +9,13 @@
   },
   "devDependencies": {
     "fs-extra": "10.0.0",
-    "markdown-table": "3.0.2"
+    "husky": "7.0.4",
+    "markdown-table": "3.0.2",
+    "prettier": "2.5.1"
   },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "es5"
+  "scripts": {
+    "prepare": "husky install",
+    "prettier": "prettier --check --ignore-unknown \"**/*.*\"",
+    "prettier-fix": "prettier --write --ignore-unknown \"**/*.*\""
   }
 }
