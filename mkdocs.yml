@@ -89,6 +89,11 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/?h=meta#metadata
   - meta
 
+  # The toc.permalink extension adds a permalink behind each heading.
+  # https://python-markdown.github.io/extensions/toc/#usage
+  - toc:
+      permalink: true
+
   # The Highlight extension adds support for syntax highlighting of code blocks (with the help of SuperFences)
   # and inline code blocks (with the help of InlineHilite).
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=highlig#highlight
