@@ -1,15 +1,49 @@
 ![Renovate banner](https://app.renovatebot.com/images/whitesource_renovate_660_220.jpg)
 
-# Renovate documentation
+# Renovate
 
-Renovate is an Open Source tool to automate:
+Automated dependency updates.
+Multi-platform and multi-language.
 
-- Detecting dependencies in a repository (Open Source and private/closed source)
-- Checking if there are dependency updates
-- Creating commits and Merge/Pull Requests to update dependencies
-- Showing the release notes
+## Why Use Renovate?
 
-## Renovate's purpose
+- Get automated Pull Requests to update your dependencies
+- Reduce noise by running Renovate on a schedule
+- Relevant package files are discovered automatically
+- Supports monorepo architectures like Lerna or Yarn workspaces with no extra configuration
+- Bot behavior is customizable via configuration files (config as code)
+- Use ESLint-like shared config presets for ease of use and simplifying configuration (JSON format only)
+- Lock files are supported and updated in the same commit, including immediately resolving conflicts whenever PRs are merged
+- Get replacement PRs to migrate from a deprecated dependency to the community suggested replacement (npm packages only)
+- Open source (installable via npm/Yarn or Docker Hub) so can be self-hosted or used via GitHub App
+
+## Supported Platforms
+
+Renovate works on the following platforms:
+
+- GitHub (.com and Enterprise)
+- GitLab (.com and CE/EE)
+- Bitbucket Cloud
+- Bitbucket Server
+- Azure DevOps
+- Gitea
+
+## Who Uses Renovate?
+
+Renovate is widely used in the developer community:
+
+![Renovate Matrix](https://app.renovatebot.com/images/matrix.png)
+
+## The Renovate Approach
+
+We believe everyone benefits from automation, whether it's a little or a lot.
+This means that Renovate:
+
+- Adapts to your workflow
+- Allows you to configure its behavior
+- Will autodetect settings where possible
+
+## Renovate's Purpose
 
 We created Renovate to tackle the problem of out-of-date dependencies in software projects.
 
