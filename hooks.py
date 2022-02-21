@@ -7,3 +7,7 @@ def on_page_markdown(markdown, page, **kwargs):
     edit_url = page.meta.get('edit_url')
     if edit_url:
         page.edit_url = edit_url
+
+    repo_url = page.meta.get('repo_url')
+    if repo_url:
+        page.repo_url= repo_url
