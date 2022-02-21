@@ -8,6 +8,13 @@ strict: true
 # https://www.mkdocs.org/user-guide/configuration/#remote_branch
 remote_branch: gh-pages
 
+# Plugins
+
+plugins:
+  - mkdocs-simple-hooks:
+      hooks:
+        on_page_markdown: 'hooks:on_page_markdown'
+
 # General site info
 
 # Metadata
