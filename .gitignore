@@ -5,3 +5,4 @@
 /tmp
 /renovate-schema.json
 /dist
+__pycache__
