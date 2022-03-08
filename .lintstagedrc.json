@@ -1,6 +1,5 @@
 {
   "*.sh": "shellcheck",
   ".husky/*": "shellcheck",
-  ".bin/*": "shellcheck",
   "*": "prettier --ignore-unknown --write"
 }
