@@ -63,7 +63,9 @@ jobs:
         with:
           reporter: github-pr-review
           filter_mode: nofilter
-          path: bin
+          path: |
+            bin
+            .husky
           pattern: '*.sh'
           check_all_files_with_shebangs: 'true'
 
