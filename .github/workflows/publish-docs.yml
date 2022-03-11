@@ -59,7 +59,7 @@ jobs:
         run: yarn prettier
 
       - name: Run shellcheck
-        uses: reviewdog/action-shellcheck@v1.13.0
+        uses: reviewdog/action-shellcheck@180be9f01392cc8636cae13e58837f209a34620b # tag=v1.13.0
         with:
           reporter: github-pr-review
           filter_mode: nofilter
