@@ -59,7 +59,15 @@ jobs:
         run: yarn prettier
 
       - name: Run shellcheck
-        run: make shellcheck
+        uses: reviewdog/action-shellcheck@v1.13.0
+        with:
+          reporter: github-pr-review
+          filter_mode: nofilter
+          path: |
+            bin
+            .husky
+          pattern: '*.sh'
+          check_all_files_with_shebangs: 'true'
 
       - name: Prepare docs
         run: make prepare
