@@ -1,8 +1,14 @@
 describe('My First Test', () => {
   beforeEach(() => {
-    cy.visit('https://docs.renovatebot.com/'); //change link when testing locally
+    cy.visit('http://127.0.0.1:8000/'); //change link when testing locally
   });
-  it('Does not do much!', () => {
-    expect(true).to.equal(true);
+
+  it('search field working', () => {
+    cy.get('.md-search__input').type('config').should('have.value', 'config');
+  });
+  it('toggle light/dark mode', () => {
+    cy.get('[data-md-color-scheme="default"]');
+    cy.get('.md-header__option').click();
+    cy.get('[data-md-color-scheme="slate"]');
   });
 });
