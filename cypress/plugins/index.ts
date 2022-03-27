@@ -1,7 +1,3 @@
-// cypress/plugins/index.ts
-
-/// <reference types="cypress" />
-
 /**
  * @type {Cypress.PluginConfig}
  */
