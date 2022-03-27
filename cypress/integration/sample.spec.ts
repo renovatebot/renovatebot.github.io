@@ -11,4 +11,27 @@ describe('My First Test', () => {
     cy.get('.md-header__option').click();
     cy.get('[data-md-color-scheme="slate"]');
   });
+  it('previous and next button works', () => {
+    let nextUrl: any, prevUrl: any;
+    cy.get('.md-footer__link--next')
+      .should('have.attr', 'href')
+      .then((href) => {
+        nextUrl = href;
+      });
+    cy.get('.md-footer__link--next').click();
+    cy.location().should((loc) => {
+      expect(loc.href.includes(nextUrl)).to.eq(true);
+    });
+    cy.get('.md-footer__link--prev')
+      .should('have.attr', 'href')
+      .then((href) => {
+        prevUrl = href;
+        console.log(prevUrl);
+      });
+    cy.get('.md-footer__link--prev').click();
+    cy.location().should((loc) => {
+      if (prevUrl === '../..') prevUrl = '/';
+      expect(loc.href.includes(prevUrl)).to.eq(true);
+    });
+  });
 });
