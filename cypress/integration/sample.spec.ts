@@ -33,5 +33,17 @@ describe('My First Test', () => {
       if (prevUrl === '../..') prevUrl = '/';
       expect(loc.href.includes(prevUrl)).to.eq(true);
     });
+    it('sidebar button works', () => {
+      cy.get('[class="md-header__button md-icon"]').each(
+        (headerItem, index) => {
+          if (index === 0) {
+            cy.wrap(headerItem).click();
+            cy.get('.md-nav__list').should('be.visible');
+            cy.get('.md-overlay').click();
+            cy.get('.md-nav__list').should('be.hidden');
+          }
+        }
+      );
+    });
   });
 });
