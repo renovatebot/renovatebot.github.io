@@ -1,4 +1,4 @@
-describe('My First Test', () => {
+describe('Basic Tests', () => {
   beforeEach(() => {
     cy.visit('http://127.0.0.1:8000/'); //change link when testing locally
   });
