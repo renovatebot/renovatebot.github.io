@@ -6,6 +6,12 @@
   "git-submodules": {
     "enabled": true
   },
+  "pip_requirements": {
+    "enabled": false
+  },
+  "pip-compile": {
+    "fileMatch": ["(^|/)requirements\\.in$"]
+  },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor"],
