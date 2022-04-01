@@ -1,0 +1,3 @@
+Contact: mailto:renovate-disclosure@whitesourcesoftware.com
+Expires: 2022-12-31T23:59:00.000Z
+Preferred-Languages: en
