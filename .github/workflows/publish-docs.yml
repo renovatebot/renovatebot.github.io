@@ -84,3 +84,12 @@ jobs:
       - name: Publish docs
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: mkdocs gh-deploy --force
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          spec: cypress/integration/sample.spec.ts
+          build: make
+          start: mkdocs serve
+          wait-on: 'http://127.0.0.1:8000/'
+        timeout-minutes: 5
