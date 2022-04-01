@@ -54,7 +54,7 @@ jobs:
         run: make install
 
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@f5bea478b80a774068179089247f13d60abc5010 # tag=v2.11.8
         with:
           spec: cypress/integration/sample.spec.ts
           build: make
