@@ -1,0 +1,63 @@
+name: cypress-tests
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!gh-pages'
+  pull_request:
+    branches:
+      - 'main'
+
+env:
+  node-version: 14.x
+  python-version: 3.x
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3.0.0
+
+      - name: Checkout submodules
+        shell: bash
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
+      - name: Set up Node.js ${{ env.node-version }}
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a # tag=v3.0.0
+        with:
+          node-version: ${{ env.node-version }}
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
+
+      - name: Set up Python ${{ env.python-version }}
+        uses: actions/setup-python@0ebf233433c08fb9061af664d501c3f3ff0e9e20 # tag=v3.0.0
+        with:
+          python-version: ${{ env.python-version }}
+          cache: 'pip'
+
+      - name: Init platform
+        id: init
+        shell: bash
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.symlinks true
+          git config --global user.email 'bot@renovateapp.com'
+          git config --global user.name  'Renovate Bot'
+          python --version
+          pip --version
+
+      - name: Installing dependencies
+        run: make install
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          spec: cypress/integration/sample.spec.ts
+          build: make
+          start: mkdocs serve
+          wait-on: 'http://127.0.0.1:8000/'
+        timeout-minutes: 5
