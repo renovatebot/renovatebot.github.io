@@ -8,6 +8,11 @@ on:
   pull_request:
     branches:
       - 'main'
+
+env:
+  node-version: 14.x
+  python-version: 3.x
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -56,9 +61,3 @@ jobs:
           start: mkdocs serve
           wait-on: 'http://127.0.0.1:8000/'
         timeout-minutes: 5
-
-      - uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3.0.0
-        with:
-          name: site
-          path: site
-          if-no-files-found: error
