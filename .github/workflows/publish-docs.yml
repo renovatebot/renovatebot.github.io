@@ -82,7 +82,6 @@ jobs:
           if-no-files-found: error
 
       - name: Cypress run
-        id: cypress_run
         uses: cypress-io/github-action@f5bea478b80a774068179089247f13d60abc5010 # tag=v2.11.8
         with:
           spec: cypress/integration/sample.spec.ts
@@ -92,5 +91,5 @@ jobs:
         timeout-minutes: 3
 
       - name: Publish docs
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.cypress_run.conclusion == 'success'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: mkdocs gh-deploy --force
