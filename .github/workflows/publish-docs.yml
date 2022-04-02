@@ -92,5 +92,5 @@ jobs:
         timeout-minutes: 3
 
       - name: Publish docs
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && ${{ steps.cypress_run.conclusion }} == 'success'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.cypress_run.conclusion == 'success'
         run: mkdocs gh-deploy --force
