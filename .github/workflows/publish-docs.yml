@@ -89,7 +89,7 @@ jobs:
           build: make
           start: mkdocs serve
           wait-on: 'http://127.0.0.1:8000/'
-        timeout-minutes: 5
+        timeout-minutes: 3
 
       - name: Publish docs
         if: github.event_name == 'push' && github.ref == 'refs/heads/main' && ${{ steps.cypress_run.conclusion }} == 'success'
