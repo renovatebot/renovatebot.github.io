@@ -166,9 +166,9 @@ nav:
       - 'Schedule Presets': 'presets-schedule.md'
       - 'Workaround Presets': 'presets-workarounds.md'
   - All Other:
+      - 'Security and Permissions': 'security-and-permissions.md'
       - 'Merge Confidence': 'merge-confidence.md'
       - 'Templates': 'templates.md'
       - 'Frequently Asked Questions': 'faq.md'
       - 'Known Limitations': 'known-limitations.md'
-  - Security and Permissions: 'security-and-permissions.md'
   - About Us: 'about-us.md'
