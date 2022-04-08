@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
+      - uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3.0.0
 
       - name: Checkout submodules
         shell: bash
@@ -29,14 +29,14 @@ jobs:
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
       - name: Set up Node.js ${{ env.node-version }}
-        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # renovate: tag=v2.5.1
+        uses: actions/setup-node@5b52f097d36d4b0b2f94ed6de710023fbb8b2236 # tag=v3.1.0
         with:
           node-version: ${{ env.node-version }}
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
 
       - name: Set up Python ${{ env.python-version }}
-        uses: actions/setup-python@7f80679172b057fc5e90d70d197929d454754a5a # renovate: tag=v2.3.2
+        uses: actions/setup-python@9c644ca2ab8e57ea0a487b5ec2f8290740378bfd # tag=v3.1.0
         with:
           python-version: ${{ env.python-version }}
           cache: 'pip'
@@ -59,7 +59,15 @@ jobs:
         run: yarn prettier
 
       - name: Run shellcheck
-        run: make shellcheck
+        uses: reviewdog/action-shellcheck@96c6653098ad696d9441d726c0593866671872f2 # tag=v1.14.0
+        with:
+          reporter: github-pr-review
+          filter_mode: nofilter
+          path: |
+            bin
+            .husky
+          pattern: '*.sh'
+          check_all_files_with_shebangs: 'true'
 
       - name: Prepare docs
         run: make prepare
@@ -67,11 +75,20 @@ jobs:
       - name: Build docs
         run: mkdocs build
 
-      - uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # renovate: tag=v2.3.1
+      - uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3.0.0
         with:
           name: site
           path: site
           if-no-files-found: error
+
+      - name: Cypress run
+        uses: cypress-io/github-action@f5bea478b80a774068179089247f13d60abc5010 # tag=v2.11.8
+        with:
+          spec: cypress/integration/sample.spec.ts
+          build: make
+          start: mkdocs serve
+          wait-on: 'http://127.0.0.1:8000/'
+        timeout-minutes: 3
 
       - name: Publish docs
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
