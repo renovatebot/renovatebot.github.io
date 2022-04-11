@@ -18,9 +18,9 @@ body:
     validations:
       required: true
 
-  - type: textarea
+  - type: input
     attributes:
-      label: Other browser
+      label: Other browser name
       description: |
         If your browser is not listed above, then put your browser's name here:
     validations:
