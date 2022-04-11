@@ -8,25 +8,23 @@ body:
       description: We do not support Internet Explorer 11.
       options:
         - 'Android browser'
-        - 'Baidu Browser'
-        - 'Chrome for Android'
         - 'Chrome'
         - 'Edge'
-        - 'Firefox for Android'
         - 'Firefox'
-        - 'Internet Explorer'
-        - 'KaiOS'
-        - 'Opera Mini'
-        - 'Opera Mobile'
         - 'Opera'
-        - 'QQ Browser'
         - 'Safari on iOS'
         - 'Safari on macOS'
-        - 'Samsung Internet'
-        - 'UC browser for Android'
         - 'Other'
     validations:
       required: true
+
+  - type: textarea
+    attributes:
+      label: Other browser
+      description: |
+        If your browser is not listed above, then put your browser's name here:
+    validations:
+      required: false
 
   - type: textarea
     attributes:
