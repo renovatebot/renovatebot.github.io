@@ -18,7 +18,7 @@ Multi-platform and multi-language.
 
 ## Supported Platforms
 
-Renovate works on the following platforms:
+Renovate works on these platforms:
 
 - GitHub (.com and Enterprise Server)
 - GitLab (.com and CE/EE)
@@ -29,7 +29,7 @@ Renovate works on the following platforms:
 
 ## Who Uses Renovate?
 
-Renovate is widely used in the developer community:
+Renovate is used by:
 
 ![Renovate Matrix](https://app.renovatebot.com/images/matrix.png)
 
