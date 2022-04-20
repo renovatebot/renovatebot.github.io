@@ -1,0 +1,58 @@
+name: Bug report
+description: You've found a bug on the documentation website
+labels: ['bug']
+body:
+  - type: dropdown
+    attributes:
+      label: What browser are you using?
+      description: We do not support Internet Explorer 11.
+      options:
+        - 'Android browser'
+        - 'Chrome'
+        - 'Edge'
+        - 'Firefox'
+        - 'Opera'
+        - 'Safari on iOS'
+        - 'Safari on macOS'
+        - 'Other'
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Other browser name
+      description: |
+        If your browser is not listed above, then put your browser's name here:
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Describe the bug
+      description: |
+        A clear and concise description of what the bug is.
+
+        Please do not report any security concerns this way.
+        Email [renovate-disclosure@whitesourcesoftware.com](mailto:renovate-disclosure@whitesourcesoftware.com) instead.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: |
+        Explain how to reproduce the bug.
+        Make screenshots if necessary.
+      placeholder: |
+        1. Do ....
+        2. Then do ...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: |
+        Add any other context about the problem here, including your own debugging or ideas on what went wrong.
+    validations:
+      required: false
