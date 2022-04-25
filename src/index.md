@@ -18,7 +18,7 @@ This means:
 
 - Missing out on bug fixes or new features
 - Getting further into "technical debt"
-- Increasing the time needed to fix vulnerabilities
+- Decreasing the time needed to fix vulnerabilities
 
 Renovate allows projects to get, and stay, up-to-date.
 Developers can use the saved time on more important duties.
