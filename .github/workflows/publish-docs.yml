@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748 # tag=v3.0.1
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
 
       - name: Checkout submodules
         shell: bash
@@ -59,7 +59,7 @@ jobs:
         run: yarn prettier
 
       - name: Run shellcheck
-        uses: reviewdog/action-shellcheck@96c6653098ad696d9441d726c0593866671872f2 # tag=v1.14.0
+        uses: reviewdog/action-shellcheck@66c9a47bf02255b250284a82251cb4cadf5043f5 # tag=v1.15.0
         with:
           reporter: github-pr-review
           filter_mode: nofilter
@@ -82,7 +82,7 @@ jobs:
           if-no-files-found: error
 
       - name: Cypress run
-        uses: cypress-io/github-action@f5bea478b80a774068179089247f13d60abc5010 # tag=v2.11.8
+        uses: cypress-io/github-action@16aacf8ea6a67e5e5d907d34bc3be8ad0e6e979f # tag=v3.0.3
         with:
           spec: cypress/integration/sample.spec.ts
           build: make
