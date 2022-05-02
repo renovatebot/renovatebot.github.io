@@ -8,11 +8,10 @@ Multi-platform and multi-language.
 ## Why use Renovate?
 
 - Get pull requests to update your dependencies and lock files
-- Reduce noise by scheduling when Renovate runs
-- Renovate finds relevant package files automatically
-- Renovate works with monorepos like Lerna or Yarn workspaces with no extra configuration
+- Reduce noise by scheduling when Renovate creates PRs
+- Renovate finds relevant package files automatically, including in monorepos
 - You can customize the bot's behavior with configuration files
-- Share your configuration with ESLint-like config presets (JSON format only)
+- Share your configuration with ESLint-like config presets
 - Get replacement PRs to migrate from a deprecated dependency to the community suggested replacement (npm packages only)
 - Open source
 
