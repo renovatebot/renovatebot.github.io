@@ -109,7 +109,7 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#admonition
   - admonition
 
-  # The Attribute Lists extension allows to add HTML attributes and CSS classes to almost every Markdown inline- and block-level element with a special syntax.
+  # The Attribute Lists extension allows us to add HTML attributes and CSS classes to almost every Markdown inline- and block-level element with a special syntax.
   # We're using this to get a button on the homepage that links to our GitHub app.
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists
   - attr_list
