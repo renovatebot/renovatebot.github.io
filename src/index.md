@@ -1,6 +1,6 @@
 ![Renovate banner](https://app.renovatebot.com/images/whitesource_renovate_660_220.jpg)
 
-# Renovate
+# Renovate documentation
 
 Automated dependency updates.
 Multi-platform and multi-language.
