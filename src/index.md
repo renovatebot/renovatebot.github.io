@@ -32,29 +32,6 @@ Renovate is used by:
 
 ![Renovate Matrix](https://app.renovatebot.com/images/matrix.png)
 
-## The Renovate Approach
-
-We believe everyone benefits from automation, whether it's a little or a lot.
-This means that Renovate:
-
-- Adapts to your workflow
-- Allows you to configure its behavior
-- Will autodetect settings where possible
-
-## Renovate's Purpose
-
-We created Renovate to tackle the problem of out-of-date dependencies in software projects.
-
-Most projects start with up-to-date dependencies, but fall behind over time.
-This means:
-
-- Missing out on bug fixes or new features
-- Getting further into "technical debt"
-- Increasing the time needed to fix vulnerabilities
-
-Renovate allows projects to get, and stay, up-to-date.
-Developers can use the saved time on more important duties.
-
 ## Ways to run Renovate
 
 You can run Renovate as:
