@@ -2,26 +2,35 @@
 
 # Renovate documentation
 
-Renovate is an Open Source tool to automate:
+Automated dependency updates.
+Multi-platform and multi-language.
 
-- Detecting dependencies in a repository (Open Source and private/closed source)
-- Checking if there are dependency updates
-- Creating commits and Merge/Pull Requests to update dependencies
-- Showing the release notes
+## Why use Renovate?
 
-## Renovate's purpose
+- Get pull requests to update your dependencies and lock files
+- Reduce noise by scheduling when Renovate creates PRs
+- Renovate finds relevant package files automatically, including in monorepos
+- You can customize the bot's behavior with configuration files
+- Share your configuration with ESLint-like config presets
+- Get replacement PRs to migrate from a deprecated dependency to the community suggested replacement (npm packages only)
+- Open source
 
-We created Renovate to tackle the problem of out-of-date dependencies in software projects.
+## Supported Platforms
 
-Most projects start with up-to-date dependencies, but fall behind over time.
-This means:
+Renovate works on these platforms:
 
-- Missing out on bug fixes or new features
-- Getting further into "technical debt"
-- Increasing the time needed to fix vulnerabilities
+- GitHub (.com and Enterprise Server)
+- GitLab (.com and CE/EE)
+- Bitbucket Cloud
+- Bitbucket Server
+- Azure DevOps
+- Gitea
 
-Renovate allows projects to get, and stay, up-to-date.
-Developers can use the saved time on more important duties.
+## Who Uses Renovate?
+
+Renovate is used by:
+
+![Renovate Matrix](https://app.renovatebot.com/images/matrix.png)
 
 ## Ways to run Renovate
 
@@ -29,4 +38,6 @@ You can run Renovate as:
 
 - an [Open Source npm package](https://www.npmjs.com/package/renovate)
 - a [pre-built Open Source image on Docker Hub](https://hub.docker.com/repository/docker/renovate/renovate)
-- a [free GitHub App](https://github.com/marketplace/renovate) that is hosted by WhiteSource
+- a [free GitHub App](https://github.com/marketplace/renovate) that is hosted by [WhiteSource](https://www.whitesourcesoftware.com/)
+
+[Install our GitHub app now](https://github.com/marketplace/renovate){ .md-button .md-button--primary }
