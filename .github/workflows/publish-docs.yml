@@ -82,7 +82,7 @@ jobs:
           if-no-files-found: error
 
       - name: Cypress run
-        uses: cypress-io/github-action@dddd6c2a23e82a301d9480fad175c21c29745d47 # tag=v3.0.4
+        uses: cypress-io/github-action@7877eda34ffd16b72356ea330618fd2ca0f14ef2 # tag=v3.0.5
         with:
           spec: cypress/integration/sample.spec.ts
           build: make
