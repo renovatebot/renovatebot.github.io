@@ -130,6 +130,7 @@ nav:
       - 'Repository': 'configuration-options.md'
       - 'Presets': 'config-presets.md'
   - Key Concepts:
+      - 'Presets': 'key-concepts/presets.md'
       - 'Dependency Dashboard': 'key-concepts/dashboard.md'
       - 'Renovate Scheduling': 'key-concepts/scheduling.md'
       - 'Automerge': 'key-concepts/automerge.md'
