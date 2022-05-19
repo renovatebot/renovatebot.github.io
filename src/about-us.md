@@ -23,7 +23,7 @@ Next up, we have these people who help maintain parts of Renovate:
 
 - [@HonkingGoose](https://github.com/HonkingGoose) master of the docs and community manager
 - [@zharinov](https://github.com/zharinov) focused on parsing, Gradle and Maven
-- [@secustor](https://github.com/secustor) worked on Terraform
+- [@secustor](https://github.com/secustor) worked on Terraform and Helm
 - [@fgreinacher](https://github.com/fgreinacher) worked on NuGet
 - [@Turbo87](https://github.com/Turbo87) has helped in multiple areas, especially Cargo
 
