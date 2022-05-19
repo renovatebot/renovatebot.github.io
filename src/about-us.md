@@ -6,8 +6,8 @@ More than 600 outside contributors helped improve Renovate.
 
 ## Special thanks
 
-We want to highlight the work of some very awesome people.
-Thank you very much for your time and effort!
+We want to highlight the work of these awesome people.
+Thank you for your time and effort!
 
 ### Maintainers
 
