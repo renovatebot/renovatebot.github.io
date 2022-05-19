@@ -2,7 +2,39 @@
 
 Renovate was created by [WhiteSource](https://www.whitesourcesoftware.com/) staff and they continue to work on Renovate.
 
-More than 500 outside contributors helped improve Renovate.
+More than 600 outside contributors helped improve Renovate.
+
+## Special thanks
+
+We want to highlight the work of some very awesome people.
+Thank you very much for your time and effort!
+
+### Maintainers
+
+Renovate is maintained by:
+
+- [@rarkins](https://github.com/rarkins)
+- [@viceice](https://github.com/viceice)
+- [@JamieMagee](https://github.com/JamieMagee)
+
+### Maintainers for features
+
+Next up, we have these people who help maintain parts of Renovate:
+
+- [@HonkingGoose](https://github.com/HonkingGoose) master of the docs and community manager
+- [@zharinov](https://github.com/zharinov) focused on parsing, Gradle and Maven
+- [@secustor](https://github.com/secustor) worked on Terraform
+- [@fgreinacher](https://github.com/fgreinacher) worked on NuGet
+- [@Turbo87](https://github.com/Turbo87) has helped in multiple areas, especially Cargo
+
+### Valuable contributions
+
+We want to highlight these valuable contributions, even if they are one-offs.
+Some feature made a lot of people happy, and efficient!
+
+- [@ikesyo](https://github.com/ikesyo) regularly helpful
+- [@astellingwerf](https://github.com/astellingwerf) reviews PRs
+- [@danports](https://github.com/danports)
 
 ## Renovate development
 
