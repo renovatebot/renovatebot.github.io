@@ -30,7 +30,7 @@ Next up, we have these people who help maintain parts of Renovate:
 ### Valuable contributions
 
 We want to highlight these valuable contributions, even if they are one-offs.
-Some feature made a lot of people happy, and efficient!
+Some features made a lot of people happy, and efficient!
 
 - [@ikesyo](https://github.com/ikesyo) regularly helpful
 - [@astellingwerf](https://github.com/astellingwerf) reviews PRs
