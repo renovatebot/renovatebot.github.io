@@ -38,6 +38,6 @@ You can run Renovate as:
 
 - an [Open Source npm package](https://www.npmjs.com/package/renovate)
 - a [pre-built Open Source image on Docker Hub](https://hub.docker.com/repository/docker/renovate/renovate)
-- a [free GitHub App](https://github.com/marketplace/renovate) that is hosted by [WhiteSource](https://www.whitesourcesoftware.com/)
+- a [free GitHub App](https://github.com/marketplace/renovate) that is hosted by [Mend](https://mend.io/)
 
 [Install our GitHub app now](https://github.com/marketplace/renovate){ .md-button .md-button--primary }
