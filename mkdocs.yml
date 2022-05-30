@@ -113,7 +113,7 @@ markdown_extensions:
   # We're using this to get a button on the homepage that links to our GitHub app.
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists
   - attr_list
-  
+
   # The Details extension supercharges the Admonition extension, making the resulting call-outs collapsible, allowing them to be opened and closed by the user.
   # We're using this to enable collapsible admonition blocks for the list of bug reports and feature requests per manager.
   - pymdownx.details
