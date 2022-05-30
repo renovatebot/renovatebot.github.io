@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "8.0.2",
-    "cypress": "9.6.1",
+    "cypress": "9.7.0",
     "fs-extra": "10.1.0",
     "husky": "7.0.4",
     "lint-staged": "12.4.1",
