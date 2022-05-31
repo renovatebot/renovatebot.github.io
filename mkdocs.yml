@@ -114,6 +114,10 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists
   - attr_list
 
+  # The Details extension supercharges the Admonition extension, making the resulting call-outs collapsible, allowing them to be opened and closed by the user.
+  # We're using this to enable collapsible admonition blocks for the list of bug reports and feature requests per manager.
+  - pymdownx.details
+
 # Page Tree/Sidebar
 # https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
 nav:
