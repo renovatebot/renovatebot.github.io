@@ -1,4 +1,4 @@
 [submodule "renovate"]
 	path = deps/renovate
 	url = https://github.com/Gabriel-Ladzaretti/renovate.git
-	branch = 15546-renovate-docs-known-list
+	branch =  15546-renovate-docs-known-list
