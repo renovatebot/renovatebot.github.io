@@ -85,9 +85,10 @@ jobs:
         uses: cypress-io/github-action@31b3f686c1ee05fb7390cc106d1f09eb83919a3c # tag=v3.2.0
         with:
           spec: cypress/integration/sample.spec.ts
-          build: make
           start: mkdocs serve
           wait-on: 'http://127.0.0.1:8000/'
+          # we have already installed all dependencies above
+          install: false
         timeout-minutes: 3
 
       - name: Publish docs
