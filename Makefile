@@ -12,7 +12,7 @@ get-docs:
 	bash bin/get-docs.sh
 
 build-docs:
-	bash bin/build-docs.sh
+	mkdocs build
 
 prepare: get-docs
 
