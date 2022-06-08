@@ -10,7 +10,7 @@ on:
       - 'main'
 
 env:
-  node-version: 14.x
+  node-version: 16.x
   python-version: 3.x
 
 jobs:
