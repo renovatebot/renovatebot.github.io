@@ -8,7 +8,7 @@
     "url": "git+https://github.com/renovatebot/docs.renovatebot.com.git"
   },
   "devDependencies": {
-    "@testing-library/cypress": "8.0.2",
+    "@testing-library/cypress": "8.0.3",
     "cypress": "9.7.0",
     "fs-extra": "10.1.0",
     "husky": "7.0.4",
