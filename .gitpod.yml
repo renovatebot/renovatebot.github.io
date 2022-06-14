@@ -1,7 +1,7 @@
 tasks:
   - init: >
-      nvm install 14 &&
-      nvm use 14 &&
+      nvm install 16 &&
+      nvm use 16 &&
       make
     command: mkdocs serve
 
