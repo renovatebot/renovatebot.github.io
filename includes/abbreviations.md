@@ -8,6 +8,7 @@
 *[CD]: Continuous Development
 *[CI]: Continuous Integration
 *[CLI]: Command-Line Interface
+*[CVE]: Common Vulnerabilities and Exposures
 *[IaC]: Infrastructure as Code
 *[IAM]: Identity and Access Management
 *[JRE]: Java Runtime Environment
