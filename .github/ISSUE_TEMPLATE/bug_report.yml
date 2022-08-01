@@ -33,7 +33,7 @@ body:
         A clear and concise description of what the bug is.
 
         Please do not report any security concerns this way.
-        Email [renovate-disclosure@whitesourcesoftware.com](mailto:renovate-disclosure@whitesourcesoftware.com) instead.
+        Email [renovate-disclosure@mend.io](mailto:renovate-disclosure@mend.io) instead.
     validations:
       required: true
 
