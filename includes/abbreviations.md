@@ -4,7 +4,6 @@
 <!-- Please keep this list sorted from A-Z. -->
 
 *[AMI]: Amazon Machine Images
-*[API]: Application Programming Interface
 *[AWS]: Amazon Web Services
 *[CD]: Continuous Deployment
 *[CI]: Continuous Integration
@@ -19,7 +18,6 @@
 *[IaC]: Infrastructure as Code
 *[IAM]: Identity and Access Management
 *[JRE]: Java Runtime Environment
-*[JSON]: JavaScript Object Notation
 *[LTS]: Long Term Support
 *[OCI]: Open Container Initiative
 *[PAT]: Personal Access Token
@@ -30,4 +28,3 @@
 *[TLS]: Transport Layer Security
 *[URL]: Uniform Resource Locator
 *[UTC]: Coordinated Universal Time
-*[YAML]: YAML Ain't Markup Language
