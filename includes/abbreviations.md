@@ -3,21 +3,31 @@
 
 <!-- Please keep this list sorted from A-Z. -->
 
+*[AMI]: Amazon Machine Images
 *[API]: Application Programming Interface
 *[AWS]: Amazon Web Services
 *[CD]: Continuous Deployment
 *[CI]: Continuous Integration
 *[CLI]: Command-Line Interface
 *[CVE]: Common Vulnerabilities and Exposures
+*[DCO]: Developer Certificate of Origin
+*[GCR]: Google Container Registry
+*[GPG]: GNU Privacy Guard
+*[HTML]: HyperText Markup Language
+*[HTTP]: Hypertext Transfer Protocol
+*[HTTPS]: Hypertext Transfer Protocol Secure
 *[IaC]: Infrastructure as Code
 *[IAM]: Identity and Access Management
 *[JRE]: Java Runtime Environment
 *[JSON]: JavaScript Object Notation
 *[LTS]: Long Term Support
 *[OCI]: Open Container Initiative
+*[PAT]: Personal Access Token
+*[SDK]: Software Development Kit
 *[SemVer]: Semantic Versioning
 *[SSH]: Secure Shell
 *[SSL]: Secure Sockets Layer
 *[TLS]: Transport Layer Security
 *[URL]: Uniform Resource Locator
 *[UTC]: Coordinated Universal Time
+*[YAML]: YAML Ain't Markup Language
