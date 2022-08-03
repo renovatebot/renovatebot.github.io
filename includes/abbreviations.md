@@ -5,7 +5,7 @@
 
 *[API]: Application Programming Interface
 *[AWS]: Amazon Web Services
-*[CD]: Continuous Development
+*[CD]: Continuous Deployment
 *[CI]: Continuous Integration
 *[CLI]: Command-Line Interface
 *[CVE]: Common Vulnerabilities and Exposures
