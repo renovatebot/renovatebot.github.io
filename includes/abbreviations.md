@@ -12,9 +12,6 @@
 *[DCO]: Developer Certificate of Origin
 *[GCR]: Google Container Registry
 *[GPG]: GNU Privacy Guard
-*[HTML]: HyperText Markup Language
-*[HTTP]: Hypertext Transfer Protocol
-*[HTTPS]: Hypertext Transfer Protocol Secure
 *[IaC]: Infrastructure as Code
 *[IAM]: Identity and Access Management
 *[JRE]: Java Runtime Environment
