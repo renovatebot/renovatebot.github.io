@@ -10,3 +10,6 @@
 
 # Ignore the git submodule that pulls in the Renovate content
 /deps
+
+# Ignore the .venv directory
+.venv
