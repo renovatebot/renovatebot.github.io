@@ -27,4 +27,4 @@ serve:
 	pipenv run mkdocs serve
 
 deploy:
-	mkdocs gh-deploy --force
+	pipenv run mkdocs gh-deploy --force
