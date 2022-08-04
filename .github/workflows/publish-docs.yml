@@ -75,10 +75,10 @@ jobs:
       - name: Build docs
         run: mkdocs build
 
-      - name: Upload docs artifacts
+      - name: Upload site artifacts
         uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3.1.0
         with:
-          name: docs
+          name: site
           path: site/
           if-no-files-found: error
 
