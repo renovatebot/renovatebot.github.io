@@ -77,16 +77,9 @@ jobs:
 
       - name: Upload docs artifacts
         uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3.1.0
-        if: always()
         with:
           name: docs
           path: site/
-          if-no-files-found: error
-
-      - uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3.1.0
-        with:
-          name: site
-          path: site
           if-no-files-found: error
 
       - name: Cypress run
@@ -102,7 +95,7 @@ jobs:
         uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3.1.0
         if: always()
         with:
-          name: cypress-artifats
+          name: cypress
           path: |
             cypress/videos/
             cypress/screenshots/
