@@ -6,3 +6,5 @@
 /renovate-schema.json
 /dist
 __pycache__
+/cypress/videos/
+/cypress/screenshots/
