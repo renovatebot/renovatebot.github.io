@@ -8,3 +8,4 @@
 __pycache__
 /cypress/videos/
 /cypress/screenshots/
+/.venv
