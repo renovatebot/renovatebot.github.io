@@ -2,7 +2,7 @@ default: install build
 
 install:
 	yarn install --frozen-lockfile
-	pip install -r requirements.txt
+	pipenv install
 
 shellcheck:
 	shellcheck bin/*.sh
@@ -12,7 +12,7 @@ get-docs:
 	bash bin/get-docs.sh
 
 build-docs:
-	mkdocs build
+	pipenv run mkdocs build
 
 prepare: get-docs
 
@@ -22,3 +22,9 @@ clean:
 	git clean -dfx
 	rm -rf build
 	rm -rf tmp
+
+serve:
+	pipenv run mkdocs serve
+
+deploy:
+	mkdocs gh-deploy --force

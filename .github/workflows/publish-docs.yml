@@ -10,8 +10,10 @@ on:
       - 'main'
 
 env:
-  node-version: 16.x
-  python-version: 3.x
+  NODE_VERSION: 16.16.0 # renovate: datasource=node depName=node
+  PYTHON_VERSION: 3.10.5 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
+  # Don't use PIPENV_VERSION:  https://github.com/pypa/pipenv/issues/3633#issuecomment-478250721
+  RENOVATE_PIPENV_VERSION: 2022.7.24 # renovate: datasource=pypi depName=pipenv
 
 jobs:
   build:
@@ -28,29 +30,28 @@ jobs:
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
-      - name: Set up Node.js ${{ env.node-version }}
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3.4.1
         with:
-          node-version: ${{ env.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
 
-      - name: Set up Python ${{ env.python-version }}
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@c4e89fac7e8767b327bbad6cb4d859eda999cf08 # tag=v4.1.0
         with:
-          python-version: ${{ env.python-version }}
-          cache: 'pip'
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pipenv'
 
       - name: Init platform
-        id: init
-        shell: bash
         run: |
           git config --global core.autocrlf false
           git config --global core.symlinks true
           git config --global user.email 'bot@renovateapp.com'
           git config --global user.name  'Renovate Bot'
           python --version
-          pip --version
+          pip install pipenv==${{ env.RENOVATE_PIPENV_VERSION }}
+          pipenv --version
 
       - name: Installing dependencies
         run: make install
@@ -73,7 +74,7 @@ jobs:
         run: make prepare
 
       - name: Build docs
-        run: mkdocs build
+        run: make build-docs
 
       - name: Upload site artifacts
         uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3.1.0
@@ -85,7 +86,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@30008f1458a5a2c97054bfe118fe33d75976c482 # tag=v4.2.0
         with:
-          start: mkdocs serve
+          start: make serve
           wait-on: 'http://127.0.0.1:8000/'
           # we have already installed all dependencies above
           install: false
@@ -103,4 +104,4 @@ jobs:
 
       - name: Publish docs
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: mkdocs gh-deploy --force
+        run: make deploy
