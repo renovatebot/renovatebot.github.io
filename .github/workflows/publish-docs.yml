@@ -75,21 +75,31 @@ jobs:
       - name: Build docs
         run: mkdocs build
 
-      - uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3.1.0
+      - name: Upload site artifacts
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3.1.0
         with:
           name: site
-          path: site
+          path: site/
           if-no-files-found: error
 
       - name: Cypress run
         uses: cypress-io/github-action@30008f1458a5a2c97054bfe118fe33d75976c482 # tag=v4.2.0
         with:
-          spec: cypress/integration/sample.spec.ts
           start: mkdocs serve
           wait-on: 'http://127.0.0.1:8000/'
           # we have already installed all dependencies above
           install: false
         timeout-minutes: 3
+
+      - name: Upload cypress artifacts
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3.1.0
+        if: always()
+        with:
+          name: cypress
+          path: |
+            cypress/videos/
+            cypress/screenshots/
+          if-no-files-found: error
 
       - name: Publish docs
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
