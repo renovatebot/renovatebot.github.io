@@ -8,7 +8,7 @@ The content itself is pulled from https://github.com/renovatebot/renovate, so yo
 
 The website is built and hosted by GitHub Pages.
 
-To build locally, run `make` and then `mkdocs serve`.
+To build locally, run `make` and then `make serve`.
 
 ## Contributing
 
