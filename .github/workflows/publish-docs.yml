@@ -10,8 +10,9 @@ on:
       - 'main'
 
 env:
-  node-version: 16.16.0 # renovate: datasource=node depName=node
-  python-version: 3.10.5 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
+  NODE_VERSION: 16.16.0 # renovate: datasource=node depName=node
+  PYTHON_VERSION: 3.10.5 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
+  PIPENV_VERSION: 2022.7.24 # renovate: datasource=pypi depName=pipenv
 
 jobs:
   build:
@@ -28,28 +29,27 @@ jobs:
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
-      - name: Set up Node.js ${{ env.node-version }}
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3.4.1
         with:
-          node-version: ${{ env.node-version }}
+          NODE_VERSION: ${{ env.NODE_VERSION }}
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
 
-      - name: Set up Python ${{ env.python-version }}
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@c4e89fac7e8767b327bbad6cb4d859eda999cf08 # tag=v4.1.0
         with:
-          python-version: ${{ env.python-version }}
+          PYTHON_VERSION: ${{ env.PYTHON_VERSION }}
           cache: 'pipenv'
 
       - name: Init platform
-        id: init
-        shell: bash
         run: |
           git config --global core.autocrlf false
           git config --global core.symlinks true
           git config --global user.email 'bot@renovateapp.com'
           git config --global user.name  'Renovate Bot'
           python --version
+          pip install pipenv==${{ env.PIPENV_VERSION }}
           pipenv --version
 
       - name: Installing dependencies
