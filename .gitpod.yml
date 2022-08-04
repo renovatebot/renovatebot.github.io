@@ -3,7 +3,7 @@ tasks:
       nvm install 16 &&
       nvm use 16 &&
       make
-    command: mkdocs serve
+    command: make serve
 
 ports:
   - port: 8000
