@@ -22,5 +22,10 @@ cp -R tmp/docs/* "$docs"
 cd "$pwd"
 cp -R src/* docs/
 
-printf -- '---\ntitle: Merge Confidence\ndescription: Node versions support in Renovate\n---\n\n' > docs/merge-confidence.md
-curl -sSLf https://raw.githubusercontent.com/whitesource/merge-confidence/main/README.md >> docs/merge-confidence.md
+{
+  printf -- '---\n'
+  printf -- 'title: Merge Confidence\ndescription: Learn about Renovate'\''s Merge Confidence feature\n'
+  printf -- 'edit_url: https://github.com/whitesource/merge-confidence/edit/main/README.md\n'
+  printf -- '---\n\n'
+  curl -sSLf https://raw.githubusercontent.com/whitesource/merge-confidence/main/README.md
+} > docs/merge-confidence.md
