@@ -8,7 +8,7 @@ The content itself is pulled from https://github.com/renovatebot/renovate, so yo
 
 The website is built and hosted by GitHub Pages.
 
-To build locally, run `make` and then `mkdocs serve`.
+To build locally, run `make` and then `make serve`.
 
 ## Contributing
 
@@ -16,7 +16,7 @@ If you would like to contribute to this repository or get a local copy running f
 
 ## Security / Disclosure
 
-If you find any bug with Renovate that may be a security problem, then e-mail us at: [renovate-disclosure@whitesourcesoftware.com](mailto:renovate-disclosure@whitesourcesoftware.com).
+If you find any bug with Renovate that may be a security problem, then e-mail us at: [renovate-disclosure@mend.io](mailto:renovate-disclosure@mend.io).
 This way we can evaluate the bug and hopefully fix it before it gets abused.
 Please give us enough time to investigate the bug before you report it anywhere else.
 
