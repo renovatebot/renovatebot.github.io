@@ -24,7 +24,7 @@ cp -R src/* docs/
 
 {
   printf -- '---\n'
-  printf -- 'title: Merge Confidence\ndescription: Learn about Renovate's Merge Confidence feature\n'
+  printf -- 'title: Merge Confidence\ndescription: Learn about Renovate'\''s Merge Confidence feature\n'
   printf -- 'edit_url: https://github.com/whitesource/merge-confidence/edit/main/README.md\n'
   printf -- '---\n\n'
   curl -sSLf https://raw.githubusercontent.com/whitesource/merge-confidence/main/README.md
