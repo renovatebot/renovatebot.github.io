@@ -29,4 +29,3 @@ cp -R src/* docs/
   printf -- '---\n\n'
   curl -sSLf https://raw.githubusercontent.com/whitesource/merge-confidence/main/README.md
 } > docs/merge-confidence.md
-curl -sSLf https://raw.githubusercontent.com/whitesource/merge-confidence/main/README.md >> docs/merge-confidence.md
