@@ -13,3 +13,6 @@
 
 # Ignore the .venv directory
 .venv
+
+# Ignore the list of abbreviations, as Prettier messes up the syntax
+/includes/abbreviations.md
