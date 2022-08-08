@@ -118,6 +118,16 @@ markdown_extensions:
   # We're using this to enable collapsible admonition blocks for the list of bug reports and feature requests per manager.
   - pymdownx.details
 
+  # The Abbreviations extension adds the ability to add a small tooltip to an element, by wrapping it with an abbr tag.
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#abbreviations
+  - abbr
+
+  # The Snippets extension adds the ability to embed content from arbitrary files into a document, including other documents or source files, by using a simple syntax.
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+
 # Plugins
 plugins:
   - search
