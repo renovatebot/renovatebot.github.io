@@ -145,8 +145,6 @@ nav:
       - 'Self-Hosting Examples': 'examples/self-hosting.md'
       - 'Installing & Onboarding': 'getting-started/installing-onboarding.md'
       - 'Private Packages': 'getting-started/private-packages.md'
-  - User Stories:
-      - 'Swissquote': 'user-stories/swissquote.md'
   - Troubleshooting: 'troubleshooting.md'
   - Configuration:
       - 'Self-hosted': 'self-hosted-configuration.md'
@@ -195,6 +193,8 @@ nav:
       - 'Schedule Presets': 'presets-schedule.md'
       - 'Workaround Presets': 'presets-workarounds.md'
   - All Other:
+      - User Stories:
+          - 'Swissquote': 'user-stories/swissquote.md'
       - 'Security and Permissions': 'security-and-permissions.md'
       - 'Merge Confidence': 'merge-confidence.md'
       - 'Templates': 'templates.md'
