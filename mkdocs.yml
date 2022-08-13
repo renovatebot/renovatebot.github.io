@@ -193,6 +193,8 @@ nav:
       - 'Schedule Presets': 'presets-schedule.md'
       - 'Workaround Presets': 'presets-workarounds.md'
   - All Other:
+      - User Stories:
+          - 'Swissquote': 'user-stories/swissquote.md'
       - 'Security and Permissions': 'security-and-permissions.md'
       - 'Merge Confidence': 'merge-confidence.md'
       - 'Templates': 'templates.md'
