@@ -114,6 +114,13 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists
   - attr_list
 
+  # We need this to get emojis working on Material for MkDocs.
+  # We also need the attr_list extension, which is already enabled in the lines above this comment.
+  # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#configuration
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
   # The Details extension supercharges the Admonition extension, making the resulting call-outs collapsible, allowing them to be opened and closed by the user.
   # We're using this to enable collapsible admonition blocks for the list of bug reports and feature requests per manager.
   - pymdownx.details
