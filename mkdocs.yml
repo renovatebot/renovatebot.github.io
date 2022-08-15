@@ -114,6 +114,11 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists
   - attr_list
 
+  # This configuration adds the ability to align images, add captions to images (rendering them as figures), and mark large images for lazy-loading.
+  # We also need the attr_list markdown extension, which is enabled in the lines above this comment.
+  # https://squidfunk.github.io/mkdocs-material/reference/images/#configuration
+  - md_in_html
+
   # We need this to get emojis working on Material for MkDocs.
   # We also need the attr_list extension, which is already enabled in the lines above this comment.
   # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#configuration
