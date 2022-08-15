@@ -16,3 +16,6 @@
 
 # Ignore the list of abbreviations, as Prettier messes up the syntax
 /includes/abbreviations.md
+
+# Ignore the mkdocs.yml file, as Prettier moves some comments around
+mkdocs.yml
