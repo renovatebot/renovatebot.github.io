@@ -1,0 +1,10 @@
+<!-- This file has the content for our announcement bar. -->
+<!-- Use target="_blank" when linking to a external site, so the link opens in a new tab. -->
+<!-- https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#announcement-bar -->
+<!-- https://squidfunk.github.io/mkdocs-material/customization/#overriding-blocks -->
+
+{% extends "base.html" %}
+
+{% block announce %}
+Read the release notes for our recent major release: <a href="https://github.com/renovatebot/renovate/releases/tag/32.0.0" target="_blank">32.0.0</a>.
+{% endblock %}
