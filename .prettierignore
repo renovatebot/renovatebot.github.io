@@ -22,3 +22,6 @@ mkdocs.yml
 
 # ignore generated pipfile lock
 /Pipfile.lock
+
+# Ignore overrides/main.html because Prettier messes up the formatting
+overrides/main.html
