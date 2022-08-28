@@ -14,6 +14,7 @@
 *[GPG]: GNU Privacy Guard
 *[IaC]: Infrastructure as Code
 *[IAM]: Identity and Access Management
+*[JDK]: Java Development Kit
 *[JRE]: Java Runtime Environment
 *[LTS]: Long Term Support
 *[OCI]: Open Container Initiative
