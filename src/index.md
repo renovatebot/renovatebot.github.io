@@ -2,7 +2,7 @@
 edit_url: https://github.com/renovatebot/renovatebot.github.io/edit/main/src/index.md
 ---
 
-![Renovate banner](https://app.renovatebot.com/images/whitesource_renovate_660_220.jpg)
+![Renovate banner](https://app.renovatebot.com/images/whitesource_renovate_660_220.jpg){ loading=lazy }
 
 # Renovate documentation
 
@@ -34,7 +34,7 @@ Renovate works on these platforms:
 
 Renovate is used by:
 
-![Renovate Matrix](https://app.renovatebot.com/images/matrix.png)
+![Renovate Matrix](https://app.renovatebot.com/images/matrix.png){ loading=lazy }
 
 ## Ways to run Renovate
 
