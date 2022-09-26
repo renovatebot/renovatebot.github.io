@@ -13,8 +13,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "prettier": "prettier --check --ignore-unknown \"**/*.*\"",
-    "prettier-fix": "prettier --write --ignore-unknown \"**/*.*\""
+    "prettier": "prettier --check --ignore-unknown --cache \"**/*.*\"",
+    "prettier-fix": "prettier --write --ignore-unknown --cache \"**/*.*\""
   },
   "devDependencies": {
     "@testing-library/cypress": "8.0.3",
