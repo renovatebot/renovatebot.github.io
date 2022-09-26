@@ -74,6 +74,10 @@ theme:
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=integrate#integrated-table-of-contents
     - toc.integrate
 
+    # Automatically scroll the navigation sidebar, so the active anchor is always on screen.
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-following
+    - toc.follow
+
     # Use instant loading for internal links
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=instant#instant-loading
     - navigation.instant
