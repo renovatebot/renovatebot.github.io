@@ -8,12 +8,6 @@ strict: true
 # https://www.mkdocs.org/user-guide/configuration/#remote_branch
 remote_branch: gh-pages
 
-# Hooks
-# https://www.mkdocs.org/user-guide/configuration/#hooks
-
-hooks:
-  - mkdocs-hooks/custom-edit-url.py
-
 # General site info
 
 # Metadata
@@ -161,6 +155,9 @@ markdown_extensions:
 # Plugins
 plugins:
   - search
+  - mkdocs-simple-hooks:
+      hooks:
+        on_page_context: 'mkdocs-hooks.custom-edit-url:on_page_context'
 
 # Page Tree/Sidebar
 # https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
