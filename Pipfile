@@ -7,6 +7,5 @@ name = "pypi"
 mkdocs = "==1.4.0"
 mkdocs-material = "==8.5.3"
 mkdocs-material-extensions = "==1.0.3"
-mkdocs-simple-hooks = "==0.1.5"
 
 [dev-packages]
