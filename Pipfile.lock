@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "306189dfb8f8f5ac4e349f12bbe4409a1567ef828e25f48778ed1a1ae3fea2f4"
+            "sha256": "2e953d3ee3ebee8fcfb177efefecbf616d3108059bc3e8387f1914c80150d305"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -27,7 +27,7 @@
                 "sha256:5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845",
                 "sha256:83e9a75d1911279afd89352c68b45348559d1fc0506b054b346651b5e7fee29f"
             ],
-            "markers": "python_version >= '3.6'",
+            "markers": "python_full_version >= '3.6.0'",
             "version": "==2.1.1"
         },
         "click": {
@@ -52,14 +52,6 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==3.4"
-        },
-        "importlib-metadata": {
-            "hashes": [
-                "sha256:637245b8bab2b6502fcbc752cc4b7a6f6243bb02b31c5c26156ad103d3d45670",
-                "sha256:7401a975809ea1fdc658c3aa4f78cc2195a0e019c5cbc4c06122884e9ae80c23"
-            ],
-            "markers": "python_version < '3.10'",
-            "version": "==4.12.0"
         },
         "jinja2": {
             "hashes": [
@@ -141,11 +133,11 @@
         },
         "mkdocs-material": {
             "hashes": [
-                "sha256:43b0aa707d6f9acd836024cab2dce9330957c94a4e1e41c23ee6c8ce67b4d8c5",
-                "sha256:d194c38041d1e83560221022b3f85eec4604b35e44f5c3a488c24b88542074ed"
+                "sha256:70dc47820d4765b77968b9119f2957d09b4d8d328d950bee4544ff224d5c7b36",
+                "sha256:aec2f0f2143109f8388aadf76e6fff749a2b74ebe730d0f674c65b53da89d19d"
             ],
             "index": "pypi",
-            "version": "==8.5.3"
+            "version": "==8.5.4"
         },
         "mkdocs-material-extensions": {
             "hashes": [
@@ -303,14 +295,6 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==2.1.9"
-        },
-        "zipp": {
-            "hashes": [
-                "sha256:05b45f1ee8f807d0cc928485ca40a07cb491cf092ff587c0df9cb1fd154848d2",
-                "sha256:47c40d7fe183a6f21403a199b3e4192cca5774656965b0a4988ad2f8feb5f009"
-            ],
-            "markers": "python_version >= '3.7'",
-            "version": "==3.8.1"
         }
     },
     "develop": {}
