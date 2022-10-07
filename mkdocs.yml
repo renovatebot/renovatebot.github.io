@@ -180,6 +180,7 @@ nav:
   - Key Concepts:
       - 'Presets': 'key-concepts/presets.md'
       - 'Dependency Dashboard': 'key-concepts/dashboard.md'
+      - 'Pull Requests': 'key-concepts/pull-requests.md'
       - 'Renovate Scheduling': 'key-concepts/scheduling.md'
       - 'Automerge': 'key-concepts/automerge.md'
   - Renovate Modules:
