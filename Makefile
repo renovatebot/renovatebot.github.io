@@ -16,7 +16,10 @@ build-docs:
 
 prepare: get-docs
 
-build: prepare build-docs
+build-decoder:
+	bash bin/build-decoder.sh
+
+build: prepare build-docs build-decoder
 
 clean:
 	git clean -dfx
