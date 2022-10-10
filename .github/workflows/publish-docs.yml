@@ -38,7 +38,7 @@ jobs:
           cache-dependency-path: '**/yarn.lock'
 
       - name: Set up Python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@b55428b1882923874294fa556849718a1d7f2ca5 # tag=v4.2.0
+        uses: actions/setup-python@13ae5bb136fac2878aff31522b9efb785519f984 # tag=v4.3.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pipenv'
