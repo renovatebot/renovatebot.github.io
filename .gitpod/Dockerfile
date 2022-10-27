@@ -46,4 +46,8 @@ RUN set -ex; \
 
 RUN set -ex; mkdir /workspace; chown -hR $USER_NAME:$USER_NAME /workspace
 
+RUN git config --system --add safe.directory '*'
+
 USER gitpod
+
+RUN git config --global --add safe.directory '*'
