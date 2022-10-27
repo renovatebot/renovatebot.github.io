@@ -3,8 +3,8 @@
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "dev": "parcel",
-    "build": "parcel build --dist-dir=dist/ --public-url /cache-decoder"
+    "dev": "parcel --dist-dir=../../docs/cache-decoder --public-url /cache-decoder",
+    "build": "parcel build --dist-dir=../../docs/cache-decoder --public-url /cache-decoder"
   },
   "devDependencies": {
     "buffer": "6.0.3",
