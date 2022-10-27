@@ -1,0 +1,16 @@
+{
+  "name": "Renovate",
+  "dockerFile": "Dockerfile",
+  "settings": {
+    "terminal.integrated.profiles.linux": { "bash": { "path": "/bin/bash" } },
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": ["esbenp.prettier-vscode", "EditorConfig.editorconfig"],
+  "runArgs": [
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined",
+    "--privileged"
+  ],
+  "postCreateCommand": "git submodule update --init && make"
+}
