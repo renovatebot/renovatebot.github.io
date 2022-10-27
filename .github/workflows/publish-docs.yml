@@ -73,6 +73,9 @@ jobs:
       - name: Prepare docs
         run: make prepare
 
+      - name: Build cache decoder
+        run: make build-decoder
+
       - name: Build docs
         run: make build-docs
 
