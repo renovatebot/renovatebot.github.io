@@ -39,6 +39,6 @@ RUN install-pip pipenv 2022.10.25
 
 RUN install-apt make shellcheck sudo
 
-RUN set -ex; echo "$USER_NAME" | passwd $USER_NAME --stdin; adduser $USER_NAME sudo
+RUN set -ex; echo "$USER_NAME:$USER_NAME" | chpasswd; adduser $USER_NAME sudo
 
 USER gitpod
