@@ -1,3 +1,7 @@
+---
+edit_url: https://github.com/renovatebot/renovatebot.github.io/edit/main/src/release-notes-for-major-versions.md
+---
+
 # Release notes for major versions of Renovate
 
 It can be hard to keep track of the changes between major versions of Renovate.
