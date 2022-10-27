@@ -2,6 +2,7 @@ tasks:
   - init: >
       nvm install 16 &&
       nvm use 16 &&
+      pyenv install &&
       pip3 install pipenv &&
       make
     command: make serve
