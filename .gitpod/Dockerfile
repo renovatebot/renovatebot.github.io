@@ -14,7 +14,7 @@ ENV BASH_ENV=/usr/local/etc/env ENV=/usr/local/etc/env PATH=/home/$USER_NAME/bin
 SHELL ["/bin/bash" , "-c"]
 
 # This entry point ensures that dumb-init is run
-ENTRYPOINT [ "docker-entrypoint.sh" ]
+#ENTRYPOINT [ "docker-entrypoint.sh" ]
 
 
 # Set up buildpack
