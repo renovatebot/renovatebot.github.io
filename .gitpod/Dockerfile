@@ -39,6 +39,11 @@ RUN install-pip pipenv 2022.10.25
 
 RUN install-apt make shellcheck sudo
 
-RUN set -ex; echo "$USER_NAME:$USER_NAME" | chpasswd; addgroup --gid $USER_ID $USER_NAME; adduser $USER_NAME sudo; adduser $USER_NAME $USER_NAME
+RUN set -ex; \
+  echo "$USER_NAME:$USER_NAME" | chpasswd; \
+  adduser $USER_NAME sudo; \
+  sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
+
+RUN set -ex; mkdir /workspace; chown -hR $USER_NAME:$USER_NAME /workspace
 
 USER gitpod
