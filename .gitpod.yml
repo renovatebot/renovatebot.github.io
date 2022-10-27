@@ -1,10 +1,10 @@
 image:
   file: .gitpod/Dockerfile
   context: .gitpod
-tasks:
-  - init: >
-      make
-    command: make serve
+# tasks:
+#   - init: >
+#       make
+#     command: make serve
 
 ports:
   - port: 8000
