@@ -29,5 +29,5 @@ clean:
 serve:
 	pipenv run mkdocs serve
 
-deploy:
-	pipenv run mkdocs gh-deploy --force
+deploy: clean install build
+	pipenv run mkdocs gh-deploy --dirty --force
