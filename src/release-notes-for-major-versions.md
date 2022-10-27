@@ -23,7 +23,7 @@ If you are upgrading from v32 to v34 then it means that the setting for `branchN
 If you already upgraded from v32 to v33 then you have a decision to make first:
 
 - set `branchNameStrict` to `true` (like in v33),
-- let it set back to `false` (like in v32).
+- or let it set back to `false` (like in v32).
 
 Strict branch naming meant that all special characters other than letters, numbers and hyphens were converted to hyphens and then deduplicated, e.g. a branch which in v32 was like `renovate/abc.def-2.x` would become `renovate/abc-def-2-x` in v33.
 If you prefer to revert back to the old way then that will happen automatically in v34.
