@@ -12,5 +12,5 @@
     "seccomp=unconfined",
     "--privileged"
   ],
-  "postCreateCommand": "yarn install && pipenv install"
+  "postCreateCommand": "git submodule update --init && make"
 }
