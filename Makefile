@@ -12,7 +12,7 @@ get-docs:
 	bash bin/get-docs.sh
 
 build-docs:
-	pipenv run mkdocs build
+	pipenv run mkdocs build --strict
 
 prepare: get-docs
 
@@ -27,7 +27,7 @@ clean:
 	rm -rf tmp
 
 serve:
-	pipenv run mkdocs serve
+	pipenv run mkdocs serve --strict
 
 deploy: clean install build
 	pipenv run mkdocs gh-deploy --dirty --force
