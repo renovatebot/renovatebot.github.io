@@ -230,4 +230,5 @@ nav:
       - 'Templates': 'templates.md'
       - 'Frequently Asked Questions': 'faq.md'
       - 'Known Limitations': 'known-limitations.md'
+      - 'Release notes for major versions': 'release-notes-for-major-versions.md'
   - About Us: 'about-us.md'

@@ -20,7 +20,7 @@ We decided to issue another breaking change to revert one of the breaking change
 
 If you are upgrading from v32 to v34 then it means that the setting for `branchNameStrict` remains as `false` and you don't need to worry about that.
 
-If you already upgraded from v32 to v33 then you have a decision to make first: 
+If you already upgraded from v32 to v33 then you have a decision to make first:
 
 - set `branchNameStrict` to `true` (like in v33),
 - let it set back to `false` (like in v32).
