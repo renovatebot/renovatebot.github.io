@@ -13,7 +13,6 @@ SHELL ["/bin/bash" , "-c"]
 
 # This entry point ensures that dumb-init is run
 ENTRYPOINT [ "docker-entrypoint.sh" ]
-CMD [ "bash" ]
 
 
 # Set up buildpack
