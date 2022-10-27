@@ -4,6 +4,8 @@ FROM ubuntu:20.04@sha256:450e066588f42ebe1551f3b1a535034b6aa46cd936fe7f2c6b0d729
 
 # required for gitpod
 # https://www.gitpod.io/docs/configure/workspaces/workspace-image#custom-base-image
+# https://github.com/gitpod-io/workspace-images/blob/main/base/Dockerfile
+
 ARG USER_NAME=gitpod
 ARG USER_ID=33333
 
@@ -36,7 +38,9 @@ RUN install-tool python 3.10.8
 RUN install-pip pipenv 2022.10.25
 
 
-RUN install-apt make shellcheck sudo
+RUN set -ex; \
+  install-apt make shellcheck sudo locales; \
+  locale-gen en_US.UTF-8
 
 RUN set -ex; \
   echo "$USER_NAME:$USER_NAME" | chpasswd; \
@@ -49,4 +53,3 @@ RUN git config --system --add safe.directory '*'
 
 USER gitpod
 
-RUN git config --global --add safe.directory '*'
