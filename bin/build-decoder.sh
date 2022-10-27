@@ -10,6 +10,7 @@ cd "$deps/cache-decoder"
 if [ -z "$SKIP_BUILD" ]; then
   yarn install --frozen-lockfile
   yarn build
+  mkdir -p "$pwd/site"
   mv dist ../../site/cache-decoder
 fi
 

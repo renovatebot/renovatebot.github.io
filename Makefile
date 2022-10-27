@@ -12,14 +12,14 @@ get-docs:
 	bash bin/get-docs.sh
 
 build-docs:
-	pipenv run mkdocs build --strict
+	pipenv run mkdocs build
 
 prepare: get-docs
 
 build-decoder:
 	bash bin/build-decoder.sh
 
-build: prepare build-docs build-decoder
+build: prepare build-decoder build-docs
 
 clean:
 	git clean -dfx
@@ -27,7 +27,7 @@ clean:
 	rm -rf tmp
 
 serve:
-	pipenv run mkdocs serve --strict
+	pipenv run mkdocs serve
 
 deploy:
-	pipenv run mkdocs gh-deploy --dirty --force
+	pipenv run mkdocs gh-deploy --force
