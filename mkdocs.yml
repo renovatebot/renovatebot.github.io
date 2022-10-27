@@ -42,8 +42,10 @@ theme:
   name: 'material'
 
   # Allow overriding the Material for MkDocs themes with a 'overrides' directory.
+  # The custom_dir points to the overrides folder, this folder has the code for our announcement bar.
+  # The easiest way to disable the announcement bar is to comment out the custom_dir: overrides entry in this mkdocs.yml file.
   # https://squidfunk.github.io/mkdocs-material/customization/#setup-and-theme-structure
-  # custom_dir: overrides // Commenting out this config option to disable our announcement bar. The overrides/main.html file has the code for the announcement bar.
+  custom_dir: overrides
 
   logo: 'assets/images/logo.png'
   favicon: 'assets/images/logo.png'
@@ -228,4 +230,5 @@ nav:
       - 'Templates': 'templates.md'
       - 'Frequently Asked Questions': 'faq.md'
       - 'Known Limitations': 'known-limitations.md'
+      - 'Release notes for major versions': 'release-notes-for-major-versions.md'
   - About Us: 'about-us.md'
