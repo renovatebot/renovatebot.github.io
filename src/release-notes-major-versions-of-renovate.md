@@ -39,13 +39,35 @@ Apologies to anyone negatively affected by this v33 change.
 
 ### Breaking changes
 
-Someone with `write` rights to the release notes on `renovatebot/renovate`: please copy/paste the notes in here.
-Otherwise I need to re-do all the basic formatting like bold text, monospaced fonts, list item layout.
+- Node 16 is the required runtime for Renovate
+- [NOTE: This was reverted in `v34`] **config:** `branchNameStrict` default value is now `true`
+- **config:** `internalChecksFilter` default value is now `"strict"`
+- **config:** `ignoreScripts` default value is now `true`. If `allowScripts=true` in global config, `ignoreScripts` must be set to `false` in repo config if you want all repos to run scripts
+- **config:** `autodiscover` filters can no longer include commas
+- **config:** boolean variables must be `true` or `false` when configured in environment variables, and errors will be thrown for invalid values. Previously invalided values were ignored and treated as `false`
+- **datasource/go:** `git-tags` datasource will be used as the fallback instead of `github-tags` if a go package's host type is unknown
+- **jsonnet-bundler:** `depName` now uses the "absolute import" format (e.g. `bar`-> `github.com/foo/bar/baz-wow`)
+- **azure-pipelines:** azure-pipelines manager is now disabled by default
+- **github:** No longer necessary to configure forkMode. Forking mode is now experimental
+- Users of `containerbase` images (such as official Renovate images) will now have dynamic package manager installs enabled by default
+- Dependencies are no longer automatically pinned if `rangeStrategy=auto`, pinning must be opted into using `rangeStrategy=pin`
 
 ### Commentary
 
-We don't have any official commentary for these release notes.
-Rarkins should probably write something up and put that in the release notes as well.
+This release contains some changes of default values/behavior:
+
+- `internalChecksFilter` will now default to `strict`, meaning that updates will be withheld by default when internal status checks are pending. This should reduce the number of "non-actionable" Pull Requests you get
+- `azure-pipelines` manager is disabled by default, because its primary datasource can unfortunately suggest updates which aren't yet installable. Users should opt into this manager once they know the risks
+- `binarySource=install` will now be used instead of `global` whenever Renovate is run within a "containerbase" image. This means dynamic installation of most package managers and languages
+- Dependencies will no longer be pinned by default if `rangeStrategy=auto`. While we recommend pinning dependencies, we decided users should opt into this more explicitly
+
+And two major features!
+
+- AWS CodeCommit platform support
+- OpenTelemetry support
+
+Both the above are considered "experimental".
+Please test them out and let us know your feedback - both positive or negative - so that we can progress them to fully available.
 
 ### Link to release notes
 
