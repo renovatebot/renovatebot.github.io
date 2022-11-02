@@ -63,15 +63,15 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-      primary: 'blue'
-      accent: 'blue'
+      primary: 'indigo'
+      accent: 'indigo'
     - media: '(prefers-color-scheme: dark)'
       scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-      primary: 'cyan'
-      accent: 'cyan'
+      primary: 'teal'
+      accent: 'teal'
 
   features:
     # Back to top button
