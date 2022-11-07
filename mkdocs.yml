@@ -160,6 +160,10 @@ markdown_extensions:
       auto_append:
         - includes/abbreviations.md
 
+  # The Footnotes extension adds the ability to add footnotes.
+  # https://squidfunk.github.io/mkdocs-material/reference/footnotes/
+  - footnotes
+
 # Plugins
 plugins:
   - search
