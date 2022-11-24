@@ -23,12 +23,13 @@ Multi-platform and multi-language.
 
 Renovate works on these platforms:
 
-- GitHub (.com and Enterprise Server)
-- GitLab (.com and CE/EE)
-- Bitbucket Cloud
-- Bitbucket Server
-- Azure DevOps
-- Gitea
+- [GitHub (.com and Enterprise Server)](./modules/platform/github/)
+- [GitLab (.com and CE/EE)](./modules/platform/gitlab/)
+- [Bitbucket Cloud](./modules/platform/bitbucket/)
+- [Bitbucket Server](./modules/platform/bitbucket-server/)
+- [Azure DevOps](./modules/platform/azure/)
+- [AWS CodeCommit](./modules/platform/codecommit/)
+- [Gitea](./modules/platform/gitea/)
 
 ## Who Uses Renovate?
 
