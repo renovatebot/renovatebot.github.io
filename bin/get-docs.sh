@@ -17,10 +17,10 @@ if [ -z "$SKIP_BUILD" ]; then
   yarn build:docs
 fi
 
-cp -R tmp/docs/* "$docs"
+cp -R tmp/docs/. "$docs"
 
 cd "$pwd"
-cp -R src/* docs/
+cp -R src/. docs/
 
 {
   printf -- '---\n'
