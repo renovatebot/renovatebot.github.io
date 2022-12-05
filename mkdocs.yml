@@ -168,6 +168,7 @@ plugins:
 # Page Tree/Sidebar
 # https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
 # https://3os.org/utilities/markdown-cheatsheet/awesome-pages/
-# We now use awesome-pages plugin, so check `.pages` files inside renovate docs folder
+# We now use the awesome-pages plugin, which uses `.pages` files inside the renovate docs/ folder to set the navigation structure.
+# The source `.pages` file(s) are in the renovatebot/renovate repository.
 nav:
  - ...
