@@ -52,6 +52,8 @@ theme:
 
   icon:
     repo: fontawesome/brands/github # Custom icon for link to GitHub repository in header
+    edit: material/pencil # Custom icon for the edit source button
+    view: material/eye # Custom icon for the view source button
 
   # Setup colorscheme for Light and Dark mode
   # Setup icon set for the light/dark mode toggle
@@ -93,6 +95,19 @@ theme:
     # Mark the announcement bar as read.
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#mark-as-read
     - announce.dismiss
+
+    # Enable copy-to-clipboard button
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-copy-button
+    - content.code.copy
+
+    # Enable view/edit source button.
+    # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+    - content.action.edit
+    - content.action.view
+
+    # Enable navigation footer (next/previous buttons at the bottom of the page).
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#navigation
+    - navigation.footer
 
 # CSS and JavaScript customizations
 
