@@ -100,10 +100,9 @@ theme:
     # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-copy-button
     - content.code.copy
 
-    # Enable view/edit source button.
+    # Enable edit source button.
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     - content.action.edit
-    - content.action.view
 
     # Enable navigation footer (next/previous buttons at the bottom of the page).
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#navigation
