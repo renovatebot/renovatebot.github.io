@@ -53,7 +53,6 @@ theme:
   icon:
     repo: fontawesome/brands/github # Custom icon for link to GitHub repository in header
     edit: material/pencil # Custom icon for the edit source button
-    view: material/eye # Custom icon for the view source button
 
   # Setup colorscheme for Light and Dark mode
   # Setup icon set for the light/dark mode toggle
