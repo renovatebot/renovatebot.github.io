@@ -38,7 +38,7 @@ jobs:
           cache-dependency-path: '**/yarn.lock'
 
       - name: Set up Python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@5ccb29d8773c3f3f653e1705f474dfaa8a06a912 # v4.4.0
+        uses: actions/setup-python@d27e3f3d7c64b4bbf8e4abfb9b63b83e846e0435 # v4.5.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pipenv'
@@ -87,7 +87,7 @@ jobs:
           if-no-files-found: error
 
       - name: Cypress run
-        uses: cypress-io/github-action@dc9224ac2de4f7e899f14832c39cbede73dec5b2 # v5.0.4
+        uses: cypress-io/github-action@37c511bc322f112c2dd629d3610f4f096bc80096 # v5.0.5
         with:
           start: make serve
           wait-on: 'http://127.0.0.1:8000/'
