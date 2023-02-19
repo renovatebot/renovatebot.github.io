@@ -10,7 +10,7 @@ on:
       - 'main'
 
 env:
-  NODE_VERSION: 18.14.0 # renovate: datasource=node depName=node
+  NODE_VERSION: 18.14.1 # renovate: datasource=node depName=node
   PYTHON_VERSION: 3.11.1 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
   # Don't use PIPENV_VERSION:  https://github.com/pypa/pipenv/issues/3633#issuecomment-478250721
   RENOVATE_PIPENV_VERSION: 2022.12.19 # renovate: datasource=pypi depName=pipenv
