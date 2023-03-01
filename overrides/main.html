@@ -6,5 +6,16 @@
 {% extends "base.html" %}
 
 {% block announce %}
-We released two new major versions of Renovate. Read the <a href="https://docs.renovatebot.com/release-notes-for-major-versions/" target="_blank">Release notes for major versions of Renovate</a> section of the docs to learn what's changed.
+<p>If you're using the GitHub-hosted app version of Renovate, <em>and</em> you invited the <code>renovate</code> npm user into your npm organization then keep reading this message.</p>
+
+<p>
+  We are phasing out using the <code>renovate</code> npm user for private packages.
+  We are deliberately skipping provisioning this npm token for 20 percent of the time (brownout).
+  This means that Renovate will autoclose some pull requests, which will then be re-opened the next time Renovate runs with the token.
+</p>
+
+<p>
+  If you're seeing this behavior, it means you need to set up your own service user token.
+  Read <a href="https://github.com/renovatebot/renovate/discussions/20613" target="_blank">discussion 20613 on the Renovate repository</a> to learn more.
+</p>
 {% endblock %}
