@@ -11,6 +11,35 @@ The most recent versions are always at the top of the page.
 This is because recent versions may revert changes made in an older version.
 You also don't have to scroll to the bottom of the page to find the latest release notes.
 
+## Version 35
+
+### Breaking changes
+
+- require NodeJS v18.12+ ([#20838](https://github.com/renovatebot/renovate/pull/20838))
+- **config:** Forked repos will now be processed automatically if `autodiscover=false`. `includeForks` is removed and replaced by new option `forkProcessing`
+- Internal checks such as `renovate/stability-days` will no longer count as passing/green, meaning that actions such as `automerge` won't occur if the only checks are Renovate internal ones. Set `internalChecksAsSuccess=true` to restore existing behavior
+- **versioning:** default versioning is now `semver-coerced`, instead of `semver`
+- **datasource/github-releases:** Regex Manager configurations relying on the github-release data-source with digests will have different digest semantics. The digest will now always correspond to the underlying Git SHA of the release/version. The old behavior can be preserved by switching to the github-release-attachments datasource
+- **versioning:** bump short ranges to version ([#20494](https://github.com/renovatebot/renovate/pull/20494))
+- **config:** `containerbase/` account used for sidecar containers instead of `renovate/`
+- **go:** Renovate will now use go's default `GOPROXY` settings. To avoid using the public proxy, configure `GOPROXY=direct`
+- **datasource/npm:** Package cache will include entries for up to 24 hours after the last lookup. Set `cacheHardTtlMinutes=0` to revert to existing behavior
+- **config:** Renovate now defaults to applying hourly and concurrent PR limits. To revert to unlimited, configure them back to `0`
+- **config:** Renovate will now default to updating locked dependency versions. To revert to previous behavior, configure `rangeStrategy=replace`
+- **config:** PyPI releases will no longer be filtered by default based on `constraints.python` compatibility. To retain existing functionality, set `constraintsFiltering=strict`
+
+### Commentary
+
+Most of these changes will be invisible to the majority of users.
+They may be "breaking" (change of behavior) but good changes of defaults to make.
+
+The biggest change is defaulting `rangeStrategy=auto` to use `update-lockfile` instead of `replace`, which impacts anyone using the recommended `config:base`.
+This will mean that you start seeing some "lockfile-only" PRs for in-range updates, such as updating `package-lock.json` when a range exists in `package.json`.
+
+### Link to release notes
+
+[Release notes for `v35` on GitHub](https://github.com/renovatebot/renovate/releases/tag/35.0.0).
+
 ## Version 34
 
 ### Breaking changes
