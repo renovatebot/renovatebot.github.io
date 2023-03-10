@@ -30,7 +30,11 @@ You also don't have to scroll to the bottom of the page to find the latest relea
 
 ### Commentary
 
-To fill out by rarkins.
+Most of these changes will be invisible to the majority of users.
+They may be "breaking" (change of behavior) but good changes of defaults to make.
+
+The biggest change is defaulting `rangeStrategy=auto` to use `update-lockfile` instead of `replace`, which impacts anyone using the recommended `config:base`.
+This will mean that you start seeing some "lockfile-only" PRs for in-range updates, such as updating `package-lock.json` when a range exists in `package.json`.
 
 ### Link to release notes
 
