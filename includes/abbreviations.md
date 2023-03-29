@@ -26,3 +26,4 @@
 *[TLS]: Transport Layer Security
 *[URL]: Uniform Resource Locator
 *[UTC]: Coordinated Universal Time
+*[VM]: Virtual Machine
