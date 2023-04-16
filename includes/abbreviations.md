@@ -4,6 +4,7 @@
 <!-- Please keep this list sorted from A-Z. -->
 
 *[AMI]: Amazon Machine Images
+*[AUR]: Arch User Repository
 *[AWS]: Amazon Web Services
 *[CD]: Continuous Deployment
 *[CI]: Continuous Integration
