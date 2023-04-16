@@ -10,7 +10,7 @@ on:
       - 'main'
 
 env:
-  NODE_VERSION: 18.15.0 # renovate: datasource=node depName=node
+  NODE_VERSION: 18.16.0 # renovate: datasource=node depName=node
   PYTHON_VERSION: 3.11.3 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
   # Don't use PIPENV_VERSION:  https://github.com/pypa/pipenv/issues/3633#issuecomment-478250721
   RENOVATE_PIPENV_VERSION: 2023.3.20 # renovate: datasource=pypi depName=pipenv
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
+      - uses: actions/checkout@83b7061638ee4956cf7545a6f7efe594e5ad0247 # v3.5.1
 
       - name: Checkout submodules
         shell: bash
