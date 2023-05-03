@@ -13,7 +13,7 @@ env:
   NODE_VERSION: 18.16.0 # renovate: datasource=node depName=node
   PYTHON_VERSION: 3.11.3 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
   # Don't use PIPENV_VERSION:  https://github.com/pypa/pipenv/issues/3633#issuecomment-478250721
-  RENOVATE_PIPENV_VERSION: 2023.4.20 # renovate: datasource=pypi depName=pipenv
+  RENOVATE_PIPENV_VERSION: 2023.4.29 # renovate: datasource=pypi depName=pipenv
 
 jobs:
   build:
