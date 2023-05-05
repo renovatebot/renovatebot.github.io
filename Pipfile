@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-mkdocs = "==1.4.2"
+mkdocs = "==1.4.3"
 mkdocs-material = "==9.1.9"
 mkdocs-material-extensions = "==1.1.1"
 mkdocs-awesome-pages-plugin = "==2.9.0"
