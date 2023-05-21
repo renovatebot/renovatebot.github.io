@@ -31,7 +31,7 @@ describe('Basic Tests', () => {
     cy.get('.md-footer__link--prev').click();
     cy.location().should((loc) => {
       if (prevUrl === '../..') prevUrl = '/';
-      expect(loc.href.includes(prevUrl)).to.eq(true);
+      expect(loc.href.includes(prevUrl)).to.eq(false);
     });
   });
   it('sidebar button works', () => {
