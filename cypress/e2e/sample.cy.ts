@@ -30,7 +30,7 @@ describe('Basic Tests', () => {
       });
     cy.get('.md-footer__link--prev').click();
     cy.location().should((loc) => {
-      if (prevUrl === '../..') prevUrl = '/';
+      if (prevUrl === '..') prevUrl = '/';
       expect(loc.href.includes(prevUrl)).to.eq(true);
     });
   });
