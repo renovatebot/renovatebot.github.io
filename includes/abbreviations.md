@@ -62,3 +62,4 @@
 *[matchPackagePatterns]: Package name patterns to match. Valid only within a `packageRules` object.
 *[matchDepTypes]: List of depTypes to match (e.g. [`peerDependencies`]). Valid only within `packageRules` object.
 *[additionalBranchPrefix]: Additional string value to be appended to `branchPrefix`.
+*[regexManagers]: Custom managers using regex matching.
