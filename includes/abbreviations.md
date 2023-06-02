@@ -3,6 +3,8 @@
 
 <!-- Please keep this list sorted from A-Z. -->
 
+<!-- Put real abbreviations in this section. -->
+
 *[AMI]: Amazon Machine Images
 *[AUR]: Arch User Repository
 *[AWS]: Amazon Web Services
@@ -28,3 +30,21 @@
 *[URL]: Uniform Resource Locator
 *[UTC]: Coordinated Universal Time
 *[VM]: Virtual Machine
+
+<!-- Grab description string from config options typescript file, and copy/paste it into the right format here -->
+
+*[detectGlobalManagerConfig]: If `true`, Renovate tries to detect global manager configuration from the file system.
+*[detectHostRulesFromEnv]: If `true`, Renovate tries to detect host rules from environment variables.
+*[allowPostUpgradeCommandTemplating]: Set this to `true` to allow templating for post-upgrade commands.
+*[allowedPostUpgradeCommands]: A list of regular expressions that decide which post-upgrade tasks are allowed.
+*[postUpgradeTasks]: Post-upgrade tasks that are executed before a commit is made by Renovate.
+*[commands]: A list of post-upgrade commands that are executed before a commit is made by Renovate.
+*[fileFilters]: Files that match the glob pattern will be committed after running a post-upgrade task.
+*[executionMode]: Controls when the post upgrade tasks run: on every update, or once per upgrade branch.
+*[onboardingBranch]: Change this value to override the default onboarding branch name.
+*[onboardingCommitMessage]: Change this value to override the default onboarding commit message.
+*[onboardingConfigFileName]: Change this value to override the default onboarding config file name.
+*[onboardingNoDeps]: Onboard the repository even if no dependencies are found.
+*[onboardingPrTitle]: Change this value to override the default onboarding PR title.
+*[configMigration]: Enable this to get config migration PRs when needed.
+*[productLinks]: Links which are used in PRs, issues and comments.
