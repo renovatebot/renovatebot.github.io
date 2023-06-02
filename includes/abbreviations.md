@@ -48,3 +48,17 @@
 *[onboardingPrTitle]: Change this value to override the default onboarding PR title.
 *[configMigration]: Enable this to get config migration PRs when needed.
 *[productLinks]: Links which are used in PRs, issues and comments.
+*[hostType]: hostType for a package rule. Can be a platform name or a datasource name.
+*[matchHost]: A domain name, host name or base URL to match against.
+*[timeout]: Timeout (in milliseconds) for queries to external endpoints.
+*[insecureRegistry]: Explicitly turn on insecure Docker registry access (HTTP).
+*[authType]: Authentication type for HTTP header. e.g. `"Bearer"` or `"Basic"`. Use `"Token-Only"` to use only the token without an authorization type.
+*[hostRules]: Host rules/configuration including credentials.
+*[hostType]: hostType for a package rule. Can be a platform name or a datasource name.
+*[matchHost]: A domain name, host name or base URL to match against.
+*[addLabels]: Labels to add to Pull Request.
+*[labels]: Labels to set in Pull Request.
+*[packageRules]: Rules for matching package names.
+*[matchPackagePatterns]: Package name patterns to match. Valid only within a `packageRules` object.
+*[matchDepTypes]: List of depTypes to match (e.g. [`peerDependencies`]). Valid only within `packageRules` object.
+*[additionalBranchPrefix]: Additional string value to be appended to `branchPrefix`.
