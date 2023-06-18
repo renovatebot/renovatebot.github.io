@@ -87,7 +87,7 @@ jobs:
           if-no-files-found: error
 
       - name: Cypress run
-        uses: cypress-io/github-action@e08da4966cec4d8f99cf72b09d3362aae2c5391c # v5.8.2
+        uses: cypress-io/github-action@d69252d52b9a31bad4f418f05ba2bc83687a02eb # v5.8.3
         with:
           start: make serve
           wait-on: 'http://127.0.0.1:8000/'
