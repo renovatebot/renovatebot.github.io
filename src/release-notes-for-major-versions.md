@@ -11,6 +11,22 @@ The most recent versions are always at the top of the page.
 This is because recent versions may revert changes made in an older version.
 You also don't have to scroll to the bottom of the page to find the latest release notes.
 
+## Version 36
+
+### Breaking changes
+
+- List all the breaking changes for `v36`
+- Breaking change 2
+- Breaking change 3
+
+### Commentary
+
+Insert maintainer commentary for `v36` here.
+
+### Link to release notes
+
+[Release notes for `v36` on GitHub](https://github.com/renovatebot/renovate/releases/tag/36.0.0).
+
 ## Version 35
 
 ### Breaking changes
