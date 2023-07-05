@@ -37,7 +37,11 @@ You also don't have to scroll to the bottom of the page to find the latest relea
 
 ### Commentary
 
-Insert maintainer commentary for `v36` here.
+If you're self-hosting Renovate, play particular attention to:
+- Do you want to run the full, or slim versions of the image? We have switched the defaults (latest is now slim, not full)
+- Have you configured `dockerImagePrefix`? If so then you need to use `dockerSidecarImage` instead
+- If you're using `config:base` in your `onboardingConfig` then switch to `config:recommended`
+- `gitAuthor` may change if you're on GitLab and have a different commit email for your bot account. If so then configure `gitIgnoredAuthors` with the old email
 
 ### Link to release notes
 
