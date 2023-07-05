@@ -15,9 +15,25 @@ You also don't have to scroll to the bottom of the page to find the latest relea
 
 ### Breaking changes
 
-- List all the breaking changes for `v36`
-- Breaking change 2
-- Breaking change 3
+- postUpgradeTasks.fileFilters is now optional and defaults to all files
+- `languages` are now called `categories` instead. Use `matchCategories` in `packageRules`
+- Node v19 is no longer supported
+- **datasource:** `semver-coerced` is now the default versioning
+- **presets:** Preset `config:base` is now called `config:recommended` (will be migrated automatically)
+- remove `BUILDPACK` env support
+- **package-rules:** `matchPackageNames` now matches both `depName` (existing) and `packageName` (new) and warns if only `depName` matches
+- **release-notes:** Release notes won't be fetched early for `commitBody` insertion unless explicitly configured with `fetchReleaseNotes=branch`
+- `dockerImagePrefix` is now replaced by `dockerSidecarImage`
+- `matchPaths` and `matchFiles` are now combined into `matchFileNames`, supporting exact match and glob-only. The "any string match" functionality of `matchPaths` is now removed
+- **presets:** v25 compatibility for language-based branch prefixes is removed
+- **npm:** Rollback PRs will no longer be enabled by default for npm (they are now disabled by default for all managers)
+- **post-upgrade-tasks:** dot files will now be included by default for all minimatch results
+- **platform/gitlab:** GitLab `gitAuthor` will change from the account's "email" to "commit_email" if they are different
+- **automerge:** Platform automerge will now be chosen by default whenever automerge is enabled
+- Post upgrade templating is now allowed by default, as long as the post upgrade task command is itself already allowed
+- Official Renovate Docker images now use the "slim" approach with `binarySource=install` by default. e.g. `renovate/renovate:latest` is the slim image, not full
+- The "full" image is now available via the tag `full`, e.g. `renovate/renovate:36-full`, and defaults to `binarySource=global` (no dynamic installs)
+- Third party tools in the full image have been updated to latest/LTS major version
 
 ### Commentary
 
