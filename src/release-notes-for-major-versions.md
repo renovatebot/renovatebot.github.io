@@ -11,6 +11,43 @@ The most recent versions are always at the top of the page.
 This is because recent versions may revert changes made in an older version.
 You also don't have to scroll to the bottom of the page to find the latest release notes.
 
+## Version 36
+
+### Breaking changes
+
+- postUpgradeTasks.fileFilters is now optional and defaults to all files
+- `languages` are now called `categories` instead. Use `matchCategories` in `packageRules`
+- Node v19 is no longer supported
+- **datasource:** `semver-coerced` is now the default versioning
+- **presets:** Preset `config:base` is now called `config:recommended` (will be migrated automatically)
+- remove `BUILDPACK` env support
+- **package-rules:** `matchPackageNames` now matches both `depName` (existing) and `packageName` (new) and warns if only `depName` matches
+- **release-notes:** Release notes won't be fetched early for `commitBody` insertion unless explicitly configured with `fetchReleaseNotes=branch`
+- `dockerImagePrefix` is now replaced by `dockerSidecarImage`
+- `matchPaths` and `matchFiles` are now combined into `matchFileNames`, supporting exact match and glob-only. The "any string match" functionality of `matchPaths` is now removed
+- **presets:** v25 compatibility for language-based branch prefixes is removed
+- **npm:** Rollback PRs will no longer be enabled by default for npm (they are now disabled by default for all managers)
+- **post-upgrade-tasks:** dot files will now be included by default for all minimatch results
+- **platform/gitlab:** GitLab `gitAuthor` will change from the account's "email" to "commit_email" if they are different
+- **automerge:** Platform automerge will now be chosen by default whenever automerge is enabled
+- Post upgrade templating is now allowed by default, as long as the post upgrade task command is itself already allowed
+- Official Renovate Docker images now use the "slim" approach with `binarySource=install` by default. e.g. `renovate/renovate:latest` is the slim image, not full
+- The "full" image is now available via the tag `full`, e.g. `renovate/renovate:36-full`, and defaults to `binarySource=global` (no dynamic installs)
+- Third party tools in the full image have been updated to latest/LTS major version
+
+### Commentary
+
+If you're self-hosting Renovate, pay particular attention to:
+
+- Do you want to run the full, or slim versions of the image? We have switched the defaults (latest is now slim, not full)
+- Have you configured `dockerImagePrefix`? If so then you need to use `dockerSidecarImage` instead
+- If you're using `config:base` in your `onboardingConfig` then switch to `config:recommended`
+- `gitAuthor` may change if you're on GitLab and have a different commit email for your bot account. If so then configure `gitIgnoredAuthors` with the old email
+
+### Link to release notes
+
+[Release notes for `v36` on GitHub](https://github.com/renovatebot/renovate/releases/tag/36.0.0).
+
 ## Version 35
 
 ### Breaking changes
