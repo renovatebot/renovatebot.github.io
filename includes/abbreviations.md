@@ -25,6 +25,7 @@
 *[SRI]: Subresource Integrity
 *[SSH]: Secure Shell
 *[SSL]: Secure Sockets Layer
+*[the Mend Renovate App]: this means the Mend-hosted GitHub app
 *[TLS]: Transport Layer Security
 *[URL]: Uniform Resource Locator
 *[UTC]: Coordinated Universal Time
