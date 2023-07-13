@@ -9,7 +9,7 @@ RUN install-tool yarn 1.22.19
 RUN install-tool python 3.11.4
 
 # renovate: datasource=pypi
-RUN install-pip pipenv 2023.7.4
+RUN install-tool pipenv 2023.7.9
 
 
 RUN install-apt make shellcheck
