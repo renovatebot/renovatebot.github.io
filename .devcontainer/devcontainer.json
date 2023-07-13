@@ -12,5 +12,5 @@
     "seccomp=unconfined",
     "--privileged"
   ],
-  "postCreateCommand": "git config --global --add safe.directory $PWD && git submodule update --init && make"
+  "postCreateCommand": "git config --global --add safe.directory $PWD && git config --global --add safe.directory $PWD/deps/renovate && git submodule update --init && make"
 }
