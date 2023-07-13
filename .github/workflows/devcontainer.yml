@@ -23,3 +23,6 @@ jobs:
         uses: devcontainers/ci@57eaf0c9b518a76872bc429cdceefd65a912309b # v0.3.1900000329
         with:
           runCmd: make
+          env: GITHUB_TOKEN
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
