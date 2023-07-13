@@ -22,6 +22,7 @@
 *[PAT]: Personal Access Token
 *[SDK]: Software Development Kit
 *[SemVer]: Semantic Versioning
+*[SRI]: Subresource Integrity
 *[SSH]: Secure Shell
 *[SSL]: Secure Sockets Layer
 *[TLS]: Transport Layer Security
