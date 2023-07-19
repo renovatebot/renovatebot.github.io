@@ -66,6 +66,7 @@ jobs:
           filter_mode: nofilter
           path: |
             bin
+            .devcontainer
             .husky
           pattern: '*.sh'
           check_all_files_with_shebangs: 'true'
