@@ -29,7 +29,7 @@ Renovate works on these platforms:
 - [Bitbucket Server](./modules/platform/bitbucket-server/)
 - [Azure DevOps](./modules/platform/azure/)
 - [AWS CodeCommit](./modules/platform/codecommit/)
-- [Gitea](./modules/platform/gitea/)
+- [Gitea and Forgejo](./modules/platform/gitea/)
 
 ## Who Uses Renovate?
 
@@ -43,7 +43,8 @@ You can run Renovate as:
 
 - an [Open Source npm package](https://www.npmjs.com/package/renovate)
 - a [pre-built Open Source image on Docker Hub](https://hub.docker.com/r/renovate/renovate)
-- a [free GitHub App](https://github.com/marketplace/renovate) that is hosted by [Mend](https://www.mend.io/)
 
-[Install our GitHub app now](https://github.com/marketplace/renovate){ .md-button .md-button--primary }
+Or you can use [the Mend Renovate App](https://github.com/marketplace/renovate) which is hosted by [Mend](https://www.mend.io/).
+
+[Install the Mend Renovate app for GitHub](https://github.com/marketplace/renovate){ .md-button .md-button--primary }
 [Check out our tutorial](https://github.com/renovatebot/tutorial){ .md-button }
