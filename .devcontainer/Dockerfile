@@ -8,7 +8,7 @@ RUN install-apt make shellcheck
 RUN install-tool python 3.11.4
 
 # renovate: datasource=pypi
-RUN install-tool pipenv 2023.7.11
+RUN install-tool pipenv 2023.7.23
 
 # renovate: datasource=npm
 RUN install-tool yarn 1.22.19
