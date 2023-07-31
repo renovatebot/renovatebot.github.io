@@ -4,6 +4,14 @@
 # https://www.mkdocs.org/user-guide/configuration/#strict
 strict: true
 
+# Use MkDocs maintainer's recommended strictness settings for link validation.
+# https://www.mkdocs.org/user-guide/configuration/#validation
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
 # Set the remote branch to commit to when using `gh-deploy` to deploy to GitHub Pages.
 # https://www.mkdocs.org/user-guide/configuration/#remote_branch
 remote_branch: gh-pages
