@@ -75,6 +75,11 @@ theme:
       accent: 'teal'
 
   features:
+    # Navigation pruning (not compatible with navigation.expand)
+    # When pruning is enabled, only the visible navigation items are included in the rendered HTML, reducing the size of the built site by 33% or more.
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-pruning
+    - navigation.prune
+
     # Back to top button
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=back+to+top#back-to-top-button
     - navigation.top
