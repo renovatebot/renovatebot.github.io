@@ -5,7 +5,7 @@ USER root
 RUN install-apt make shellcheck
 
 # renovate: datasource=github-releases packageName=containerbase/python-prebuild
-RUN install-tool python 3.11.4
+RUN install-tool python 3.11.5
 
 # renovate: datasource=pypi
 RUN install-tool pipenv 2023.8.25
