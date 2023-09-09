@@ -84,10 +84,6 @@ theme:
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=back+to+top#back-to-top-button
     - navigation.top
 
-    # Integrate table of contents into left sidebar
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=integrate#integrated-table-of-contents
-    - toc.integrate
-
     # Automatically scroll the navigation sidebar, so the active anchor is always on screen.
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-following
     - toc.follow
