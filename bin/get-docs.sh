@@ -13,8 +13,8 @@ deps=$pwd/deps
 cd "$deps/renovate"
 
 if [ -z "$SKIP_BUILD" ]; then
-  yarn install --frozen-lockfile
-  yarn build:docs
+  pnpm install --frozen-lockfile
+  pnpm build:docs
 fi
 
 cp -R tmp/docs/. "$docs"
