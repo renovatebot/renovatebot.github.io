@@ -52,6 +52,7 @@ jobs:
           python --version
           pip install pipenv==${{ env.RENOVATE_PIPENV_VERSION }}
           pipenv --version
+          corepack enable
 
       - name: Installing dependencies
         run: make install
