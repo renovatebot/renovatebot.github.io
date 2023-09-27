@@ -20,7 +20,7 @@ SHELL ["/bin/bash" , "-c"]
 # Set up buildpack
 COPY --from=buildpack /usr/local/bin/ /usr/local/bin/
 COPY --from=buildpack /usr/local/buildpack/ /usr/local/buildpack/
-RUN install-buildpack
+RUN install-buildpack && usermod -g ${USER_ID} ${USER_NAME}
 
 # renovate: datasource=github-tags packageName=git/git
 RUN install-tool git v2.38.1
@@ -42,12 +42,8 @@ RUN set -ex; \
   install-apt make shellcheck sudo locales; \
   locale-gen en_US.UTF-8
 
-RUN set -ex; \
-  echo "$USER_NAME:$USER_NAME" | chpasswd; \
-  adduser $USER_NAME sudo; \
+RUN adduser $USER_NAME sudo; \
   sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
-
-RUN set -ex; mkdir /workspace; chown -hR $USER_NAME:$USER_NAME /workspace
 
 RUN git config --system --add safe.directory '*'
 
