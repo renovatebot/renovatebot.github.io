@@ -16,7 +16,7 @@ Multi-platform and multi-language.
 - Renovate finds relevant package files automatically, including in monorepos
 - You can customize the bot's behavior with configuration files
 - Share your configuration with ESLint-like config presets
-- Get replacement PRs to migrate from a deprecated dependency to the community suggested replacement (npm packages only)
+- Get replacement PRs to migrate from a deprecated dependency to the community suggested replacement, works with _most_ managers, see [issue 14149](https://github.com/renovatebot/renovate/issues/14149) for exceptions
 - Open source
 
 ## Supported Platforms

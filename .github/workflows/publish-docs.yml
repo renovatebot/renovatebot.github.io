@@ -10,10 +10,10 @@ on:
       - 'main'
 
 env:
-  NODE_VERSION: 18.17.1 # renovate: datasource=node depName=node
+  NODE_VERSION: 18.18.0 # renovate: datasource=node depName=node
   PYTHON_VERSION: 3.11.5 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
   # Don't use PIPENV_VERSION:  https://github.com/pypa/pipenv/issues/3633#issuecomment-478250721
-  RENOVATE_PIPENV_VERSION: 2023.9.1 # renovate: datasource=pypi depName=pipenv
+  RENOVATE_PIPENV_VERSION: 2023.9.8 # renovate: datasource=pypi depName=pipenv
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
 
       - name: Checkout submodules
         shell: bash
@@ -52,6 +52,7 @@ jobs:
           python --version
           pip install pipenv==${{ env.RENOVATE_PIPENV_VERSION }}
           pipenv --version
+          corepack enable
 
       - name: Installing dependencies
         run: make install
@@ -60,7 +61,7 @@ jobs:
         run: yarn prettier
 
       - name: Run shellcheck
-        uses: reviewdog/action-shellcheck@50e5e1e2284575f23a1e409d9c0804cdfc4f6e31 # v1.18.1
+        uses: reviewdog/action-shellcheck@96fa305c16b0f9cc9b093af22dcd09de1c8f1c2d # v1.19.0
         with:
           reporter: github-pr-review
           filter_mode: nofilter
@@ -81,14 +82,14 @@ jobs:
         run: make build-docs
 
       - name: Upload site artifacts
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
         with:
           name: site
           path: site/
           if-no-files-found: error
 
       - name: Cypress run
-        uses: cypress-io/github-action@248bde77443c376edc45906ede03a1aba9da0462 # v5.8.4
+        uses: cypress-io/github-action@59810ebfa5a5ac6fcfdcfdf036d1cd4d083a88f2 # v6.5.0
         with:
           start: make serve
           wait-on: 'http://127.0.0.1:8000/'
@@ -97,7 +98,7 @@ jobs:
         timeout-minutes: 3
 
       - name: Upload cypress artifacts
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
         if: always()
         with:
           name: cypress

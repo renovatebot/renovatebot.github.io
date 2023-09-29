@@ -1,4 +1,4 @@
-FROM ghcr.io/containerbase/node:18.17.1
+FROM ghcr.io/containerbase/node:18.18.0
 
 USER root
 
@@ -8,9 +8,9 @@ RUN install-apt make shellcheck
 RUN install-tool python 3.11.5
 
 # renovate: datasource=pypi
-RUN install-tool pipenv 2023.9.1
+RUN install-tool pipenv 2023.9.8
 
 # renovate: datasource=npm
-RUN install-tool yarn 1.22.19
+RUN install-tool corepack 0.20.0
 
 USER ubuntu
