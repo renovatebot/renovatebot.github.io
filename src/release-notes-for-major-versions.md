@@ -11,6 +11,20 @@ The most recent versions are always at the top of the page.
 This is because recent versions may revert changes made in an older version.
 You also don't have to scroll to the bottom of the page to find the latest release notes.
 
+## Version 37
+
+### Breaking changes
+
+- **maven:** use hunt strategy for registries
+- **npm:** drop explicit lerna support
+
+### Commentary
+
+We switched from "merge" strategy to "hunt" strategy to match with how Maven works.
+
+Lerna v7 does not need our explicit support anymore, so we dropped it.
+If you're on a version of Lerna before v7, you should prioritize upgrading to v7.
+
 ## Version 36
 
 ### Breaking changes
