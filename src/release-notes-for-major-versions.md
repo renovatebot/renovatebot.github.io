@@ -25,6 +25,10 @@ We switched from "merge" strategy to "hunt" strategy to match with how Maven wor
 Lerna v7 does not need our explicit support anymore, so we dropped it.
 If you're on a version of Lerna before v7, you should prioritize upgrading to v7.
 
+### Link to release notes
+
+[Release notes for `v37` on GitHub](https://github.com/renovatebot/renovate/releases/tag/37.0.0).
+
 ## Version 36
 
 ### Breaking changes
