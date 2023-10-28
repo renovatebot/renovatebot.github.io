@@ -11,6 +11,6 @@ RUN install-tool python 3.12.0
 RUN install-tool pipenv 2023.10.24
 
 # renovate: datasource=npm
-RUN install-tool corepack 0.21.0
+RUN install-tool corepack 0.22.0
 
 USER ubuntu
