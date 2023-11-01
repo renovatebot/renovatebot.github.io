@@ -81,7 +81,7 @@ theme:
     - navigation.prune
 
     # Back to top button
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=back+to+top#back-to-top-button
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#back-to-top-button
     - navigation.top
 
     # Automatically scroll the navigation sidebar, so the active anchor is always on screen.
@@ -89,7 +89,7 @@ theme:
     - toc.follow
 
     # Use instant loading for internal links
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=instant#instant-loading
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-loading
     - navigation.instant
 
     # Mark the announcement bar as read.
@@ -120,7 +120,7 @@ extra_javascript:
 markdown_extensions:
   # Adds the ability to attach arbitrary key-value pairs to a document
   # via front matter written in YAML syntax before the Markdown.
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/?h=meta#metadata
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#metadata
   - meta
 
   # The toc.permalink extension adds a permalink behind each heading.
@@ -130,13 +130,19 @@ markdown_extensions:
 
   # The Highlight extension adds support for syntax highlighting of code blocks (with the help of SuperFences)
   # and inline code blocks (with the help of InlineHilite).
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=highlig#highlight
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
   - pymdownx.highlight
 
   # The SuperFences extension allows for arbitrary nesting of code and content blocks inside each other,
   # including admonitions, tabs, lists and all other elements.
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=superfence#superfences
-  - pymdownx.superfences
+  # SuperFences supports Mermaid.js diagrams.
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences
+  # https://squidfunk.github.io/mkdocs-material/reference/diagrams/#diagrams
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
   # The Admonition extension adds support for admonitions,
   # more commonly known as call-outs, which can be defined in Markdown by using a simple syntax.
