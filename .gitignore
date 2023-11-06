@@ -11,5 +11,6 @@ __pycache__
 /.venv
 /.vscode/*
 /yarn.lock
+.parcel-cache/
 
 !.vscode/settings.json
