@@ -30,12 +30,18 @@ jobs:
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
+      - name: enable corepack
+        run: corepack enable
+
       - name: Set up Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock'
+          cache: 'pnpm'
+          cache-dependency-path: '**/pnpm-lock.yaml'
+
+      - name: enable corepack
+        run: corepack enable
 
       - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236 # v4.7.1
@@ -52,13 +58,12 @@ jobs:
           python --version
           pip install pipenv==${{ env.RENOVATE_PIPENV_VERSION }}
           pipenv --version
-          corepack enable
 
       - name: Installing dependencies
         run: make install
 
       - name: Run Prettier
-        run: yarn prettier
+        run: pnpm prettier
 
       - name: Run shellcheck
         uses: reviewdog/action-shellcheck@96fa305c16b0f9cc9b093af22dcd09de1c8f1c2d # v1.19.0
