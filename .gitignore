@@ -10,5 +10,6 @@ __pycache__
 /cypress/screenshots/
 /.venv
 /.vscode/*
+/yarn.lock
 
 !.vscode/settings.json
