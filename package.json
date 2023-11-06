@@ -7,10 +7,6 @@
     "url": "https://github.com/renovatebot/renovatebot.github.io.git"
   },
   "type": "module",
-  "engines": {
-    "node": "^18.12.0 || >=20.9.0",
-    "pnpm": "^8.0.0"
-  },
   "scripts": {
     "prepare": "husky install",
     "prettier": "prettier --check --ignore-unknown --cache \"**/*.*\"",
@@ -22,8 +18,12 @@
     "husky": "8.0.3",
     "lint-staged": "15.0.2",
     "prettier": "3.0.3",
-    "prettier-plugin-package": "1.3.1",
+    "prettier-plugin-packagejson": "2.4.6",
     "typescript": "5.2.2"
   },
-  "packageManager": "pnpm@8.10.2"
+  "packageManager": "pnpm@8.10.2",
+  "engines": {
+    "node": "^18.12.0 || >=20.9.0",
+    "pnpm": "^8.0.0"
+  }
 }
