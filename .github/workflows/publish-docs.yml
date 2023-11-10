@@ -33,8 +33,8 @@ jobs:
         uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
-          # cache: 'pnpm' # doesn't cache cypress
-          # cache-dependency-path: '**/pnpm-lock.yaml'
+          cache: 'pnpm' # doesn't cache cypress
+          cache-dependency-path: '**/pnpm-lock.yaml'
 
       - name: enable corepack
         run: corepack enable
