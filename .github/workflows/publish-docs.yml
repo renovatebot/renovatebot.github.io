@@ -10,10 +10,10 @@ on:
       - 'main'
 
 env:
-  NODE_VERSION: 18.17.0 # renovate: datasource=node depName=node
-  PYTHON_VERSION: 3.11.4 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
+  NODE_VERSION: 20.9.0 # renovate: datasource=node depName=node
+  PYTHON_VERSION: 3.12.0 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
   # Don't use PIPENV_VERSION:  https://github.com/pypa/pipenv/issues/3633#issuecomment-478250721
-  RENOVATE_PIPENV_VERSION: 2023.7.23 # renovate: datasource=pypi depName=pipenv
+  RENOVATE_PIPENV_VERSION: 2023.10.24 # renovate: datasource=pypi depName=pipenv
 
 jobs:
   build:
@@ -21,24 +21,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: true
 
-      - name: Checkout submodules
-        shell: bash
-        run: |
-          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
-          git submodule sync --recursive
-          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+      - name: enable corepack
+        run: corepack enable
 
       - name: Set up Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3.7.0
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock'
+          # cache: 'pnpm' # doesn't cache cypress
+          # cache-dependency-path: '**/pnpm-lock.yaml'
+
+      - name: enable corepack
+        run: corepack enable
 
       - name: Set up Python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@61a6322f88396a6271a6ee3565807d608ecaddd1 # v4.7.0
+        uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236 # v4.7.1
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pipenv'
@@ -53,14 +55,21 @@ jobs:
           pip install pipenv==${{ env.RENOVATE_PIPENV_VERSION }}
           pipenv --version
 
+      - uses: actions/cache@v3.3.2
+        with:
+          path: |
+            ~/.cache/Cypress
+            node_modules
+          key: npm-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+
       - name: Installing dependencies
         run: make install
 
       - name: Run Prettier
-        run: yarn prettier
+        run: pnpm prettier
 
       - name: Run shellcheck
-        uses: reviewdog/action-shellcheck@50e5e1e2284575f23a1e409d9c0804cdfc4f6e31 # v1.18.1
+        uses: reviewdog/action-shellcheck@96fa305c16b0f9cc9b093af22dcd09de1c8f1c2d # v1.19.0
         with:
           reporter: github-pr-review
           filter_mode: nofilter
@@ -81,14 +90,14 @@ jobs:
         run: make build-docs
 
       - name: Upload site artifacts
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
         with:
           name: site
           path: site/
           if-no-files-found: error
 
       - name: Cypress run
-        uses: cypress-io/github-action@d69252d52b9a31bad4f418f05ba2bc83687a02eb # v5.8.3
+        uses: cypress-io/github-action@ebe8b24c4428922d0f793a5c4c96853a633180e3 # v6.6.0
         with:
           start: make serve
           wait-on: 'http://127.0.0.1:8000/'
@@ -97,7 +106,7 @@ jobs:
         timeout-minutes: 3
 
       - name: Upload cypress artifacts
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
         if: always()
         with:
           name: cypress

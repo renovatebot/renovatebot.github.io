@@ -1,7 +1,7 @@
 default: install build
 
 install:
-	yarn install --frozen-lockfile
+	pnpm install --frozen-lockfile
 	pipenv install
 
 shellcheck:

@@ -53,7 +53,7 @@ theme:
   # The custom_dir points to the overrides folder, this folder has the code for our announcement bar.
   # The easiest way to disable the announcement bar is to comment out the custom_dir: overrides entry in this mkdocs.yml file.
   # https://squidfunk.github.io/mkdocs-material/customization/#setup-and-theme-structure
-  custom_dir: overrides
+  # custom_dir: overrides
 
   logo: 'assets/images/logo.png'
   favicon: 'assets/images/logo.png'
@@ -83,20 +83,21 @@ theme:
       accent: 'teal'
 
   features:
-    # Back to top button
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=back+to+top#back-to-top-button
-    - navigation.top
+    # Navigation pruning (not compatible with navigation.expand)
+    # When pruning is enabled, only the visible navigation items are included in the rendered HTML, reducing the size of the built site by 33% or more.
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-pruning
+    - navigation.prune
 
-    # Integrate table of contents into left sidebar
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=integrate#integrated-table-of-contents
-    - toc.integrate
+    # Back to top button
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#back-to-top-button
+    - navigation.top
 
     # Automatically scroll the navigation sidebar, so the active anchor is always on screen.
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-following
     - toc.follow
 
     # Use instant loading for internal links
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=instant#instant-loading
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-loading
     - navigation.instant
 
     # Mark the announcement bar as read.
@@ -127,7 +128,7 @@ extra_javascript:
 markdown_extensions:
   # Adds the ability to attach arbitrary key-value pairs to a document
   # via front matter written in YAML syntax before the Markdown.
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/?h=meta#metadata
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#metadata
   - meta
 
   # The toc.permalink extension adds a permalink behind each heading.
@@ -137,13 +138,19 @@ markdown_extensions:
 
   # The Highlight extension adds support for syntax highlighting of code blocks (with the help of SuperFences)
   # and inline code blocks (with the help of InlineHilite).
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=highlig#highlight
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
   - pymdownx.highlight
 
   # The SuperFences extension allows for arbitrary nesting of code and content blocks inside each other,
   # including admonitions, tabs, lists and all other elements.
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=superfence#superfences
-  - pymdownx.superfences
+  # SuperFences supports Mermaid.js diagrams.
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences
+  # https://squidfunk.github.io/mkdocs-material/reference/diagrams/#diagrams
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
   # The Admonition extension adds support for admonitions,
   # more commonly known as call-outs, which can be defined in Markdown by using a simple syntax.
@@ -164,8 +171,8 @@ markdown_extensions:
   # We also need the attr_list extension, which is already enabled in the lines above this comment.
   # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#configuration
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
   # The Details extension supercharges the Admonition extension, making the resulting call-outs collapsible, allowing them to be opened and closed by the user.
   # We're using this to enable collapsible admonition blocks for the list of bug reports and feature requests per manager.

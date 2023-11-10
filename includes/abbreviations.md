@@ -6,6 +6,7 @@
 *[AMI]: Amazon Machine Images
 *[AUR]: Arch User Repository
 *[AWS]: Amazon Web Services
+*[CA]: Certificate Authority
 *[CD]: Continuous Deployment
 *[CI]: Continuous Integration
 *[CLI]: Command-Line Interface
@@ -18,8 +19,10 @@
 *[JDK]: Java Development Kit
 *[JRE]: Java Runtime Environment
 *[LTS]: Long Term Support
+*[mTLS]: Mutual Transport Layer Security
 *[OCI]: Open Container Initiative
 *[PAT]: Personal Access Token
+*[PEM]: Privacy-Enhanced Mail
 *[SDK]: Software Development Kit
 *[SemVer]: Semantic Versioning
 *[SRI]: Subresource Integrity

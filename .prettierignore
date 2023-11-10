@@ -25,3 +25,6 @@ mkdocs.yml
 
 # Ignore overrides/main.html because Prettier messes up the formatting
 overrides/main.html
+
+# pnpm lockfile
+pnpm-lock.yaml
