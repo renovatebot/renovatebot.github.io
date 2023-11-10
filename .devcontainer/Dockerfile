@@ -1,5 +1,4 @@
 FROM ghcr.io/containerbase/node:20.9.0
-
 USER root
 
 RUN install-apt make shellcheck
@@ -14,3 +13,6 @@ RUN install-tool pipenv 2023.10.24
 RUN install-tool corepack 0.22.0
 
 USER ubuntu
+
+# https://github.com/parcel-bundler/parcel/issues/6569
+ENV PARCEL_WORKER_BACKEND=process
