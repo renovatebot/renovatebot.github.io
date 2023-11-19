@@ -7,7 +7,7 @@ RUN install-apt make shellcheck
 RUN install-tool python 3.12.0
 
 # renovate: datasource=pypi
-RUN install-tool pipenv 2023.11.14
+RUN install-tool pipenv 2023.11.15
 
 # renovate: datasource=npm
 RUN install-tool corepack 0.23.0
