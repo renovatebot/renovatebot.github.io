@@ -1,4 +1,4 @@
-FROM ghcr.io/containerbase/node:20.9.0
+FROM ghcr.io/containerbase/node:20.10.0
 USER root
 
 RUN install-apt make shellcheck
@@ -7,7 +7,7 @@ RUN install-apt make shellcheck
 RUN install-tool python 3.12.0
 
 # renovate: datasource=pypi
-RUN install-tool pipenv 2023.10.24
+RUN install-tool pipenv 2023.11.15
 
 # renovate: datasource=npm
 RUN install-tool corepack 0.23.0
