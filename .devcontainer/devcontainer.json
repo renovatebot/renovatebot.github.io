@@ -25,5 +25,7 @@
       }
     }
   },
-  "postCreateCommand": [".devcontainer/post-create.sh"]
+  "postCreateCommand": ["git submodule update --init", "make"],
+  "forwardPorts": [8000],
+  "postStartCommand": "make serve"
 }
