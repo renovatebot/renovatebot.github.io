@@ -28,6 +28,5 @@
   },
   "forwardPorts": [8000],
   "postCreateCommand": ".devcontainer/post-create.sh",
-  "postStartCommand": "make serve",
   "waitFor": "postCreateCommand"
 }
