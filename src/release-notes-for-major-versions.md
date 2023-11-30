@@ -1,3 +1,7 @@
+---
+edit_url: https://github.com/renovatebot/renovatebot.github.io/edit/main/src/release-notes-for-major-versions.md
+---
+
 # Release notes for major versions of Renovate
 
 It can be hard to keep track of the changes between major versions of Renovate.
@@ -6,6 +10,90 @@ To help you, we've listed the breaking changes, plus the developer commentary fo
 The most recent versions are always at the top of the page.
 This is because recent versions may revert changes made in an older version.
 You also don't have to scroll to the bottom of the page to find the latest release notes.
+
+## Version 37
+
+### Breaking changes
+
+- **maven:** use hunt strategy for registries
+- **npm:** drop explicit lerna support
+
+### Commentary
+
+We switched from "merge" strategy to "hunt" strategy to match with how Maven works.
+
+Lerna v7 does not need our explicit support anymore, so we dropped it.
+If you're on a version of Lerna before v7, you should prioritize upgrading to v7.
+
+### Link to release notes
+
+[Release notes for `v37` on GitHub](https://github.com/renovatebot/renovate/releases/tag/37.0.0).
+
+## Version 36
+
+### Breaking changes
+
+- postUpgradeTasks.fileFilters is now optional and defaults to all files
+- `languages` are now called `categories` instead. Use `matchCategories` in `packageRules`
+- Node v19 is no longer supported
+- **datasource:** `semver-coerced` is now the default versioning
+- **presets:** Preset `config:base` is now called `config:recommended` (will be migrated automatically)
+- remove `BUILDPACK` env support
+- **package-rules:** `matchPackageNames` now matches both `depName` (existing) and `packageName` (new) and warns if only `depName` matches
+- **release-notes:** Release notes won't be fetched early for `commitBody` insertion unless explicitly configured with `fetchReleaseNotes=branch`
+- `dockerImagePrefix` is now replaced by `dockerSidecarImage`
+- `matchPaths` and `matchFiles` are now combined into `matchFileNames`, supporting exact match and glob-only. The "any string match" functionality of `matchPaths` is now removed
+- **presets:** v25 compatibility for language-based branch prefixes is removed
+- **npm:** Rollback PRs will no longer be enabled by default for npm (they are now disabled by default for all managers)
+- **post-upgrade-tasks:** dot files will now be included by default for all minimatch results
+- **platform/gitlab:** GitLab `gitAuthor` will change from the account's "email" to "commit_email" if they are different
+- **automerge:** Platform automerge will now be chosen by default whenever automerge is enabled
+- Post upgrade templating is now allowed by default, as long as the post upgrade task command is itself already allowed
+- Official Renovate Docker images now use the "slim" approach with `binarySource=install` by default. e.g. `renovate/renovate:latest` is the slim image, not full
+- The "full" image is now available via the tag `full`, e.g. `renovate/renovate:37-full`, and defaults to `binarySource=global` (no dynamic installs)
+- Third party tools in the full image have been updated to latest/LTS major version
+
+### Commentary
+
+If you're self-hosting Renovate, pay particular attention to:
+
+- Do you want to run the full, or slim versions of the image? We have switched the defaults (latest is now slim, not full)
+- Have you configured `dockerImagePrefix`? If so then you need to use `dockerSidecarImage` instead
+- If you're using `config:base` in your `onboardingConfig` then switch to `config:recommended`
+- `gitAuthor` may change if you're on GitLab and have a different commit email for your bot account. If so then configure `gitIgnoredAuthors` with the old email
+
+### Link to release notes
+
+[Release notes for `v36` on GitHub](https://github.com/renovatebot/renovate/releases/tag/36.0.0).
+
+## Version 35
+
+### Breaking changes
+
+- require NodeJS v18.12+ ([#20838](https://github.com/renovatebot/renovate/pull/20838))
+- **config:** Forked repos will now be processed automatically if `autodiscover=false`. `includeForks` is removed and replaced by new option `forkProcessing`
+- Internal checks such as `renovate/stability-days` will no longer count as passing/green, meaning that actions such as `automerge` won't occur if the only checks are Renovate internal ones. Set `internalChecksAsSuccess=true` to restore existing behavior
+- **versioning:** default versioning is now `semver-coerced`, instead of `semver`
+- **datasource/github-releases:** Regex Manager configurations relying on the github-release data-source with digests will have different digest semantics. The digest will now always correspond to the underlying Git SHA of the release/version. The old behavior can be preserved by switching to the github-release-attachments datasource
+- **versioning:** bump short ranges to version ([#20494](https://github.com/renovatebot/renovate/pull/20494))
+- **config:** `containerbase/` account used for sidecar containers instead of `renovate/`
+- **go:** Renovate will now use go's default `GOPROXY` settings. To avoid using the public proxy, configure `GOPROXY=direct`
+- **datasource/npm:** Package cache will include entries for up to 24 hours after the last lookup. Set `cacheHardTtlMinutes=0` to revert to existing behavior
+- **config:** Renovate now defaults to applying hourly and concurrent PR limits. To revert to unlimited, configure them back to `0`
+- **config:** Renovate will now default to updating locked dependency versions. To revert to previous behavior, configure `rangeStrategy=replace`
+- **config:** PyPI releases will no longer be filtered by default based on `constraints.python` compatibility. To retain existing functionality, set `constraintsFiltering=strict`
+
+### Commentary
+
+Most of these changes will be invisible to the majority of users.
+They may be "breaking" (change of behavior) but good changes of defaults to make.
+
+The biggest change is defaulting `rangeStrategy=auto` to use `update-lockfile` instead of `replace`, which impacts anyone using the recommended `config:base`.
+This will mean that you start seeing some "lockfile-only" PRs for in-range updates, such as updating `package-lock.json` when a range exists in `package.json`.
+
+### Link to release notes
+
+[Release notes for `v35` on GitHub](https://github.com/renovatebot/renovate/releases/tag/35.0.0).
 
 ## Version 34
 

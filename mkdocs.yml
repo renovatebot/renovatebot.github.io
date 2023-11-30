@@ -4,6 +4,14 @@
 # https://www.mkdocs.org/user-guide/configuration/#strict
 strict: true
 
+# Use MkDocs maintainer's recommended strictness settings for link validation.
+# https://www.mkdocs.org/user-guide/configuration/#validation
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
 # Set the remote branch to commit to when using `gh-deploy` to deploy to GitHub Pages.
 # https://www.mkdocs.org/user-guide/configuration/#remote_branch
 remote_branch: gh-pages
@@ -45,13 +53,14 @@ theme:
   # The custom_dir points to the overrides folder, this folder has the code for our announcement bar.
   # The easiest way to disable the announcement bar is to comment out the custom_dir: overrides entry in this mkdocs.yml file.
   # https://squidfunk.github.io/mkdocs-material/customization/#setup-and-theme-structure
-  custom_dir: overrides
+  # custom_dir: overrides
 
   logo: 'assets/images/logo.png'
   favicon: 'assets/images/logo.png'
 
   icon:
     repo: fontawesome/brands/github # Custom icon for link to GitHub repository in header
+    edit: material/pencil # Custom icon for the edit source button
 
   # Setup colorscheme for Light and Dark mode
   # Setup icon set for the light/dark mode toggle
@@ -63,36 +72,49 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-      primary: 'blue'
-      accent: 'blue'
+      primary: 'indigo'
+      accent: 'indigo'
     - media: '(prefers-color-scheme: dark)'
       scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-      primary: 'cyan'
-      accent: 'cyan'
+      primary: 'teal'
+      accent: 'teal'
 
   features:
-    # Back to top button
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=back+to+top#back-to-top-button
-    - navigation.top
+    # Navigation pruning (not compatible with navigation.expand)
+    # When pruning is enabled, only the visible navigation items are included in the rendered HTML, reducing the size of the built site by 33% or more.
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-pruning
+    - navigation.prune
 
-    # Integrate table of contents into left sidebar
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=integrate#integrated-table-of-contents
-    - toc.integrate
+    # Back to top button
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#back-to-top-button
+    - navigation.top
 
     # Automatically scroll the navigation sidebar, so the active anchor is always on screen.
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-following
     - toc.follow
 
     # Use instant loading for internal links
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=instant#instant-loading
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-loading
     - navigation.instant
 
     # Mark the announcement bar as read.
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#mark-as-read
     - announce.dismiss
+
+    # Enable copy-to-clipboard button
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-copy-button
+    - content.code.copy
+
+    # Enable edit source button.
+    # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+    - content.action.edit
+
+    # Enable navigation footer (next/previous buttons at the bottom of the page).
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#navigation
+    - navigation.footer
 
 # CSS and JavaScript customizations
 
@@ -106,7 +128,7 @@ extra_javascript:
 markdown_extensions:
   # Adds the ability to attach arbitrary key-value pairs to a document
   # via front matter written in YAML syntax before the Markdown.
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/?h=meta#metadata
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#metadata
   - meta
 
   # The toc.permalink extension adds a permalink behind each heading.
@@ -116,13 +138,19 @@ markdown_extensions:
 
   # The Highlight extension adds support for syntax highlighting of code blocks (with the help of SuperFences)
   # and inline code blocks (with the help of InlineHilite).
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=highlig#highlight
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
   - pymdownx.highlight
 
   # The SuperFences extension allows for arbitrary nesting of code and content blocks inside each other,
   # including admonitions, tabs, lists and all other elements.
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=superfence#superfences
-  - pymdownx.superfences
+  # SuperFences supports Mermaid.js diagrams.
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences
+  # https://squidfunk.github.io/mkdocs-material/reference/diagrams/#diagrams
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
   # The Admonition extension adds support for admonitions,
   # more commonly known as call-outs, which can be defined in Markdown by using a simple syntax.
@@ -143,8 +171,8 @@ markdown_extensions:
   # We also need the attr_list extension, which is already enabled in the lines above this comment.
   # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#configuration
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
   # The Details extension supercharges the Admonition extension, making the resulting call-outs collapsible, allowing them to be opened and closed by the user.
   # We're using this to enable collapsible admonition blocks for the list of bug reports and feature requests per manager.
@@ -162,73 +190,12 @@ markdown_extensions:
 
 # Plugins
 plugins:
-  - search
+  - search:
+      separator: '[\s\-,:!?=\[\]()<>{}"/\\]+|\.(?!\d)|&[lg]t;'
+  - awesome-pages
 
 # Page Tree/Sidebar
 # https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
-nav:
-  - Home: 'index.md'
-  - Getting Started:
-      - 'Use Cases': 'getting-started/use-cases.md'
-      - 'Running Renovate': 'getting-started/running.md'
-      - 'Self-Hosting Examples': 'examples/self-hosting.md'
-      - 'Installing & Onboarding': 'getting-started/installing-onboarding.md'
-      - 'Private Packages': 'getting-started/private-packages.md'
-  - Troubleshooting: 'troubleshooting.md'
-  - Configuration:
-      - 'Self-hosted': 'self-hosted-configuration.md'
-      - 'Repository': 'configuration-options.md'
-      - 'Presets': 'config-presets.md'
-  - Key Concepts:
-      - 'Presets': 'key-concepts/presets.md'
-      - 'Dependency Dashboard': 'key-concepts/dashboard.md'
-      - 'Pull Requests': 'key-concepts/pull-requests.md'
-      - 'Renovate Scheduling': 'key-concepts/scheduling.md'
-      - 'Automerge': 'key-concepts/automerge.md'
-  - Renovate Modules:
-      - 'Platforms': 'modules/platform.md'
-      - 'Managers': 'modules/manager.md'
-      - 'Datasources': 'modules/datasource.md'
-      - 'Versioning': 'modules/versioning.md'
-  - Language Support:
-      - 'Bazel': 'bazel.md'
-      - 'Docker': 'docker.md'
-      - 'Golang': 'golang.md'
-      - 'Java': 'java.md'
-      - 'JavaScript': 'javascript.md'
-      - 'Node.js Versions': 'node.md'
-      - 'Nuget': 'nuget.md'
-      - 'PHP': 'php.md'
-      - 'Python': 'python.md'
-      - 'Ruby': 'ruby.md'
-  - Deep Dives:
-      - 'Should you Pin your Javascript Dependencies?': 'dependency-pinning.md'
-      - 'Config Template Editing': 'configuration-templates.md'
-      - 'Updating and Rebasing Branches': 'updating-rebasing.md'
-      - 'Semantic Commit Messages': 'semantic-commits.md'
-      - 'Noise Reduction': 'noise-reduction.md'
-  - Included Presets:
-      - 'Compatibility Presets': 'presets-compatibility.md'
-      - 'Default Presets': 'presets-default.md'
-      - 'Docker Presets': 'presets-docker.md'
-      - 'Full Config Presets': 'presets-config.md'
-      - 'Group Presets': 'presets-group.md'
-      - 'Helper Presets': 'presets-helpers.md'
-      - 'Monorepo Presets': 'presets-monorepo.md'
-      - 'npm Presets': 'presets-npm.md'
-      - 'Package Presets': 'presets-packages.md'
-      - 'Preview Presets': 'presets-preview.md'
-      - 'Regex Manager Presets': 'presets-regexManagers.md'
-      - 'Replacement Presets': 'presets-replacements.md'
-      - 'Schedule Presets': 'presets-schedule.md'
-      - 'Workaround Presets': 'presets-workarounds.md'
-  - All Other:
-      - User Stories:
-          - 'Swissquote': 'user-stories/swissquote.md'
-      - 'Security and Permissions': 'security-and-permissions.md'
-      - 'Merge Confidence': 'merge-confidence.md'
-      - 'Templates': 'templates.md'
-      - 'Frequently Asked Questions': 'faq.md'
-      - 'Known Limitations': 'known-limitations.md'
-      - 'Release notes for major versions': 'release-notes-for-major-versions.md'
-  - About Us: 'about-us.md'
+# https://3os.org/utilities/markdown-cheatsheet/awesome-pages/
+# We now use the awesome-pages plugin, which uses `.pages` files inside the renovate docs/ folder to set the navigation structure.
+# The source `.pages` file(s) are in the renovatebot/renovate repository.

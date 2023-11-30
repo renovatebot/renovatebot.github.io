@@ -10,10 +10,10 @@ on:
       - 'main'
 
 env:
-  NODE_VERSION: 16.18.0 # renovate: datasource=node depName=node
-  PYTHON_VERSION: 3.10.8 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
+  NODE_VERSION: 20.10.0 # renovate: datasource=node depName=node
+  PYTHON_VERSION: 3.12.0 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
   # Don't use PIPENV_VERSION:  https://github.com/pypa/pipenv/issues/3633#issuecomment-478250721
-  RENOVATE_PIPENV_VERSION: 2022.10.12 # renovate: datasource=pypi depName=pipenv
+  RENOVATE_PIPENV_VERSION: 2023.11.15 # renovate: datasource=pypi depName=pipenv
 
 jobs:
   build:
@@ -21,24 +21,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: true
 
-      - name: Checkout submodules
-        shell: bash
-        run: |
-          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
-          git submodule sync --recursive
-          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+      - name: enable corepack
+        run: corepack enable
 
       - name: Set up Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3.5.1
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock'
+          cache: 'pnpm' # doesn't cache cypress
+          cache-dependency-path: '**/pnpm-lock.yaml'
+
+      - name: enable corepack
+        run: corepack enable
 
       - name: Set up Python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@13ae5bb136fac2878aff31522b9efb785519f984 # tag=v4.3.0
+        uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236 # v4.7.1
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pipenv'
@@ -53,19 +55,28 @@ jobs:
           pip install pipenv==${{ env.RENOVATE_PIPENV_VERSION }}
           pipenv --version
 
+      - name: Cache node_modules and cypress
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
+        with:
+          path: |
+            ~/.cache/Cypress
+            node_modules
+          key: npm-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+
       - name: Installing dependencies
         run: make install
 
       - name: Run Prettier
-        run: yarn prettier
+        run: pnpm prettier
 
       - name: Run shellcheck
-        uses: reviewdog/action-shellcheck@66c9a47bf02255b250284a82251cb4cadf5043f5 # tag=v1.15.0
+        uses: reviewdog/action-shellcheck@96fa305c16b0f9cc9b093af22dcd09de1c8f1c2d # v1.19.0
         with:
           reporter: github-pr-review
           filter_mode: nofilter
           path: |
             bin
+            .devcontainer
             .husky
           pattern: '*.sh'
           check_all_files_with_shebangs: 'true'
@@ -80,14 +91,14 @@ jobs:
         run: make build-docs
 
       - name: Upload site artifacts
-        uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3.1.1
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
         with:
           name: site
           path: site/
           if-no-files-found: error
 
       - name: Cypress run
-        uses: cypress-io/github-action@30008f1458a5a2c97054bfe118fe33d75976c482 # tag=v4.2.0
+        uses: cypress-io/github-action@ebe8b24c4428922d0f793a5c4c96853a633180e3 # v6.6.0
         with:
           start: make serve
           wait-on: 'http://127.0.0.1:8000/'
@@ -96,7 +107,7 @@ jobs:
         timeout-minutes: 3
 
       - name: Upload cypress artifacts
-        uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3.1.1
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
         if: always()
         with:
           name: cypress

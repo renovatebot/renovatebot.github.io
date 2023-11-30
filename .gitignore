@@ -9,4 +9,8 @@ __pycache__
 /cypress/videos/
 /cypress/screenshots/
 /.venv
-/.vscode
+/.vscode/*
+/yarn.lock
+.parcel-cache/
+
+!.vscode/settings.json

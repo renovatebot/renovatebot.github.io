@@ -1,15 +1,18 @@
-FROM containerbase/node:18.12.0@sha256:e3914c9144cc6f08cbca4e4e089912a5a304f7ee9830b27ec150276dbaf77bbc
-
+FROM ghcr.io/containerbase/node:20.10.0
 USER root
 
-# renovate: datasource=npm
-RUN install-tool yarn 1.22.19
+RUN install-apt make shellcheck
 
 # renovate: datasource=github-releases packageName=containerbase/python-prebuild
-RUN install-tool python 3.10.8
+RUN install-tool python 3.12.0
 
 # renovate: datasource=pypi
-RUN install-pip pipenv 2022.10.25
+RUN install-tool pipenv 2023.11.15
 
+# renovate: datasource=npm
+RUN install-tool corepack 0.23.0
 
-RUN install-apt make shellcheck
+USER ubuntu
+
+# https://github.com/parcel-bundler/parcel/issues/6569
+ENV PARCEL_WORKER_BACKEND=process
