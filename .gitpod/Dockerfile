@@ -3,5 +3,5 @@ FROM ghcr.io/containerbase/gitpod:9.26.0@sha256:4bfc785206c0786dcab6ca4308a19549
 # renovate: datasource=github-releases packageName=containerbase/python-prebuild
 RUN install-tool python 3.12.0
 # renovate: datasource=pypi
-RUN install-pip pipenv 2023.11.15
+RUN install-tool pipenv 2023.11.15
 
