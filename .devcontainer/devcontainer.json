@@ -1,14 +1,17 @@
 {
   "name": "Renovate",
-  "dockerFile": "Dockerfile",
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {}
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  "capAdd": ["SYS_PTRACE"],
-  "privileged": true,
-  "securityOpt": ["seccomp=unconfined"],
   "customizations": {
     "vscode": {
+      "terminal.integrated.profiles.linux": {
+        "bash": {
+          "path": "bash",
+          "icon": "terminal-bash"
+        }
+      },
+      "terminal.integrated.defaultProfile.linux": "bash",
       "extensions": [
         "esbenp.prettier-vscode",
         "EditorConfig.editorconfig",
