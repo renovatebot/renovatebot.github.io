@@ -10,8 +10,6 @@ on:
       - 'main'
 
 env:
-  NODE_VERSION: 20.10.0 # renovate: datasource=node depName=node
-  PYTHON_VERSION: 3.12.0 # renovate: datasource=github-releases depName=python packageName=containerbase/python-prebuild
   # Don't use PIPENV_VERSION:  https://github.com/pypa/pipenv/issues/3633#issuecomment-478250721
   RENOVATE_PIPENV_VERSION: 2023.11.15 # renovate: datasource=pypi depName=pipenv
 
@@ -29,20 +27,20 @@ jobs:
       - name: enable corepack
         run: corepack enable
 
-      - name: Set up Node.js ${{ env.NODE_VERSION }}
+      - name: Set up Node.js
         uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: .node-version
           cache: 'pnpm' # doesn't cache cypress
           cache-dependency-path: '**/pnpm-lock.yaml'
 
       - name: enable corepack
         run: corepack enable
 
-      - name: Set up Python ${{ env.PYTHON_VERSION }}
+      - name: Set up Python
         uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236 # v4.7.1
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version-file: .python-version
           cache: 'pipenv'
 
       - name: Init platform
