@@ -25,7 +25,7 @@
       }
     }
   },
-  "postCreateCommand": "make",
+  "postCreateCommand": ".devcontainer/post-create.sh",
   "forwardPorts": [8000],
   "postStartCommand": "make serve"
 }
