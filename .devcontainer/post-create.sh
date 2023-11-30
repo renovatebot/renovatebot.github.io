@@ -7,8 +7,5 @@ if [[ "${CODESPACES}" == true ]]; then
   sudo chmod 1777 /tmp
 fi
 
-set -x
-
 git submodule update --init
-
-exec make
+make
