@@ -3,6 +3,7 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "init": true,
   "customizations": {
     "vscode": {
       "terminal.integrated.profiles.linux": {
