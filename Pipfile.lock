@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e2dfaa7aa0be6990e97fd12196079baad7dd699716491ce8844343c137cbb0d2"
+            "sha256": "4b088da4c10f9b560e3aacdb5daf15a9f967113a41f15807f51afccfddb68dcf"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -274,13 +274,9 @@
             "version": "==2.9.2"
         },
         "mkdocs-material": {
-            "hashes": [
-                "sha256:a511d3ff48fa8718b033e7e37d17abd9cc1de0fdf0244a625ca2ae2387e2416d",
-                "sha256:dbc78a4fea97b74319a6aa9a2f0be575a6028be6958f813ba367188f7b8428f6"
-            ],
-            "index": "pypi",
+            "git": "git+https://github.com/squidfunk/mkdocs-material.git",
             "markers": "python_version >= '3.8'",
-            "version": "==9.4.14"
+            "ref": "6af73667b36c2c1043252d3bc9f772a665295ae6"
         },
         "mkdocs-material-extensions": {
             "hashes": [
