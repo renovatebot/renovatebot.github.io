@@ -45,6 +45,11 @@ repo_name: renovatebot/renovate
 repo_url: https://github.com/renovatebot/renovate
 edit_uri: edit/main/docs/usage/
 
+# Watch the includes directory that has the abbreviations.md file.
+# Now the preview will update automatically when the abbreviations file is changed.
+watch:
+  - includes
+
 # Theme settings
 theme:
   name: 'material'
@@ -67,6 +72,11 @@ theme:
   # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
 
   palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
     - media: '(prefers-color-scheme: light)'
       scheme: default
       toggle:
@@ -74,11 +84,12 @@ theme:
         name: Switch to dark mode
       primary: 'indigo'
       accent: 'indigo'
+
     - media: '(prefers-color-scheme: dark)'
       scheme: slate
       toggle:
         icon: material/weather-sunny
-        name: Switch to light mode
+        name: Switch to system preference
       primary: 'teal'
       accent: 'teal'
 
