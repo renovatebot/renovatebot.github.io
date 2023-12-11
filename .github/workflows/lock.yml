@@ -24,5 +24,6 @@ jobs:
         if: github.repository == 'renovatebot/renovatebot.github.io'
         with:
           github-token: ${{ github.token }}
+          process-only: 'issues, prs'
           issue-inactive-days: 30
           pr-inactive-days: 30
