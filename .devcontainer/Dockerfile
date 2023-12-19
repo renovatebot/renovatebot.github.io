@@ -1,4 +1,4 @@
-FROM ghcr.io/containerbase/devcontainer:9.30.6
+FROM ghcr.io/containerbase/devcontainer:9.30.7
 
 # renovate: datasource=pypi
 RUN install-tool pipenv 2023.11.15
