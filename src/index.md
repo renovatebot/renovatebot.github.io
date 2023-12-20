@@ -11,13 +11,16 @@ Multi-platform and multi-language.
 
 ## Why use Renovate?
 
-- Get pull requests to update your dependencies and lock files
-- Reduce noise by scheduling when Renovate creates PRs
-- Renovate finds relevant package files automatically, including in monorepos
-- You can customize the bot's behavior with configuration files
-- Share your configuration with ESLint-like config presets
-- Get replacement PRs to migrate from a deprecated dependency to the community suggested replacement, works with _most_ managers, see [issue 14149](https://github.com/renovatebot/renovate/issues/14149) for exceptions
-- Open source
+<div class="grid cards" markdown>
+
+- :octicons-git-pull-request-16: Get pull requests to update your dependencies and lock files
+- :octicons-calendar-16: Reduce noise by scheduling when Renovate creates PRs
+- :octicons-package-16: Renovate finds relevant package files automatically, including in monorepos
+- :octicons-goal-16: You can customize the bot's behavior with configuration files
+- :octicons-share-16: Share your configuration with ESLint-like config presets
+- :octicons-sync-16: Get replacement PRs to migrate from a deprecated dependency to the community suggested replacement, works with _most_ managers, see [issue 14149](https://github.com/renovatebot/renovate/issues/14149) for exceptions
+- :octicons-tools-16: Open source
+</div>
 
 ## Supported Platforms
 
