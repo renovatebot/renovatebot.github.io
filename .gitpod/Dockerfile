@@ -1,4 +1,4 @@
-FROM ghcr.io/containerbase/gitpod:9.30.7
+FROM ghcr.io/containerbase/gitpod:9.30.9
 
 # renovate: datasource=pypi
 RUN install-tool pipenv 2023.11.15
