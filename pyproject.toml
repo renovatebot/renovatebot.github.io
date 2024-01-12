@@ -12,7 +12,7 @@ mkdocs-awesome-pages-plugin = "==2.9.2"
 # to support amazonlinux 2 on vercel with python 3.9
 urllib3 = [
   { version = "<2", python = "<=3.9" },
-  { version = ">=2", python = ">3.9" }
+  { version = ">=2", python = ">=3.10" }
 ]
 
 
