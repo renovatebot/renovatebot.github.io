@@ -4,6 +4,11 @@ install:
 	pnpm install --frozen-lockfile
 	pipenv install
 
+install-pipenv:
+	pip install pipenv
+
+install-vercel: install-pipenv install
+
 shellcheck:
 	shellcheck bin/*.sh .devcontainer/*.sh .husky/pre-commit
 
