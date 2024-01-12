@@ -36,6 +36,9 @@ jobs:
       - name: enable corepack
         run: corepack enable
 
+      - name: Install poetry
+        run: pipx install poetry==${{ env.POETRY_VERSION }}
+
       - name: Set up Python
         uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
         with:
@@ -49,7 +52,6 @@ jobs:
           git config --global user.email 'bot@renovateapp.com'
           git config --global user.name  'Renovate Bot'
           python --version
-          pipx install poetry==${{ env.POETRY_VERSION }}
           poetry --version
 
       - name: Cache node_modules and cypress

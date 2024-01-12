@@ -5,7 +5,7 @@ install:
 	poetry install --no-root
 
 install-poetry:
-	pipx install poetry
+	pip install poetry
 
 install-vercel: install-poetry install
 
