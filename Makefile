@@ -5,7 +5,7 @@ install:
 	pipenv install
 
 install-pipenv:
-	pip install pipenv importlib-metadata
+	pip install --user pipenv
 
 install-vercel: install-pipenv install
 
