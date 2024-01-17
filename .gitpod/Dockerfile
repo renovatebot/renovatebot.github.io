@@ -1,7 +1,7 @@
 FROM ghcr.io/containerbase/gitpod:9.31.4
 
 # renovate: datasource=pypi
-RUN install-tool pipenv 2023.11.15
+RUN install-tool poetry 1.7.1
 
 # https://github.com/parcel-bundler/parcel/issues/6569
 ENV PARCEL_WORKER_BACKEND=process

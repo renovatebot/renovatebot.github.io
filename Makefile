@@ -2,7 +2,7 @@ default: install build
 
 install:
 	pnpm install --frozen-lockfile
-	pipenv install
+	poetry install --no-root
 
 shellcheck:
 	shellcheck bin/*.sh .devcontainer/*.sh .husky/pre-commit
@@ -11,7 +11,7 @@ get-docs:
 	bash bin/get-docs.sh
 
 build-docs:
-	pipenv run mkdocs build
+	poetry run mkdocs build
 
 prepare: get-docs
 
@@ -25,7 +25,7 @@ clean:
 	rm -rf build tmp
 
 serve:
-	pipenv run mkdocs serve
+	poetry run mkdocs serve
 
 deploy:
-	pipenv run mkdocs gh-deploy --force
+	poetry run mkdocs gh-deploy --force
