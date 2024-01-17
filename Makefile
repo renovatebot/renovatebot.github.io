@@ -5,7 +5,7 @@ install:
 	poetry install --no-root
 
 install-poetry:
-	pip install poetry
+	pip install poetry 'urllib3<2.0'
 
 install-vercel: install-poetry install
 
