@@ -4,10 +4,10 @@ install:
 	pnpm install --frozen-lockfile
 	poetry install --no-root
 
-install-poetry:
-	pip install poetry 'urllib3<2.0'
+prepare-vercel:
+	bash bin/prepare-vercel.sh
 
-install-vercel: install-poetry install
+install-vercel: prepare-vercel install
 
 shellcheck:
 	shellcheck bin/*.sh .devcontainer/*.sh .husky/pre-commit

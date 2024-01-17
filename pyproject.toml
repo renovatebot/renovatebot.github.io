@@ -9,8 +9,6 @@ python = ">=3.9"
 mkdocs = "==1.5.3"
 mkdocs-material = "==9.5.3"
 mkdocs-awesome-pages-plugin = "==2.9.2"
-# to support amazonlinux 2 on vercel with python 3.9
-urllib3 = "<2"
 
 
 [build-system]
