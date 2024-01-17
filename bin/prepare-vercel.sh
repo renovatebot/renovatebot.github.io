@@ -19,6 +19,7 @@ tar -xf /tmp/python.tar.xz -C /usr/local/python
 ln -sf /usr/local/python/${PYTON_VERSION}/bin/python /usr/local/bin/python
 ln -sf /usr/local/python/${PYTON_VERSION}/bin/pip /usr/local/bin/pip
 
-python -m pip install --prefix /usr/local poetry
+python -m pip install poetry
+ln -sf /usr/local/python/${PYTON_VERSION}/bin/poetry /usr/local/bin/poetry
 
 poetry --version
