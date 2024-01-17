@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "docs.renovatebot.com"
+version = "1.0.0"
+authors = []
+description = ""
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+mkdocs = "==1.5.3"
+mkdocs-material = "==9.5.3"
+mkdocs-awesome-pages-plugin = "==2.9.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

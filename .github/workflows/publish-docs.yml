@@ -10,8 +10,7 @@ on:
       - 'main'
 
 env:
-  # Don't use PIPENV_VERSION:  https://github.com/pypa/pipenv/issues/3633#issuecomment-478250721
-  RENOVATE_PIPENV_VERSION: 2023.11.15 # renovate: datasource=pypi depName=pipenv
+  POETRY_VERSION: 1.7.1 # renovate: datasource=pypi depName=poetry
 
 jobs:
   build:
@@ -37,11 +36,14 @@ jobs:
       - name: enable corepack
         run: corepack enable
 
+      - name: Install poetry
+        run: pipx install poetry==${{ env.POETRY_VERSION }}
+
       - name: Set up Python
         uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
         with:
           python-version-file: .python-version
-          cache: 'pipenv'
+          cache: 'poetry'
 
       - name: Init platform
         run: |
@@ -50,8 +52,7 @@ jobs:
           git config --global user.email 'bot@renovateapp.com'
           git config --global user.name  'Renovate Bot'
           python --version
-          pip install pipenv==${{ env.RENOVATE_PIPENV_VERSION }}
-          pipenv --version
+          poetry --version
 
       - name: Cache node_modules and cypress
         uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3.3.3
