@@ -4,6 +4,11 @@ install:
 	pnpm install --frozen-lockfile
 	poetry install --no-root
 
+prepare-vercel:
+	bash bin/prepare-vercel.sh
+
+install-vercel: prepare-vercel install
+
 shellcheck:
 	shellcheck bin/*.sh .devcontainer/*.sh .husky/pre-commit
 
