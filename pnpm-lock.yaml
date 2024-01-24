@@ -7,10 +7,10 @@ settings:
 devDependencies:
   '@testing-library/cypress':
     specifier: 10.0.1
-    version: 10.0.1(cypress@13.6.2)
+    version: 10.0.1(cypress@13.6.3)
   cypress:
-    specifier: 13.6.2
-    version: 13.6.2
+    specifier: 13.6.3
+    version: 13.6.3
   husky:
     specifier: 8.0.3
     version: 8.0.3
@@ -124,7 +124,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
 
-  /@testing-library/cypress@10.0.1(cypress@13.6.2):
+  /@testing-library/cypress@10.0.1(cypress@13.6.3):
     resolution: {integrity: sha512-e8uswjTZIBhaIXjzEcrQQ8nHRWHgZH7XBxKuIWxZ/T7FxfWhCR48nFhUX5nfPizjVOKSThEfOSv67jquc1ASkw==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -132,7 +132,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.8
       '@testing-library/dom': 9.3.4
-      cypress: 13.6.2
+      cypress: 13.6.3
     dev: true
 
   /@testing-library/dom@9.3.4:
@@ -155,9 +155,11 @@ packages:
 
   /@types/node@18.19.6:
     resolution: {integrity: sha512-X36s5CXMrrJOs2lQCdDF68apW4Rfx9ixYMawlepwmE4Anezv/AV2LSpKD1Ub8DAc+urp5bk0BGZ6NtmBitfnsg==}
+    requiresBuild: true
     dependencies:
       undici-types: 5.26.5
     dev: true
+    optional: true
 
   /@types/sinonjs__fake-timers@8.1.1:
     resolution: {integrity: sha512-0kSuKjAS0TrGLJ0M/+8MaFkGsQhZpB6pxOmvS3K8FYI72K//YmdfoW9X2qPsAKh1mkwxGD5zib9s1FIFed6E8g==}
@@ -499,15 +501,14 @@ packages:
       which: 2.0.2
     dev: true
 
-  /cypress@13.6.2:
-    resolution: {integrity: sha512-TW3bGdPU4BrfvMQYv1z3oMqj71YI4AlgJgnrycicmPZAXtvywVFZW9DAToshO65D97rCWfG/kqMFsYB6Kp91gQ==}
+  /cypress@13.6.3:
+    resolution: {integrity: sha512-d/pZvgwjAyZsoyJ3FOsJT5lDsqnxQ/clMqnNc++rkHjbkkiF2h9s0JsZSyyH4QXhVFW3zPFg82jD25roFLOdZA==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@cypress/request': 3.0.1
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
-      '@types/node': 18.19.6
       '@types/sinonjs__fake-timers': 8.1.1
       '@types/sizzle': 2.3.8
       arch: 2.2.0
@@ -1987,7 +1988,9 @@ packages:
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+    requiresBuild: true
     dev: true
+    optional: true
 
   /universalify@0.2.0:
     resolution: {integrity: sha512-CJ1QgKmNg3CwvAv/kOFmtnEN05f0D/cn9QntgNOQlQF9dgvVTHj3t+8JPdjqawCHk7V/KA+fbUqzZ9XWhcqPUg==}
