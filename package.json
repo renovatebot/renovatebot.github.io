@@ -17,8 +17,8 @@
     "cypress": "13.6.4",
     "husky": "8.0.3",
     "lint-staged": "15.2.1",
-    "prettier": "3.2.2",
-    "prettier-plugin-packagejson": "2.4.9",
+    "prettier": "3.2.5",
+    "prettier-plugin-packagejson": "2.4.10",
     "typescript": "5.3.3"
   },
   "packageManager": "pnpm@8.15.1",
