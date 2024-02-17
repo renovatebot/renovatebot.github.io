@@ -10,7 +10,7 @@
     "enabled": false
   },
   "pip-compile": {
-    "fileMatch": ["(^|/)requirements\\.in$"]
+    "fileMatch": ["(^|/)requirements\\.txt$"]
   },
   "packageRules": [
     {
