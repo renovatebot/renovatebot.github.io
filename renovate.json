@@ -6,17 +6,17 @@
   "git-submodules": {
     "enabled": true
   },
-  "pip_requirements": {
-    "enabled": false
-  },
-  "pip-compile": {
-    "fileMatch": ["(^|/)requirements\\.txt$"]
-  },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor"],
       "automerge": false,
-      "matchManagers": ["pip_requirements"]
+      "matchManagers": ["poetry"]
+    },
+    {
+      "description": "Require dashboard approval for python minor versions because of delayed availabillity",
+      "matchUpdateTypes": ["minor"],
+      "matchDepNames": ["python"],
+      "dependencyDashboardApproval": true
     },
     {
       "matchManagers": ["git-submodules"],

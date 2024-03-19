@@ -33,6 +33,7 @@ jobs:
           cache: 'pnpm' # doesn't cache cypress
           cache-dependency-path: '**/pnpm-lock.yaml'
 
+        # enable again to use newer node version
       - name: enable corepack
         run: corepack enable
 
@@ -44,6 +45,10 @@ jobs:
         with:
           python-version-file: .python-version
           cache: 'poetry'
+
+        # install again to use newer python version
+      - name: Install poetry
+        run: pipx install poetry==${{ env.POETRY_VERSION }}
 
       - name: Init platform
         run: |
