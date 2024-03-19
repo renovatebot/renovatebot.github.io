@@ -2,6 +2,8 @@
 
 set -e
 
+yum install -y python3-pip
+
 # renovate: datasource=pypi depName=poetry
 POETRY_VERSION=1.8.2
 
