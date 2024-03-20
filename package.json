@@ -8,7 +8,7 @@
   },
   "type": "module",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "prettier": "prettier --check --ignore-unknown --cache \"**/*.*\"",
     "prettier-fix": "prettier --write --ignore-unknown --cache \"**/*.*\""
   },
