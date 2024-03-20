@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# shellcheck source=/dev/null
-. "$(dirname "$0")/_/husky.sh"
-
 BRANCH_NAME=$(git branch --show-current)
 
 if [ "$BRANCH_NAME" = "main" ]; then

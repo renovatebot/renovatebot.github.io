@@ -8,14 +8,14 @@
   },
   "type": "module",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "prettier": "prettier --check --ignore-unknown --cache \"**/*.*\"",
     "prettier-fix": "prettier --write --ignore-unknown --cache \"**/*.*\""
   },
   "devDependencies": {
     "@testing-library/cypress": "10.0.1",
     "cypress": "13.6.6",
-    "husky": "8.0.3",
+    "husky": "9.0.11",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
     "prettier-plugin-packagejson": "2.4.12",
