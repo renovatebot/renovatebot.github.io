@@ -1,4 +1,4 @@
-FROM ghcr.io/containerbase/gitpod:10.3.4
+FROM ghcr.io/containerbase/gitpod:10.3.5
 
 # renovate: datasource=pypi
 RUN install-tool poetry 1.8.2
