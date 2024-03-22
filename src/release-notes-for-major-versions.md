@@ -15,7 +15,6 @@ You also don't have to scroll to the bottom of the page to find the latest relea
 
 ### Breaking changes
 
-- **maven:** use hunt strategy for registries
 - **npm:** drop explicit lerna support
 
 ### Commentary
