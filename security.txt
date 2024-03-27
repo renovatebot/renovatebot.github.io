@@ -1,0 +1,5 @@
+Contact: mailto:renovate-disclosure@mend.io
+Expires: 2024-12-31T23:59:00.000Z
+Preferred-Languages: en
+Canonical: https://docs.renovatebot.com/security.txt
+Policy: https://github.com/renovatebot/renovatebot.github.io/blob/main/SECURITY.md
