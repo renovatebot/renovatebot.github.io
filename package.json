@@ -21,7 +21,7 @@
     "prettier-plugin-packagejson": "2.4.14",
     "typescript": "5.4.3"
   },
-  "packageManager": "pnpm@8.15.5",
+  "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": "^18.12.0 || >=20.9.0",
     "pnpm": "^8.0.0"
