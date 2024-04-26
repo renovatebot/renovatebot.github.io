@@ -7,10 +7,10 @@ settings:
 devDependencies:
   '@testing-library/cypress':
     specifier: 10.0.1
-    version: 10.0.1(cypress@13.7.3)
+    version: 10.0.1(cypress@13.8.0)
   cypress:
-    specifier: 13.7.3
-    version: 13.7.3
+    specifier: 13.8.0
+    version: 13.8.0
   husky:
     specifier: 9.0.11
     version: 9.0.11
@@ -125,7 +125,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
 
-  /@testing-library/cypress@10.0.1(cypress@13.7.3):
+  /@testing-library/cypress@10.0.1(cypress@13.8.0):
     resolution: {integrity: sha512-e8uswjTZIBhaIXjzEcrQQ8nHRWHgZH7XBxKuIWxZ/T7FxfWhCR48nFhUX5nfPizjVOKSThEfOSv67jquc1ASkw==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -133,7 +133,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.24.4
       '@testing-library/dom': 9.3.4
-      cypress: 13.7.3
+      cypress: 13.8.0
     dev: true
 
   /@testing-library/dom@9.3.4:
@@ -491,8 +491,8 @@ packages:
       which: 2.0.2
     dev: true
 
-  /cypress@13.7.3:
-    resolution: {integrity: sha512-uoecY6FTCAuIEqLUYkTrxamDBjMHTYak/1O7jtgwboHiTnS1NaMOoR08KcTrbRZFCBvYOiS4tEkQRmsV+xcrag==}
+  /cypress@13.8.0:
+    resolution: {integrity: sha512-Qau//mtrwEGOU9cn2YjavECKyDUwBh8J2tit+y9s1wsv6C3BX+rlv6I9afmQnL8PmEEzJ6be7nppMHacFzZkTw==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
     requiresBuild: true
