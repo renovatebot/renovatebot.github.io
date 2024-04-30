@@ -6,7 +6,7 @@ description = ""
 
 [tool.poetry.dependencies]
 python = ">=3.11"
-mkdocs-material = "==9.5.19"
+mkdocs-material = "==9.5.20"
 mkdocs-awesome-pages-plugin = "==2.9.2"
 
 
