@@ -11,6 +11,7 @@ validation:
   omitted_files: warn
   absolute_links: warn
   unrecognized_links: warn
+  anchors: warn
 
 # Set the remote branch to commit to when using `gh-deploy` to deploy to GitHub Pages.
 # https://www.mkdocs.org/user-guide/configuration/#remote_branch
