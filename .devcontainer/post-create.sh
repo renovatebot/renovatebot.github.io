@@ -8,4 +8,4 @@ if [[ "${CODESPACES}" == true ]]; then
 fi
 
 git submodule update --init
-make
+COREPACK_ENABLE_DOWNLOAD_PROMPT=0 make

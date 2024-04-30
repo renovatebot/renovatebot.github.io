@@ -3,7 +3,7 @@ image:
   context: .gitpod
 tasks:
   - init: >
-      make
+      COREPACK_ENABLE_DOWNLOAD_PROMPT=0 make
     command: make serve
 
 ports:
