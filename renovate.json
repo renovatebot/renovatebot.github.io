@@ -13,12 +13,12 @@
       "matchManagers": ["poetry"]
     },
     {
-      "description": "Separate python minor from patch versions because of delayed availabillity",
+      "description": "Separate python minor from patch versions because of delayed availability",
       "matchDepNames": ["python"],
       "separateMinorPatch": true
     },
     {
-      "description": "Require dashboard approval for python minor versions because of delayed availabillity",
+      "description": "Require dashboard approval for python minor versions because of delayed availability",
       "matchUpdateTypes": ["minor"],
       "matchDepNames": ["python"],
       "dependencyDashboardApproval": true
