@@ -10,7 +10,7 @@ on:
       - 'main'
 
 env:
-  POETRY_VERSION: 1.8.2 # renovate: datasource=pypi depName=poetry
+  POETRY_VERSION: 1.8.3 # renovate: datasource=pypi depName=poetry
   HUSKY: 0 # disable husky on CI
 
 jobs:

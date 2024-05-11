@@ -7,7 +7,7 @@ set -e
 PYTHON_VERSION=3.11
 
 # renovate: datasource=pypi depName=poetry
-POETRY_VERSION=1.8.2
+POETRY_VERSION=1.8.3
 
 # install python and pip
 yum install -y python${PYTHON_VERSION} python${PYTHON_VERSION}-pip
