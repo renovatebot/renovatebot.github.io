@@ -128,13 +128,10 @@ theme:
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#navigation
     - navigation.footer
 
-# CSS and JavaScript customizations
+# CSS customizations
 
 extra_css:
   - 'assets/css/style.css'
-
-#extra_javascript:
-#  - 'assets/js/fx.js'
 
 # Extensions
 markdown_extensions:
