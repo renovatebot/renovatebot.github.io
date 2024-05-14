@@ -133,8 +133,8 @@ theme:
 extra_css:
   - 'assets/css/style.css'
 
-extra_javascript:
-  - 'assets/js/fx.js'
+#extra_javascript:
+#  - 'assets/js/fx.js'
 
 # Extensions
 markdown_extensions:
