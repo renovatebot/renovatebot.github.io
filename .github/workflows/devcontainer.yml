@@ -27,6 +27,9 @@ jobs:
         uses: devcontainers/ci@a56d055efecd725e8cfe370543b6071b79989cc8 # v0.3.1900000349
         with:
           runCmd: make
-          env: GITHUB_TOKEN
+          env: |
+            GITHUB_TOKEN
+            SKIP_GITHUB_ISSUES
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          SKIP_GITHUB_ISSUES: 'true'
