@@ -1,4 +1,4 @@
-FROM ghcr.io/containerbase/devcontainer:10.6.14
+FROM ghcr.io/containerbase/devcontainer:10.6.15
 
 # renovate: datasource=pypi
 RUN install-tool poetry 1.8.3
