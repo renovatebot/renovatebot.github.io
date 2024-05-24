@@ -3,7 +3,7 @@ name: lock-threads
 on:
   # run daily
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 1 * * *'
 
   # allow manual trigger
   workflow_dispatch:
