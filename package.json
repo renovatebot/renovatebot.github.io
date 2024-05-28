@@ -16,7 +16,7 @@
     "@testing-library/cypress": "10.0.1",
     "cypress": "13.9.0",
     "husky": "9.0.11",
-    "lint-staged": "15.2.2",
+    "lint-staged": "15.2.4",
     "prettier": "3.2.5",
     "prettier-plugin-packagejson": "2.5.0",
     "typescript": "5.4.5"
