@@ -19,7 +19,7 @@
     "lint-staged": "15.2.7",
     "prettier": "3.3.3",
     "prettier-plugin-packagejson": "2.5.1",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   },
   "packageManager": "pnpm@9.6.0",
   "engines": {
