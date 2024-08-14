@@ -1,5 +1,11 @@
 default: install build
 
+STRICT?=true
+
+ifeq ($(STRICT),true)
+  build_args=--strict
+endif
+
 install:
 	pnpm install --frozen-lockfile
 	poetry install --no-root
@@ -16,7 +22,7 @@ get-docs:
 	bash bin/get-docs.sh
 
 build-docs:
-	poetry run mkdocs build
+	poetry run mkdocs build $(build_args)
 
 prepare: get-docs
 
