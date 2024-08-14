@@ -10,7 +10,7 @@ on:
       - 'main'
 
 env:
-  POETRY_VERSION: 1.8.3 # renovate: datasource=pypi depName=poetry
+  PDM_VERSION: 2.18.0 # renovate: datasource=pypi depName=pdm
   HUSKY: 0 # disable husky on CI
 
 jobs:
@@ -36,18 +36,12 @@ jobs:
           cache: 'pnpm' # doesn't cache cypress
           cache-dependency-path: '**/pnpm-lock.yaml'
 
-      - name: Install poetry
-        run: pipx install poetry==${{ env.POETRY_VERSION }}
-
-      - name: Set up Python
-        uses: actions/setup-python@39cd14951b08e74b54015e9e001cdefcf80e669f # v5.1.1
+      - name: Setup PDM
+        uses: pdm-project/setup-pdm@568ddd69406b30de1774ec0044b73ae06e716aa4 # v4.1
         with:
           python-version-file: .python-version
-          cache: 'poetry'
-
-        # install again to use newer python version
-      - name: Install poetry
-        run: pipx install poetry==${{ env.POETRY_VERSION }}
+          version: ${{ env.PDM_VERSION }}
+          cache: true
 
       - name: Init platform
         run: |
@@ -56,7 +50,7 @@ jobs:
           git config --global user.email 'bot@renovateapp.com'
           git config --global user.name  'Renovate Bot'
           python --version
-          poetry --version
+          pdm --version
 
       - name: Cache node_modules and cypress
         uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2

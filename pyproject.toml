@@ -1,15 +1,1 @@
-[tool.poetry]
-name = "docs.renovatebot.com"
-version = "1.0.0"
-authors = []
-description = ""
-
-[tool.poetry.dependencies]
-python = ">=3.11"
-mkdocs-material = "==9.5.31"
-mkdocs-awesome-pages-plugin = "==2.9.3"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+deps/renovate/pyproject.toml

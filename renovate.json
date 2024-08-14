@@ -10,7 +10,7 @@
     {
       "matchUpdateTypes": ["minor"],
       "automerge": false,
-      "matchManagers": ["poetry"]
+      "matchManagers": ["pep621", "poetry"]
     },
     {
       "description": "Separate python minor from patch versions because of delayed availability",
