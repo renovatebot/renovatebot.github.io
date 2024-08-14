@@ -13,5 +13,6 @@ __pycache__
 /yarn.lock
 .parcel-cache/
 /.cache/
+.pdm-python
 
 !.vscode/settings.json
