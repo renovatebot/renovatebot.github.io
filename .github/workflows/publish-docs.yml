@@ -10,7 +10,7 @@ on:
       - 'main'
 
 env:
-  PDM_VERSION: 2.19.1 # renovate: datasource=pypi depName=pdm
+  PDM_VERSION: 2.19.2 # renovate: datasource=pypi depName=pdm
   HUSKY: 0 # disable husky on CI
 
 jobs:
