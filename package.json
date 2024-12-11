@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "10.0.2",
-    "cypress": "13.16.0",
+    "cypress": "13.16.1",
     "husky": "9.1.7",
     "lint-staged": "15.2.10",
     "prettier": "3.4.2",
