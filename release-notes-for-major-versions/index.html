@@ -1,0 +1,2332 @@
+<!-- This file has the content for our announcement bar. -->
+<!-- https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#announcement-bar -->
+<!-- https://squidfunk.github.io/mkdocs-material/customization/#overriding-blocks -->
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Renovate documentation.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/release-notes-for-major-versions/">
+      
+      
+        <link rel="prev" href="../known-limitations/">
+      
+      
+        <link rel="next" href="../bot-comparison/">
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Release notes for major versions - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#release-notes-for-major-versions-of-renovate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+<p>
+  We released Renovate <code>v39</code>. Read the <a href="https://docs.renovatebot.com/release-notes-for-major-versions/">Release notes for major versions of Renovate</a> to learn what's changed.
+</p>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Renovate Docs" class="md-header__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renovate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Release notes for major versions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Renovate Docs" class="md-nav__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Renovate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reading List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../getting-started/use-cases/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../config-overview/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../mend-hosted/hosted-apps-config/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Mend-hosted Apps
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../key-concepts/how-renovate-works/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Key concepts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../modules/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Renovate Modules
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../bazel/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Language Support
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../dependency-pinning/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Deep Dives
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../presets-customManagers/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Included Presets
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    All Other
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            All Other
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../user-stories/swissquote/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    User Stories
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-and-permissions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security and Permissions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../merge-confidence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merge Confidence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language-constraints-and-upgrading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Language constraints and upgrading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string-pattern-matching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    String Pattern Matching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../known-limitations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Known Limitations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Release notes for major versions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Release notes for major versions
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 39
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 39">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 39
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Breaking changes for 39">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-tools-for-all-docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      New tools for all Docker images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-docker-user-id-for-all-docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Docker user ID for all Docker images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updated-version-of-python-and-new-default-behavior-for-the-full-docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updated version of Python, and new default behavior for the -full Docker image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renovate-tries-squash-merges-first-when-automerging-on-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renovate tries squash merges first when automerging on GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Renovate tries squash merges first when automerging on GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-you-can-allow-squash-merges-on-your-github-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      How you can allow squash merges on your GitHub repository
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-names-with-multiple-slashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branch names with multiple slashes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 39
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commentary for 39">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-reasons-for-trying-the-squash-merge-first-on-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical reasons for trying the squash merge first on GitHub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-we-change-branch-names-with-multiple-slashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why we change branch names with multiple slashes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 39
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 38
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 38">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 38
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 38
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commentary for 38">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#our-docker-images-are-slim-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Docker images are slim by default
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renovate-needs-nodejs-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renovate needs Node.js 20
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Renovate needs Node.js 20">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-we-picked-node-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why we picked Node 20
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-we-picked-a-non-vulnerable-version-of-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why we picked a non-vulnerable version of Node
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-use-mends-renovate-github-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you use Mend's Renovate GitHub app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-file-configuration-requires-env-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log file configuration requires env settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-package-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes to package matching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 38
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 37
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 37">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 37
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 37
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 37
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 36
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 36">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 36
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 36
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 36
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 35
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 35">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 35
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 35
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 35
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 34
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 34">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 34
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 34
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 34
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 33
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 33">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 33
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 33
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 33
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bot-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bot comparison
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logo-brand-guidelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logo and brand guidelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-us/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing-to-renovate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing to Renovate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 39
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 39">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 39
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Breaking changes for 39">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-tools-for-all-docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      New tools for all Docker images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-docker-user-id-for-all-docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Docker user ID for all Docker images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updated-version-of-python-and-new-default-behavior-for-the-full-docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updated version of Python, and new default behavior for the -full Docker image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renovate-tries-squash-merges-first-when-automerging-on-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renovate tries squash merges first when automerging on GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Renovate tries squash merges first when automerging on GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-you-can-allow-squash-merges-on-your-github-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      How you can allow squash merges on your GitHub repository
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-names-with-multiple-slashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branch names with multiple slashes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 39
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commentary for 39">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-reasons-for-trying-the-squash-merge-first-on-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical reasons for trying the squash merge first on GitHub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-we-change-branch-names-with-multiple-slashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why we change branch names with multiple slashes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 39
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 38
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 38">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 38
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 38
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commentary for 38">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#our-docker-images-are-slim-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Docker images are slim by default
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renovate-needs-nodejs-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renovate needs Node.js 20
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Renovate needs Node.js 20">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-we-picked-node-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why we picked Node 20
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-we-picked-a-non-vulnerable-version-of-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why we picked a non-vulnerable version of Node
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-use-mends-renovate-github-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you use Mend's Renovate GitHub app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-file-configuration-requires-env-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log file configuration requires env settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-package-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes to package matching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 38
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 37
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 37">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 37
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 37
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 37
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 36
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 36">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 36
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 36
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 36
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 35
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 35">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 35
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 35
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 35
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 34
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 34">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 34
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 34
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 34
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 33
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 33">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes-for-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking changes for 33
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commentary-for-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentary for 33
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-to-release-notes-for-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to release notes for 33
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/renovatebot/renovate/edit/main/docs/usage/release-notes-for-major-versions.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="release-notes-for-major-versions-of-renovate">Release notes for major versions of Renovate<a class="headerlink" href="#release-notes-for-major-versions-of-renovate" title="Permanent link">&para;</a></h1>
+<p>It can be hard to keep track of the changes between major versions of Renovate.
+To help you, we've listed the breaking changes, plus the developer commentary for the latest major releases.</p>
+<p>The most recent versions are always at the top of the page.
+This is because recent versions may revert changes made in an older version.
+You also don't have to scroll to the bottom of the page to find the latest release notes.</p>
+<h2 id="version-39">Version 39<a class="headerlink" href="#version-39" title="Permanent link">&para;</a></h2>
+<h3 id="breaking-changes-for-39">Breaking changes for 39<a class="headerlink" href="#breaking-changes-for-39" title="Permanent link">&para;</a></h3>
+<h4 id="new-tools-for-all-docker-images">New tools for all Docker images<a class="headerlink" href="#new-tools-for-all-docker-images" title="Permanent link">&para;</a></h4>
+<p>All our Docker images now use:</p>
+<ul>
+<li>Node.js v22 as base, was Node.js v20</li>
+<li>Ubuntu 24.04 as base, was 20.04</li>
+</ul>
+<h4 id="new-docker-user-id-for-all-docker-images">New Docker user ID for all Docker images<a class="headerlink" href="#new-docker-user-id-for-all-docker-images" title="Permanent link">&para;</a></h4>
+<p>All our Docker images now set the Docker user ID to <code>12021</code>, the old ID was <code>1001</code>.</p>
+<p>After updating your Renovate Docker image to the new v39 release, you must:</p>
+<ul>
+<li>Delete your old Docker cache, <em>or</em></li>
+<li>Ensure the new user ID has write permissions to any existing cache</li>
+</ul>
+<h4 id="updated-version-of-python-and-new-default-behavior-for-the-full-docker-image">Updated version of Python, and new default behavior for the <code>-full</code> Docker image<a class="headerlink" href="#updated-version-of-python-and-new-default-behavior-for-the-full-docker-image" title="Permanent link">&para;</a></h4>
+<p>On top of the changes listed above, the <code>-full</code> image now:</p>
+<ul>
+<li>Uses Python 3.13</li>
+<li>Defaults to <a href="../self-hosted-configuration/#binarysource"><code>binarySource=global</code></a> (note: this was previously the case in v36 onwards but regressed sometime in v38)</li>
+</ul>
+<p>If you want to keep the old behavior, where Renovate dynamically installs the needed tools: set the environment variable <code>RENOVATE_BINARY_SOURCE</code> to <code>"install"</code>.</p>
+<h4 id="renovate-tries-squash-merges-first-when-automerging-on-github">Renovate tries squash merges first when automerging on GitHub<a class="headerlink" href="#renovate-tries-squash-merges-first-when-automerging-on-github" title="Permanent link">&para;</a></h4>
+<p>Due to technical reasons, GitHub will only sign commits coming from a squash merge.
+To help those who want Renovate to sign its commits, Renovate now tries the squash merge first.</p>
+<p>Of course, Renovate only uses the merge method(s) that you allow in your GitHub repository config.</p>
+<h5 id="how-you-can-allow-squash-merges-on-your-github-repository">How you can allow squash merges on your GitHub repository<a class="headerlink" href="#how-you-can-allow-squash-merges-on-your-github-repository" title="Permanent link">&para;</a></h5>
+<p>If you want to allow squash merges on your GitHub repository, follow the steps in the <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests">GitHub Docs, configuring commit squashing for pull requests</a>.</p>
+<h4 id="branch-names-with-multiple-slashes">Branch names with multiple slashes<a class="headerlink" href="#branch-names-with-multiple-slashes" title="Permanent link">&para;</a></h4>
+<p>If you set <code>branchNameStrict=true</code>, then branch names with multiple forward slashes (<code>/</code>) will change.</p>
+<p>The problem was that even if you set <code>branchNameStrict=true</code>, in some cases special characters could still end up in Renovate's branch names.
+We fixed this problem, by letting Renovate convert multiple forward slashes (<code>/</code>) to hyphens (<code>-</code>) in its branch names, if <code>branchNameStrict=true</code>.</p>
+<h3 id="commentary-for-39">Commentary for 39<a class="headerlink" href="#commentary-for-39" title="Permanent link">&para;</a></h3>
+<h4 id="technical-reasons-for-trying-the-squash-merge-first-on-github">Technical reasons for trying the squash merge first on GitHub<a class="headerlink" href="#technical-reasons-for-trying-the-squash-merge-first-on-github" title="Permanent link">&para;</a></h4>
+<p>Renovate has changed its GitHub merge preference to "squash" because this way results in signed commits, while "rebase" merges do not.</p>
+<p>Read the <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#signature-verification-for-rebase-and-merge">GitHub Docs, Signature verification for rebase and merge</a> to learn more about commit signing.</p>
+<h4 id="why-we-change-branch-names-with-multiple-slashes">Why we change branch names with multiple slashes<a class="headerlink" href="#why-we-change-branch-names-with-multiple-slashes" title="Permanent link">&para;</a></h4>
+<p>Branches with mutiple slashes (<code>/</code>) are not wanted, this was a bug.
+We are changing it in a major release out of politeness to all our users.
+If you enabled <code>branchNameStrict</code>, you can expect some branch names to change.</p>
+<h3 id="link-to-release-notes-for-39">Link to release notes for 39<a class="headerlink" href="#link-to-release-notes-for-39" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/renovatebot/renovate/releases/tag/39.0.0">Release notes for <code>v39</code> on GitHub</a>.</p>
+<h2 id="version-38">Version 38<a class="headerlink" href="#version-38" title="Permanent link">&para;</a></h2>
+<h3 id="breaking-changes-for-38">Breaking changes for 38<a class="headerlink" href="#breaking-changes-for-38" title="Permanent link">&para;</a></h3>
+<p>General:</p>
+<ul>
+<li>Require Node.js 20 (<a href="https://github.com/renovatebot/renovate/pull/30291">#30291</a>)</li>
+<li>The Renovate Docker images no longer have <code>-slim</code> tags. You must stop using the <code>-slim</code> prefix. Renovate now defaults to the <code>-slim</code> tag type behavior.</li>
+</ul>
+<p>Specific:</p>
+<ul>
+<li><strong>bitbucket-server:</strong> autodetect <code>gitAuthor</code>, if possible (<a href="https://github.com/renovatebot/renovate/pull/29525">#29525</a>)</li>
+<li><strong>config:</strong> change from <code>boolean</code> to <code>enum</code> for <code>onboardingNoDeps</code>. Renovate now onboards repositories with no dependencies, with one exception: if you run Renovate in <code>autodiscover</code> mode then you must manually onboard Renovate for repos with no dependencies</li>
+<li><strong>config:</strong> sanitize special characters from branch names for vulnerability type PRs. This may cause Renovate to autoclose/replace existing PRs</li>
+<li><strong>config:</strong> change the order of <code>globalExtends</code> resolution, it is applied <em>first</em> and remaining global config takes precedence</li>
+<li><strong>datasource/docker:</strong> Docker Hub lookups prefers <code>hub.docker.com</code> over <code>index.docker.io</code>. To revert to the old behavior: set <code>RENOVATE_X_DOCKER_HUB_TAGS_DISABLE=true</code> in your env</li>
+<li><strong>git:</strong> check <em>all</em> commits on the branch to decide if the branch was modified (<a href="https://github.com/renovatebot/renovate/pull/28225">#28225</a>)</li>
+<li><strong>gitea:</strong> use "bearer auth" instead of "token auth" to authenticate to the Gitea platform</li>
+<li><strong>github:</strong> if you run Renovate as a GitHub app then <code>platformCommit</code> is automatically enabled</li>
+<li><strong>http:</strong> remove <code>dnsCache</code></li>
+<li><strong>logging:</strong> you must set file logging via env, not in <code>config.js</code></li>
+<li><strong>manager/pep621:</strong> change <code>depName</code> for <code>pep621</code> dependencies. This causes the branch name for <code>pep621</code> updates to change, which in turn means Renovate may autoclose and re-open some <code>pep621</code> PRs. Also, Renovate may start grouping dependencies into a single PR.</li>
+<li><strong>npm:</strong> for npm versions lower than 7, drop support for remediating vulnerabilities in <em>transitive</em> dependencies</li>
+<li><strong>npm:</strong> remove <code>RENOVATE_CACHE_NPM_MINUTES</code> (<a href="https://github.com/renovatebot/renovate/pull/28715">#28715</a>)</li>
+<li><strong>packageRules:</strong> <code>matchPackageNames</code> (and related functions) no longer fall back to checking <code>depName</code></li>
+<li><strong>packageRules:</strong> <code>matchPackageNames</code> exact matches are now case-insensitive</li>
+</ul>
+<h3 id="commentary-for-38">Commentary for 38<a class="headerlink" href="#commentary-for-38" title="Permanent link">&para;</a></h3>
+<h4 id="our-docker-images-are-slim-by-default">Our Docker images are slim by default<a class="headerlink" href="#our-docker-images-are-slim-by-default" title="Permanent link">&para;</a></h4>
+<p>If you self-host using Renovate's Docker <code>-slim</code> images: drop the <code>-slim</code> suffix, and switch to the default tags.
+Renovate's default tags like <code>38.0.0</code> are "slim" by default.
+There's no change if you're using the <code>-full</code> images.</p>
+<h4 id="renovate-needs-nodejs-20">Renovate needs Node.js 20<a class="headerlink" href="#renovate-needs-nodejs-20" title="Permanent link">&para;</a></h4>
+<p>Renovate now needs Node.js <code>^20.15.1</code> to run.
+Our Docker images already use the correct version of Node.js.</p>
+<p>But if you self-host <em>without</em> using our Docker image, then you must update the version of Node.js.
+You must update manually, if for example: you build your own image, or run the <code>renovate</code> npm package.</p>
+<h5 id="why-we-picked-node-20">Why we picked Node 20<a class="headerlink" href="#why-we-picked-node-20" title="Permanent link">&para;</a></h5>
+<p>We dropped Node.js 18, and do not yet support Node.js 22 as it's non-<abbr title="Long Term Support">LTS</abbr> and not recommended for production.</p>
+<h5 id="why-we-picked-a-non-vulnerable-version-of-node">Why we picked a non-vulnerable version of Node<a class="headerlink" href="#why-we-picked-a-non-vulnerable-version-of-node" title="Permanent link">&para;</a></h5>
+<p>We decided to require the current non-vulnerable version of Node.js (<code>20.15.1</code> or newer).
+If we ever need to bump the minimum version of Node.js v20, we will release a new <em>major</em> version of Renovate.</p>
+<p>If you self-host: we recommend you always run a secure version of Node.js v20.
+This is because security vulnerabilities in Node.js can affect Renovate too.</p>
+<h4 id="if-you-use-mends-renovate-github-app">If you use Mend's Renovate GitHub app<a class="headerlink" href="#if-you-use-mends-renovate-github-app" title="Permanent link">&para;</a></h4>
+<p>We recommend that all users running Renovate as a GitHub App use <code>platformCommit</code>.
+Renovate now defaults to <code>platformCommit</code> is enabled, when Renovate detects a GitHub App token.
+For PATs, we still recommend regular commits.</p>
+<h4 id="log-file-configuration-requires-env-settings">Log file configuration requires env settings<a class="headerlink" href="#log-file-configuration-requires-env-settings" title="Permanent link">&para;</a></h4>
+<p>File-based logging must be configured using environment variables (e.g. <code>LOG_FILE</code>).
+Do <em>not</em> set logging in files or <abbr title="Command-Line Interface">CLI</abbr> (such as <code>logFile</code>).</p>
+<p>This ensures that logging begins right when Renovate starts a run.
+It also means Renovates logs how it parses the config.</p>
+<h4 id="changes-to-package-matching">Changes to package matching<a class="headerlink" href="#changes-to-package-matching" title="Permanent link">&para;</a></h4>
+<p>Finally, we merged the <code>matchPackage*</code> and <code>excludePackage*</code> options into <code>matchPackageNames</code>.
+We also enabled patterns for the <code>matchPackageNames</code> config option.</p>
+<p>This means you can now use regex or glob patterns:</p>
+<ul>
+<li><code>"matchPackageNames": "/^com.renovatebot/"</code> (regex)</li>
+<li><code>"matchPackageNames": "@renovate/*"</code> (glob)</li>
+</ul>
+<p>And of course, you can still use exact name matching.</p>
+<h3 id="link-to-release-notes-for-38">Link to release notes for 38<a class="headerlink" href="#link-to-release-notes-for-38" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/renovatebot/renovate/releases/tag/38.0.0">Release notes for <code>v38</code> on GitHub</a>.</p>
+<h2 id="version-37">Version 37<a class="headerlink" href="#version-37" title="Permanent link">&para;</a></h2>
+<h3 id="breaking-changes-for-37">Breaking changes for 37<a class="headerlink" href="#breaking-changes-for-37" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>npm:</strong> drop explicit lerna support</li>
+</ul>
+<h3 id="commentary-for-37">Commentary for 37<a class="headerlink" href="#commentary-for-37" title="Permanent link">&para;</a></h3>
+<p>We switched from "merge" strategy to "hunt" strategy to match with how Maven works.</p>
+<p>Lerna v7 does not need our explicit support anymore, so we dropped it.
+If you're on a version of Lerna before v7, you should prioritize upgrading to v7.</p>
+<h3 id="link-to-release-notes-for-37">Link to release notes for 37<a class="headerlink" href="#link-to-release-notes-for-37" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/renovatebot/renovate/releases/tag/37.0.0">Release notes for <code>v37</code> on GitHub</a>.</p>
+<h2 id="version-36">Version 36<a class="headerlink" href="#version-36" title="Permanent link">&para;</a></h2>
+<h3 id="breaking-changes-for-36">Breaking changes for 36<a class="headerlink" href="#breaking-changes-for-36" title="Permanent link">&para;</a></h3>
+<ul>
+<li>postUpgradeTasks.fileFilters is now optional and defaults to all files</li>
+<li><code>languages</code> are now called <code>categories</code> instead. Use <code>matchCategories</code> in <code>packageRules</code></li>
+<li>Node v19 is no longer supported</li>
+<li><strong>datasource:</strong> <code>semver-coerced</code> is now the default versioning</li>
+<li><strong>presets:</strong> Preset <code>config:base</code> is now called <code>config:recommended</code> (will be migrated automatically)</li>
+<li>remove <code>BUILDPACK</code> env support</li>
+<li><strong>package-rules:</strong> <code>matchPackageNames</code> now matches both <code>depName</code> (existing) and <code>packageName</code> (new) and warns if only <code>depName</code> matches</li>
+<li><strong>release-notes:</strong> Release notes won't be fetched early for <code>commitBody</code> insertion unless explicitly configured with <code>fetchReleaseNotes=branch</code></li>
+<li><code>dockerImagePrefix</code> is now replaced by <code>dockerSidecarImage</code></li>
+<li><code>matchPaths</code> and <code>matchFiles</code> are now combined into <code>matchFileNames</code>, supporting exact match and glob-only. The "any string match" functionality of <code>matchPaths</code> is now removed</li>
+<li><strong>presets:</strong> v25 compatibility for language-based branch prefixes is removed</li>
+<li><strong>npm:</strong> Rollback PRs will no longer be enabled by default for npm (they are now disabled by default for all managers)</li>
+<li><strong>post-upgrade-tasks:</strong> dot files will now be included by default for all minimatch results</li>
+<li><strong>platform/gitlab:</strong> GitLab <code>gitAuthor</code> will change from the account's "email" to "commit_email" if they are different</li>
+<li><strong>automerge:</strong> Platform automerge will now be chosen by default whenever automerge is enabled</li>
+<li>Post upgrade templating is now allowed by default, as long as the post upgrade task command is itself already allowed</li>
+<li>Official Renovate Docker images now use the "slim" approach with <code>binarySource=install</code> by default. e.g. <code>renovate/renovate:latest</code> is the slim image, not full</li>
+<li>The "full" image is now available via the tag <code>full</code>, e.g. <code>renovate/renovate:39-full</code>, and defaults to <code>binarySource=global</code> (no dynamic installs)</li>
+<li>Third party tools in the full image have been updated to latest/<abbr title="Long Term Support">LTS</abbr> major version</li>
+</ul>
+<h3 id="commentary-for-36">Commentary for 36<a class="headerlink" href="#commentary-for-36" title="Permanent link">&para;</a></h3>
+<p>If you're self-hosting Renovate, pay particular attention to:</p>
+<ul>
+<li>Do you want to run the full, or slim versions of the image? We have switched the defaults (latest is now slim, not full)</li>
+<li>Have you configured <code>dockerImagePrefix</code>? If so then you need to use <code>dockerSidecarImage</code> instead</li>
+<li>If you're using <code>config:base</code> in your <code>onboardingConfig</code> then switch to <code>config:recommended</code></li>
+<li><code>gitAuthor</code> may change if you're on GitLab and have a different commit email for your bot account. If so then configure <code>gitIgnoredAuthors</code> with the old email</li>
+</ul>
+<h3 id="link-to-release-notes-for-36">Link to release notes for 36<a class="headerlink" href="#link-to-release-notes-for-36" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/renovatebot/renovate/releases/tag/36.0.0">Release notes for <code>v36</code> on GitHub</a>.</p>
+<h2 id="version-35">Version 35<a class="headerlink" href="#version-35" title="Permanent link">&para;</a></h2>
+<h3 id="breaking-changes-for-35">Breaking changes for 35<a class="headerlink" href="#breaking-changes-for-35" title="Permanent link">&para;</a></h3>
+<ul>
+<li>require NodeJS v18.12+ (<a href="https://github.com/renovatebot/renovate/pull/20838">#20838</a>)</li>
+<li><strong>config:</strong> Forked repos will now be processed automatically if <code>autodiscover=false</code>. <code>includeForks</code> is removed and replaced by new option <code>forkProcessing</code></li>
+<li>Internal checks such as <code>renovate/stability-days</code> will no longer count as passing/green, meaning that actions such as <code>automerge</code> won't occur if the only checks are Renovate internal ones. Set <code>internalChecksAsSuccess=true</code> to restore existing behavior</li>
+<li><strong>versioning:</strong> default versioning is now <code>semver-coerced</code>, instead of <code>semver</code></li>
+<li><strong>datasource/github-releases:</strong> Regex Manager configurations relying on the github-release data-source with digests will have different digest semantics. The digest will now always correspond to the underlying Git SHA of the release/version. The old behavior can be preserved by switching to the github-release-attachments datasource</li>
+<li><strong>versioning:</strong> bump short ranges to version (<a href="https://github.com/renovatebot/renovate/pull/20494">#20494</a>)</li>
+<li><strong>config:</strong> <code>containerbase/</code> account used for sidecar containers instead of <code>renovate/</code></li>
+<li><strong>go:</strong> Renovate will now use go's default <code>GOPROXY</code> settings. To avoid using the public proxy, configure <code>GOPROXY=direct</code></li>
+<li><strong>datasource/npm:</strong> Package cache will include entries for up to 24 hours after the last lookup. Set <code>cacheHardTtlMinutes=0</code> to revert to existing behavior</li>
+<li><strong>config:</strong> Renovate now defaults to applying hourly and concurrent PR limits. To revert to unlimited, configure them back to <code>0</code></li>
+<li><strong>config:</strong> Renovate will now default to updating locked dependency versions. To revert to previous behavior, configure <code>rangeStrategy=replace</code></li>
+<li><strong>config:</strong> PyPI releases will no longer be filtered by default based on <code>constraints.python</code> compatibility. To retain existing functionality, set <code>constraintsFiltering=strict</code></li>
+</ul>
+<h3 id="commentary-for-35">Commentary for 35<a class="headerlink" href="#commentary-for-35" title="Permanent link">&para;</a></h3>
+<p>Most of these changes will be invisible to the majority of users.
+They may be "breaking" (change of behavior) but good changes of defaults to make.</p>
+<p>The biggest change is defaulting <code>rangeStrategy=auto</code> to use <code>update-lockfile</code> instead of <code>replace</code>, which impacts anyone using the recommended <code>config:base</code>.
+This will mean that you start seeing some "lockfile-only" PRs for in-range updates, such as updating <code>package-lock.json</code> when a range exists in <code>package.json</code>.</p>
+<h3 id="link-to-release-notes-for-35">Link to release notes for 35<a class="headerlink" href="#link-to-release-notes-for-35" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/renovatebot/renovate/releases/tag/35.0.0">Release notes for <code>v35</code> on GitHub</a>.</p>
+<h2 id="version-34">Version 34<a class="headerlink" href="#version-34" title="Permanent link">&para;</a></h2>
+<h3 id="breaking-changes-for-34">Breaking changes for 34<a class="headerlink" href="#breaking-changes-for-34" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Revert <code>branchNameStrict</code> to <code>false</code></li>
+</ul>
+<h3 id="commentary-for-34">Commentary for 34<a class="headerlink" href="#commentary-for-34" title="Permanent link">&para;</a></h3>
+<p>Here comes v34 hot on the heels of v33.
+We decided to issue another breaking change to revert one of the breaking changes in v33.</p>
+<p>If you are upgrading from v32 to v34 then it means that the setting for <code>branchNameStrict</code> remains as <code>false</code> and you don't need to worry about that.</p>
+<p>If you already upgraded from v32 to v33 then you have a decision to make first:</p>
+<ul>
+<li>set <code>branchNameStrict</code> to <code>true</code> (like in v33),</li>
+<li>or let it set back to <code>false</code> (like in v32).</li>
+</ul>
+<p>Strict branch naming meant that all special characters other than letters, numbers and hyphens were converted to hyphens and then deduplicated, e.g. a branch which in v32 was like <code>renovate/abc.def-2.x</code> would become <code>renovate/abc-def-2-x</code> in v33.
+If you prefer to revert back to the old way then that will happen automatically in v34.
+If you prefer to keep the way in v33 because you already had a bunch of PRs closed and reopened due to branch names, and don't want to do that again, then add <code>branchNameStrict: false</code> to your bot config or your shared config before updating to v34.</p>
+<p>Apologies to anyone negatively affected by this v33 change.</p>
+<h3 id="link-to-release-notes-for-34">Link to release notes for 34<a class="headerlink" href="#link-to-release-notes-for-34" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/renovatebot/renovate/releases/tag/34.0.0">Release notes for <code>v34</code> on GitHub</a>.</p>
+<h2 id="version-33">Version 33<a class="headerlink" href="#version-33" title="Permanent link">&para;</a></h2>
+<h3 id="breaking-changes-for-33">Breaking changes for 33<a class="headerlink" href="#breaking-changes-for-33" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Node 16 is the required runtime for Renovate</li>
+<li>[NOTE: This was reverted in <code>v34</code>] <strong>config:</strong> <code>branchNameStrict</code> default value is now <code>true</code></li>
+<li><strong>config:</strong> <code>internalChecksFilter</code> default value is now <code>"strict"</code></li>
+<li><strong>config:</strong> <code>ignoreScripts</code> default value is now <code>true</code>. If <code>allowScripts=true</code> in global config, <code>ignoreScripts</code> must be set to <code>false</code> in repo config if you want all repos to run scripts</li>
+<li><strong>config:</strong> <code>autodiscover</code> filters can no longer include commas</li>
+<li><strong>config:</strong> boolean variables must be <code>true</code> or <code>false</code> when configured in environment variables, and errors will be thrown for invalid values. Previously invalided values were ignored and treated as <code>false</code></li>
+<li><strong>datasource/go:</strong> <code>git-tags</code> datasource will be used as the fallback instead of <code>github-tags</code> if a go package's host type is unknown</li>
+<li><strong>jsonnet-bundler:</strong> <code>depName</code> now uses the "absolute import" format (e.g. <code>bar</code>-&gt; <code>github.com/foo/bar/baz-wow</code>)</li>
+<li><strong>azure-pipelines:</strong> azure-pipelines manager is now disabled by default</li>
+<li><strong>github:</strong> No longer necessary to configure forkMode. Forking mode is now experimental</li>
+<li>Users of <code>containerbase</code> images (such as official Renovate images) will now have dynamic package manager installs enabled by default</li>
+<li>Dependencies are no longer automatically pinned if <code>rangeStrategy=auto</code>, pinning must be opted into using <code>rangeStrategy=pin</code></li>
+</ul>
+<h3 id="commentary-for-33">Commentary for 33<a class="headerlink" href="#commentary-for-33" title="Permanent link">&para;</a></h3>
+<p>This release contains some changes of default values/behavior:</p>
+<ul>
+<li><code>internalChecksFilter</code> will now default to <code>strict</code>, meaning that updates will be withheld by default when internal status checks are pending. This should reduce the number of "non-actionable" Pull Requests you get</li>
+<li><code>azure-pipelines</code> manager is disabled by default, because its primary datasource can unfortunately suggest updates which aren't yet installable. Users should opt into this manager once they know the risks</li>
+<li><code>binarySource=install</code> will now be used instead of <code>global</code> whenever Renovate is run within a "containerbase" image. This means dynamic installation of most package managers and languages</li>
+<li>Dependencies will no longer be pinned by default if <code>rangeStrategy=auto</code>. While we recommend pinning dependencies, we decided users should opt into this more explicitly</li>
+</ul>
+<p>And two major features!</p>
+<ul>
+<li><abbr title="Amazon Web Services">AWS</abbr> CodeCommit platform support</li>
+<li>OpenTelemetry support</li>
+</ul>
+<p>Both the above are considered "experimental".
+Please test them out and let us know your feedback - both positive or negative - so that we can progress them to fully available.</p>
+<h3 id="link-to-release-notes-for-33">Link to release notes for 33<a class="headerlink" href="#link-to-release-notes-for-33" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/renovatebot/renovate/releases/tag/33.0.0">Release notes for <code>v33</code> on GitHub</a>.</p>
+<!-- Material for MkDocs shows a tooltip when you hover over any abbreviation in this list. -->
+<!-- https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary -->
+
+<!-- Please keep this list sorted from A-Z. -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../known-limitations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Known Limitations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Known Limitations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../bot-comparison/" class="md-footer__link md-footer__link--next" aria-label="Next: Bot comparison">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Bot comparison
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.prune", "navigation.top", "toc.follow", "navigation.instant", "announce.dismiss", "content.code.copy", "content.action.edit", "navigation.footer"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
