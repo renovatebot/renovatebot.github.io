@@ -10,10 +10,10 @@ importers:
     devDependencies:
       '@testing-library/cypress':
         specifier: 10.0.2
-        version: 10.0.2(cypress@13.16.1)
+        version: 10.0.2(cypress@13.17.0)
       cypress:
-        specifier: 13.16.1
-        version: 13.16.1
+        specifier: 13.17.0
+        version: 13.17.0
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -263,8 +263,8 @@ packages:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
-  cypress@13.16.1:
-    resolution: {integrity: sha512-17FtCaz0cx7ssWYKXzGB0Vub8xHwpVPr+iPt2fHhLMDhVAPVrplD+rTQsZUsfb19LVBn5iwkEUFjQ1yVVJXsLA==}
+  cypress@13.17.0:
+    resolution: {integrity: sha512-5xWkaPurwkIljojFidhw8lFScyxhtiFHl/i/3zov+1Z5CmY4t9tjIdvSXfu82Y3w7wt0uR9KkucbhkVvJZLQSA==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
 
@@ -1028,11 +1028,11 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
-  '@testing-library/cypress@10.0.2(cypress@13.16.1)':
+  '@testing-library/cypress@10.0.2(cypress@13.17.0)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@testing-library/dom': 10.4.0
-      cypress: 13.16.1
+      cypress: 13.17.0
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -1210,7 +1210,7 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  cypress@13.16.1:
+  cypress@13.17.0:
     dependencies:
       '@cypress/request': 3.0.7
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
