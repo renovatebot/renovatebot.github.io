@@ -1,4 +1,4 @@
-FROM ghcr.io/containerbase/gitpod:13.5.8
+FROM ghcr.io/containerbase/gitpod:13.5.9
 
 # renovate: datasource=pypi
 RUN install-tool pdm 2.22.2
