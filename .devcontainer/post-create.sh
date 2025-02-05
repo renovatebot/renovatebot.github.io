@@ -17,4 +17,6 @@ ls -la /home/vscode/.local/share/
 
 id
 
+cat /etc/groups
+
 pdm install

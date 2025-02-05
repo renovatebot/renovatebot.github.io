@@ -12,5 +12,6 @@ ENV PARCEL_WORKER_BACKEND=process
 
 # temporary fix
 RUN set -ex; \
+  chgrp -R roor /home/vscode/.local/share; \
   chmod -R g+w /home/vscode/.local/share; \
   true
