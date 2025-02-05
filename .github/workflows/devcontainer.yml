@@ -26,7 +26,7 @@ jobs:
       - name: Build and run dev container task
         uses: devcontainers/ci@a56d055efecd725e8cfe370543b6071b79989cc8 # v0.3.1900000349
         with:
-          runCmd: make
+          runCmd: id
           env: |
             GITHUB_TOKEN
             SKIP_GITHUB_ISSUES
