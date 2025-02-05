@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 if [[ "${CODESPACES}" == true ]]; then
   echo "Fixing permissions of /tmp for GitHub Codespaces..." >&2
@@ -10,7 +10,8 @@ fi
 git submodule update --init
 # make STRICT=false
 
-ls -la /tmp/
+ls -la /tmp/containerbase/
+ls -la /tmp/containerbase/cache/
 ls -la /home/vscode/
 ls -la /home/vscode/.local/
 ls -la /home/vscode/.local/share/
