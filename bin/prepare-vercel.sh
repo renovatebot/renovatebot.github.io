@@ -4,7 +4,7 @@ set -e
 
 
 # renovate: datasource=docker depName=python
-PYTHON_VERSION=3.11
+PYTHON_VERSION=3.13
 
 # renovate: datasource=pypi depName=pdm
 PDM_VERSION=2.22.3
