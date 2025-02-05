@@ -1,13 +1,15 @@
 name: publish-docs
 
 on:
-  push:
-    branches:
-      - '**'
-      - '!gh-pages'
-  pull_request:
-    branches:
-      - 'main'
+  # TODO: revert, just for faster testing
+  # push:
+  #   branches:
+  #     - '**'
+  #     - '!gh-pages'
+  # pull_request:
+  #   branches:
+  #     - 'main'
+  workflow_dispatch:
 
 env:
   PDM_VERSION: 2.22.3 # renovate: datasource=pypi depName=pdm
