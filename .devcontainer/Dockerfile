@@ -12,4 +12,6 @@ ENV PARCEL_WORKER_BACKEND=process
 
 RUN set -ex; \
   ls -la /home/vscode/.local/share/; \
+  ls -la /home/vscode/.local/share/virtualenv/; \
+  du -sh /home/vscode/.local/share/virtualenv/; \
   true
