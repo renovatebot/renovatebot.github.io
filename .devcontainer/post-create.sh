@@ -8,15 +8,4 @@ if [[ "${CODESPACES}" == true ]]; then
 fi
 
 git submodule update --init
-# make STRICT=false
-
-ls -la /tmp/containerbase/cache/
-ls -la /home/vscode/
-ls -la /home/vscode/.local/
-ls -la /home/vscode/.local/share/
-
-id
-
-cat /etc/group
-
-pdm install
+make STRICT=false

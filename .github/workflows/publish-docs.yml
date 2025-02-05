@@ -1,14 +1,13 @@
 name: publish-docs
 
 on:
-  # TODO: revert, just for faster testing
-  # push:
-  #   branches:
-  #     - '**'
-  #     - '!gh-pages'
-  # pull_request:
-  #   branches:
-  #     - 'main'
+  push:
+    branches:
+      - '**'
+      - '!gh-pages'
+  pull_request:
+    branches:
+      - 'main'
   workflow_dispatch:
 
 env:
