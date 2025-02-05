@@ -9,3 +9,9 @@ RUN install-tool pdm 2.22.3
 
 # https://github.com/parcel-bundler/parcel/issues/6569
 ENV PARCEL_WORKER_BACKEND=process
+
+# temporary fix
+RUN set -ex; \
+  chgrp -R root /home/vscode/.local/share; \
+  chmod -R g+w /home/vscode/.local/share; \
+  true
