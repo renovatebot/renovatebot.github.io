@@ -10,10 +10,11 @@ fi
 git submodule update --init
 # make STRICT=false
 
-ls -la /tmp/containerbase/
 ls -la /tmp/containerbase/cache/
 ls -la /home/vscode/
 ls -la /home/vscode/.local/
 ls -la /home/vscode/.local/share/
-ls -la /home/vscode/.local/share/pdm/
+
+id
+
 pdm install
