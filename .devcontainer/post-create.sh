@@ -17,4 +17,4 @@ ls -la /home/vscode/.local/share/
 
 id
 
-pdm install
+#pdm install
