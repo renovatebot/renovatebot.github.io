@@ -35,7 +35,9 @@ jobs:
         with:
           node-version-file: .node-version
           cache: 'pnpm' # doesn't cache cypress
-          cache-dependency-path: '**/pnpm-lock.yaml'
+          cache-dependency-path: |
+            **/pnpm-lock.yaml
+            **/package.json
 
       - name: Setup PDM
         uses: pdm-project/setup-pdm@b2472ca4258a9ea3aee813980a0100a2261a42fc # v4.2
@@ -59,7 +61,7 @@ jobs:
           path: |
             ~/.cache/Cypress
             node_modules
-          key: npm-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: npm-${{ runner.os }}-${{ hashFiles('**/package.json', '**/pnpm-lock.yaml') }}
 
       - name: Installing dependencies
         run: make install
