@@ -13,8 +13,9 @@ deps=$pwd/deps
 cd "$deps/renovate"
 
 if [ -z "$SKIP_BUILD" ]; then
-  pnpm install --frozen-lockfile
-  pnpm build:docs
+ # fix version mismatch until we're on pnpm v10
+  corepack pnpm install --frozen-lockfile
+  corepack pnpm build:docs
 fi
 
 cp -R tmp/docs/. "$docs"
