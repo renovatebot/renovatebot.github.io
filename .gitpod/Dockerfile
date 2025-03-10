@@ -2,7 +2,7 @@ FROM ghcr.io/containerbase/gitpod:13.8.4
 
 # https://github.com/pnpm/pnpm/issues/8971
 # renovate: datasource=npm
-RUN install-tool pnpm 10.5.1
+RUN install-tool pnpm 10.5.2
 
 # renovate: datasource=pypi
 RUN install-tool pdm 2.22.4
