@@ -7,7 +7,7 @@ set -e
 PYTHON_VERSION=3.13
 
 # renovate: datasource=pypi depName=pdm
-PDM_VERSION=2.22.4
+PDM_VERSION=2.23.0
 
 # install python and pip
 yum install -y python${PYTHON_VERSION} python${PYTHON_VERSION}-pip
