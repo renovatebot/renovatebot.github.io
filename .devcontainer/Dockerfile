@@ -5,7 +5,7 @@ FROM ghcr.io/containerbase/devcontainer:13.8.14
 RUN install-tool pnpm 10.8.0
 
 # renovate: datasource=pypi
-RUN install-tool pdm 2.23.1
+RUN install-tool pdm 2.24.0
 
 # https://github.com/parcel-bundler/parcel/issues/6569
 ENV PARCEL_WORKER_BACKEND=process
