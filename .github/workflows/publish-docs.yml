@@ -14,6 +14,17 @@ env:
   PDM_VERSION: 2.25.9 # renovate: datasource=pypi depName=pdm
   HUSKY: 0 # disable husky on CI
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: ${{ github.workflow }}-${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name || github.run_number }}
+  cancel-in-progress: ${{ github.ref_name != 'main' }}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build:
     name: build
@@ -97,6 +108,12 @@ jobs:
           path: site/
           if-no-files-found: error
 
+      - name: Upload pages artifact
+        if: github.ref_name == 'main'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
+        with:
+          path: site/
+
       - name: Cypress run
         uses: cypress-io/github-action@b8ba51a856ba5f4c15cf39007636d4ab04f23e3c # v6.10.2
         with:
@@ -117,5 +134,19 @@ jobs:
           if-no-files-found: error
 
       - name: Publish docs
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref_name == 'main'
         run: make deploy
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    if: github.ref_name == 'main'
+    needs:
+      - build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
