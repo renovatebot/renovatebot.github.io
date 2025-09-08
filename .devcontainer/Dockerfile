@@ -2,7 +2,7 @@ FROM ghcr.io/containerbase/devcontainer:13.10.19
 
 # https://github.com/pnpm/pnpm/issues/8971
 # renovate: datasource=npm
-RUN install-tool pnpm 10.15.0
+RUN install-tool pnpm 10.15.1
 
 # renovate: datasource=pypi
 RUN install-tool pdm 2.25.9
