@@ -1,4 +1,4 @@
-FROM ghcr.io/containerbase/gitpod:13.12.0
+FROM ghcr.io/containerbase/gitpod:13.13.0
 
 # https://github.com/pnpm/pnpm/issues/8971
 # renovate: datasource=npm
