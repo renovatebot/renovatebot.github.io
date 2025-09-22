@@ -68,8 +68,8 @@ packages:
   '@types/aria-query@5.0.4':
     resolution: {integrity: sha512-rfT93uj5s0PRL7EzccGMs3brplhcrghnDoV26NqKhCAS1hVo+WdNsPvE/yb6ilfr5hi2MEk6d5EWJTKdxg8jVw==}
 
-  '@types/node@24.4.0':
-    resolution: {integrity: sha512-gUuVEAK4/u6F9wRLznPUU4WGUacSEBDPoC2TrBkw3GAnOLHBL45QdfHOXp1kJ4ypBGLxTOB+t7NJLpKoC3gznQ==}
+  '@types/node@24.5.2':
+    resolution: {integrity: sha512-FYxk1I7wPv3K2XBaoyH2cTnocQEu8AOZ60hPbsyukMPLv5/5qr7V1i8PLHdl6Zf87I+xZXFvPCXYjiTFq+YSDQ==}
 
   '@types/sinonjs__fake-timers@8.1.1':
     resolution: {integrity: sha512-0kSuKjAS0TrGLJ0M/+8MaFkGsQhZpB6pxOmvS3K8FYI72K//YmdfoW9X2qPsAKh1mkwxGD5zib9s1FIFed6E8g==}
@@ -300,8 +300,8 @@ packages:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
 
-  detect-indent@7.0.1:
-    resolution: {integrity: sha512-Mc7QhQ8s+cLrnUfU/Ji94vG/r8M26m8f++vyres4ZoojaRDpZ1eSIh/EpzLNwlWuvzSZ3UbDFspjFvTDXe6e/g==}
+  detect-indent@7.0.2:
+    resolution: {integrity: sha512-y+8xyqdGLL+6sh0tVeHcfP/QDd8gUgbasolJJpY7NgeQGSZ739bDtSiaiDgtoicy+mtYB81dKLxO9xRhCyIB3A==}
     engines: {node: '>=12.20'}
 
   detect-newline@4.0.1:
@@ -949,8 +949,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@7.11.0:
-    resolution: {integrity: sha512-kt1ZriHTi7MU+Z/r9DOdAI3ONdaR3M3csEaRc6ewa4f4dTvX4cQCbJ4NkEn0ohE4hHtq85+PhPSTY+pO/1PwgA==}
+  undici-types@7.12.0:
+    resolution: {integrity: sha512-goOacqME2GYyOZZfb5Lgtu+1IDmAlAEu5xnD3+xTzS10hT0vzpf0SPjkXwAw9Jm+4n/mQGDP3LO8CPbYROeBfQ==}
 
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
@@ -1057,9 +1057,9 @@ snapshots:
 
   '@types/aria-query@5.0.4': {}
 
-  '@types/node@24.4.0':
+  '@types/node@24.5.2':
     dependencies:
-      undici-types: 7.11.0
+      undici-types: 7.12.0
     optional: true
 
   '@types/sinonjs__fake-timers@8.1.1': {}
@@ -1068,7 +1068,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 24.4.0
+      '@types/node': 24.5.2
     optional: true
 
   aggregate-error@3.1.0:
@@ -1292,7 +1292,7 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  detect-indent@7.0.1: {}
+  detect-indent@7.0.2: {}
 
   detect-newline@4.0.1: {}
 
@@ -1817,7 +1817,7 @@ snapshots:
 
   sort-package-json@3.4.0:
     dependencies:
-      detect-indent: 7.0.1
+      detect-indent: 7.0.2
       detect-newline: 4.0.1
       git-hooks-list: 4.1.1
       is-plain-obj: 4.1.0
@@ -1916,7 +1916,7 @@ snapshots:
 
   typescript@5.9.2: {}
 
-  undici-types@7.11.0:
+  undici-types@7.12.0:
     optional: true
 
   universalify@2.0.1: {}
