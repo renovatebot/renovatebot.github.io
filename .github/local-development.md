@@ -1,6 +1,6 @@
 # Local Development
 
-This document gives tips and tricks on how to create the Renovate documentation website locally - or develop with Gitpod - to add features or fix bugs.
+This document gives tips and tricks on how to create the Renovate documentation website locally to add features or fix bugs.
 You can improve this documentation by opening a pull request.
 For example, if you think anything is unclear, or you think something needs to be added, open a pull request!
 
