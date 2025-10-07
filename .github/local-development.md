@@ -1,29 +1,13 @@
 # Local Development
 
-This document gives tips and tricks on how to create the Renovate documentation website locally - or develop with Gitpod - to add features or fix bugs.
+This document gives tips and tricks on how to create the Renovate documentation website locally to add features or fix bugs.
 You can improve this documentation by opening a pull request.
 For example, if you think anything is unclear, or you think something needs to be added, open a pull request!
 
-## Gitpod
-
-The quickest way to get started is to use Gitpod.
-
-1. Create a Gitpod account - if you haven't got an account already - you can use your GitHub account credentials to create an account with Gitpod.
-1. You may need to change the following Gitpod environment variables so they match your username/email on GitHub:
-   - `GIT_AUTHOR_EMAIL`
-   - `GIT_AUTHOR_NAME`
-   - `GIT_COMMITTER_EMAIL`
-1. Before you start work, you _must_ fork the `renovatebot/renovatebot.github.io` repository into your personal account.
-
-### Pull request workflow
-
-1. Make sure the `main` branch of your fork is up-to-date with the upstream repository, you can sync your fork with a button in the GitHub interface
-1. Open your forks "homepage", and prefix the current URL with `https://gitpod.io/#`, for example: `https://gitpod.io/#https://github.com/your-user-name/renovatebot.github.io` and press <kbd>Enter</kbd>
-1. Gitpod will open in the same browser window and ask you to login
-1. Create a new Git branch in the Gitpod workspace and switch to it
-1. Work on the feature/bug/refactor
-1. Remember to `git push` your work to the fork before closing your workspace
-1. You can now close the workspace and create your new PR via the GitHub interface
+> [!NOTE]
+> Currently, there is no support for a "remote" development environment, such as GitHub Codespaces.
+>
+> For updates on progress, see: https://github.com/renovatebot/renovatebot.github.io/issues/704
 
 ## Local installation
 
