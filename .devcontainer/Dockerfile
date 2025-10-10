@@ -1,4 +1,4 @@
-FROM ghcr.io/containerbase/devcontainer:13.18.2
+FROM ghcr.io/containerbase/devcontainer:13.18.3
 
 # renovate: datasource=pypi
 RUN install-tool pdm 2.25.9
