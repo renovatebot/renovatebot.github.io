@@ -20,6 +20,7 @@ You need the following dependencies for local development:
 - Yarn `^1.22.5`
 - Python `^3.9.1`
 - Bash shell with `make`
+- [PDM](https://pypi.org/project/pdm/) `^2.26.0`
 
 We support Node.js versions according to the [Node.js release schedule](https://github.com/nodejs/Release#release-schedule).
 
