@@ -8,6 +8,11 @@
   },
   "packageRules": [
     {
+      "description": "No minimum release age for some packages",
+      "matchDepNames": ["deps/renovate", "ghcr.io/containerbase/**"],
+      "minimumReleaseAge": null
+    },
+    {
       "matchUpdateTypes": ["minor"],
       "automerge": false,
       "matchManagers": ["pep621", "poetry"]
