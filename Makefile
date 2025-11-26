@@ -6,6 +6,9 @@ ifeq ($(STRICT),true)
   build_args=--strict
 endif
 
+# renovate: datasource=github-releases depName=renovatebot/renovate
+RENOVATE_VERSION=42.22.0
+
 install:
 	pnpm install --frozen-lockfile
 	pdm install
@@ -22,7 +25,7 @@ get-docs:
 	bash bin/get-docs.sh
 
 build-docs:
-	pdm run mkdocs build $(build_args)
+	env RENOVATE_VERSION=$(RENOVATE_VERSION) pdm run mkdocs build $(build_args)
 
 prepare: get-docs
 
@@ -36,7 +39,7 @@ clean:
 	rm -rf build tmp
 
 serve:
-	pdm run mkdocs serve
+	env RENOVATE_VERSION=$(RENOVATE_VERSION) pdm run mkdocs serve
 
 deploy:
 	pdm run mkdocs gh-deploy --force
