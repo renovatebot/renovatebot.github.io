@@ -9,8 +9,16 @@
   "packageRules": [
     {
       "description": "No minimum release age for some packages",
-      "matchDepNames": ["deps/renovate", "ghcr.io/containerbase/**"],
+      "matchDepNames": [
+        "deps/renovate",
+        "renovatebot/renovate",
+        "ghcr.io/containerbase/**"
+      ],
       "minimumReleaseAge": null
+    },
+    {
+      "matchDepNames": ["deps/renovate", "renovatebot/renovate"],
+      "groupName": "Renovate"
     },
     {
       "matchUpdateTypes": ["minor"],
@@ -34,6 +42,17 @@
       "automergeType": "branch",
       "semanticCommitScope": "docs",
       "minimumReleaseAge": null
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["bin/get-docs.sh"],
+      "matchStrings": [
+        "pnpm build:docs --version (?<currentValue>[0-9]+\\.[0-9]+\\.[0-9]+)"
+      ],
+      "depNameTemplate": "renovatebot/renovate",
+      "datasourceTemplate": "github-releases"
     }
   ]
 }

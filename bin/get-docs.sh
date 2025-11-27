@@ -14,7 +14,7 @@ cd "$deps/renovate"
 
 if [ -z "$SKIP_BUILD" ]; then
   pnpm install --frozen-lockfile
-  pnpm build:docs
+  pnpm build:docs --version 42.24.1
 fi
 
 cp -R tmp/docs/. "$docs"
