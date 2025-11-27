@@ -23,7 +23,12 @@
         "https://github.com/renovatebot/renovate.git",
         "renovatebot/renovate"
       ],
-      "groupName": "Renovate"
+      "groupName": "Renovate",
+      // For the following files:
+      // deps/renovate
+      // Makefile
+      // bin/get-docs.sh
+      "minimumGroupSize": 3
     },
     {
       "matchUpdateTypes": ["minor"],
