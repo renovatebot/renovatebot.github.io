@@ -6,7 +6,7 @@ ifeq ($(STRICT),true)
   build_args=--strict
 endif
 
-# renovate: datasource=github-releases depName=renovatebot/renovate
+# renovate: datasource=git-refs depName=https://github.com/renovatebot/renovate.git
 RENOVATE_VERSION=42.24.1
 
 install:
