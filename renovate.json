@@ -11,13 +11,18 @@
       "description": "No minimum release age for some packages",
       "matchDepNames": [
         "deps/renovate",
+        "https://github.com/renovatebot/renovate.git",
         "renovatebot/renovate",
         "ghcr.io/containerbase/**"
       ],
       "minimumReleaseAge": null
     },
     {
-      "matchDepNames": ["deps/renovate", "renovatebot/renovate"],
+      "matchDepNames": [
+        "deps/renovate",
+        "https://github.com/renovatebot/renovate.git",
+        "renovatebot/renovate"
+      ],
       "groupName": "Renovate"
     },
     {
