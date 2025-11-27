@@ -2,6 +2,9 @@
 
 set -e
 
+# renovate: datasource=github-releases depName=renovatebot/renovate
+RENOVATE_VERSION=42.22.0
+
 pwd=$PWD
 
 docs=$pwd/docs
@@ -14,7 +17,7 @@ cd "$deps/renovate"
 
 if [ -z "$SKIP_BUILD" ]; then
   pnpm install --frozen-lockfile
-  pnpm build:docs --version 42.24.1
+  pnpm build:docs --version "$RENOVATE_VERSION"
 fi
 
 cp -R tmp/docs/. "$docs"
