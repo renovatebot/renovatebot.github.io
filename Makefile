@@ -7,7 +7,7 @@ ifeq ($(STRICT),true)
 endif
 
 # renovate: datasource=github-releases depName=renovatebot/renovate
-RENOVATE_VERSION=42.22.0
+RENOVATE_VERSION=42.24.1
 
 install:
 	pnpm install --frozen-lockfile
