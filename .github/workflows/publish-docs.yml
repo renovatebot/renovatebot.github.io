@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 env:
-  PDM_VERSION: 2.26.1 # renovate: datasource=pypi depName=pdm
+  PDM_VERSION: 2.26.2 # renovate: datasource=pypi depName=pdm
   HUSKY: 0 # disable husky on CI
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
