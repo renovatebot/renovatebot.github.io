@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>renovatebot/.github"],
+  "extends": ["local>renovatebot/.github", "customManagers:makefileVersions"],
   "semanticCommitScope": "deps",
   "minimumReleaseAge": "3 days",
   "git-submodules": {
