@@ -94,6 +94,9 @@ jobs:
 
       - name: Prepare docs
         run: make prepare
+        env:
+          # NOTE that this is used for read-only operations (to look up outstanding Issues), but will use the job-level permissions with some level of write access to this repo
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build cache decoder
         run: make build-decoder
