@@ -1,4 +1,4 @@
 [submodule "renovate"]
 	path = deps/renovate
 	url = https://github.com/renovatebot/renovate.git
-	branch = 42.30.4
+	branch = 42.31.0
