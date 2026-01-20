@@ -3,7 +3,7 @@
 set -e
 
 # renovate: datasource=git-refs depName=https://github.com/renovatebot/renovate.git
-RENOVATE_VERSION=42.85.7
+RENOVATE_VERSION=42.85.8
 
 pwd=$PWD
 
