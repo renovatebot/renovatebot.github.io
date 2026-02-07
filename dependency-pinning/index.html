@@ -1,0 +1,1843 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The pros and cons of dependency pinning for JavaScript/npm">
+      
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/dependency-pinning/">
+      
+      
+        <link rel="prev" href="../rust/">
+      
+      
+        <link rel="next" href="../configuration-templates/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Should you Pin your JavaScript Dependencies? - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#should-you-pin-your-javascript-dependencies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+We released a new major version of Renovate. Read the <a href="https://github.com/renovatebot/renovate/releases/tag/43.0.0">Renovate 43 changelog on GitHub</a>.
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Renovate Docs" class="md-header__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renovate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Should you Pin your JavaScript Dependencies?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Renovate Docs" class="md-nav__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Renovate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../getting-started/use-cases/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../config-overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mend-hosted/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mend-hosted Apps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../key-concepts/how-renovate-works/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../modules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renovate Modules
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../bazel/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Support
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Dives
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deep Dives
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Should you Pin your Javascript Dependencies?
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Should you Pin your Javascript Dependencies?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-dependency-pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Dependency Pinning?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why use ranges?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why use ranges?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tilde-vs-caret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tilde vs Caret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranges-for-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ranges for Libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-pin-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why pin dependencies?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why pin dependencies?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrading-pinned-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrading pinned versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downside-of-pinned-dependencies-upgrade-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downside of pinned dependencies - upgrade "noise"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reducing-the-noise-of-dependency-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reducing the "noise" of dependency updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reducing the &#34;noise&#34; of dependency updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-automerging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request automerging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-automerging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch automerging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grouping-related-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grouping related packages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinning-dependencies-and-lock-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pinning Dependencies and Lock Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pinning Dependencies and Lock Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-a-lock-file-will-do-for-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a lock file will do for you
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-lock-file-doesnt-do-for-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a lock file doesn't do for you
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-indirectsub-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What about indirect/sub-dependencies?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-whats-best" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        So what's best?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config Template Editing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updating-rebasing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating and Rebasing Branches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semantic-commits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic Commit Messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../noise-reduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Noise Reduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade-best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upgrade best practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../presets-abandonments/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Included Presets
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../user-stories/swissquote/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Other
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing-to-renovate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-dependency-pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Dependency Pinning?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why use ranges?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why use ranges?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tilde-vs-caret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tilde vs Caret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranges-for-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ranges for Libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-pin-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why pin dependencies?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why pin dependencies?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrading-pinned-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrading pinned versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downside-of-pinned-dependencies-upgrade-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downside of pinned dependencies - upgrade "noise"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reducing-the-noise-of-dependency-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reducing the "noise" of dependency updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reducing the &#34;noise&#34; of dependency updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-automerging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request automerging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-automerging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch automerging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grouping-related-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grouping related packages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinning-dependencies-and-lock-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pinning Dependencies and Lock Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pinning Dependencies and Lock Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-a-lock-file-will-do-for-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a lock file will do for you
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-lock-file-doesnt-do-for-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a lock file doesn't do for you
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-indirectsub-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What about indirect/sub-dependencies?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-whats-best" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        So what's best?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/renovatebot/renovate/edit/main/docs/usage/dependency-pinning.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="should-you-pin-your-javascript-dependencies">Should you Pin your JavaScript Dependencies?<a class="headerlink" href="#should-you-pin-your-javascript-dependencies" title="Permanent link">&para;</a></h1>
+<p>Once you start using a tool/service like Renovate, probably the biggest decision you need to make is whether to "pin" your dependencies instead of using <abbr title="Semantic Versioning">SemVer</abbr> ranges.
+The answer is "It's your choice", but we can certainly make some generalizations/recommendations to help you.</p>
+<p>If you don't want to read the in-depth discussion, you can skip ahead to our recommendations in the <a href="#so-whats-best">"So what's best?" section</a>.</p>
+<h2 id="what-is-dependency-pinning">What is Dependency Pinning?<a class="headerlink" href="#what-is-dependency-pinning" title="Permanent link">&para;</a></h2>
+<p>To ensure we're all talking about the same thing, it's important to define exactly what we mean by dependency "pinning".</p>
+<p>Historically, projects use <abbr title="Semantic Versioning">SemVer</abbr> ranges in their <code>package.json</code>.
+For instance, if you run <code>npm install foobar</code> you will see an entry like <code>"foobar": "^1.1.0"</code> added to your <code>package.json</code>.
+Verbosely, this means "any foobar version greater than or equal to 1.1.0 but less than 2".
+The project will automatically use <code>1.1.1</code> if it's released, or <code>1.2.0</code>, or <code>1.2.1</code>, etc - meaning you will get not only patch updates but also feature (minor) releases too.</p>
+<p>Another alternative is ranges like <code>"foobar": "~1.1.0"</code> which means "any foobar version greater than or equal to 1.1.0 but less than 1.2".
+This narrows the range to only patch updates to the 1.1 range.</p>
+<p>If instead you "pin" your dependencies rather than use ranges, it means you use exact entries like <code>"foobar": "1.1.0"</code> which means "use only foobar version 1.1.0 and no other".</p>
+<h2 id="why-use-ranges">Why use ranges?<a class="headerlink" href="#why-use-ranges" title="Permanent link">&para;</a></h2>
+<p>For projects of any type, the main reason to use ranges is so that you can "automatically" get updated releases - which may even include security fixes.
+By "automatically", we mean that any time you run <code>npm install</code> you will get the very latest version matching your <abbr title="Semantic Versioning">SemVer</abbr> - assuming you're not using a lock file, that is.</p>
+<h3 id="tilde-vs-caret">Tilde vs Caret<a class="headerlink" href="#tilde-vs-caret" title="Permanent link">&para;</a></h3>
+<p>If you're familiar with the theory of <abbr title="Semantic Versioning">SemVer</abbr>, you might think that you only need to use tilde ranges (e.g. <code>"~1.1.0"</code>) to get bug fixes, rather than caret ranges (e.g. <code>"^1.1.0"</code>).
+This is true in theory but not in practice.
+The reality is that for most projects, fixes are not "backported" to previous minor releases, and minor releases themselves may include fixes.
+So for example release <code>1.2.0</code> may include one new feature and one fix, so if you stick with <code>1.1.0</code> then you will miss out on the fix as there will never be a <code>1.1.1</code> once <code>1.2.0</code> is already released.
+This is the <em>reality</em> of most open source packages.</p>
+<h3 id="ranges-for-libraries">Ranges for Libraries<a class="headerlink" href="#ranges-for-libraries" title="Permanent link">&para;</a></h3>
+<p>A second reason for using ranges applies to "libraries" that are published as npm packages with the intention that they are used/<code>require()</code>'d by other packages.
+In this case, it is usually a bad idea to pin all your dependencies because it will introduce an unnecessarily narrow range (one release!) and cause most users of your package to bloat their <code>node_modules</code> with duplicates.</p>
+<p>For example, you might have pinned <code>foobar</code> to version <code>1.1.0</code> and another author pinned his/her <code>foobar</code> dependency to <code>1.2.2</code>.
+Any user of both your packages will end up with npm trying to install two separate versions of <code>foobar</code>, which might not even work.
+Even if both projects use a service like Renovate to keep their pinned dependencies up to date with the very latest versions, it's still not a good idea - there will always be times when one package has updated/released before the other one and they will be out of sync.
+e.g. there might be a space of 30 minutes where your package specifies foobar <code>1.1.0</code> and the other one specifies <code>1.1.1</code> and your joint downstream users end up with a duplicate.</p>
+<h2 id="why-pin-dependencies">Why pin dependencies?<a class="headerlink" href="#why-pin-dependencies" title="Permanent link">&para;</a></h2>
+<p>You mainly pin versions for certainty, and visibility.
+When you have a pinned version of each dependency in your <code>package.json</code>, you know exactly which version of each dependency is installed at any time.
+This benefits when upgrading versions as well as when rolling back in case of problems.</p>
+<!-- prettier-ignore -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We'll cover lock files later, don't worry.</p>
+</div>
+<h3 id="upgrading-pinned-versions">Upgrading pinned versions<a class="headerlink" href="#upgrading-pinned-versions" title="Permanent link">&para;</a></h3>
+<p>Let's say that a "faulty" version <code>1.2.0</code> of <code>foobar</code> is released and it breaks one of your tests.</p>
+<p>If you were using default caret <abbr title="Semantic Versioning">SemVer</abbr> ranges, then your <code>main</code> branch is now "broken" because its <code>package.json</code> says that any version 1.x above 1.1.0 is acceptable, and npm will choose the latest (<code>1.2.0</code>).
+You would need to manually check and work out which dependency caused the failure (<code>foobar</code> may not have been the only dependency to have "automatically" upgraded since the last time your tests passed) and then you would need to pin the dependency yourself to stop <code>npm</code> installing <code>1.2.0</code>.</p>
+<p>Consider the same situation if instead you were <em>pinning</em> dependency versions.
+Your <code>main</code> branch would not be broken because it's pinned to <code>foobar@1.1.0</code> - instead you'd have a Pull Request for upgrading to <code>foobar@1.2.0</code> which would fail.
+You'd know not to merge it and can wait for <code>foobar@1.2.1</code> or later when it's fixed.
+By pinning dependencies you know exactly what you're running and you know exactly what failed.</p>
+<p>Now consider a similar theoretical scenario where <code>foobar@1.2.0</code> is faulty but it is <em>not</em> caught by any of your automated tests.
+This is more common and more dangerous.</p>
+<p>If you were using <abbr title="Semantic Versioning">SemVer</abbr> ranges then this new version of <code>foobar</code> will likely be deployed to production automatically one day, sometime after which you notice errors and realize you need to fix it.
+Like before, you need to manually work out which dependency caused it - assuming you guess correctly that it was a new dependency version at fault - and pin it manually by editing <code>package.json</code> one dependency at a time.</p>
+<p>Alternatively, if you were instead pinning <code>foobar</code> then you would get a PR for <code>foobar@1.2.0</code> which awaits your approval.
+So first of all, you can choose to read the changelogs and/or visually inspect the branch yourself before merging, hopefully saving you from pushing this faulty code to production.</p>
+<p>If you did not catch the fault before merging, you are still better off with a pinned version.
+If you discover something wrong in production, you can easily "roll back" commits in your development environment until you find which rollback fixes the problem.
+Then you can simply revert that commit (reversing <code>foobar@1.1.0</code> -&gt; <code>foobar@1.2.0</code>) and push that to <code>main</code>.
+When the next release of <code>foobar</code> comes out (e.g. <code>1.2.1</code>) you will be prompted with a new PR and hopefully inspect it carefully this time before merge!</p>
+<p>As you can see in the above, pinning dependencies makes your build more consistent and predictable as a developer.</p>
+<h3 id="downside-of-pinned-dependencies-upgrade-noise">Downside of pinned dependencies - upgrade "noise"<a class="headerlink" href="#downside-of-pinned-dependencies-upgrade-noise" title="Permanent link">&para;</a></h3>
+<p>The one major downside to your development workflow of pinning dependencies is the potential for increased "noise" in your repository.
+As mentioned above, you can expect to get Pull Requests whenever there is a new version of your dependencies available.
+Depending on how many repositories you maintain, and how many dependencies are in each, you may find this default approach to be overwhelming (e.g. waking up to 10 new Pull Requests each day).</p>
+<h2 id="reducing-the-noise-of-dependency-updates">Reducing the "noise" of dependency updates<a class="headerlink" href="#reducing-the-noise-of-dependency-updates" title="Permanent link">&para;</a></h2>
+<p>The increased volume of Pull Requests for upgrading dependencies may be considered by some to be undesirable "noise" in their day.
+To some extent this is simply a trade-off for having your dependencies pinned and predictable, but there are also ways you can reduce this noise while still gaining the majority of the benefits:</p>
+<h3 id="pull-request-automerging">Pull Request automerging<a class="headerlink" href="#pull-request-automerging" title="Permanent link">&para;</a></h3>
+<p>There are some dependencies that either (a) don't have the potential to break something in production, or (b) are fully tested by your tests.</p>
+<p>For example, it's very hard for <code>eslint</code> to break anything in production.
+If your build/tests pass, then you are fine.
+Consider enabling automerge for all lint packages to save yourself the work of manually approving the update each time.
+In this case you might wake up to 5/10 of your overnight Pull Requests having already merged themselves.</p>
+<p>Another example of a good candidate for automerging might be a database driver like <code>node-postgres</code> (<code>pg</code> on npm), if you have 100% test coverage of your API.
+In that case if the <code>pg</code> package has a minor or patch update and passes all tests then you may as well merge it automatically if you were not going to do a manual inspection anyway.</p>
+<h3 id="branch-automerging">Branch automerging<a class="headerlink" href="#branch-automerging" title="Permanent link">&para;</a></h3>
+<p>In the above suggestion of Pull Request automerging, you might still find it annoying if you get GitHub Notifications for every PR that is created and merged.
+In that case, you could set <code>automergeType</code> to <code>branch</code>, which means Renovate will:</p>
+<ul>
+<li>Create a new branch for testing</li>
+<li>Wait until after tests have completed</li>
+<li>Push the commit directly to <code>main</code> if tests pass, or</li>
+<li>Raise a PR only if tests failed</li>
+</ul>
+<p>With this approach, updates will be essentially "silent" - causing no notifications - but you will be able to see each commit on <code>main</code> of course.</p>
+<h3 id="scheduling">Scheduling<a class="headerlink" href="#scheduling" title="Permanent link">&para;</a></h3>
+<p>Although it can feel satisfying to get updates "immediately" when they're available, the reality is that you usually don't <em>need</em> updates so frequently.
+And worse still, npm package versions that are less than 72 hours <a href="https://docs.npmjs.com/policies/unpublish">can be unpublished</a>, which would really break your build if you've pinned to a version that no longer exists.</p>
+<p>So to reduce the interruptions of automated dependency updates, consider putting Renovate on a schedule, such as:</p>
+<ul>
+<li>Update only on weekends? This way you update packages at most once per week, <em>and</em> your <abbr title="Continuous Integration">CI</abbr> build runners are likely to be idle anyway</li>
+<li>Update daily, but between midnight and 5am? This way developers aren't bothered by notifications when they're working, <em>and</em> you're keeping the build machines free for the developers</li>
+</ul>
+<p>To learn all about controlling Renovate's schedule, read the <a href="../key-concepts/scheduling/">key concepts, scheduling</a> docs.</p>
+<h3 id="grouping-related-packages">Grouping related packages<a class="headerlink" href="#grouping-related-packages" title="Permanent link">&para;</a></h3>
+<p>Although it's good to isolate each dependency update for ease of troubleshooting, there are times when the extra noise isn't worth it, or when packages naturally belong together anyway (such as all <code>babel</code> packages).
+You can add a package rule in our Renovate configuration to group these together and you'll get one branch combined even if multiple packages have updates available.</p>
+<h2 id="pinning-dependencies-and-lock-files">Pinning Dependencies and Lock Files<a class="headerlink" href="#pinning-dependencies-and-lock-files" title="Permanent link">&para;</a></h2>
+<p>Since both <code>yarn</code> and <code>npm@5</code> both support lock files, it's a common question to ask "Why should I pin dependencies if I'm already using a lock file?".
+It's a good question!</p>
+<p><img alt="A scary bald man in a subway carriage, surrounded with this text: when your dependencies are broken but you still got a lockfile" loading="lazy" src="../assets/images/broken-lockfile.jpg" /></p>
+<p>Lock files are a great companion to <abbr title="Semantic Versioning">SemVer</abbr> ranges <em>or</em> pinning dependencies, because these files lock (pin) deeper into your dependency tree than you see in <code>package.json</code>.</p>
+<h3 id="what-a-lock-file-will-do-for-you">What a lock file will do for you<a class="headerlink" href="#what-a-lock-file-will-do-for-you" title="Permanent link">&para;</a></h3>
+<p>When kept in sync with its associated <code>package.json</code>, a lock file will further lock down the exact dependencies and <em>sub</em>-dependencies that your project uses, so that everyone running <code>npm install</code> or <code>yarn install</code> will install the exact same dependencies as the person or bot that last updated the lock file.</p>
+<p>To reuse an earlier example, this means that you could have <code>foobar@^1.1.0</code> in your <code>package.json</code> and be locked to <code>1.1.0</code> in your lock file, so that when the broken <code>foobar@1.2.0</code> is released, nobody on the team installs it.</p>
+<h3 id="what-a-lock-file-doesnt-do-for-you">What a lock file doesn't do for you<a class="headerlink" href="#what-a-lock-file-doesnt-do-for-you" title="Permanent link">&para;</a></h3>
+<p>If a lock file gets out of sync with its <code>package.json</code>, it can no longer be guaranteed to lock anything, and the <code>package.json</code> will be the source of truth for installs.</p>
+<p>The lock file has only delayed the inevitable problem, and provides much less visibility than <code>package.json</code>, because it's not designed to be human readable and is quite dense.</p>
+<p><img alt="Man with goth-style hair and makeup saying: They're all dead. They just don't know it yet." loading="lazy" src="../assets/images/all-dead.jpg" /></p>
+<p>If the <code>package.json</code> has a range, and a new in-range version is released that would break the build, then essentially your <code>package.json</code> is in a state of "broken", even if the lock file is still holding things together.</p>
+<p>The upside is that the lockfile will hold back <code>foobar</code> to <code>1.1.0</code> unless it's forced to upgrade, so the break is postponed.
+The downside is <em>how</em> you will discover the break eventually.</p>
+<p>The easiest case is if for some reason you <em>need</em> to upgrade <code>foobar</code>, e.g. for a new feature it has, so you might run something like <code>yarn upgrade foobar</code>.
+Then you might either discover the break during your development or when you push your new development to <abbr title="Continuous Integration">CI</abbr> for testing.
+In this case, hopefully you'll guess it's <code>foobar</code> that broke it and not your own code.</p>
+<p>Alternatively, maybe someone thinks "This lockfile is probably really out of date and might be missing some essential patches" and decides to <code>yarn upgrade</code> the whole thing in one go.
+No doubt the diff will be full of green and red as many direct and indirect dependencies will have changed versions.
+Then it's pushed to <abbr title="Continuous Integration">CI</abbr> for testing, fails, and you have to guess which of the changes caused it until you eventually narrow it down to <code>foobar</code>.
+This might require even manually looking through the lock file diffs line by line.
+Maybe dep <code>blahblah</code> also broke at the same time, to make it even harder.</p>
+<p>By ceding control of direct dependency versions to the lock file, you have lost the ability to <em>know</em> when things are updated.
+You also may be missing out on really important patches you're not even aware of, because they're "in range" yet locked back to vulnerable or buggy versions in the lock file.</p>
+<p>Reconsider the same scenario if <code>foobar</code> had instead been pinned to <code>1.1.0</code> in <code>package.json</code>.
+The (broken) upgrade to <code>1.2.0</code> would have been explicitly proposed to you via a Renovate PR, you would see the break, and know that the version is bad.
+Meanwhile you could be upgrading all the other essential fixes of other dependencies without worrying about <code>foobar</code>.
+You could even be running <code>yarn upgrade</code> regularly to be getting <em>indirect</em> package updates in the lockfile and seeing if everything still passes.</p>
+<p>So the lock file does not solve the same <abbr title="Semantic Versioning">SemVer</abbr> problems that pinning solves - but it compliments it.
+For this reason our usual recommendation is using a lock file regardless of whether you pin dependencies or not, and pinning even if you have a lock file.</p>
+<p>But you may also go ahead and configure however you want.
+Also, we're open to ideas for how to make lock file updates more "visible" too.
+e.g. are you interested in a Renovate feature where you get a lockfile-only PR any time a direct dependency gets an in-range update?</p>
+<h2 id="what-about-indirectsub-dependencies">What about indirect/sub-dependencies?<a class="headerlink" href="#what-about-indirectsub-dependencies" title="Permanent link">&para;</a></h2>
+<p>A good argument made by <a href="https://github.com/LinusU">@LinusU</a> is:</p>
+<blockquote>
+<p>Pinning will only protect you against breakage in a, in many cases, small percentage of your packages. If you for example have installed Express and pinned it, you will only protect yourself against a bad Express release, it will not help with the 30 dependencies that Express has.</p>
+<p>Because of this, I personally think that pinning dependencies just creates a false sense of security, and that using a lock file is superior in every way.</p>
+</blockquote>
+<p>It is true that pinning applies only to direct dependencies, and "indirect" dependencies typically count for a lot more in total in your lockfile than direct.
+e.g. those 30 ones that Express relies on.</p>
+<p>Does pinning give you "increased" security?
+Undeniably.
+The question is not whether it does, but whether that increased security comes at a cost (e.g. "noise").
+But Linus also points out that a <em>false</em> sense of security is a cost too.</p>
+<p>Don't forget that there is some form of transitive trust too.
+You need to pick your direct dependencies carefully, and which versions of them you use.
+Hopefully in doing that you pick dependencies partly for how well <em>they</em> look after their own dependencies and versions (e.g. do they have good enough test coverage, do they use something like Renovate to keep updated, etc?).
+So the reality is that even if 90% of the entries in your lock file are indirect dependencies, those are ones you have somewhat "delegated" responsibility for to your dependencies.
+e.g. I'd hope that Express are even better at watching their dependencies for breaks than I am, to use the example above.</p>
+<p>But certainly "does it give a false sense of security" is not a question we can really answer quantifiably.</p>
+<h2 id="so-whats-best">So what's best?<a class="headerlink" href="#so-whats-best" title="Permanent link">&para;</a></h2>
+<p>We recommend:</p>
+<ol>
+<li>Any apps (web or Node.js) that aren't <code>require()</code>'d by other packages should pin all types of dependencies for greatest reliability/predictability</li>
+<li>Browser or dual browser/node.js libraries that are consumed/<code>required()</code>'d by others should keep using <abbr title="Semantic Versioning">SemVer</abbr> ranges for <code>dependencies</code> but can use pinned dependencies for <code>devDependencies</code></li>
+<li>Node.js-only libraries can consider pinning all dependencies, because application size/duplicate dependencies are not as much a concern in Node.js compared to the browser. Of course, don't do that if your library is a micro one likely to be consumed in disk-sensitive environments</li>
+<li>Use a lock file</li>
+</ol>
+<p>As noted earlier, when you pin dependencies then you will see an increase in the raw volume of dependency updates, compared to if you use ranges.
+If/when this starts bothering you, add Renovate rules to reduce the volume, such as scheduling updates, grouping them, or automerging "safe" ones.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>This is a "living" document and we plan to update it whenever we think of something new or someone makes a valid point we've missed or misunderstood.</p>
+<p>Updated 2018-01-19 after <a href="https://github.com/commitizen/cz-conventional-changelog-default-export/pull/4#issuecomment-358038966">excellent feedback on lockfiles</a> by <a href="https://github.com/LinusU">@LinusU</a></p>
+<!-- Material for MkDocs shows a tooltip when you hover over any abbreviation in this list. -->
+<!-- https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary -->
+
+<!-- Please keep this list sorted from A-Z. -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../rust/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Rust">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Rust
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../configuration-templates/" class="md-footer__link md-footer__link--next" aria-label="Next: Config Template Editing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Config Template Editing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    Made with
+  <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.prune", "navigation.top", "toc.follow", "navigation.instant", "announce.dismiss", "content.code.copy", "content.action.edit", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

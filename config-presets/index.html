@@ -1,0 +1,2345 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Renovate's support for ESLint-like shareable configs">
+      
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/config-presets/">
+      
+      
+        <link rel="prev" href="../self-hosted-configuration/">
+      
+      
+        <link rel="next" href="../config-validation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Shareable Config Presets - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#shareable-config-presets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+We released a new major version of Renovate. Read the <a href="https://github.com/renovatebot/renovate/releases/tag/43.0.0">Renovate 43 changelog on GitHub</a>.
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Renovate Docs" class="md-header__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renovate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Shareable Config Presets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Renovate Docs" class="md-nav__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Renovate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../getting-started/use-cases/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-hosted-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-hosted
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extending-from-a-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extending from a preset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preset-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preset Hosting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preset Hosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preset-file-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preset File Naming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitLab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forgejo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forgejo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-hosted-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-hosted Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-configs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example configs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-preset-configs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use Preset Configs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preset-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preset Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-hosted-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub-hosted Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitlab-hosted-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitLab-hosted Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitea-hosted-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitea-hosted Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forgejo-hosted-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forgejo-hosted Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetching-presets-from-an-http-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fetching presets from an HTTP server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templating-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Templating presets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Templating presets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example use-case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing-to-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing to presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouporganization-level-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group/Organization level presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#npm-hosted-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        npm-hosted presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mend-hosted/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mend-hosted Apps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../key-concepts/how-renovate-works/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../modules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renovate Modules
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../bazel/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Support
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../dependency-pinning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Dives
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../presets-abandonments/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Included Presets
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../user-stories/swissquote/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Other
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing-to-renovate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extending-from-a-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extending from a preset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preset-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preset Hosting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preset Hosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preset-file-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preset File Naming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitLab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forgejo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forgejo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-hosted-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-hosted Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-configs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example configs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-preset-configs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use Preset Configs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preset-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preset Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-hosted-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub-hosted Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitlab-hosted-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitLab-hosted Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitea-hosted-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitea-hosted Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forgejo-hosted-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forgejo-hosted Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetching-presets-from-an-http-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fetching presets from an HTTP server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templating-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Templating presets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Templating presets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example use-case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing-to-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing to presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouporganization-level-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group/Organization level presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#npm-hosted-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        npm-hosted presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/renovatebot/renovate/edit/main/docs/usage/config-presets.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="shareable-config-presets">Shareable Config Presets<a class="headerlink" href="#shareable-config-presets" title="Permanent link">&para;</a></h1>
+<p>This page describes how to configure your shared presets.
+Read the <a href="../key-concepts/presets/">Key concepts, presets</a> page to learn more about presets in general.</p>
+<p>Shareable config presets must use the JSON or JSON5 formats, other formats are not supported.</p>
+<!-- prettier-ignore -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Describe what your preset does in the <code>"description"</code> field or add comments as Renovate supports <code>JSONC</code> syntax within its preset files.</p>
+</div>
+<h2 id="extending-from-a-preset">Extending from a preset<a class="headerlink" href="#extending-from-a-preset" title="Permanent link">&para;</a></h2>
+<p>To use a preset put it in an <code>extends</code> array within your Renovate config.
+Presets can be nested.</p>
+<h2 id="preset-hosting">Preset Hosting<a class="headerlink" href="#preset-hosting" title="Permanent link">&para;</a></h2>
+<p>Presets should be hosted in repositories, which usually means the same platform host as Renovate is running against.</p>
+<p>Alternatively, Renovate can fetch preset files from an HTTP server.</p>
+<!-- prettier-ignore -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We deprecated npm-based presets.
+We plan to drop the npm-based presets feature in a future major release of Renovate.</p>
+</div>
+<p>You can set a Git tag (like a <abbr title="Semantic Versioning">SemVer</abbr>) to use a specific release of your shared config.</p>
+<h3 id="preset-file-naming">Preset File Naming<a class="headerlink" href="#preset-file-naming" title="Permanent link">&para;</a></h3>
+<p>Presets are repo-hosted, and you can have one or more presets hosted per repository.
+If you omit a file name from your preset (e.g. <code>github&gt;abc/foo</code>) then Renovate will look for a <code>default.json</code> file in the repo.
+If you wish to have an alternative file name, you need to specify it (e.g. <code>github&gt;abc/foo//alternative-name.json5</code>).</p>
+<!-- prettier-ignore -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We've deprecated using a <code>renovate.json</code> file for the default <em>preset</em> file name in a repository.
+If you're using a <code>renovate.json</code> file to share your presets, rename it to <code>default.json</code>.</p>
+</div>
+<h3 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>example use</th>
+<th>preset</th>
+<th>resolves as</th>
+<th>filename</th>
+<th>Git tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub default</td>
+<td><code>github&gt;abc/foo</code></td>
+<td><code>default</code></td>
+<td><code>https://github.com/abc/foo</code></td>
+<td><code>default.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>GitHub with preset name</td>
+<td><code>github&gt;abc/foo:xyz</code></td>
+<td><code>xyz</code></td>
+<td><code>https://github.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>GitHub with preset name (JSON5)</td>
+<td><code>github&gt;abc/foo:xyz.json5</code></td>
+<td><code>xyz</code></td>
+<td><code>https://github.com/abc/foo</code></td>
+<td><code>xyz.json5</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>GitHub with preset name and path</td>
+<td><code>github&gt;abc/foo//path/xyz</code></td>
+<td><code>xyz</code></td>
+<td><code>https://github.com/abc/foo</code></td>
+<td><code>path/xyz.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>GitHub default with a tag</td>
+<td><code>github&gt;abc/foo#1.2.3</code></td>
+<td><code>default</code></td>
+<td><code>https://github.com/abc/foo</code></td>
+<td><code>default.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>GitHub with preset name with a tag</td>
+<td><code>github&gt;abc/foo:xyz#1.2.3</code></td>
+<td><code>xyz</code></td>
+<td><code>https://github.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>GitHub with preset name and path with a tag</td>
+<td><code>github&gt;abc/foo//path/xyz#1.2.3</code></td>
+<td><code>xyz</code></td>
+<td><code>https://github.com/abc/foo</code></td>
+<td><code>path/xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>GitHub with subpreset name and tag</td>
+<td><code>github&gt;abc/foo:xyz/sub#1.2.3</code></td>
+<td><code>sub</code></td>
+<td><code>https://github.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gitlab">GitLab<a class="headerlink" href="#gitlab" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>example use</th>
+<th>preset</th>
+<th>resolves as</th>
+<th>filename</th>
+<th>Git tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitLab default</td>
+<td><code>gitlab&gt;abc/foo</code></td>
+<td><code>default</code></td>
+<td><code>https://gitlab.com/abc/foo</code></td>
+<td><code>default.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>GitLab with preset name</td>
+<td><code>gitlab&gt;abc/foo:xyz</code></td>
+<td><code>xyz</code></td>
+<td><code>https://gitlab.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>GitLab with preset name (JSON5)</td>
+<td><code>gitlab&gt;abc/foo:xyz.json5</code></td>
+<td><code>xyz</code></td>
+<td><code>https://gitlab.com/abc/foo</code></td>
+<td><code>xyz.json5</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>GitLab default with a tag</td>
+<td><code>gitlab&gt;abc/foo#1.2.3</code></td>
+<td><code>default</code></td>
+<td><code>https://gitlab.com/abc/foo</code></td>
+<td><code>default.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>GitLab with preset name with a tag</td>
+<td><code>gitlab&gt;abc/foo:xyz#1.2.3</code></td>
+<td><code>xyz</code></td>
+<td><code>https://gitlab.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>GitLab with preset name and path with a tag</td>
+<td><code>gitlab&gt;abc/foo//path/xyz#1.2.3</code></td>
+<td><code>xyz</code></td>
+<td><code>https://gitlab.com/abc/foo</code></td>
+<td><code>path/xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>GitLab with subpreset name and tag</td>
+<td><code>gitlab&gt;abc/foo:xyz/sub#1.2.3</code></td>
+<td><code>sub</code></td>
+<td><code>https://gitlab.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gitea">Gitea<a class="headerlink" href="#gitea" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>example use</th>
+<th>preset</th>
+<th>resolves as</th>
+<th>filename</th>
+<th>Git tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gitea default</td>
+<td><code>gitea&gt;abc/foo</code></td>
+<td><code>default</code></td>
+<td><code>https://gitea.com/abc/foo</code></td>
+<td><code>default.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>Gitea with preset name</td>
+<td><code>gitea&gt;abc/foo:xyz</code></td>
+<td><code>xyz</code></td>
+<td><code>https://gitea.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>Gitea with preset name (JSON5)</td>
+<td><code>gitea&gt;abc/foo:xyz.json5</code></td>
+<td><code>xyz</code></td>
+<td><code>https://gitea.com/abc/foo</code></td>
+<td><code>xyz.json5</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>Gitea default with a tag</td>
+<td><code>gitea&gt;abc/foo#1.2.3</code></td>
+<td><code>default</code></td>
+<td><code>https://gitea.com/abc/foo</code></td>
+<td><code>default.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>Gitea with preset name with a tag</td>
+<td><code>gitea&gt;abc/foo:xyz#1.2.3</code></td>
+<td><code>xyz</code></td>
+<td><code>https://gitea.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>Gitea with preset name and path with a tag</td>
+<td><code>gitea&gt;abc/foo//path/xyz#1.2.3</code></td>
+<td><code>xyz</code></td>
+<td><code>https://gitea.com/abc/foo</code></td>
+<td><code>path/xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>Gitea with subpreset name and tag</td>
+<td><code>gitea&gt;abc/foo:xyz/sub#1.2.3</code></td>
+<td><code>sub</code></td>
+<td><code>https://gitea.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="forgejo">Forgejo<a class="headerlink" href="#forgejo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>example use</th>
+<th>preset</th>
+<th>resolves as</th>
+<th>filename</th>
+<th>Git tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forgejo default</td>
+<td><code>forgejo&gt;abc/foo</code></td>
+<td><code>default</code></td>
+<td><code>https://codeberg.org/abc/foo</code></td>
+<td><code>default.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>Forgejo with preset name</td>
+<td><code>forgejo&gt;abc/foo:xyz</code></td>
+<td><code>xyz</code></td>
+<td><code>https://codeberg.org/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>Forgejo with preset name (JSON5)</td>
+<td><code>forgejo&gt;abc/foo:xyz.json5</code></td>
+<td><code>xyz</code></td>
+<td><code>https://codeberg.org/abc/foo</code></td>
+<td><code>xyz.json5</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>Forgejo default with a tag</td>
+<td><code>forgejo&gt;abc/foo#1.2.3</code></td>
+<td><code>default</code></td>
+<td><code>https://codeberg.org/abc/foo</code></td>
+<td><code>default.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>Forgejo with preset name with a tag</td>
+<td><code>forgejo&gt;abc/foo:xyz#1.2.3</code></td>
+<td><code>xyz</code></td>
+<td><code>https://codeberg.org/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>Forgejo with preset name and path with a tag</td>
+<td><code>forgejo&gt;abc/foo//path/xyz#1.2.3</code></td>
+<td><code>xyz</code></td>
+<td><code>https://codeberg.org/abc/foo</code></td>
+<td><code>path/xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>Forgejo with subpreset name and tag</td>
+<td><code>forgejo&gt;abc/foo:xyz/sub#1.2.3</code></td>
+<td><code>sub</code></td>
+<td><code>https://codeberg.org/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="self-hosted-git">Self-hosted Git<a class="headerlink" href="#self-hosted-git" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>example use</th>
+<th>preset</th>
+<th>resolves as</th>
+<th>filename</th>
+<th>Git tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local default</td>
+<td><code>local&gt;abc/foo</code></td>
+<td><code>default</code></td>
+<td><code>https://github.company.com/abc/foo</code></td>
+<td><code>default.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>Local with preset path</td>
+<td><code>local&gt;abc/foo:xyz</code></td>
+<td><code>xyz</code></td>
+<td><code>https://github.company.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>Local with preset path (JSON5)</td>
+<td><code>local&gt;abc/foo:xyz.json5</code></td>
+<td><code>xyz</code></td>
+<td><code>https://github.company.com/abc/foo</code></td>
+<td><code>xyz.json5</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>Local with preset name and path</td>
+<td><code>local&gt;abc/foo//path/xyz</code></td>
+<td><code>xyz</code></td>
+<td><code>https://github.company.com/abc/foo</code></td>
+<td><code>path/xyz.json</code></td>
+<td>Default branch</td>
+</tr>
+<tr>
+<td>Local default with a tag</td>
+<td><code>local&gt;abc/foo#1.2.3</code></td>
+<td><code>default</code></td>
+<td><code>https://github.company.com/abc/foo</code></td>
+<td><code>default.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>Local with preset name with a tag</td>
+<td><code>local&gt;abc/foo:xyz#1.2.3</code></td>
+<td><code>xyz</code></td>
+<td><code>https://github.company.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>Local with preset name and path with a tag</td>
+<td><code>local&gt;abc/foo//path/xyz#1.2.3</code></td>
+<td><code>xyz</code></td>
+<td><code>https://github.company.com/abc/foo</code></td>
+<td><code>path/xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+<tr>
+<td>Local with subpreset name and tag</td>
+<td><code>local&gt;abc/foo:xyz/sub#1.2.3</code></td>
+<td><code>sub</code></td>
+<td><code>https://github.company.com/abc/foo</code></td>
+<td><code>xyz.json</code></td>
+<td><code>1.2.3</code></td>
+</tr>
+</tbody>
+</table>
+<!-- prettier-ignore -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can't combine the path and sub-preset syntaxes.
+This means that anything in the form <code>provider&gt;owner/repo//path/to/file:subsubpreset</code> is not supported.
+One workaround is to use distinct files instead of sub-presets.</p>
+</div>
+<h2 id="example-configs">Example configs<a class="headerlink" href="#example-configs" title="Permanent link">&para;</a></h2>
+<p>An example of a small rule is <code>:preserveSemverRanges</code>, which has the description "Preserve (but continue to upgrade) any existing <abbr title="Semantic Versioning">SemVer</abbr> ranges.".
+It simply sets the configuration option <code>rangeStrategy</code> to <code>replace</code>.</p>
+<p>An example of a full config is <code>config:recommended</code>, which is Renovate's default configuration.
+It mostly uses Renovate config defaults but adds a few smart customizations such as grouping monorepo packages together.</p>
+<!-- prettier-ignore -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>:xyz</code> naming convention (with <code>:</code> prefix) is shorthand for the <code>default:</code> presets.
+For example: <code>:xyz</code> is the same as <code>default:xyz</code>.</p>
+</div>
+<h2 id="how-to-use-preset-configs">How to Use Preset Configs<a class="headerlink" href="#how-to-use-preset-configs" title="Permanent link">&para;</a></h2>
+<p>By default, Renovate App's onboarding PR suggests the <code>["config:recommended"]</code> preset.
+If you're self hosting, and want to use the <code>config:recommended</code> preset, then you must add <code>"onboardingConfig": { "extends": ["config:recommended"] }</code> to your bot's config.</p>
+<p>Read the <a href="../presets-config/">Full Config Presets</a> page to learn more about our <code>config:</code> presets.</p>
+<p>A typical onboarding <code>renovate.json</code> looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;config:recommended&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Here's an example of using presets to change Renovate's behavior.
+You're happy with the <code>config:recommended</code> preset, but want Renovate to create PRs when you're not at the office.
+You look at our <code>schedule:</code> presets, and find the <code>schedule:nonOfficeHours</code> preset.
+You put <code>schedule:nonOfficeHours</code> in the <code>extends</code> array of your <code>renovate.json</code> file, like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;config:recommended&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;schedule:nonOfficeHours&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="preset-parameters">Preset Parameters<a class="headerlink" href="#preset-parameters" title="Permanent link">&para;</a></h2>
+<p>If you browse the "default" presets, you will see some that have parameters, e.g.:</p>
+<!-- schema-validation-disable-next-block -->
+
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apply labels &lt;code&gt;{{arg0}}&lt;/code&gt; and &lt;code&gt;{{arg1}}&lt;/code&gt; to PRs&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;{{arg0}}&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;{{arg1}}&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;assignee&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Assign PRs to &lt;code&gt;{{arg0}}&lt;/code&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;assignees&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;{{arg0}}&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Here is how you would use these in your Renovate config:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;:labels(dependencies,devops)&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;:assignee(renovate-tests)&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In short, the number of <code>{{argx}}</code> parameters in the definition is how many parameters you need to provide.
+Parameters must be strings, non-quoted, and separated by commas if there are more than one.</p>
+<p>If you find that you are repeating config a lot, you might consider publishing one of these types of parameterized presets yourself.
+Or if you think your preset would be valuable for others, please contribute a PR to the Renovate repository, see <a href="#contributing-to-presets">Contributing to presets</a>.</p>
+<p>Also, the entire parameter string is available as <code>{{args}}</code>.
+It includes everything between parentheses, verbatim, without the parentheses themselves.
+If you want to include a comma in the parameter value, you need to use <code>{{args}}</code> instead of <code>{{arg0}}</code>.</p>
+<h2 id="github-hosted-presets">GitHub-hosted Presets<a class="headerlink" href="#github-hosted-presets" title="Permanent link">&para;</a></h2>
+<p>To host your preset config on GitHub:</p>
+<ul>
+<li>Create a new repository. Normally you'd call it <code>renovate-config</code> but it can be named anything</li>
+<li>Add configuration files to this new repo for any presets you want to share. For the default preset, <code>default.json</code> will be checked. For named presets, <code>&lt;preset-name&gt;.json</code> will be loaded. For example, loading preset <code>library</code> would load <code>library.json</code>. No other files are necessary.</li>
+<li>In other repos, reference it in an extends array like <code>"github&gt;owner/name"</code>, for example:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;github&gt;renovate-tests/renovate-config&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>From then on Renovate will use the Renovate config from the preset repo's default branch.
+You do not need to add it as a devDependency or add any other files to the preset repo.</p>
+<h2 id="gitlab-hosted-presets">GitLab-hosted Presets<a class="headerlink" href="#gitlab-hosted-presets" title="Permanent link">&para;</a></h2>
+<p>For a private GitLab repository Renovate requires at least <code>Reporter</code> level access.</p>
+<p>To host your preset config on GitLab:</p>
+<ul>
+<li>Create a new repository on GitLab. Normally you'd call it <code>renovate-config</code> but it can be named anything</li>
+<li>Add a <code>default.json</code> to this new repo containing the preset config. No other files are necessary</li>
+<li>In other repos, reference it in an extends array like <code>"gitlab&gt;owner/name"</code>, e.g. <code>"gitlab&gt;renovate-tests/renovate-config"</code></li>
+</ul>
+<h2 id="gitea-hosted-presets">Gitea-hosted Presets<a class="headerlink" href="#gitea-hosted-presets" title="Permanent link">&para;</a></h2>
+<p>To host your preset config on Gitea:</p>
+<ul>
+<li>Create a new repository on Gitea. Normally you'd call it <code>renovate-config</code> but you can use any name you want</li>
+<li>Add a <code>default.json</code> to this new repository containing the preset config. No other files are necessary</li>
+<li>In other repositories, reference it in an extends array like <code>"gitea&gt;owner/name"</code>, e.g. <code>"gitea&gt;renovate-tests/renovate-config"</code></li>
+</ul>
+<h2 id="forgejo-hosted-presets">Forgejo-hosted Presets<a class="headerlink" href="#forgejo-hosted-presets" title="Permanent link">&para;</a></h2>
+<p>To host your preset config on Forgejo:</p>
+<ul>
+<li>Create a new repository on Forgejo. Normally you'd call it <code>renovate-config</code> but you can use any name you want</li>
+<li>Add a <code>default.json</code> to this new repository containing the preset config. No other files are necessary</li>
+<li>In other repositories, reference it in an extends array like <code>"forgejo&gt;owner/name"</code>, e.g. <code>"forgejo&gt;renovate-tests/renovate-config"</code></li>
+</ul>
+<h2 id="local-presets">Local presets<a class="headerlink" href="#local-presets" title="Permanent link">&para;</a></h2>
+<p>Renovate also supports local presets, e.g. presets that are hosted on the same platform as the target repository.
+This is especially helpful in self-hosted scenarios where public presets cannot be used.
+Local presets are specified either by leaving out any prefix, e.g. <code>owner/name</code>, or explicitly by adding a <code>local&gt;</code> prefix, e.g. <code>local&gt;owner/name</code>.
+Renovate will determine the current platform and look up the preset from there.</p>
+<h2 id="fetching-presets-from-an-http-server">Fetching presets from an HTTP server<a class="headerlink" href="#fetching-presets-from-an-http-server" title="Permanent link">&para;</a></h2>
+<p>If your desired platform is not yet supported, or if you want presets to work when you run Renovate with <code>--platform=local</code>, you can specify presets using HTTP URLs:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;http://my.server/users/me/repos/renovate-presets/raw/default.json?at=refs%2Fheads%2Fmain&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Parameters are supported similar to other methods:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;http://my.server/users/me/repos/renovate-presets/raw/default.json?at=refs%2Fheads%2Fmain(param)&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="templating-presets">Templating presets<a class="headerlink" href="#templating-presets" title="Permanent link">&para;</a></h2>
+<p>You can use <a href="https://handlebarsjs.com/">Handlebars</a> templates to be flexible with your presets.
+This can be handy when you want to include presets conditionally.</p>
+<!-- prettier-ignore -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The template only supports a small subset of options, but you can extend them via <code>customEnvVariables</code>.</p>
+</div>
+<p>Read the <a href="../templates/">templates</a> section to learn more.</p>
+<h3 id="example-use-case">Example use-case<a class="headerlink" href="#example-use-case" title="Permanent link">&para;</a></h3>
+<p>The following example shows a self-hosted Renovate preset located in a GitLab repository called <code>renovate/presets</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;local&gt;renovate/presets&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Usually you want to validate the preset before you put it in your Renovate configuration
+Here is an example of how you can use templating to validate and load the preset on a branch level:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">customEnvVariables</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">GITLAB_REF</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">CI_COMMIT_REF_NAME</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;main&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="k">extends</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;local&gt;renovate/presets#{{ env.GITLAB_REF }}&#39;</span><span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div>
+<h2 id="contributing-to-presets">Contributing to presets<a class="headerlink" href="#contributing-to-presets" title="Permanent link">&para;</a></h2>
+<p>Have you configured a rule that could help others?
+Please consider contributing it to the <a href="https://github.com/renovatebot/renovate/tree/main/lib/config/presets/internal">Renovate repository</a> so that it gains higher visibility and saves others from reinventing the same thing.</p>
+<p>Create a <a href="https://github.com/renovatebot/renovate/discussions">discussion</a> to propose your preset to the Renovate maintainers.
+The maintainers can also help improve the preset, and let you know where to put it in the code.
+If you are proposing a "monorepo" preset addition then it's OK to raise a PR directly as that can be more efficient than a GitHub Discussion.</p>
+<h2 id="grouporganization-level-presets">Group/Organization level presets<a class="headerlink" href="#grouporganization-level-presets" title="Permanent link">&para;</a></h2>
+<p>Whenever repository onboarding happens, Renovate checks for a a default config to extend.
+Renovate will check for a repository called <code>renovate-config</code> with a <code>default.json</code> file in the parent user/group/org of the repository.
+On platforms that support nested groups (e.g. GitLab), Renovate will check for this repository at each level of grouping, from nearest to furthest, and use the first one it finds.
+On all platforms, it will then look for a repository named like <code>.{{platform}}</code> (e.g. <code>.github</code>) with a <code>renovate-config.json</code>, under the same top-level user/group/org.</p>
+<p>If found, that repository's preset will be suggested as the sole extended preset, and any existing <code>onboardingConfig</code> config will be ignored/overridden.
+For example the result may be:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://docs.renovatebot.com/renovate-schema.json&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;local&gt;myorgname/.github:renovate-config&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="npm-hosted-presets">npm-hosted presets<a class="headerlink" href="#npm-hosted-presets" title="Permanent link">&para;</a></h2>
+<!-- prettier-ignore -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using npm-hosted presets is deprecated, we recommend you do not follow these instructions and instead use a <code>local</code> preset.</p>
+</div>
+<p>If you manage multiple repositories using Renovate and want the same custom config across all or most of them, then you might want to consider publishing your own preset config so that you can "extend" it in every applicable repository.
+That way when you want to change your Renovate configuration you can make the change in one location rather than having to copy/paste it to every repository individually.</p>
+<p>Let's say that your username on npm and elsewhere is "fastcore".
+In that case, you can choose between publishing your preset config package as <code>@fastcore/renovate-config</code> or <code>renovate-config-fastcore</code>.
+Let's assume you choose <code>renovate-config-fastcore</code> as the package name.</p>
+<p>You then need to publish the <code>renovate-config-fastcore</code> package where the <code>package.json</code> has the field <code>renovate-config</code> and then put your config under the field <code>default</code>.
+For example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;renovate-config-fastcore&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.0.1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;renovate-config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;config:recommended&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;schedule:nonOfficeHours&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then in each of your repositories you can add your Renovate config like:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;fastcore&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Any repository including this config will then adopt the rules of the default <code>library</code> preset but schedule it on weeknights or weekends.</p>
+<p>If you prefer to publish using the namespace <code>@fastcore/renovate-config</code> then you would use the <code>@</code> prefix instead:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;@fastcore&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<!-- Material for MkDocs shows a tooltip when you hover over any abbreviation in this list. -->
+<!-- https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary -->
+
+<!-- Please keep this list sorted from A-Z. -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../self-hosted-configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Self-hosted">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Self-hosted
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../config-validation/" class="md-footer__link md-footer__link--next" aria-label="Next: Validation">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Validation
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    Made with
+  <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.prune", "navigation.top", "toc.follow", "navigation.instant", "announce.dismiss", "content.code.copy", "content.action.edit", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

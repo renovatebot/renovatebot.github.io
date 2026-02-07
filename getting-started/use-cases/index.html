@@ -1,0 +1,2039 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Renovate documentation.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/getting-started/use-cases/">
+      
+      
+        <link rel="prev" href="../../reading-list/">
+      
+      
+        <link rel="next" href="../running/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Use Cases - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#use-cases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+We released a new major version of Renovate. Read the <a href="https://github.com/renovatebot/renovate/releases/tag/43.0.0">Renovate 43 changelog on GitHub</a>.
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Renovate Docs" class="md-header__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renovate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Use Cases
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Renovate Docs" class="md-nav__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Renovate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#development-dependency-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development dependency updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development dependency updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-of-package-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating of package files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updating of package files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-renovate-updates-a-package-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Renovate updates a package file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-managers-with-lock-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package managers with lock files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-dependency-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom dependency extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevOps tooling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DevOps tooling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devops-infrastructure-as-code-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevOps / Infrastructure as Code updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DevOps / Infrastructure as Code updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-compatible-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker-compatible images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-based-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag-based updating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-digests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker digests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-package-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal package updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal package updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automerge-internal-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automerge internal dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-automerging-internal-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example of automerging internal dependencies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example of automerging internal dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batched-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batched updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduled updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-demand-updates-via-dependency-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On-demand updates via Dependency Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-dashboard-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Dashboard Approval
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Dashboard Approval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-using-dependency-dashboard-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits of using Dependency Dashboard Approval
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-others-use-renovate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How others use Renovate
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../running/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/examples/self-hosting" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Hosting Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing & Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../private-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Private Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/opentelemetry" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../config-overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mend-hosted/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mend-hosted Apps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../key-concepts/how-renovate-works/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../modules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renovate Modules
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../bazel/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Support
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dependency-pinning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Dives
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../presets-abandonments/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Included Presets
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../user-stories/swissquote/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Other
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing-to-renovate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#development-dependency-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development dependency updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development dependency updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-of-package-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating of package files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updating of package files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-renovate-updates-a-package-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Renovate updates a package file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-managers-with-lock-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package managers with lock files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-dependency-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom dependency extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevOps tooling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DevOps tooling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devops-infrastructure-as-code-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevOps / Infrastructure as Code updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DevOps / Infrastructure as Code updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-compatible-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker-compatible images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-based-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag-based updating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-digests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker digests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-package-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal package updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal package updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automerge-internal-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automerge internal dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-automerging-internal-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example of automerging internal dependencies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example of automerging internal dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batched-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batched updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduled updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-demand-updates-via-dependency-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On-demand updates via Dependency Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-dashboard-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Dashboard Approval
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Dashboard Approval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-using-dependency-dashboard-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits of using Dependency Dashboard Approval
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-others-use-renovate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How others use Renovate
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/renovatebot/renovate/edit/main/docs/usage/getting-started/use-cases.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h1>
+<p>This page describes common use cases for Renovate.</p>
+<h2 id="development-dependency-updates">Development dependency updates<a class="headerlink" href="#development-dependency-updates" title="Permanent link">&para;</a></h2>
+<p>The original use case, and the most popular one, is for developers to automate dependency updating in their software projects.</p>
+<h3 id="updating-of-package-files">Updating of package files<a class="headerlink" href="#updating-of-package-files" title="Permanent link">&para;</a></h3>
+<p>We use the term "package file" to describe files which reference dependencies.
+Package files are managed by a "package manager".</p>
+<p>Example package files include:</p>
+<ul>
+<li><code>package.json</code>, managed by npm or Yarn</li>
+<li><code>Gemfile</code>, managed by Bundler</li>
+<li><code>go.mod</code>, managed by <code>go</code> modules</li>
+</ul>
+<h4 id="how-renovate-updates-a-package-file">How Renovate updates a package file<a class="headerlink" href="#how-renovate-updates-a-package-file" title="Permanent link">&para;</a></h4>
+<p>Renovate:</p>
+<ol>
+<li>Scans your repositories to find package files and their dependencies</li>
+<li>Checks if any newer versions exist</li>
+<li>Raises Pull Requests for available updates</li>
+</ol>
+<p>The Pull Requests patch the package files directly, and include changelogs for the newer versions (if they are available).</p>
+<p>By default:</p>
+<ul>
+<li>You'll get separate Pull Requests for each dependency</li>
+<li>Major updates are kept separate from non-major updates</li>
+</ul>
+<h3 id="package-managers-with-lock-files">Package managers with lock files<a class="headerlink" href="#package-managers-with-lock-files" title="Permanent link">&para;</a></h3>
+<p>Many package managers support "lock files", which "freeze" the entire dependency tree including transitive dependencies.
+npm, Yarn, Bundler, Composer, Poetry, Pipenv, and Cargo all support or use lock files.</p>
+<p>If you use a lock file then changes to your package file must come with a compatible change to the lock file.
+Renovate can patch/update package files directly, but can't "reverse engineer" lock files.
+This is why Renovate lets the package manager do the lock file update.
+A simplified example:</p>
+<ol>
+<li>The repository has a <code>package.json</code> and <code>package-lock.json</code> with version <code>1.0.0</code> of a dependency</li>
+<li>Renovate sees that version <code>1.1.0</code> is available</li>
+<li>Renovate patches the <code>package.json</code> to change the dependency's version from <code>1.0.0</code> to <code>1.1.0</code></li>
+<li>Renovate runs <code>npm install</code> to let <code>npm</code> update the <code>package-lock.json</code></li>
+<li>Renovate commits the <code>package.json</code> and <code>package-lock.json</code></li>
+<li>Renovate creates the PR</li>
+</ol>
+<h3 id="custom-dependency-extraction">Custom dependency extraction<a class="headerlink" href="#custom-dependency-extraction" title="Permanent link">&para;</a></h3>
+<p>Renovate supports 90+ types of package files.
+By default, Renovate finds most dependencies, but there are exceptions.
+This can be because:</p>
+<ul>
+<li>The package manager/file format is not supported, or</li>
+<li>The file format is not a standard or is proprietary</li>
+</ul>
+<p>If your dependencies are not found by default, you can use our <code>custom</code> manager to set your own custom patterns to extract dependencies.
+You configure the custom manager by telling it:</p>
+<ul>
+<li>Which file pattern(s) to match</li>
+<li>How to find the dependency name and version from within the file</li>
+<li>Which datasource (e.g. Docker registry, npm registry, etc) to use to look up new versions</li>
+</ul>
+<p>The end result is that Renovate can keep dependencies in custom file formats up-to-date as long as the dependency datasource is known to Renovate.</p>
+<h2 id="devops-tooling">DevOps tooling<a class="headerlink" href="#devops-tooling" title="Permanent link">&para;</a></h2>
+<p>Renovate is increasingly used for purposes which are traditionally described as DevOps instead of Developer.</p>
+<h3 id="devops-infrastructure-as-code-updates">DevOps / Infrastructure as Code updates<a class="headerlink" href="#devops-infrastructure-as-code-updates" title="Permanent link">&para;</a></h3>
+<p>It's common for repositories to have DevOps-related files like <abbr title="Continuous Integration">CI</abbr>/<abbr title="Continuous Deployment">CD</abbr> configs, or "Infrastructure as Code" (<abbr title="Infrastructure as Code">IaC</abbr>) files.
+Examples of <abbr title="Infrastructure as Code">IaC</abbr> files are Docker, Kubernetes or Terraform files.
+Renovate handles <abbr title="Infrastructure as Code">IaC</abbr> files as "package managers" and "package files" and can find and update them.</p>
+<h4 id="docker-compatible-images">Docker-compatible images<a class="headerlink" href="#docker-compatible-images" title="Permanent link">&para;</a></h4>
+<p>Docker-compatible images are a key building block of modern software.
+These images are commonly found in <abbr title="Continuous Integration">CI</abbr>/<abbr title="Continuous Deployment">CD</abbr> pipeline configs or referenced in <abbr title="Infrastructure as Code">IaC</abbr> files.
+Renovate finds these <abbr title="Infrastructure as Code">IaC</abbr> files and then searches Docker registries to see if there are newer tags or digests.</p>
+<h4 id="tag-based-updating">Tag-based updating<a class="headerlink" href="#tag-based-updating" title="Permanent link">&para;</a></h4>
+<p>An example of tag-based updating are <code>node</code> images from Docker Hub.
+The <code>node</code> images use these tag formats:</p>
+<ul>
+<li><code>14.17.4</code></li>
+<li><code>14.17.4-alpine3.11</code></li>
+</ul>
+<p>Renovate understands both formats and raises updates like these:</p>
+<ul>
+<li>From <code>14.17.4</code> to <code>14.17.5</code></li>
+<li>From <code>14.17.4-alpine3.11</code> to <code>14.17.5-alpine3.11</code></li>
+</ul>
+<h4 id="docker-digests">Docker digests<a class="headerlink" href="#docker-digests" title="Permanent link">&para;</a></h4>
+<p>You can check and update versions like <code>14.17.4</code> yourself.
+But looking up image digests like <code>341976f40d963a425d627a349a9b0034e1eafffbf4c82a173c1465ee403878d9</code> and updating them yourself doesn't scale.
+So let Renovate update your Docker digests.</p>
+<p>You can even configure Renovate to "pin" your Docker digests.
+When you're using tag+digest based images, you'll have immutable builds.</p>
+<h3 id="internal-package-updates">Internal package updates<a class="headerlink" href="#internal-package-updates" title="Permanent link">&para;</a></h3>
+<p>Your company typically has dozens of repositories, if not hundreds or thousands.
+These repositories often rely on other repositories and may have upstream or downstream internal dependencies.
+In such cases, it is best practice to:</p>
+<ul>
+<li>Update downstream links as soon as possible, and</li>
+<li>Keep internal version use as consistent as possible</li>
+</ul>
+<p>You can use Renovate to follow this best practice.
+Renovate finds and updates internal dependencies just like external or Open Source dependencies.</p>
+<h4 id="automerge-internal-dependencies">Automerge internal dependencies<a class="headerlink" href="#automerge-internal-dependencies" title="Permanent link">&para;</a></h4>
+<p>Renovate's automerge feature is really useful for internal dependencies where you can say "if it passes tests let's merge it".</p>
+<p>To learn more about "automerge" read the <a href="../../key-concepts/automerge/">key concepts, automerge</a> documentation.</p>
+<h4 id="example-of-automerging-internal-dependencies">Example of automerging internal dependencies<a class="headerlink" href="#example-of-automerging-internal-dependencies" title="Permanent link">&para;</a></h4>
+<p>We use these Renovate features to automerge an internal dependency:</p>
+<ul>
+<li><a href="../../modules/manager/git-submodules/">Git submodule support</a></li>
+<li><a href="../../configuration-options/#automerge"><code>automerge</code></a> set to <code>true</code></li>
+<li><a href="../../configuration-options/#automergetype"><code>automergeType</code></a> set to <code>branch</code></li>
+</ul>
+<h5 id="background-information">Background information<a class="headerlink" href="#background-information" title="Permanent link">&para;</a></h5>
+<p>We split our work over two repositories:</p>
+<ol>
+<li>The <a href="https://github.com/renovatebot/renovate"><code>renovatebot/renovate</code></a> repository, which has the Renovate code, and most of the Markdown documentation files</li>
+<li>The <a href="https://github.com/renovatebot/renovatebot.github.io"><code>renovatebot/renovatebot.github.io</code></a> repository, which has a submodule link to the <code>renovatebot/renovate</code> repository</li>
+</ol>
+<h5 id="update-process">Update process<a class="headerlink" href="#update-process" title="Permanent link">&para;</a></h5>
+<ol>
+<li>We edit our documentation files on the main Renovate repository <code>renovatebot/renovate</code></li>
+<li>Renovate sees the change(s) to the <code>renovatebot/renovate</code> Git submodule, and creates an update branch on the <em>documentation build</em> repository</li>
+<li>If the tests pass Renovate automerges the update branch into the <code>main</code> branch.</li>
+<li>A GitHub Actions workflow runs on <code>main</code> to build the documentation site and push the build live on our GitHub Pages domain</li>
+</ol>
+<h5 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h5>
+<p>The way we've set things up means we avoid:</p>
+<ul>
+<li>reviewing PRs</li>
+<li>manually merging PRs</li>
+</ul>
+<p>In fact we don't even get the update PR anymore!</p>
+<h2 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h2>
+<p>The capabilities listed below are commonly needed for all the above use cases.</p>
+<h3 id="batched-updates">Batched updates<a class="headerlink" href="#batched-updates" title="Permanent link">&para;</a></h3>
+<p>Renovate defaults to separating each dependency update into its own PR.
+But you may want to batch or "group" updates together.
+For example, group all patch updates into one PR or even all non-major updates together (patches and minor updates).</p>
+<p>You can configure batched updates by setting a <a href="../../configuration-options/#groupname"><code>groupName</code></a> as part of <code>packageRules</code>.</p>
+<p>To learn more about batched updates, see <a href="../../noise-reduction/#package-grouping">Package grouping</a>.</p>
+<h3 id="scheduled-updates">Scheduled updates<a class="headerlink" href="#scheduled-updates" title="Permanent link">&para;</a></h3>
+<p>You may want to limit the times when Renovate is allowed to raise updates.
+This reduces "noise" during your working hours, and reduces the chance of <abbr title="Continuous Integration">CI</abbr> contention.
+You can tell Renovate to "not bother you" during times when you're using the <abbr title="Continuous Integration">CI</abbr> resources, or want to focus on your work.</p>
+<p>You can set the time ranges during which Renovate creates updates in the <code>schedule</code> field.</p>
+<h3 id="on-demand-updates-via-dependency-dashboard">On-demand updates via Dependency Dashboard<a class="headerlink" href="#on-demand-updates-via-dependency-dashboard" title="Permanent link">&para;</a></h3>
+<p>You can use Renovate's "Dependency Dashboard" on platforms which support dynamic Markdown checkboxes:</p>
+<ul>
+<li>Forgejo</li>
+<li>Gitea</li>
+<li>GitHub</li>
+<li>GitLab</li>
+</ul>
+<p>When you enable the Dependency Dashboard, Renovate creates a "Dependency Dashboard" issue.
+This issue lists all updates which are pending, in progress, or were previously closed ignored.</p>
+<p>If you want to get an update ahead of schedule, or want to retry a previously closed update: select the update's checkbox in the Dependency Dashboard.</p>
+<h3 id="dependency-dashboard-approval">Dependency Dashboard Approval<a class="headerlink" href="#dependency-dashboard-approval" title="Permanent link">&para;</a></h3>
+<p>If you enable the Dependency Dashboard you can opt-in to a different workflow for some, or even all of your packages.
+We call this the "Dependency Dashboard Approval" workflow.</p>
+<p>Here's how it works:</p>
+<ul>
+<li>You tell Renovate which package updates need "Dashboard Approval" by setting a custom <code>packageRule</code></li>
+<li>Renovate only raises updates for packages that need "Dashboard Approval" after you select the corresponding checkbox on the dashboard</li>
+</ul>
+<h4 id="benefits-of-using-dependency-dashboard-approval">Benefits of using Dependency Dashboard Approval<a class="headerlink" href="#benefits-of-using-dependency-dashboard-approval" title="Permanent link">&para;</a></h4>
+<ul>
+<li>By not raising PRs automatically, it allows you to request updates on-demand when you're ready, and</li>
+<li>It offers you an alternative to permanently ignoring/disabling certain types of updates, like major updates</li>
+</ul>
+<p>When you use the Dependency Dashboard Approval workflow you have full visibility and control over your updates.</p>
+<h3 id="configuration-presets">Configuration presets<a class="headerlink" href="#configuration-presets" title="Permanent link">&para;</a></h3>
+<p>You may run Renovate on many, or even all your repositories.
+This also means that you might want a similar config for all of your repositories.
+You can use configuration "presets" to avoid duplicating your configuration across your repositories.</p>
+<p>Configuration presets are JSON configuration files which are committed to repositories and then referenced from others.
+Renovate includes over 100 built-in presets, like the default recommended <code>config:recommended</code> preset.</p>
+<p>The typical workflow for a company is:</p>
+<ul>
+<li>Create a dedicated repository to store the company's default Renovate settings</li>
+<li>Set that repository as the default <code>extends</code> value when onboarding new repositories</li>
+</ul>
+<p>This means that repositories get the centralized config by default, and any changes made to the centralized config repository are propagated to other repositories immediately.</p>
+<h2 id="how-others-use-renovate">How others use Renovate<a class="headerlink" href="#how-others-use-renovate" title="Permanent link">&para;</a></h2>
+<p>You can learn a lot by seeing how others use Renovate.
+Check out the <a href="../../user-stories/swissquote/">Swissquote user story</a>.</p>
+<!-- Material for MkDocs shows a tooltip when you hover over any abbreviation in this list. -->
+<!-- https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary -->
+
+<!-- Please keep this list sorted from A-Z. -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../reading-list/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Reading List">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Reading List
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../running/" class="md-footer__link md-footer__link--next" aria-label="Next: Running Renovate">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Running Renovate
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    Made with
+  <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.prune", "navigation.top", "toc.follow", "navigation.instant", "announce.dismiss", "content.code.copy", "content.action.edit", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
