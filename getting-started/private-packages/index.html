@@ -1,0 +1,2623 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Renovate documentation.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/getting-started/private-packages/">
+      
+      
+        <link rel="prev" href="../installing-onboarding/">
+      
+      
+        <link rel="next" href="../../troubleshooting/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Private Packages - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#private-package-support" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+We released a new major version of Renovate. Read the <a href="https://github.com/renovatebot/renovate/releases/tag/43.0.0">Renovate 43 changelog on GitHub</a>.
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Renovate Docs" class="md-header__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renovate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Private Packages
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Renovate Docs" class="md-nav__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Renovate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../running/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/examples/self-hosting" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Hosting Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing & Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Private Packages
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Private Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-does-renovate-need-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When does Renovate need credentials?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-config-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private Config Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-version-lookups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Version Lookups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Version Lookups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-and-enterprise-repo-scoped-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub (and Enterprise) repo scoped credentials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub (and Enterprise) repo scoped credentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-for-gomod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example for gomod
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#looking-up-changelogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Looking up changelogs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-manager-credentials-for-artifact-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package Manager Credentials for Artifact Updating
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Manager Credentials for Artifact Updating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bundler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bundler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        composer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gomod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gomod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        helm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        npm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="npm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-hostrule-to-bots-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add hostRule to bots config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-npmrc-string-to-renovate-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add npmrc string to Renovate config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-npmtoken-to-renovate-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add npmToken to Renovate config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-an-encrypted-npm-token-to-renovate-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add an encrypted npm token to Renovate config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encrypted-entire-npmrc-file-into-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encrypted entire .npmrc file into config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatically-authenticate-for-npm-package-stored-in-private-github-npm-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatically authenticate for npm package stored in private GitHub npm repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yarn-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yarn 2+
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        maven
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nuget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nuget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pipenv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip-compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pip-compile
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pip-compile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packages-that-renovate-needs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packages that Renovate needs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packages that Renovate needs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-hosting-renovate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-hosting Renovate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-hostrules-credentials-for-platform-hosted-registries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic hostRules credentials for platform-hosted registries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automatic hostRules credentials for platform-hosted registries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Packages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encryption-and-the-mend-renovate-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encryption and the Mend Renovate App
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encryption and the Mend Renovate App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-presets-with-public-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private presets with public repositories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encrypting-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encrypting secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-to-github-actions-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access to GitHub Actions Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adminbot-config-vs-userrepository-config-for-self-hosted-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin/Bot config vs User/Repository config for Self-hosted users
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin/Bot config vs User/Repository config for Self-hosted users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hostrules-configuration-using-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hostRules configuration using environment variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/opentelemetry" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../config-overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mend-hosted/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mend-hosted Apps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../key-concepts/how-renovate-works/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../modules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renovate Modules
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../bazel/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Support
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dependency-pinning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Dives
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../presets-abandonments/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Included Presets
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../user-stories/swissquote/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Other
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing-to-renovate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-does-renovate-need-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When does Renovate need credentials?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-config-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private Config Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-version-lookups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Version Lookups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Version Lookups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-and-enterprise-repo-scoped-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub (and Enterprise) repo scoped credentials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub (and Enterprise) repo scoped credentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-for-gomod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example for gomod
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#looking-up-changelogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Looking up changelogs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-manager-credentials-for-artifact-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package Manager Credentials for Artifact Updating
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Manager Credentials for Artifact Updating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bundler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bundler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        composer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gomod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gomod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        helm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        npm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="npm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-hostrule-to-bots-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add hostRule to bots config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-npmrc-string-to-renovate-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add npmrc string to Renovate config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-npmtoken-to-renovate-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add npmToken to Renovate config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-an-encrypted-npm-token-to-renovate-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add an encrypted npm token to Renovate config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encrypted-entire-npmrc-file-into-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encrypted entire .npmrc file into config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatically-authenticate-for-npm-package-stored-in-private-github-npm-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatically authenticate for npm package stored in private GitHub npm repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yarn-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yarn 2+
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        maven
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nuget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nuget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pipenv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip-compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pip-compile
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pip-compile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packages-that-renovate-needs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packages that Renovate needs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packages that Renovate needs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-hosting-renovate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-hosting Renovate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-hostrules-credentials-for-platform-hosted-registries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic hostRules credentials for platform-hosted registries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automatic hostRules credentials for platform-hosted registries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Packages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encryption-and-the-mend-renovate-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encryption and the Mend Renovate App
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encryption and the Mend Renovate App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-presets-with-public-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private presets with public repositories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encrypting-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encrypting secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-to-github-actions-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access to GitHub Actions Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adminbot-config-vs-userrepository-config-for-self-hosted-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin/Bot config vs User/Repository config for Self-hosted users
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin/Bot config vs User/Repository config for Self-hosted users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hostrules-configuration-using-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hostRules configuration using environment variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/renovatebot/renovate/edit/main/docs/usage/getting-started/private-packages.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="private-package-support">Private package support<a class="headerlink" href="#private-package-support" title="Permanent link">&para;</a></h1>
+<p>It's a very common requirement to be able to support private module/dependency lookups.
+This page describes Renovate's approach to authentication.</p>
+<p>First, a quick note on terminology:</p>
+<ul>
+<li>The terms <code>module</code>, <code>package</code> and <code>dependency</code> can mostly be used interchangeably below</li>
+<li>The terms <code>credentials</code>, <code>secrets</code> and <code>authentication</code> are also used interchangeably</li>
+</ul>
+<h2 id="when-does-renovate-need-credentials">When does Renovate need credentials?<a class="headerlink" href="#when-does-renovate-need-credentials" title="Permanent link">&para;</a></h2>
+<p>By default, the only credentials Renovate has are those for the "platform", i.e. GitHub, GitLab, etc.
+If the token used has sufficient permissions, this will enable Renovate to lookup dependencies located in alternative repositories on the same host or any hosted on any embedded package registry on the same host.</p>
+<p>It's also quite common to need to look up packages on other protected hosts, including npmjs, Docker Hub, or private registries like Nexus or Artifactory.
+Any time you need Renovate to access such registries with credentials then you will need to provision them as part of your config.</p>
+<p>There are four times in Renovate's behavior when it may need credentials:</p>
+<ul>
+<li>Resolving private config presets</li>
+<li>Looking up dependency versions</li>
+<li>Looking up changelogs</li>
+<li>Passing to package managers when updating lock files or checksums</li>
+</ul>
+<!-- prettier-ignore -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you self-host Renovate, and have a self-hosted registry which <em>doesn't</em> require authentication to access, then such modules/packages are not considered "private" to Renovate.</p>
+</div>
+<h2 id="private-config-presets">Private Config Presets<a class="headerlink" href="#private-config-presets" title="Permanent link">&para;</a></h2>
+<p>Renovate supports config presets, including those which are private.</p>
+<p>Although npm presets were the first type supported, they are now deprecated and it is recommend that all users migrate to git-hosted "local" presets instead.
+However if you do still use them, private modules should work if you configure <code>hostRules</code> (recommended) or <code>npmrc</code> including token credentials in your bot global config.
+It is strongly recommended not to use private modules on a private registry and a warning will be logged if that is found.
+Credentials stored on disk (e.g. in <code>~/.npmrc</code>) are no longer supported.</p>
+<p>The recommended way of using local presets is to configure them using "local" presets, e.g. <code>"extends": ["local&gt;myorg/renovate-config"]</code>, and ensure that the platform token has access to that repo.</p>
+<p>It's not recommended that you use a private repository to host your config while then extending it from a public repository.
+If your preset doesn't have secrets then you should make it public, while if it does have secrets then it's better to split your preset between a public one which all repos extend, and a private one with secrets which only other private repos extend.</p>
+<p>In summary, the recommended approach to private presets is:</p>
+<ul>
+<li>Host the presets on the same server/platform as other repositories</li>
+<li>Make sure you install Renovate into the preset repository so that it has credentials to access it from other private repos</li>
+<li>Use <code>local&gt;....</code> syntax to refer to private presets</li>
+</ul>
+<h2 id="dependency-version-lookups">Dependency Version Lookups<a class="headerlink" href="#dependency-version-lookups" title="Permanent link">&para;</a></h2>
+<p>Whenever Renovate detects that a project uses a particular dependency, it tries to look up that dependency to see if any new versions exist.
+If such a package is private, then Renovate must be configured with the relevant credentials.
+Renovate does not use any package managers for this step and performs all HTTP(S) lookups itself, including insertion of authentication headers.</p>
+<p>Configuring Renovate with credentials requires <code>hostRules</code>.
+Each host rule consists of a <code>hostType</code> value and/or a way to match against hosts using <code>matchHost</code>.</p>
+<p><code>hostType</code> is not particularly important at this step unless you have different credentials for the same host, but it is sometimes useful in later steps so is good to include if you can.
+It can be either a "platform" name (e.g. <code>github</code>, <code>azure</code>, etc) or a "datasource" name (e.g. <code>npm</code>, <code>maven</code>, <code>github-tags</code>, etc).</p>
+<p>If you want to apply credentials only for a nested path within a host then write <code>matchHost</code> as a base <abbr title="Uniform Resource Locator">URL</abbr> like <code>https://registry.company.com/nested/path/</code>.
+If the same credentials apply to all paths on a host and not on any subdomains of it then configure <code>matchHost</code> with a protocol like <code>https://registry.company.com</code>.
+Finally, to apply credentials to all hosts within the domain, use a <code>matchHost</code> value with no <code>https://</code> prefix, e.g. <code>company.com</code> or <code>registry.company.com</code>, both of which would apply to a host like <code>beta.registry.company.com</code>.</p>
+<p>In addition to the above options to match against a host, you need to add the credentials.
+Typically they are either <code>token</code>, or <code>username</code> + <code>password</code>.
+Other credential terms are not supported yet.</p>
+<div class="highlight"><span class="filename">Example host rules</span><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;registry.npmjs.org&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc123&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://registry.company.com/pypi-simple/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;engineering&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc123&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Renovate applies these <code>hostRules</code> to every HTTP(s) request which is sent, so they are largely independent of any platform or datasource logic.
+With <code>hostRules</code> in place, private package lookups should all work.</p>
+<h3 id="github-and-enterprise-repo-scoped-credentials">GitHub (and Enterprise) repo scoped credentials<a class="headerlink" href="#github-and-enterprise-repo-scoped-credentials" title="Permanent link">&para;</a></h3>
+<p>If you need to use different credentials for a specific GitHub repo, then you can configure <code>hostRules</code> like one of the following:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.github.com/repos/org/repo&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc123&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.domain.com/api/v3/repos/org/repo&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc123&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Renovate will use those credentials for all requests to <code>org/repo</code>.</p>
+<h4 id="example-for-gomod">Example for gomod<a class="headerlink" href="#example-for-gomod" title="Permanent link">&para;</a></h4>
+<p>Here's an example for <code>gomod</code> with private <code>github.com</code> repos.
+Assume this config is used on the <code>github.com/some-other-org</code> repo:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://docs.renovatebot.com/renovate-schema.json&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dependencyDashboard&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://gitlab.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;glpat-token_for_different_git_platform&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;hostType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gitlab&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/some-org&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ghp_token_for_different_org&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;hostType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;go&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.github.com/repos/some-org&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ghp_token_for_different_org&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;hostType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;customEnvVariables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;GOPRIVATE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/some-org,github.com/some-other-org,gitlab.com/some-org&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;GONOSUMDB&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/some-org,github.com/some-other-org,gitlab.com/some-org&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;GONOPROXY&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/some-org,github.com/some-other-org,gitlab.com/some-org&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;postUpdateOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;gomodTidy&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="looking-up-changelogs">Looking up changelogs<a class="headerlink" href="#looking-up-changelogs" title="Permanent link">&para;</a></h2>
+<p>When Renovate creates Pull Requests, its default behavior is to locate and embed release notes/changelogs of packages.
+These release notes are fetched from the source repository of packages and not from the registries themselves, so if they are private then they will require different credentials.</p>
+<p>When it comes to open source, most packages host their source on <code>github.com</code> in public repositories.
+GitHub greatly rate limits unauthenticated API requests, so you need to configure credentials for <code>github.com</code> or the bot will get rate limited quickly.
+It can be confusing for people who host their own source code privately to be asked to configure a <code>github.com</code> token but without it changelogs for most open source packages will be blocked.</p>
+<p>Currently the preferred way to configure <code>github.com</code> credentials for self-hosted Renovate is:</p>
+<ul>
+<li>Create a read-only Personal Access Token (<abbr title="Personal Access Token">PAT</abbr>) for a <code>github.com</code> account. This can be any GitHub account, but we recommend you create an "empty" account for this purpose.</li>
+<li>Add the <abbr title="Personal Access Token">PAT</abbr> to Renovate using the environment variable <code>RENOVATE_GITHUB_COM_TOKEN</code></li>
+</ul>
+<!-- prettier-ignore -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>GITHUB_COM_TOKEN</code> is still parsed and takes precedence over <code>RENOVATE_GITHUB_COM_TOKEN</code>, but is considered deprecated and will be removed in a future major update.</p>
+</div>
+<h2 id="package-manager-credentials-for-artifact-updating">Package Manager Credentials for Artifact Updating<a class="headerlink" href="#package-manager-credentials-for-artifact-updating" title="Permanent link">&para;</a></h2>
+<p>In Renovate terminology, "artifacts" includes lock files, checksum files, and vendored dependencies.
+One way of understanding artifacts is: "everything else that needs to be updated when the dependency version changes".</p>
+<p>Not all package managers supported by Renovate require artifact updating, because not all use lock or checksum files.
+But when such files need updating, Renovate does so by using the package managers themselves instead of trying to "reverse engineer" each package manager's file formats and behavior.
+Importantly, such package managers are run via shell commands and do not understand Renovate's <code>hostRules</code> objects, so Renovate needs to reformat the credentials into formats (such as environment variables or configuration files) which the package manager understands.</p>
+<p>Because of this need to convert <code>hostRules</code> credentials into a format which package managers understand, sometimes artifact updating can fail due to missing credentials.
+Sometimes this can be resolved by changing Renovate configuration, but other times it may be due to a feature gap.
+The following details the most common/popular manager artifacts updating and how credentials are passed:</p>
+<h3 id="bundler">bundler<a class="headerlink" href="#bundler" title="Permanent link">&para;</a></h3>
+<p><code>hostRules</code> with <code>hostType=rubygems</code> are converted into environment variables which Bundler supports.</p>
+<h3 id="composer">composer<a class="headerlink" href="#composer" title="Permanent link">&para;</a></h3>
+<p>Any <code>hostRules</code> token for <code>github.com</code> or <code>gitlab.com</code> are found and written out to <code>COMPOSER_AUTH</code> in env for Composer to parse.
+Any <code>hostRules</code> with <code>hostType=packagist</code> are also included.
+For dependencies on <code>github.com</code> without a Packagist server: use a Personal Access Token for <code>hostRule</code> with <code>hostType=git-tags</code>, do not use an application token.
+Avoid adding a <code>hostRule</code> with <code>hostType=github</code> because:</p>
+<ul>
+<li>it overrides the default Renovate application token for everything else</li>
+<li>it causes unwanted side effects</li>
+</ul>
+<p>The repository in <code>composer.json</code> should have the <code>vcs</code> type with a <code>https</code> <abbr title="Uniform Resource Locator">URL</abbr>.
+For example:</p>
+<!-- schema-validation-disable-next-block -->
+
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;repositories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vcs&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/organization/private-repository&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="gomod">gomod<a class="headerlink" href="#gomod" title="Permanent link">&para;</a></h3>
+<!-- prettier-ignore -->
+<p>If a <code>github.com</code> token is found in <code>hostRules</code>, then it is written out to local <a href="https://git-scm.com/docs/git-config#Documentation/git-config.txt-GITCONFIGCOUNT">GIT_CONFIG_</a> variables prior to running <code>go</code> commands.
+The environment variables used are: <code>GIT_CONFIG_KEY_0=url.https://${token}@github.com/.insteadOf GIT_CONFIG_VALUE_0=https://github.com/ GIT_CONFIG_COUNT=1</code>.</p>
+<h3 id="helm">helm<a class="headerlink" href="#helm" title="Permanent link">&para;</a></h3>
+<p>Maybe you're running your own ChartMuseum server to host your private Helm Charts.
+This is how you connect to a private Helm repository:</p>
+<div class="highlight"><span class="filename">Connecting to a private Helm repository</span><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">hostRules</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">matchHost</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;your.host.io&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">hostType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;helm&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;your-username&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SELF_HOSTED_HELM_CHARTS_PASSWORD</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>If you need to configure per-repository credentials then you can also configure the above within a repository's Renovate config (e.g. <code>renovate.json</code>).</p>
+<h3 id="npm">npm<a class="headerlink" href="#npm" title="Permanent link">&para;</a></h3>
+<p>The recommended approaches in order of preference are:</p>
+<ol>
+<li><strong>Self-hosted hostRules</strong>: Configure a hostRules entry in the bot's <code>config.js</code> with the <code>hostType</code>, <code>matchHost</code> and <code>token</code> specified</li>
+<li><strong><abbr title="This means the Mend-hosted GitHub app.">The Mend Renovate App</abbr> with private modules from npmjs.org</strong>: Add an encrypted <code>npmToken</code> to your Renovate config</li>
+<li><strong><abbr title="This means the Mend-hosted GitHub app.">The Mend Renovate App</abbr> with a private registry</strong>: Add an plaintext <code>npmrc</code> plus an encrypted <code>npmToken</code> in config</li>
+</ol>
+<p>These approaches are described in full below.</p>
+<h4 id="add-hostrule-to-bots-config">Add hostRule to bots config<a class="headerlink" href="#add-hostrule-to-bots-config" title="Permanent link">&para;</a></h4>
+<p>Define <code>hostRules</code> like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">hostRules</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">hostType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;npm&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">matchHost</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;registry.npmjs.org&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NPMJS_TOKEN</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">hostType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;npm&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">matchHost</span><span class="o">:</span>
+<span class="w">        </span><span class="s1">&#39;https://pkgs.dev.azure.com/{organization}/{project}/_packaging/{feed}/npm/registry/&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;VssSessionToken&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">AZURE_NPM_TOKEN</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// https://www.jfrog.com/confluence/display/JFROG/npm+Registry</span>
+<span class="w">      </span><span class="c1">// Will be passed as `//artifactory.my-company.com/artifactory/api/npm/npm:_auth=&lt;TOKEN&gt;` to `.npmrc`</span>
+<span class="w">      </span><span class="nx">hostType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;npm&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">matchHost</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://artifactory.my-company.com/artifactory/api/npm/npm/&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ARTIFACTORY_NPM_TOKEN</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">authType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Basic&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div>
+<!-- prettier-ignore -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Remember to put a trailing slash at the end of your <code>matchHost</code> <abbr title="Uniform Resource Locator">URL</abbr>.</p>
+</div>
+<h4 id="add-npmrc-string-to-renovate-config">Add npmrc string to Renovate config<a class="headerlink" href="#add-npmrc-string-to-renovate-config" title="Permanent link">&para;</a></h4>
+<p>You can add an <code>.npmrc</code> authentication line to your Renovate config under the field <code>npmrc</code>. e.g. a <code>renovate.json</code> might look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;npmrc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;//some.registry.com/:_authToken=abcdefghi-1234-jklmno-aac6-12345567889&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If configured like this, Renovate will use this to authenticate with npm and will ignore any <code>.npmrc</code> files(s) it finds checked into the repository.
+If you wish for the values in your <code>config.npmrc</code> to be <em>merged</em> (prepended) with any values found in repos then also set <code>config.npmrcMerge=true</code>.
+This merge approach is similar to how <code>npm</code> itself behaves if <code>.npmrc</code> is found in both the user home directory as well as a project.</p>
+<h4 id="add-npmtoken-to-renovate-config">Add npmToken to Renovate config<a class="headerlink" href="#add-npmtoken-to-renovate-config" title="Permanent link">&para;</a></h4>
+<p>If you are using the main npmjs registry then you can configure only the <code>npmToken</code> instead:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;npmToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abcdefghi-1234-jklmno-aac6-12345567889&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="add-an-encrypted-npm-token-to-renovate-config">Add an encrypted npm token to Renovate config<a class="headerlink" href="#add-an-encrypted-npm-token-to-renovate-config" title="Permanent link">&para;</a></h4>
+<p>If you don't want all users of the repository to see the plaintext token, you can encrypt it with Renovate's public key instead, so that only Renovate can decrypt it.</p>
+<p>Go to <a href="https://app.renovatebot.com/encrypt">https://app.renovatebot.com/encrypt</a>, paste in your npm token, select "Encrypt", then copy the encrypted result.</p>
+<p>Paste the encrypted result inside an <code>encrypted</code> object like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;encrypted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;npmToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxT19RIdhAh09lkhdrK39HzKNBn3etoLZAwHdeJ25cX+5y52a9kAC7flXmdw5JrkciN08aQuRNqDaKxp53IVptB5AYOnQPrt8MCT+x0zHgp4A1zv1QOV84I6uugdWpFSjPUkmLGMgULudEZJMlY/dAn/IVwf/IImqwazY8eHyJAA4vyUqKkL9SXzHjvS+OBonQ/9/AHYYKmDJwT8vLSRCKrXxJCdUfH7ZnikZbFqjnURJ9nGUHP44rlYJ7PFl05RZ+X5WuZG/A27S5LuBvguyQGcw8A2AZilHSDta9S/4eG6kb22jX87jXTrT6orUkxh2WHI/xvNUEout0gxwWMDkA==&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If you have no <code>.npmrc</code> file then Renovate creates one for you, pointing to the default npmjs registry.
+If instead you use an alternative registry or need an <code>.npmrc</code> file for some other reason, you should configure it too and substitute the npm token with <code>${NPM_TOKEN}</code> for it to be replaced. e.g.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;encrypted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;npmToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxT19RIdhAh09lkhdrK39HzKNBn3etoLZAwHdeJ25cX+5y52a9kAC7flXmdw5JrkciN08aQuRNqDaKxp53IVptB5AYOnQPrt8MCT+x0zHgp4A1zv1QOV84I6uugdWpFSjPUkmLGMgULudEZJMlY/dAn/IVwf/IImqwazY8eHyJAA4vyUqKkL9SXzHjvS+OBonQ/9/AHYYKmDJwT8vLSRCKrXxJCdUfH7ZnikZbFqjnURJ9nGUHP44rlYJ7PFl05RZ+X5WuZG/A27S5LuBvguyQGcw8A2AZilHSDta9S/4eG6kb22jX87jXTrT6orUkxh2WHI/xvNUEout0gxwWMDkA==&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;npmrc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;registry=https://my.custom.registry/npm\n//my.custom.registry/npm:_authToken=${NPM_TOKEN}&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Renovate will then use the following logic:</p>
+<ol>
+<li>If no <code>npmrc</code> string is present in config then one will be created with the <code>_authToken</code> pointing to the default npmjs registry</li>
+<li>If an <code>npmrc</code> string is present and has a <code>${NPM_TOKEN}</code> then that placeholder will be replaced with the decrypted token</li>
+<li>If an <code>npmrc</code> string is present but doesn't have a <code>${NPM_TOKEN}</code> then the file will have <code>_authToken=&lt;token&gt;</code> appended to it</li>
+</ol>
+<h4 id="encrypted-entire-npmrc-file-into-config">Encrypted entire .npmrc file into config<a class="headerlink" href="#encrypted-entire-npmrc-file-into-config" title="Permanent link">&para;</a></h4>
+<p>Copy the entire <code>.npmrc</code>, replace newlines with <code>\n</code> characters , and then try encrypting it at <a href="https://app.renovatebot.com/encrypt">https://app.renovatebot.com/encrypt</a>.</p>
+<p>You will then get an encrypted string that you can substitute into your <code>renovate.json</code> instead.
+The end-result looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;encrypted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;npmrc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WOTWu+jliBtXYz3CU2eI7dDyMIvSJKS2N5PEHZmLB3XKT3vLaaYTGCU6m92Q9FgdaM/q2wLYun2JrTP4GPaW8eGZ3iiG1cm7lgOR5xPnkCzz0DUmSf6Cc/6geeVeSFdJ0zqlEAhdNMyJ4pUW6iQxC3WJKgM/ADvFtme077Acvc0fhCXv0XvbNSbtUwHF/gD6OJ0r2qlIzUMGJk/eI254xo5SwWVctc1iZS9LW+L0/CKjqhWh4SbyglP3lKE5shg3q7mzWDZepa/nJmAnNmXdoVO2aPPeQCG3BKqCtCfvLUUU/0LvnJ2SbQ1obyzL7vhh2OF/VsATS5cxbHvoX/hxWQ==&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="automatically-authenticate-for-npm-package-stored-in-private-github-npm-repository">Automatically authenticate for npm package stored in private GitHub npm repository<a class="headerlink" href="#automatically-authenticate-for-npm-package-stored-in-private-github-npm-repository" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://npm.pkg.github.com/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;hostType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npm&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;encrypted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;Encrypted PAT Token&gt;&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;npmrc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@organizationName:registry=https://npm.pkg.github.com/&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="yarn-2">Yarn 2+<a class="headerlink" href="#yarn-2" title="Permanent link">&para;</a></h4>
+<p>Renovate doesn't support reading <code>npmRegistries</code> and <code>npmScopes</code> from <code>.yarnrc.yml</code>, so <code>hostRules</code> (or <code>npmToken</code>) and <code>npmrc</code> should be configured like above.
+Renovate updates <code>npmRegistries</code> in <code>.yarnrc.yml</code> with resolved <code>hostRules</code> before running Yarn.
+For Renovate to overwrite existing <code>npmRegistries</code> entry, the key should match the <code>matchHost</code> minus the protocol (<code>http:</code> or <code>https:</code>) plus the trailing slash.</p>
+<p>For example, the Renovate configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://npm.pkg.github.com/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;hostType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npm&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;encrypted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;Encrypted PAT Token&gt;&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>will update <code>.yarnrc.yml</code> as following:</p>
+<p>If no registry currently set</p>
+<div class="highlight"><pre><span></span><code><span class="nt">npmRegistries</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">//npm.pkg.github.com/</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">npmAuthToken</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Decrypted PAT Token&gt;</span>
+</code></pre></div>
+<p>If current registry key has protocol set:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">npmRegistries</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">https://npm.pkg.github.com</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">npmAuthToken</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Decrypted PAT Token&gt;</span>
+</code></pre></div>
+<h3 id="maven">maven<a class="headerlink" href="#maven" title="Permanent link">&para;</a></h3>
+<p>GitLab package registry can be authorized using <code>Authorization: Bearer &lt;token&gt;</code>.
+In GitLab Pipelines authorization can be achieved using following config:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">hostRules</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">hostType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;maven&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">matchHost</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://gitlab.host.com/api/v4&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">CI_JOB_TOKEN</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">];</span>
+</code></pre></div>
+<h3 id="nuget">nuget<a class="headerlink" href="#nuget" title="Permanent link">&para;</a></h3>
+<p>For each known NuGet registry, Renovate searches for <code>hostRules</code> with <code>hostType=nuget</code> and matching host.
+For those found, a command like the following is run: <code>dotnet nuget add source ${registryInfo.feedUrl} --configfile ${nugetConfigFile} --username ${username} --password ${password} --store-password-in-clear-text</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">hostRules</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">matchHost</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://pkgs.dev.azure.com/&lt;org&gt;/&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">hostType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;nuget&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// doesn&#39;t matter for azure</span>
+<span class="w">    </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;PAT&gt;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">];</span>
+</code></pre></div>
+<h3 id="pip">pip<a class="headerlink" href="#pip" title="Permanent link">&para;</a></h3>
+<p>If a <code>requirements.txt</code> file has an index-url then Renovate follows that link, instead of following any link set in the <code>registryUrls</code> array.
+To override the <abbr title="Uniform Resource Locator">URL</abbr> found in <code>requirements.txt</code>, you must create a custom <code>packageRules</code> setting.
+This is because <code>packageRules</code> are applied <em>after</em> package file extraction.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchManagers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pip_requirements&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;registryUrls&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://docker.mycompany.domain&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="pipenv">pipenv<a class="headerlink" href="#pipenv" title="Permanent link">&para;</a></h3>
+<p>If a <code>Pipfile</code> contains a <code>source</code> with <code>USERNAME</code> or <code>PASSWORD</code> environment variables and there is a <code>hostRules</code> entry with a matching host plus <code>username</code> and <code>password</code> fields, then these variables would be passed to <code>pipenv lock</code>.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[[source]]</span>
+<span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://$USERNAME:${PASSWORD}@mypypi.example.com/simple&quot;</span>
+<span class="na">verify_ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pypi&quot;</span>
+</code></pre></div>
+<h3 id="pip-compile">pip-compile<a class="headerlink" href="#pip-compile" title="Permanent link">&para;</a></h3>
+<p>The pip-compile manager can extract these directives from the input file given to Renovate:</p>
+<ul>
+<li><code>--index-url</code></li>
+<li><code>--extra-index-url</code></li>
+</ul>
+<p>Renovate matches those URLs with credentials from matching <code>hostRules</code> blocks in the Renovate configuration.
+Then Renovate passes the information to <code>pip-compile</code> via environment variables.</p>
+<!-- prettier-ignore -->
+<div class="admonition warning">
+<p class="admonition-title">Put directives in the .in file, avoid the lockfile</p>
+<p>You must put the <code>--[extra-]index-url</code> directive(s) in the <code>.in</code> file, for <code>pip-compile</code> to use during Renovate jobs.
+Do <em>not</em> put the directive(s) in the lockfile, as this is <em>not</em> supported.</p>
+</div>
+<div class="highlight"><span class="filename">requirements.in</span><pre><span></span><code>--extra-index-url https://pypi.my.domain/simple
+
+private-package==1.2.3
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;pip-compile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;managerFilePatterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;requirements.txt&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pypi.my.domain&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myuser&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mypassword&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="packages-that-renovate-needs">Packages that Renovate needs<a class="headerlink" href="#packages-that-renovate-needs" title="Permanent link">&para;</a></h4>
+<p>Renovate relies on <code>pip</code>'s integration with the Python <a href="https://pypi.org/project/keyring/">keyring</a> package along with the <a href="https://pypi.org/project/keyrings.envvars/">keyrings.envvars</a> backend for this.</p>
+<h5 id="self-hosting-renovate">Self-hosting Renovate<a class="headerlink" href="#self-hosting-renovate" title="Permanent link">&para;</a></h5>
+<p>This section only applies to users who self-host Renovate.
+If you self-host and use Containerbase, or our Docker sidecar container, then Renovate can already access the packages it needs.</p>
+<p>But if you are self-hosting Renovate and:</p>
+<ul>
+<li><em>not</em> running Renovate in a Containerbase environment</li>
+<li>or, <em>not</em> using the Docker sidecar container</li>
+</ul>
+<p>Then you must install the Python keyring package and the keyrings.envvars package into your self-hosted environment.</p>
+<h3 id="poetry">poetry<a class="headerlink" href="#poetry" title="Permanent link">&para;</a></h3>
+<p>For every Poetry source, a <code>hostRules</code> search is done and then any found credentials are added to env like <code>POETRY_HTTP_BASIC_X_USERNAME</code> and <code>POETRY_HTTP_BASIC_X_PASSWORD</code>, where <code>X</code> represents the normalized name of the source in <code>pyproject.toml</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">hostRules</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">matchHost</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pypi.example.com&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">hostType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pypi&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PYPI_USERNAME</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PYPI_PASSWORD</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>If you're self-hosting Renovate via the <a href="../running/#gitlab-runner">GitLab Runner</a> and want to access packages from private GitLab registries, you can use the GitLab <abbr title="Continuous Integration">CI</abbr> job token for authentication:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">hostRules</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">matchHost</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;gitlab.example.com&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">hostType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pypi&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;gitlab-ci-token&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">CI_JOB_TOKEN</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div>
+<h2 id="automatic-hostrules-credentials-for-platform-hosted-registries">Automatic hostRules credentials for platform-hosted registries<a class="headerlink" href="#automatic-hostrules-credentials-for-platform-hosted-registries" title="Permanent link">&para;</a></h2>
+<h3 id="github-packages">GitHub Packages<a class="headerlink" href="#github-packages" title="Permanent link">&para;</a></h3>
+<p>For GitHub Packages, Renovate will automatically provision hostRules for both <code>ghcr.io</code> (containers) and <code>*.pkg.github.com</code> (maven, npm, nuget, rubygems) using the GitHub platform token.
+This means that any private packages hosted on GitHub will be automatically authenticated if they are accessible using the same token by Renovate.</p>
+<p>If you wish to <em>override</em> this authentication by providing a different token, then your rule must be <em>at least as specific</em> as the automatic rule that Renovate generates.
+For example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npm.pkg.github.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;hostType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npm&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;some-personal-access-token&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="encryption-and-the-mend-renovate-app">Encryption and <abbr title="This means the Mend-hosted GitHub app.">the Mend Renovate App</abbr><a class="headerlink" href="#encryption-and-the-mend-renovate-app" title="Permanent link">&para;</a></h2>
+<p>Many users use <a href="https://github.com/apps/renovate"><abbr title="This means the Mend-hosted GitHub app.">the Mend Renovate App</abbr></a>, which is hosted by Mend.
+If you are a user of this app, and have private modules, then the following is applicable.</p>
+<h3 id="private-presets-with-public-repositories">Private presets with public repositories<a class="headerlink" href="#private-presets-with-public-repositories" title="Permanent link">&para;</a></h3>
+<p>If you have a preset in a private repo but reference ("extend") it from a public repository then it won't work.
+This is because public repositories are provided with a token scoped to only that particular repository, and not for all repositories within the organization.
+This is a security measure so that if a the token is accidentally leaked publicly, the damage is limited to the public repository it leaked to and not to every repository within the organization.</p>
+<p>The solution to this is that you should break your presets into public and private ones, and reference only the public ones from public repositories.</p>
+<h3 id="encrypting-secrets">Encrypting secrets<a class="headerlink" href="#encrypting-secrets" title="Permanent link">&para;</a></h3>
+<p>It is strongly recommended that you avoid committing secrets to repositories, including private ones, and this includes secrets needed by Renovate to access private modules.
+The preferred approach to secrets is that the bot administrator configures them as <code>hostRules</code> which are then applied to all repositories which the bot accesses.</p>
+<!-- prettier-ignore -->
+<div class="admonition warning">
+<p class="admonition-title">Store secrets for your Mend-hosted app via the web UI</p>
+<p>Mend no longer supports putting encrypted secrets in the Renovate config file on your repository.
+Going forward, all secrets must be stored in the App settings via the web UI.
+If you have encrypted secrets in your Renovate config, you must migrate them to the web UI.
+Read <a href="../../mend-hosted/migrating-secrets/">Migrating Secrets from Repo Config to App Settings</a> to learn how.</p>
+</div>
+<p>If you need to provide credentials to <abbr title="This means the Mend-hosted GitHub app.">the Mend Renovate App</abbr>, please do this:</p>
+<ol>
+<li>Add each secret string in the Credentials section of Organisation or Repository settings in the web UI at <a href="http://developer.mend.io">http://developer.mend.io</a>.</li>
+</ol>
+<p><img alt="Organization and repository secrets on the credentials settings page" src="../../assets/images/app-settings/org-and-repo-secrets.png" /></p>
+<ol>
+<li>Reference secrets inside your Renovate config files with notation: <code>{{ secrets.YOUR_SECRET }}</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{ secrets.RENOVATE_GITHUB_COM_TOKEN }}&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>For more details, see <a href="../../mend-hosted/credentials/">Using Secrets with Mend Cloud Apps</a>.</p>
+<h3 id="access-to-github-actions-secrets">Access to GitHub Actions Secrets<a class="headerlink" href="#access-to-github-actions-secrets" title="Permanent link">&para;</a></h3>
+<p><abbr title="This means the Mend-hosted GitHub app.">The Mend Renovate App</abbr> does not run using GitHub Actions, but such secrets would be a bad fit for the app anyway for the following reasons:</p>
+<ul>
+<li>The app would be granted access to <em>all</em> the repository/org secrets, not just the ones you want</li>
+<li>If Renovate wants access to such secrets, it would need to ask for them from every user, not just the ones who want to use this approach (GitHub does not support the concept of optional permissions for Apps, so people do not have the option to decline)</li>
+</ul>
+<h2 id="adminbot-config-vs-userrepository-config-for-self-hosted-users">Admin/Bot config vs User/Repository config for Self-hosted users<a class="headerlink" href="#adminbot-config-vs-userrepository-config-for-self-hosted-users" title="Permanent link">&para;</a></h2>
+<p>"Admin/Bot config" refers to the config which the Renovate Bot administrator provides at bot startup, e.g. using environment variables, <abbr title="Command-Line Interface">CLI</abbr> parameters, or the <code>config.js</code> configuration file.
+User/Repository config refers to the in-repository config file which defaults to <code>renovate.json</code> but has a large number of alternative filenames supported.</p>
+<p>If there is a need to supply custom rules for certain repository, it can still be done using the <code>config.js</code> file and the <code>repositories</code> array.</p>
+<p>If per-repository config must be done within the repository, it is still recommended against committing secrets directly (including e.g. <code>.npmrc</code> files with tokens) and instead encrypting them with a custom public key first.
+For instructions on this, see the above section on encrypting secrets for <abbr title="This means the Mend-hosted GitHub app.">the Mend Renovate App</abbr> but instead:</p>
+<ul>
+<li>Save a copy of the <a href="https://app.renovatebot.com/encrypt">https://app.renovatebot.com/encrypt</a> HTML file locally, or host it locally</li>
+<li>Generate a public/private key pair for the app using the instructions in <a href="../../self-hosted-configuration/#privatekey">privateKey</a></li>
+<li>Replace the existing public key in the HTML with the public key you generated in the step prior</li>
+<li>Use the resulting HTML encrypt page to encrypt secrets for your app before adding them to user/repository config</li>
+<li>Configure the app to run with <code>privateKey</code> set to the private key you generated above</li>
+</ul>
+<!-- prettier-ignore -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Encrypted values can't be used in the "Admin/Bot config".</p>
+</div>
+<h3 id="hostrules-configuration-using-environment-variables">hostRules configuration using environment variables<a class="headerlink" href="#hostrules-configuration-using-environment-variables" title="Permanent link">&para;</a></h3>
+<p>Self-hosted users can enable the option <a href="../../self-hosted-configuration/#detecthostrulesfromenv"><code>detectHostRulesFromEnv</code></a> to configure the most common types of <code>hostRules</code> via environment variables.</p>
+<!-- Material for MkDocs shows a tooltip when you hover over any abbreviation in this list. -->
+<!-- https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary -->
+
+<!-- Please keep this list sorted from A-Z. -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../installing-onboarding/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing &amp; Onboarding">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Installing & Onboarding
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Troubleshooting
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    Made with
+  <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.prune", "navigation.top", "toc.follow", "navigation.instant", "announce.dismiss", "content.code.copy", "content.action.edit", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

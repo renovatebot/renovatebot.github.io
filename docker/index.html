@@ -1,0 +1,2606 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Docker Package Manager Support in Renovate">
+      
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/docker/">
+      
+      
+        <link rel="prev" href="../bicep/">
+      
+      
+        <link rel="next" href="../golang/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Docker - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#docker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+We released a new major version of Renovate. Read the <a href="https://github.com/renovatebot/renovate/releases/tag/43.0.0">Renovate 43 changelog on GitHub</a>.
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Renovate Docs" class="md-header__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renovate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Docker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Renovate Docs" class="md-nav__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Renovate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../getting-started/use-cases/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../config-overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mend-hosted/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mend-hosted Apps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../key-concepts/how-renovate-works/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../modules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renovate Modules
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bazel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bazel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bicep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bicep
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preservation-of-version-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preservation of Version Precision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version compatibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digest-pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Digest Pinning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digest-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Digest Updating
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-upgrading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Upgrading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version Upgrading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-codenames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ubuntu codenames
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-codenames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian codenames
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuringdisabling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring/Disabling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring/Disabling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-all-docker-renovation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable all Docker Renovation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-renovate-for-only-certain-dockerfiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable Renovate for only certain Dockerfiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-docker-major-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Docker major updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-digest-pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable digest pinning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automerge-digest-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automerge digest updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registry-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registry authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registry authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Hub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-hosted-docker-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-hosted Docker registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-ecr-amazon-web-services-elastic-container-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS ECR (Amazon Web Services Elastic Container Registry)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS ECR (Amazon Web Services Elastic Container Registry)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-access-key-id-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using access key id &amp; secret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-get-login-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using get-login-password
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-container-registry-google-artifact-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Container Registry / Google Artifact Registry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Google Container Registry / Google Artifact Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-workload-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Workload Identity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Workload Identity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-application-default-credentials-self-hosted-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With Application Default Credentials (self-hosted only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-short-lived-access-token-github-actions-self-hosted-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With short-lived access token / GitHub Actions (self-hosted only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-long-lived-service-account-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using long-lived service account credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-short-lived-access-token-gitlab-ci-google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using short-lived access token / Gitlab CI / Google Cloud
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using short-lived access token / Gitlab CI / Google Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-google-container-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Google Container Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-lived-gcr-bearer-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short-lived GCR Bearer tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#independent-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Independent runs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-custom-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a custom image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-google-container-registry-gcr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Google Container Registry (GCR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../golang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Go (Golang)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javascript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node.js Versions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nuget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NuGet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../php/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ruby/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ruby
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../dependency-pinning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Dives
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../presets-abandonments/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Included Presets
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../user-stories/swissquote/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Other
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing-to-renovate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preservation-of-version-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preservation of Version Precision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version compatibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digest-pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Digest Pinning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digest-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Digest Updating
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-upgrading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Upgrading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version Upgrading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-codenames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ubuntu codenames
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-codenames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian codenames
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuringdisabling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring/Disabling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring/Disabling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-all-docker-renovation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable all Docker Renovation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-renovate-for-only-certain-dockerfiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable Renovate for only certain Dockerfiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-docker-major-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Docker major updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-digest-pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable digest pinning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automerge-digest-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automerge digest updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registry-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registry authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registry authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Hub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-hosted-docker-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-hosted Docker registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-ecr-amazon-web-services-elastic-container-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS ECR (Amazon Web Services Elastic Container Registry)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS ECR (Amazon Web Services Elastic Container Registry)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-access-key-id-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using access key id &amp; secret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-get-login-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using get-login-password
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-container-registry-google-artifact-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Container Registry / Google Artifact Registry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Google Container Registry / Google Artifact Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-workload-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Workload Identity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Workload Identity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-application-default-credentials-self-hosted-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With Application Default Credentials (self-hosted only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-short-lived-access-token-github-actions-self-hosted-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With short-lived access token / GitHub Actions (self-hosted only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-long-lived-service-account-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using long-lived service account credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-short-lived-access-token-gitlab-ci-google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using short-lived access token / Gitlab CI / Google Cloud
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using short-lived access token / Gitlab CI / Google Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-google-container-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Google Container Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-lived-gcr-bearer-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short-lived GCR Bearer tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#independent-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Independent runs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-custom-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a custom image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-google-container-registry-gcr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Google Container Registry (GCR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/renovatebot/renovate/edit/main/docs/usage/docker.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<p>Renovate supports upgrading dependencies in various types of Docker definition files:</p>
+<ul>
+<li>Docker's <code>Dockerfile</code> files</li>
+<li>Docker Compose <code>docker-compose.yml</code>, <code>compose.yml</code> files</li>
+<li>Visual Studio Code dev containers and GitHub Codespaces images and features</li>
+<li>CircleCI config files</li>
+<li>Kubernetes manifest files</li>
+<li>Ansible configuration files</li>
+</ul>
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Renovate searches in each repository for any files matching each manager's configured <code>managerFilePatterns</code></li>
+<li>Matching files are parsed, Renovate checks if the file(s) has any Docker image references (e.g. <code>FROM</code> lines in a <code>Dockerfile</code>)</li>
+<li>If the image tag in use "looks" like a version (e.g. <code>myimage:1</code>, <code>myimage:1.1</code>, <code>myimage:1.1.0</code>, <code>myimage:1-onbuild</code>) then Renovate checks the Docker registry for upgrades (e.g. from <code>myimage:1.1.0</code> to <code>myimage:1.2.0</code>)</li>
+</ol>
+<h2 id="preservation-of-version-precision">Preservation of Version Precision<a class="headerlink" href="#preservation-of-version-precision" title="Permanent link">&para;</a></h2>
+<p>By default, Renovate preserves the precision level specified in the Docker images.
+For example, if the existing image is pinned at <code>myimage:1.1</code> then Renovate only proposes upgrades to <code>myimage:1.2</code> or <code>myimage:1.3</code>.
+This means that you will not get upgrades to a more specific versions like <code>myimage:1.2.0</code> or <code>myimage:1.3.0</code>.
+Renovate does not yet support "pinning" an imprecise version to a precise version, e.g. from <code>myimage:1.2</code> to <code>myimage:1.2.0</code>, but it's a feature we'd like to work on one day.</p>
+<h2 id="version-compatibility">Version compatibility<a class="headerlink" href="#version-compatibility" title="Permanent link">&para;</a></h2>
+<p>Although suffixes in <abbr title="Semantic Versioning">SemVer</abbr> indicate pre-releases (e.g. <code>v1.2.0-alpha.2</code>), in Docker they typically indicate compatibility, e.g. <code>1.2.0-alpine</code>.
+By default Renovate assumes suffixes indicate compatibility, for this reason Renovate will not <em>change</em> any suffixes.
+Renovate will update <code>1.2.0-alpine</code> to <code>1.2.1-alpine</code> but never updates to <code>1.2.1</code> or <code>1.2.1-stretch</code> as that would change the suffix.</p>
+<p>If this behavior does not suit a particular package you have, Renovate allows you to customize the <code>versioning</code> scheme it uses.
+For example, you have a Docker image <code>foo/bar</code> that sticks to <abbr title="Semantic Versioning">SemVer</abbr> versioning.
+This means that you need to tell Renovate that suffixes indicate pre-release versions, and not compatibility.</p>
+<p>You could then use this <code>packageRules</code> array, to tell Renovate to use <code>semver</code> versioning for the <code>foo/bar</code> package:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDatasources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;docker&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;matchPackageNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;foo/bar&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;versioning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;semver&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Another example is the official <code>python</code> image, which follows <code>pep440</code> versioning.</p>
+<div class="highlight"><span class="filename">Telling Renovate to use the pep440 versioning scheme</span><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDatasources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;docker&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;matchPackageNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;versioning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pep440&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If traditional versioning doesn't work, try Renovate's built-in <code>loose</code> <code>versioning</code>.
+Renovate will perform a best-effort sort of the versions, regardless of whether they have letters or digits.</p>
+<p>If both the traditional versioning, and the <code>loose</code> versioning do not give the results you want, try the <code>regex</code> <code>versioning</code>.
+This approach uses regex capture group syntax to specify which part of the version string is major, minor, patch, pre-release, or compatibility.
+See the docs for <code>versioning</code> for documentation and examples of <code>regex</code> versioning in action.</p>
+<h2 id="digest-pinning">Digest Pinning<a class="headerlink" href="#digest-pinning" title="Permanent link">&para;</a></h2>
+<p>We recommend that you pin your Docker images to an exact digest.
+By pinning to a digest you make your Docker builds immutable, every time you do a <code>pull</code> you get the same content.</p>
+<p>If you work with dependencies in the JavaScript/npm ecosystem, you may be used to exact versions being immutable.
+For example, if you set a version like <code>2.0.1</code>, you and your colleagues always get the exact same "code".</p>
+<p>Docker's tags are not immutable versions, even if tags <em>look</em> like a version.
+You probably expect <code>myimage:1</code> and <code>myimage:1.2</code> to change over time, but you might incorrectly assume that <code>myimage:1.2.0</code> never changes.
+Although it probably <em>shouldn't</em>, the reality is that any Docker image tag <em>can</em> change content, and potentially break.</p>
+<p>By replacing Docker tags with Docker digests as the image's primary identifier you'll get immutable builds.
+Working with strings like <code>FROM node@sha256:d938c1761e3afbae9242848ffbb95b9cc1cb0a24d889f8bd955204d347a7266e</code> is hard.
+Luckily Renovate can update the digests for you.</p>
+<p>When pinning a digest, Renovate retains the Docker tag in the <code>FROM</code> line for readability, like this: <code>FROM node:14.15.1@sha256:d938c1761e3afbae9242848ffbb95b9cc1cb0a24d889f8bd955204d347a7266e</code>.</p>
+<h2 id="digest-updating">Digest Updating<a class="headerlink" href="#digest-updating" title="Permanent link">&para;</a></h2>
+<p>If you follow our advice to replace a tag like <code>node:14</code> with a pinned digest like <code>node:14@sha256:d938c1761e3afbae9242848ffbb95b9cc1cb0a24d889f8bd955204d347a7266e</code>, you will get Renovate PRs whenever the <code>node:14</code> image is updated on Docker Hub.</p>
+<p>Previously this update would have been "invisible" to you - one day you pull code that represents <code>node:14.15.0</code> and the next day you pull code that represents <code>node:14.15.1</code>.
+But you can never be sure, especially as Docker caches.
+Maybe some of your colleagues, or worse still your build machine, are stuck on an older version with a security vulnerability.</p>
+<p>By pinning to a digest instead, you will get these updates via Pull Requests, or even committed directly to your repository if you enable branch automerge for convenience.
+This makes sure everyone on your team uses the latest versions.</p>
+<h2 id="version-upgrading">Version Upgrading<a class="headerlink" href="#version-upgrading" title="Permanent link">&para;</a></h2>
+<p>Renovate also supports <em>upgrading</em> versions in Docker tags, so from <code>myimage:1.2.0</code> to <code>myimage:1.2.1</code>, or from <code>myimage:1.2</code> to <code>myimage:1.3</code>.
+If a tag looks like a version, Renovate will upgrade it like a version.</p>
+<p>We recommend you use the <code>major.minor.patch</code> tagging scheme, so change <code>myimage:1</code> to <code>myimage:1.1.1</code> first.
+This way you can see the changes in Renovate PRs.
+You can see the difference between a PR that upgrades <code>myimage</code> from <code>1.1.1</code> to <code>1.1.2</code> and a PR that changes the contents of the version you already use (<code>1.1.1</code>).</p>
+<p>By default, Renovate will upgrade <code>minor</code> and <code>patch</code> versions, so from <code>1.2.0</code> to <code>1.2.1</code>, but <em>not</em> upgrade <code>major</code> versions.
+If you wish to enable <code>major</code> versions: add the preset <code>docker:enableMajor</code> to the <code>extends</code> array in your <code>renovate.json</code> file.</p>
+<p>Renovate has some Docker-specific intelligence when it comes to versions.
+For example:</p>
+<h3 id="ubuntu-codenames">Ubuntu codenames<a class="headerlink" href="#ubuntu-codenames" title="Permanent link">&para;</a></h3>
+<p>Renovate understands <a href="https://wiki.ubuntu.com/Releases">Ubuntu release code names</a> and will offer upgrades to the latest <abbr title="Long Term Support">LTS</abbr> release.</p>
+<p>You must only use the <em>first</em> term of the code name in <em>lowercase</em>.
+So use <code>noble</code> for the Noble Numbat release.</p>
+<p>For example, Renovate will offer to upgrade the following <code>Dockerfile</code> layer:</p>
+<div class="highlight"><pre><span></span><code><span class="gd">- FROM ubuntu:jammy</span>
+<span class="gi">+ FROM ubuntu:noble</span>
+</code></pre></div>
+<h3 id="debian-codenames">Debian codenames<a class="headerlink" href="#debian-codenames" title="Permanent link">&para;</a></h3>
+<p>Renovate understands <a href="https://wiki.debian.org/DebianReleases">Debian release code names and rolling updates schedule</a> and will offer upgrades to the latest stable release.
+For example from <code>debian:bullseye</code> to <code>debian:bookworm</code>.</p>
+<p>The Debian codename must be in <em>lowercase</em>.</p>
+<p>For example, Renovate will offer to upgrade the following <code>Dockerfile</code> layer:</p>
+<div class="highlight"><pre><span></span><code><span class="gd">- FROM debian:bullseye</span>
+<span class="gi">+ FROM debian:bookworm</span>
+</code></pre></div>
+<h2 id="configuringdisabling">Configuring/Disabling<a class="headerlink" href="#configuringdisabling" title="Permanent link">&para;</a></h2>
+<p>If you wish to make changes that apply to all Docker managers, then add them to the <code>docker</code> config object.
+This is not foolproof, because some managers like <code>circleci</code> and <code>ansible</code> support multiple datasources that do not inherit from the <code>docker</code> config object.</p>
+<p>If you wish to override Docker settings for one particular type of manager, use that manager's config object instead.
+For example, to disable digest updates for Docker Compose only but leave them for other managers like <code>Dockerfile</code>, you would use this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;docker-compose&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;digest&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The following configuration options are applicable to Docker:</p>
+<h3 id="disable-all-docker-renovation">Disable all Docker Renovation<a class="headerlink" href="#disable-all-docker-renovation" title="Permanent link">&para;</a></h3>
+<p>Add <code>"docker:disable"</code> to your <code>extends</code> array.</p>
+<h3 id="disable-renovate-for-only-certain-dockerfiles">Disable Renovate for only certain Dockerfiles<a class="headerlink" href="#disable-renovate-for-only-certain-dockerfiles" title="Permanent link">&para;</a></h3>
+<p>Add all paths to ignore into the <code>ignorePaths</code> configuration field. e.g.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;config:recommended&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;ignorePaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;docker/old-files/&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="enable-docker-major-updates">Enable Docker major updates<a class="headerlink" href="#enable-docker-major-updates" title="Permanent link">&para;</a></h3>
+<p>Add <code>"docker:enableMajor"</code> to your <code>extends</code> array.</p>
+<h3 id="disable-digest-pinning">Disable digest pinning<a class="headerlink" href="#disable-digest-pinning" title="Permanent link">&para;</a></h3>
+<p>Add <code>"default:pinDigestsDisabled"</code> to your <code>extends</code> array.</p>
+<!-- markdownlint-disable MD046 -->
+<!-- prettier-ignore -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This preset only sets the global default for the <a href="../configuration-options/#pindigests">digest pinning flag</a> to <code>false</code>.
+If you have configured package rules that set <code>pinDigests</code> to <code>true</code>, those will still apply.
+This is also the case if you use the <a href="../presets-docker/#dockerpindigests"><code>docker:pinDigests</code> preset</a>, which adds a package rule that sets <code>pinDigests</code> to <code>true</code> for all packages from the docker datasource.</p>
+<p>If you want to disable the <code>docker:pinDigests</code> preset (e.g. if you want to use <code>config:best-practices</code> but not have digest pinning enabled),
+ignore the preset like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;config:best-practices&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;ignorePresets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;docker:pinDigests&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h3 id="automerge-digest-updates">Automerge digest updates<a class="headerlink" href="#automerge-digest-updates" title="Permanent link">&para;</a></h3>
+<p>Add <code>"default:automergeDigest"</code> to your <code>extends</code> array.
+If you want Renovate to commit directly to your base branch without opening a PR first, add <code>"default:automergeBranchPush"</code> to the <code>extends</code> array.</p>
+<h3 id="registry-authentication">Registry authentication<a class="headerlink" href="#registry-authentication" title="Permanent link">&para;</a></h3>
+<p>There are many different registries, and many ways to authenticate to those registries.
+We will explain how to authenticate for the most common registries.</p>
+<h4 id="docker-hub">Docker Hub<a class="headerlink" href="#docker-hub" title="Permanent link">&para;</a></h4>
+<p>Here is an example of configuring a Docker username/password for Docker Hub in <code>config.js</code>.
+The Docker Hub password is stored in a process environment variable.</p>
+<div class="highlight"><span class="filename">config.js</span><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">hostRules</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">hostType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;docker&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">matchHost</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;docker.io&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;your-username&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DOCKER_HUB_PASSWORD</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>You can add more host rules, read the <a href="../configuration-options/#hostrules"><code>hostRules</code> documentation</a> for more information.</p>
+<h4 id="self-hosted-docker-registry">Self-hosted Docker registry<a class="headerlink" href="#self-hosted-docker-registry" title="Permanent link">&para;</a></h4>
+<p>Say you host some Docker images yourself, and use a password to access your self-hosted Docker images.
+In addition to self-hosting, you also pull images from Docker Hub, without a password.
+In this example you would configure a specific Docker host like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">hostRules</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">hostType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;docker&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">matchHost</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;your.host.io&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;your-username&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SELF_HOSTED_DOCKER_IMAGES_PASSWORD</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div>
+<h4 id="aws-ecr-amazon-web-services-elastic-container-registry"><abbr title="Amazon Web Services">AWS</abbr> ECR (Amazon Web Services Elastic Container Registry)<a class="headerlink" href="#aws-ecr-amazon-web-services-elastic-container-registry" title="Permanent link">&para;</a></h4>
+<h5 id="using-access-key-id-secret">Using access key id &amp; secret<a class="headerlink" href="#using-access-key-id-secret" title="Permanent link">&para;</a></h5>
+<p>Renovate can authenticate with <abbr title="Amazon Web Services">AWS</abbr> ECR using <abbr title="Amazon Web Services">AWS</abbr> access key id &amp; secret as the username &amp; password, for example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;hostType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;docker&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345612312.dkr.ecr.us-east-1.amazonaws.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AKIAABCDEFGHIJKLMNOPQ&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;encrypted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;w...A&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="using-get-login-password">Using <code>get-login-password</code><a class="headerlink" href="#using-get-login-password" title="Permanent link">&para;</a></h5>
+<p>Renovate can also authenticate with <abbr title="Amazon Web Services">AWS</abbr> ECR using the output from the <code>aws ecr get-login-password</code> command as outlined in
+the <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html#registry-auth-token"><abbr title="Amazon Web Services">AWS</abbr> documentation</a>.
+To make use of this authentication mechanism, specify the username as <code>AWS</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;hostType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;docker&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345612312.dkr.ecr.us-east-1.amazonaws.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AWS&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;encrypted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;w...A&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="google-container-registry-google-artifact-registry">Google Container Registry / Google Artifact Registry<a class="headerlink" href="#google-container-registry-google-artifact-registry" title="Permanent link">&para;</a></h4>
+<h5 id="using-workload-identity">Using Workload Identity<a class="headerlink" href="#using-workload-identity" title="Permanent link">&para;</a></h5>
+<p>To let Renovate authenticate with <a href="https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity">Workload Identity</a>, you must:</p>
+<ul>
+<li>Configure Workload Identity</li>
+<li>Give the Service Account the <code>artifactregistry.repositories.downloadArtifacts</code> permission</li>
+</ul>
+<h6 id="with-application-default-credentials-self-hosted-only">With Application Default Credentials (self-hosted only)<a class="headerlink" href="#with-application-default-credentials-self-hosted-only" title="Permanent link">&para;</a></h6>
+<p>To let Renovate authenticate with <a href="https://cloud.google.com/docs/authentication/provide-credentials-adc">ADC</a>, you must:</p>
+<ul>
+<li>Configure ADC as normal</li>
+<li><em>Not</em> provide a username, password or token</li>
+</ul>
+<p>Renovate will get the credentials with the <a href="https://www.npmjs.com/package/google-auth-library"><code>google-auth-library</code></a>.</p>
+<h6 id="with-short-lived-access-token-github-actions-self-hosted-only">With short-lived access token / GitHub Actions (self-hosted only)<a class="headerlink" href="#with-short-lived-access-token-github-actions-self-hosted-only" title="Permanent link">&para;</a></h6>
+<div class="highlight"><span class="filename">Example for Workload Identity plus Renovate host rules</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">authenticate to google cloud</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auth</span>
+<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google-github-actions/auth@v3.0.0</span>
+<span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">token_format</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;access_token&#39;</span>
+<span class="w">    </span><span class="nt">workload_identity_provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.WORKLOAD_IDENTITY_PROVIDER }}</span>
+<span class="w">    </span><span class="nt">service_account</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.SERVICE_ACCOUNT }}</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">renovate</span>
+<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">renovatebot/github-action@v46.0.2</span>
+<span class="w">  </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">RENOVATE_HOST_RULES</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">[</span>
+<span class="w">        </span><span class="no">{</span>
+<span class="w">          </span><span class="no">matchHost: &quot;us-central1-docker.pkg.dev&quot;,</span>
+<span class="w">          </span><span class="no">hostType: &quot;docker&quot;,</span>
+<span class="w">          </span><span class="no">username: &quot;oauth2accesstoken&quot;,</span>
+<span class="w">          </span><span class="no">password: &quot;${{ steps.auth.outputs.access_token }}&quot;</span>
+<span class="w">        </span><span class="no">}</span>
+<span class="w">      </span><span class="no">]</span>
+<span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.RENOVATE_TOKEN }}</span>
+<span class="w">    </span><span class="nt">configurationFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.github/renovate.json5</span>
+</code></pre></div>
+<p>You can find a full GitHub Workflow example on the <a href="https://github.com/renovatebot/github-action">renovatebot/github-action</a> repository.</p>
+<h5 id="using-long-lived-service-account-credentials">Using long-lived service account credentials<a class="headerlink" href="#using-long-lived-service-account-credentials" title="Permanent link">&para;</a></h5>
+<p>To access the Google Container Registry (deprecated) or the Google Artifact Registry, use the JSON service account with <code>Basic</code> authentication, and use the:</p>
+<ul>
+<li><code>_json_key</code> as username</li>
+<li>full Google Cloud Platform service account JSON as password</li>
+</ul>
+<p>To avoid JSON-in-JSON wrapping, which can cause problems, encode the JSON service account beforehand.</p>
+<p>Google Container Registry does not natively support <code>_json_key_base64</code> and a base64 encoded service account.
+Google Artifact Registry supports <code>_json_key_base64</code> and a base64 encoded service account natively.
+If all your dependencies are on the Google Artifact Registry, you can base64 encode and use the service account directly:</p>
+<ol>
+<li>Download your JSON service account and store it on your machine. Make sure that the service account has <code>read</code> (and only <code>read</code>) permissions to your artifacts</li>
+<li>Base64 encode the service account credentials by running <code>cat service-account.json | base64</code></li>
+<li>Add the encoded service account to your configuration file</li>
+<li>
+<p>If you want to add it to your self-hosted configuration file:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;europe-docker.pkg.dev&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;_json_key_base64&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;base64 service account&gt;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>If you want to add it to your repository Renovate configuration file, <a href="../configuration-options/#encrypted">encrypt</a> it and then add it:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;europe-docker.pkg.dev&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;_json_key_base64&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;encrypted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;encrypted base64 service account&gt;&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ol>
+<p>If you have dependencies on Google Container Registry (and Artifact Registry) you need to use <code>_json_key</code> and a slightly different encoding:</p>
+<ol>
+<li>Download your JSON service account and store it on your machine. Make sure that the service account has <code>read</code> (and only <code>read</code>) permissions to your artifacts</li>
+<li>Open the file and prefix the content with <code>_json_key:</code>. The file should look like this:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>_json_key:{
+  &quot;type&quot;: &quot;service_account&quot;,
+  &quot;project_id&quot;: &quot;sample-project&quot;,
+  &quot;private_key_id&quot;: &quot;5786ff7e615522b932a2a37b4a6f9645c4316dbd&quot;,
+  &quot;private_key&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDaOkxZut9uDUHV\n...\n/PWs0Wa2z5+IawMD7nO63+b6\n-----END PRIVATE KEY-----\n&quot;,
+  &quot;client_email&quot;: &quot;renovate-lookup@sample-project.iam.gserviceaccount.com&quot;,
+  &quot;client_id&quot;: &quot;115429165445403928973&quot;,
+  &quot;auth_uri&quot;: &quot;https://accounts.google.com/o/oauth2/auth&quot;,
+  &quot;token_uri&quot;: &quot;https://oauth2.googleapis.com/token&quot;,
+  &quot;auth_provider_x509_cert_url&quot;: &quot;https://www.googleapis.com/oauth2/v1/certs&quot;,
+  &quot;client_x509_cert_url&quot;: &quot;https://www.googleapis.com/robot/v1/metadata/x509/renovate-lookup%40sample-project.iam.gserviceaccount.com&quot;
+}
+</code></pre></div>
+<ol>
+<li>Base64 encode the prefixed service account credentials by running <code>cat prefixed-service-account.json | base64</code></li>
+<li>Add the prefixed and encoded service account to your configuration file</li>
+<li>
+<p>If you want to add it to your self-hosted configuration file:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;europe-docker.pkg.dev&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;authType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;base64 prefixed service account&gt;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>If you want to add it to your repository Renovate configuration file, <a href="../configuration-options/#encrypted">encrypt</a> it and then add it:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;europe-docker.pkg.dev&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;authType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;encrypted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;encrypted base64 prefixed service account&gt;&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ol>
+<h5 id="using-short-lived-access-token-gitlab-ci-google-cloud">Using short-lived access token / Gitlab <abbr title="Continuous Integration">CI</abbr> / Google Cloud<a class="headerlink" href="#using-short-lived-access-token-gitlab-ci-google-cloud" title="Permanent link">&para;</a></h5>
+<p>For this example, assume that you want to:</p>
+<ul>
+<li>Run the GitLab <abbr title="Continuous Integration">CI</abbr> in the Google Cloud</li>
+<li>Store your Docker images in the Google Container Registry (<abbr title="Google Container Registry">GCR</abbr>)</li>
+</ul>
+<h6 id="accessing-the-google-container-registry">Accessing the Google Container Registry<a class="headerlink" href="#accessing-the-google-container-registry" title="Permanent link">&para;</a></h6>
+<p>Accessing the <abbr title="Google Container Registry">GCR</abbr> uses Bearer token based authentication.</p>
+<p>First, install the Google Cloud <abbr title="Software Development Kit">SDK</abbr>.
+Then get the token by running: <code>gcloud auth print-access-token</code>.</p>
+<h6 id="short-lived-gcr-bearer-tokens">Short-lived <abbr title="Google Container Registry">GCR</abbr> Bearer tokens<a class="headerlink" href="#short-lived-gcr-bearer-tokens" title="Permanent link">&para;</a></h6>
+<p>The <abbr title="Google Container Registry">GCR</abbr> Bearer token expires after 60 minutes.
+This means you can <em>not</em> re-use the token in a later build.</p>
+<p>Instead, <em>before</em> Renovate starts in the <abbr title="Google Container Registry">GCR</abbr> context, you must:</p>
+<ol>
+<li>Fetch the Google access token</li>
+<li>Inject the token into the <code>hostRules</code> configuration</li>
+</ol>
+<p>The following text explains one way to fetch the token, and inject it into Renovate.</p>
+<h6 id="basic-approach">Basic approach<a class="headerlink" href="#basic-approach" title="Permanent link">&para;</a></h6>
+<p>The basic approach is:</p>
+<ol>
+<li>Create a custom image: fetch the <abbr title="Google Container Registry">GCR</abbr> token, and inject the token into Renovate's <code>config.js</code> file</li>
+<li>Then run Renovate as one of the stages of your project</li>
+</ol>
+<h6 id="independent-runs">Independent runs<a class="headerlink" href="#independent-runs" title="Permanent link">&para;</a></h6>
+<p>To make the run independent of any user, use a <a href="https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html"><code>Project Access Token</code></a>.
+Give the Project Access Token these scopes:</p>
+<ul>
+<li><code>api</code></li>
+<li><code>read_api</code></li>
+<li><code>write_repository</code></li>
+</ul>
+<p>Then use the Project Access Token as the <code>RENOVATE_TOKEN</code> variable for GitLab <abbr title="Continuous Integration">CI</abbr>.
+For more (<code>gitlab-ci.yml</code>) configuration examples, see the <a href="https://gitlab.com/renovate-bot/renovate-runner"><code>renovate-runner</code> repository on GitLab</a>.</p>
+<h6 id="create-a-custom-image">Create a custom image<a class="headerlink" href="#create-a-custom-image" title="Permanent link">&para;</a></h6>
+<p>To access the token, you need a custom Renovate Docker image.
+Make sure to install the Google Cloud <abbr title="Software Development Kit">SDK</abbr> into the custom image, as you need the <code>gcloud auth print-access-token</code> command later.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">renovate/renovate:43.0.9</span>
+<span class="c"># Include the &quot;Docker tip&quot; which you can find here https://cloud.google.com/sdk/docs/install</span>
+<span class="c"># under &quot;Installation&quot; for &quot;Debian/Ubuntu&quot;</span>
+<span class="k">RUN</span><span class="w"> </span>...
+</code></pre></div>
+<h6 id="accessing-the-google-container-registry-gcr">Accessing the Google Container Registry (<abbr title="Google Container Registry">GCR</abbr>)<a class="headerlink" href="#accessing-the-google-container-registry-gcr" title="Permanent link">&para;</a></h6>
+<p>Renovate needs the current Google Access Token to access the Google Container Registry (<abbr title="Google Container Registry">GCR</abbr>).
+Here's an example of how to set that up:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">hostRules</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">matchHost</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;eu.gcr.io&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;MyReallySecretTokenThatExpiresAfter60Minutes&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">];</span>
+</code></pre></div>
+<p>One way to give Renovate the short-lived Google Access Token is to:</p>
+<ol>
+<li>Write a script that generates a <code>config.js</code> file, with the token, in your <code>gitlab-ci.yml</code> file</li>
+<li>Run the <code>config.js</code> creation script just before you start Renovate</li>
+</ol>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">script</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;echo</span><span class="nv"> </span><span class="s">&quot;module.exports</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">hostRules:</span><span class="nv"> </span><span class="s">[</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">matchHost:</span><span class="nv"> </span><span class="se">&#39;&#39;</span><span class="s">eu.gcr.io</span><span class="se">&#39;&#39;</span><span class="s">,</span><span class="nv"> </span><span class="s">token:</span><span class="nv"> </span><span class="se">&#39;&#39;</span><span class="s">&quot;$(gcloud</span><span class="nv"> </span><span class="s">auth</span><span class="nv"> </span><span class="s">print-access-token)&quot;</span><span class="se">&#39;&#39;</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">]</span><span class="nv"> </span><span class="s">};&quot;</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">config.js&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">renovate $RENOVATE_EXTRA_FLAGS</span>
+</code></pre></div>
+<!-- Material for MkDocs shows a tooltip when you hover over any abbreviation in this list. -->
+<!-- https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary -->
+
+<!-- Please keep this list sorted from A-Z. -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../bicep/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bicep">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Bicep
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../golang/" class="md-footer__link md-footer__link--next" aria-label="Next: Go (Golang)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Go (Golang)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    Made with
+  <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.prune", "navigation.top", "toc.follow", "navigation.instant", "announce.dismiss", "content.code.copy", "content.action.edit", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

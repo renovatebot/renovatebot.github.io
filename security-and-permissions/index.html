@@ -1,0 +1,2236 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Renovate documentation.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/security-and-permissions/">
+      
+      
+        <link rel="prev" href="../user-stories/maintaining-aur-packages-with-renovate/">
+      
+      
+        <link rel="next" href="../merge-confidence/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Security and Permissions - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#security-and-permissions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+We released a new major version of Renovate. Read the <a href="https://github.com/renovatebot/renovate/releases/tag/43.0.0">Renovate 43 changelog on GitHub</a>.
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Renovate Docs" class="md-header__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renovate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Security and Permissions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Renovate Docs" class="md-nav__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Renovate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../getting-started/use-cases/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../config-overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mend-hosted/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mend-hosted Apps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../key-concepts/how-renovate-works/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../modules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renovate Modules
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../bazel/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Support
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../dependency-pinning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Dives
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../presets-abandonments/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Included Presets
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Other
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    All Other
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../user-stories/swissquote/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and Permissions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#security-stance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Stance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Stance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security / Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privacy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Privacy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-hosted-renovate-oss-cli-mend-renovate-on-premises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-hosted (Renovate OSS CLI, Mend Renovate On-Premises)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Self-hosted (Renovate OSS CLI, Mend Renovate On-Premises)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-awareness-for-self-hosted-renovate-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security awareness for self-hosted Renovate instances
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security awareness for self-hosted Renovate instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trusting-repository-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trusting Repository Developers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trusting Repository Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-to-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access to information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-of-code-insider-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution of code (insider attack)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-of-code-outsider-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution of code (outsider attack)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centralized-logging-and-sensitive-information-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centralized logging and sensitive information management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vet-and-monitor-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vet and monitor repositories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limit permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regularly-review-post-upgrade-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regularly review post-upgrade tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-security-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use security tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#securing-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Securing environment variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-infrastructure-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging infrastructure security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-review-and-redaction-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log review and redaction processes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stay-informed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stay informed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostedsaas-the-mend-renovate-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosted/SaaS (the Mend Renovate App)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../merge-confidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Merge Confidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language-constraints-and-upgrading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language constraints and upgrading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string-pattern-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Pattern Matching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frequently Asked Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../known-limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bot-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bot comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logo-brand-guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logo and brand guidelines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing-to-renovate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#security-stance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Stance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Stance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security / Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privacy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Privacy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-hosted-renovate-oss-cli-mend-renovate-on-premises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-hosted (Renovate OSS CLI, Mend Renovate On-Premises)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Self-hosted (Renovate OSS CLI, Mend Renovate On-Premises)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-awareness-for-self-hosted-renovate-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security awareness for self-hosted Renovate instances
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security awareness for self-hosted Renovate instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trusting-repository-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trusting Repository Developers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trusting Repository Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-to-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access to information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-of-code-insider-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution of code (insider attack)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-of-code-outsider-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution of code (outsider attack)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centralized-logging-and-sensitive-information-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centralized logging and sensitive information management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vet-and-monitor-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vet and monitor repositories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limit permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regularly-review-post-upgrade-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regularly review post-upgrade tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-security-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use security tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#securing-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Securing environment variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-infrastructure-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging infrastructure security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-review-and-redaction-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log review and redaction processes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stay-informed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stay informed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostedsaas-the-mend-renovate-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosted/SaaS (the Mend Renovate App)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/renovatebot/renovate/edit/main/docs/usage/security-and-permissions.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="security-and-permissions">Security and Permissions<a class="headerlink" href="#security-and-permissions" title="Permanent link">&para;</a></h1>
+<p>This page talks about our security stance, and explains what permissions are needed for the different ways you can run Renovate.</p>
+<h2 id="security-stance">Security Stance<a class="headerlink" href="#security-stance" title="Permanent link">&para;</a></h2>
+<p>Renovate is open source software, and comes with no guarantees or warranties of any kind.
+That said, we will try to fix security problems in a reasonable timeframe if possible.</p>
+<h3 id="certifications">Certifications<a class="headerlink" href="#certifications" title="Permanent link">&para;</a></h3>
+<p>Renovate the open source project is <strong>not</strong> certified.</p>
+<p>Mend is the company which maintains Renovate and provides <abbr title="This means the Mend-hosted GitHub app.">the Mend Renovate App</abbr>.
+Mend is ISO 27001 and SOC2 certified.</p>
+<h3 id="security-disclosure">Security / Disclosure<a class="headerlink" href="#security-disclosure" title="Permanent link">&para;</a></h3>
+<p>If you find any bug with Renovate that may be a security problem, then e-mail us at: <a href="mailto:renovate-disclosure@mend.io">renovate-disclosure@mend.io</a>.
+This way we can evaluate the bug and hopefully fix it before it gets abused.
+Please give us enough time to investigate the bug before you report it anywhere else.</p>
+<p>Please do not create GitHub issues for security-related doubts or problems.</p>
+<h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h2>
+<p>We apply the Principle of Least Privilege (PoLP) but do need substantial privileges for our apps to work.</p>
+<h3 id="global-permissions">Global Permissions<a class="headerlink" href="#global-permissions" title="Permanent link">&para;</a></h3>
+<p>These permissions are always needed to run the respective app.</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th style="text-align: center;"><abbr title="This means the Mend-hosted GitHub app.">The Mend Renovate App</abbr></th>
+<th style="text-align: center;">Forking Renovate</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dependabot alerts</td>
+<td style="text-align: center;"><code>read</code></td>
+<td style="text-align: center;"><code>read</code></td>
+<td>Create vulnerability fix PRs</td>
+</tr>
+<tr>
+<td>Administration</td>
+<td style="text-align: center;"><code>read</code></td>
+<td style="text-align: center;"><code>read</code></td>
+<td>Read branch protections and to be able to assign teams to PRs</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td style="text-align: center;"><code>read</code></td>
+<td style="text-align: center;"><code>read</code></td>
+<td>Mandatory for all apps</td>
+</tr>
+<tr>
+<td>Checks</td>
+<td style="text-align: center;"><code>read</code> and <code>write</code></td>
+<td style="text-align: center;">not applicable</td>
+<td>Read and write status checks</td>
+</tr>
+<tr>
+<td>Code</td>
+<td style="text-align: center;"><code>read</code> and <code>write</code></td>
+<td style="text-align: center;"><code>read</code></td>
+<td>Read for repository content and write for creating branches</td>
+</tr>
+<tr>
+<td>Commit statuses</td>
+<td style="text-align: center;"><code>read</code> and <code>write</code></td>
+<td style="text-align: center;"><code>read</code> and <code>write</code></td>
+<td>Read and write commit statuses for Renovate PRs</td>
+</tr>
+<tr>
+<td>Issues</td>
+<td style="text-align: center;"><code>read</code> and <code>write</code></td>
+<td style="text-align: center;"><code>read</code> and <code>write</code></td>
+<td>Create Dependency Dashboard or Config Warning issues</td>
+</tr>
+<tr>
+<td>Pull Requests</td>
+<td style="text-align: center;"><code>read</code> and <code>write</code></td>
+<td style="text-align: center;"><code>read</code> and <code>write</code></td>
+<td>Create update PRs</td>
+</tr>
+<tr>
+<td>Workflows</td>
+<td style="text-align: center;"><code>read</code> and <code>write</code></td>
+<td style="text-align: center;">not applicable</td>
+<td>Explicit permission needed to update workflows</td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-permissions">User permissions<a class="headerlink" href="#user-permissions" title="Permanent link">&para;</a></h3>
+<p>Renovate can also request users's permission to the following resources.
+These permissions will be requested and authorized on an individual-user basis.</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th style="text-align: center;"><abbr title="This means the Mend-hosted GitHub app.">The Mend Renovate App</abbr></th>
+<th style="text-align: center;">Forking Renovate</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td style="text-align: center;"><code>read</code></td>
+<td style="text-align: center;">not applicable</td>
+<td>Per-user consent requested if logging into App dashboard</td>
+</tr>
+</tbody>
+</table>
+<h2 id="privacy">Privacy<a class="headerlink" href="#privacy" title="Permanent link">&para;</a></h2>
+<h3 id="self-hosted-renovate-oss-cli-mend-renovate-on-premises">Self-hosted (Renovate OSS <abbr title="Command-Line Interface">CLI</abbr>, Mend Renovate On-Premises)<a class="headerlink" href="#self-hosted-renovate-oss-cli-mend-renovate-on-premises" title="Permanent link">&para;</a></h3>
+<p>Renovate is designed to operate autonomously and directly with package and source repositories, so does not "phone home", send telemetry, or need to request information from Mend or any project infrastructure.
+An exception to this is when Merge Confidence badges are requested, because those are hosted on Mend servers.
+Such badges are public, do not require authentication, and Renovate does not identify the source user or repository when requesting them.
+Self-hosted Renovate does not send or submit any package data to Mend for the purpose of calculating Merge Confidence figures.</p>
+<p>According to a strict definition, Renovate may "send data" to third-party registries and source code hosts directly to look up new releases.
+For example, if you have an <code>npm</code> package and do not configure a private registry then Renovate will query URLs on <code>https://registry.npmjs.org</code> including names of packages used in your repositories.
+You could avoid this by configuring private registries but such registries need to query public registries anyway.
+We don't know of any public registries which reverse lookup IP addresses to associate companies with packages.</p>
+<h4 id="security-awareness-for-self-hosted-renovate-instances">Security awareness for self-hosted Renovate instances<a class="headerlink" href="#security-awareness-for-self-hosted-renovate-instances" title="Permanent link">&para;</a></h4>
+<h5 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h5>
+<p>Before you start self-hosting Renovate you must understand the security implications associated with monitoring and updating repositories.
+The process that Renovate uses to update dependencies runs under the same user context as the Renovate process itself.
+This also means the process has the same level of access to information and resources as the user context!</p>
+<h5 id="trusting-repository-developers">Trusting Repository Developers<a class="headerlink" href="#trusting-repository-developers" title="Permanent link">&para;</a></h5>
+<p>All self-hosted Renovate instances must operate under a trust relationship with the developers of the monitored repositories.
+This has the following implications:</p>
+<ul>
+<li>Access to information</li>
+<li>Execution of code</li>
+</ul>
+<p>Keep reading to learn more.</p>
+<h6 id="access-to-information">Access to information<a class="headerlink" href="#access-to-information" title="Permanent link">&para;</a></h6>
+<p>Since the update process runs with the <em>same</em> user privileges as the Renovate process, it inherently has access to the same information and resources.
+This includes sensitive data that may be stored within the environment where Renovate is hosted.</p>
+<h6 id="execution-of-code-insider-attack">Execution of code (insider attack)<a class="headerlink" href="#execution-of-code-insider-attack" title="Permanent link">&para;</a></h6>
+<p>In certain scenarios, code from the monitored repository is executed as part of the update process.
+This is particularly true during, for example:</p>
+<ul>
+<li><code>postUpgradeTasks</code>, where scripts specified by the repository are run</li>
+<li>when a wrapper within the repository is called, like <code>gradlew</code> (if setting <a href="../self-hosted-configuration/#allowedunsafeexecutions"><code>allowedUnsafeExecutions=["gradleWrapper"]</code></a>.</li>
+</ul>
+<p>These scripts can contain arbitrary code.
+This may pose a significant security risk if the repository's integrity is compromised, or if the repository maintainers have malicious intentions.</p>
+<p>Because such insider attack is an inherent and unavoidable risk, the Renovate project will not issue CVEs (or GHSAs) for such attacks or weaknesses other than in exceptional circumstances.</p>
+<p>If you require <code>postUpgradeTasks</code> to run inside a shell, you can enable this using <a href="../self-hosted-configuration/#allowshellexecutorforpostupgradecommands"><code>allowShellExecutorForPostUpgradeCommands=true</code></a>.
+Note that this means that these commands can call out to other commands or access shell variables, if the allowlist via <code>allowedCommands</code> does not restrict it.
+As it is difficult to craft a regular expression that may deny usage of special characters to shells, it is likely that this will not be possible to avoid at this time.</p>
+<h6 id="execution-of-code-outsider-attack">Execution of code (outsider attack)<a class="headerlink" href="#execution-of-code-outsider-attack" title="Permanent link">&para;</a></h6>
+<p>Separately, there are also opportunities for malicious external code to execute, as part of Renovate's update process.</p>
+<!-- prettier-ignore -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Below are <em>some</em> of the options, but note that this is <strong>not exhaustive</strong>.</p>
+</div>
+<p>For instance:</p>
+<ul>
+<li>updates that invoke Gradle (i.e. <code>./gradlew</code>), such as <a href="../modules/manager/gradle-wrapper/">updating the Gradle Wrapper</a> or <a href="../modules/manager/gradle/#dependency-verification">performing Gradle Verification Metadata</a></li>
+<li>because the Gradle buildscript is evaluated at this time (i.e. to determine which dependencies are available to then update the verification metadata)</li>
+<li>executing any <code>postUpgradeTasks</code> in a way that may use an updated dependency</li>
+<li>i.e. if you have a postUpgradeTask for <code>make docs</code>, where the version of your docs builder has updated</li>
+<li>i.e. if your pre-commit hook, where the version of a linter has updated</li>
+</ul>
+<p>Depending on the self-hosted configuration, it may also be possible for package manager scripts to execute post-update (if using <a href="../self-hosted-configuration/#allowscripts"><code>allowScripts=true</code></a> alongside <a href="../configuration-options/#ignorescripts"><code>ignoreScripts=false</code></a>):</p>
+<ul>
+<li>when an <code>npm install</code>, <code>composer install</code>, etc is executed on a branch update</li>
+<li>performing <a href="../configuration-options/#lockfilemaintenance">lock file maintenance</a></li>
+</ul>
+<h5 id="centralized-logging-and-sensitive-information-management">Centralized logging and sensitive information management<a class="headerlink" href="#centralized-logging-and-sensitive-information-management" title="Permanent link">&para;</a></h5>
+<p>Centralized logging is key to monitor and troubleshoot self-hosted Renovate environments.
+But logging may inadvertently capture and expose sensitive information.
+Operations that involve <code>customEnvVariables</code>, among others, could expose sensitive data, when logging is used.</p>
+<h5 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">&para;</a></h5>
+<p>The Renovate maintainers recommend you follow these guidelines.</p>
+<h6 id="vet-and-monitor-repositories">Vet and monitor repositories<a class="headerlink" href="#vet-and-monitor-repositories" title="Permanent link">&para;</a></h6>
+<p><em>Before</em> integrating a repository with your self-hosted Renovate instance, thoroughly vet the repository for security and trustworthiness.
+This means that you should review the:</p>
+<ul>
+<li>repository's ownership</li>
+<li>contribution history</li>
+<li>open issues</li>
+<li>open pull requests</li>
+</ul>
+<h6 id="limit-permissions">Limit permissions<a class="headerlink" href="#limit-permissions" title="Permanent link">&para;</a></h6>
+<p>Configure the environment running Renovate with the principle of least privilege.
+Ensure that the Renovate process has only the permissions needed to perform its tasks and no more.
+This reduces the impact of any malicious code execution.</p>
+<h6 id="regularly-review-post-upgrade-tasks">Regularly review post-upgrade tasks<a class="headerlink" href="#regularly-review-post-upgrade-tasks" title="Permanent link">&para;</a></h6>
+<p>Regularly review the actions taken by <code>postUpgradeTasks</code> to make sure they do not execute unnecessary or risky operations.
+Consider implementing a review process for changes to these tasks within repositories.</p>
+<p>Where possible, restrict the commands executed to an allowlist you control, and try to limit the opportunity for those commands to execute additional commands.</p>
+<p>For instance, allowlisting the command <code>make lint-fix</code> could run other tasks, including running <code>npm install --foreground-scripts</code>, which would bypass the global <a href="../self-hosted-configuration/#allowscripts"><code>allowScripts</code></a> configuration</p>
+<h6 id="use-security-tools">Use security tools<a class="headerlink" href="#use-security-tools" title="Permanent link">&para;</a></h6>
+<p>Employ security tools and practices, like code scanning and vulnerability assessments, on the Renovate configuration <em>and</em> the repositories Renovate manages.
+This helps identify potentially malicious code before it is executed.</p>
+<h6 id="securing-environment-variables">Securing environment variables<a class="headerlink" href="#securing-environment-variables" title="Permanent link">&para;</a></h6>
+<p>When configuring <code>customEnvVariables</code>: <em>always</em> use Renovate's secrets management syntax <code>({{ secrets.VAR_NAME }})</code> to reference sensitive variables securely.
+This makes sure that sensitive data is not exposed as plain text.</p>
+<h6 id="logging-infrastructure-security">Logging infrastructure security<a class="headerlink" href="#logging-infrastructure-security" title="Permanent link">&para;</a></h6>
+<p>Ensure that the logging infrastructure is configured to handle logs as sensitive data.
+This includes measures like:</p>
+<ul>
+<li>log encryption</li>
+<li>access controls to restrict log viewing to authorized personnel only</li>
+<li>secure storage and transmission of log data</li>
+</ul>
+<h6 id="log-review-and-redaction-processes">Log review and redaction processes<a class="headerlink" href="#log-review-and-redaction-processes" title="Permanent link">&para;</a></h6>
+<p>Implement rigorous log review mechanisms to regularly scan for and redact sensitive information that might be logged inadvertently.
+Automated tools can assist in identifying patterns indicative of sensitive data, such as credentials or personal information, enabling timely redaction or alerting.</p>
+<h6 id="stay-informed">Stay informed<a class="headerlink" href="#stay-informed" title="Permanent link">&para;</a></h6>
+<p>Keep abreast of updates and security advisories related to Renovate itself.
+Apply updates promptly to ensure that your self-hosted instances get the latest security enhancements and bug fixes.</p>
+<h4 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h4>
+<p>The flexibility and power of self-hosting Renovate also means you must take steps to manage your security.
+By understanding the risks associated with repository management and taking steps to mitigate those risks, organizations can maintain a secure and efficient development workflow.</p>
+<h3 id="hostedsaas-the-mend-renovate-app">Hosted/SaaS (<abbr title="This means the Mend-hosted GitHub app.">the Mend Renovate App</abbr>)<a class="headerlink" href="#hostedsaas-the-mend-renovate-app" title="Permanent link">&para;</a></h3>
+<p>Users of <abbr title="This means the Mend-hosted GitHub app.">the Mend Renovate App</abbr> fall under <a href="https://www.mend.io/terms-of-service/">Mend's Terms of Service</a> and Privacy Policy.</p>
+<p>In this case the app needs to temporarily clone source code for Renovate to run, but the app does not keep the source code anywhere after jobs are completed.</p>
+<p>Mend anonymizes and aggregates package use and update success rates within the hosted app to derive Merge Confidence scores.</p>
+<p>The app database keeps a list of dependencies and versions per repo, plus basic into about any Renovate PRs it's created.</p>
+<!-- Material for MkDocs shows a tooltip when you hover over any abbreviation in this list. -->
+<!-- https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary -->
+
+<!-- Please keep this list sorted from A-Z. -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../user-stories/maintaining-aur-packages-with-renovate/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Maintaining AUR packages with Renovate">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Maintaining AUR packages with Renovate
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../merge-confidence/" class="md-footer__link md-footer__link--next" aria-label="Next: Merge Confidence">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Merge Confidence
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    Made with
+  <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.prune", "navigation.top", "toc.follow", "navigation.instant", "announce.dismiss", "content.code.copy", "content.action.edit", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

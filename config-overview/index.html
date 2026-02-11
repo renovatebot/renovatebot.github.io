@@ -1,0 +1,2274 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Renovate documentation.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/config-overview/">
+      
+      
+        <link rel="prev" href="../troubleshooting/">
+      
+      
+        <link rel="next" href="../configuration-options/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Overview - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#renovate-configuration-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+We released a new major version of Renovate. Read the <a href="https://github.com/renovatebot/renovate/releases/tag/43.0.0">Renovate 43 changelog on GitHub</a>.
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Renovate Docs" class="md-header__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renovate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Renovate Docs" class="md-nav__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Renovate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../getting-started/use-cases/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Global config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-file-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional file config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variable-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variable examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inherited config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inherited config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-its-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it's found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presets-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Presets handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Presets handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-not-ignore-presets-from-inherited-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        You can not ignore presets from inherited config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config precedence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onboarding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Onboarding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onboarding-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onboarding Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing default behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared Presets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared Presets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-presets-in-global-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use of Presets in Global config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use of Presets in Global config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#globalextends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globalExtends
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extends
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-centralized-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using a centralized config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimize-for-disabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimize for Disabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Force config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-hosted-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-hosted
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config-presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mend-hosted/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mend-hosted Apps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../key-concepts/how-renovate-works/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../modules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renovate Modules
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../bazel/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Support
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../dependency-pinning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Dives
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../presets-abandonments/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Included Presets
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../user-stories/swissquote/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Other
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing-to-renovate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Global config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-file-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional file config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variable-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variable examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inherited config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inherited config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-its-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it's found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presets-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Presets handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Presets handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-not-ignore-presets-from-inherited-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        You can not ignore presets from inherited config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config precedence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onboarding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Onboarding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onboarding-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onboarding Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing default behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared Presets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared Presets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-presets-in-global-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use of Presets in Global config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use of Presets in Global config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#globalextends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globalExtends
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extends
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-centralized-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using a centralized config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimize-for-disabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimize for Disabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Force config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/renovatebot/renovate/edit/main/docs/usage/config-overview.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="renovate-configuration-overview">Renovate configuration overview<a class="headerlink" href="#renovate-configuration-overview" title="Permanent link">&para;</a></h1>
+<p>Each time Renovate runs on a repository it reads the configuration files listed below and creates a final config.
+This final config describes what Renovate will do during its run.</p>
+<p>The final config is internal to Renovate, and is <em>not</em> saved or cached for a later run.
+But you can always find the final config in Renovate's logs.</p>
+<p>Renovate reads the configuration files in this order (from top to bottom):</p>
+<ol>
+<li>Default config</li>
+<li>Global config</li>
+<li>File config</li>
+<li>Additional file config</li>
+<li>Environment config</li>
+<li><abbr title="Command-Line Interface">CLI</abbr> config</li>
+<li>Inherited config</li>
+<li>Resolved presets referenced in config</li>
+<li>Repository config</li>
+</ol>
+<p>Items with a higher number override items that have lower numbers.
+If the item has the <code>mergeable</code> property, it will merge with lower numbers instead.</p>
+<!-- prettier-ignore -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you use a Mend-hosted app, please read <a href="../mend-hosted/hosted-apps-config/">Mend-hosted Apps Configuration</a> <em>after</em> reading this page.</p>
+</div>
+<h2 id="types-of-config">Types of config<a class="headerlink" href="#types-of-config" title="Permanent link">&para;</a></h2>
+<h3 id="default-config">Default config<a class="headerlink" href="#default-config" title="Permanent link">&para;</a></h3>
+<p>Every Renovate config option has a default value/setting.
+That default value/setting may even be <code>null</code>.
+You can find the default values on the Renovate docs website.</p>
+<p>For example:</p>
+<ul>
+<li>The default value for <code>onboarding</code> is <code>true</code></li>
+<li>The option <code>labels</code> lacks a default value, which means that no labels will be added to Renovate's PRs</li>
+</ul>
+<p>The default config is loaded first, and may be superseded/overridden by the configuration types listed below.</p>
+<h3 id="global-config">Global config<a class="headerlink" href="#global-config" title="Permanent link">&para;</a></h3>
+<p>Global config means: the config defined by the person or team responsible for running the bot.
+This is also referred to as "bot config", because it's the config passed to the bot by the person running it.
+Global config can contain config which is "global only" as well as any configuration options which are valid in Inherited config or Repository config.</p>
+<p>If you are an end user of Renovate, for example if you're using <abbr title="This means the Mend-hosted GitHub app.">the Mend Renovate App</abbr>, then you don't need to care as much about any global config.
+As a end-user you can not change some settings because those settings are global-only.
+If you are an end user, you can skip the rest of this "Global config" section and proceed to "Inherited config".</p>
+<p>Global config can be read from a file, environment variable, or <abbr title="Command-Line Interface">CLI</abbr> parameters.
+You must configure at least one of these for Renovate to have the information it needs to run.
+For example: you may need to give Renovate the correct credentials.</p>
+<h4 id="file-config">File config<a class="headerlink" href="#file-config" title="Permanent link">&para;</a></h4>
+<p>Renovate first tries to read the global config from a file.
+By default Renovate checks for a <code>config.js</code> file in the current working directory.
+But you can override this by defining <code>RENOVATE_CONFIG_FILE</code> in env, for example: <code>RENOVATE_CONFIG_FILE=/tmp/my-renovate-config.js</code>.</p>
+<p>By default Renovate allows the config file to be <em>missing</em> and does not error if it cannot find it.
+But if you have configured <code>RENOVATE_CONFIG_FILE</code> and the path you specified is not found then Renovate will error and exit, because it assumes you have a configuration problem.
+If the file is found but cannot be parsed then Renovate will also error and exit.</p>
+<p>Global config files can be <code>.js</code> or <code>.json</code> files.
+You may use synchronous or asynchronous methods inside a <code>.js</code> file, including even to fetch config information from remote hosts.</p>
+<h4 id="additional-file-config">Additional file config<a class="headerlink" href="#additional-file-config" title="Permanent link">&para;</a></h4>
+<p>Renovate tried to read an additional config file only if the env var <code>RENOVATE_ADDITIONAL_CONFIG_FILE</code> is set, for example: <code>RENOVATE_ADDITIONAL_CONFIG_FILE=/tmp/my-additional-renovate-config.js</code>.</p>
+<p>By default Renovate allows the config file to be <em>missing</em> and does not error if it cannot find it.
+But if you have configured <code>RENOVATE_ADDITIONAL_CONFIG_FILE</code> and the path you specified is not found then Renovate will error and exit, because it assumes you have a configuration problem.
+If the file is found but cannot be parsed then Renovate will also error and exit.</p>
+<p>Global config files can be <code>.js</code> or <code>.json</code> files.
+You may use synchronous or asynchronous methods inside a <code>.js</code> file, including even to fetch config information from remote hosts.</p>
+<!-- prettier-ignore -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not name the additional config file <code>config.js</code> as it is reserved for file config.</p>
+</div>
+<h4 id="environment-config">Environment config<a class="headerlink" href="#environment-config" title="Permanent link">&para;</a></h4>
+<p>Global config can be defined using environment variables.
+The config options that you can use in environment variables all have the prefix <code>RENOVATE_</code>.
+For example, <code>RENOVATE_PLATFORM=gitlab</code> is the same as setting <code>"platform": "gitlab"</code> in File config.</p>
+<p>Usually there's a clear mapping from configuration option name to the corresponding Environment config name.
+But we recommend you still check the documentation for the field <code>env</code> for each option to make sure.
+If the configuration option lacks a <code>env</code> field, the config option also lacks a Environment config variable name.</p>
+<p>A special case for Environment config is the <code>RENOVATE_CONFIG</code> "meta" config option.
+The <code>RENOVATE_CONFIG</code> option accepts a stringified full config, for example: <code>RENOVATE_CONFIG={"platform":"gitlab","onboarding":false}</code>.
+Any additional Environment config variables take precedence over values in <code>RENOVATE_CONFIG</code>.</p>
+<h5 id="environment-variable-examples">Environment variable examples<a class="headerlink" href="#environment-variable-examples" title="Permanent link">&para;</a></h5>
+<!-- prettier-ignore -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to escape any punctuation.
+Be extra careful if you're passing stringified values.</p>
+</div>
+<p>Boolean:</p>
+<ul>
+<li><code>RENOVATE_ONBOARDING=true</code></li>
+</ul>
+<p>String:</p>
+<ul>
+<li><code>RENOVATE_BASE_DIR=/tmp/something</code></li>
+<li><code>RENOVATE_BASE_DIR="/tmp/some thing"</code></li>
+</ul>
+<p>Number:</p>
+<ul>
+<li><code>RENOVATE_PR_HOURLY_LIMIT=1</code></li>
+</ul>
+<p>List with numbers or strings:</p>
+<ul>
+<li><code>RENOVATE_LABELS="abc,def,label with space"</code></li>
+</ul>
+<p>Objects, or lists with objects:</p>
+<ul>
+<li><code>RENOVATE_CONFIG="{platform\":\"gitlab\",\"onboarding\":false}"</code></li>
+<li><code>RENOVATE_PACKAGE_RULES="[{matchHost:\"gitlab\",token:\"$SOME_TOKEN\"}]"</code></li>
+</ul>
+<!-- prettier-ignore -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use "stringify" (<a href="https://jsonformatter.org/json-stringify-online">Example online service</a>) for strings and objects.</p>
+</div>
+<h5 id="experimental-variables">Experimental variables<a class="headerlink" href="#experimental-variables" title="Permanent link">&para;</a></h5>
+<p>Renovate has "experimental" environment variables, which start with <code>RENOVATE_X_</code>.
+These variables are experimental, can be changed at any time, and are not parsed as part of regular configuration.
+Read the <a href="../self-hosted-experimental/">Self-hosted experimental environment variables</a> docs to learn more.</p>
+<h5 id="logging-variables">Logging variables<a class="headerlink" href="#logging-variables" title="Permanent link">&para;</a></h5>
+<p>Finally, there are some special environment variables that are loaded <em>before</em> configuration parsing because they are used during logging initialization:</p>
+<ul>
+<li><code>LOG_CONTEXT</code>: a unique identifier used in each log message to track context</li>
+<li><code>LOG_FILE</code>: used to enable file logging and specify the log file path</li>
+<li><code>LOG_FILE_FORMAT</code>: defaults to "json", but can be changed to a "pretty" human-readable output</li>
+<li><code>LOG_FILE_LEVEL</code>: log file logging level, defaults to <code>debug</code></li>
+<li><code>LOG_FORMAT</code>: defaults to a "pretty" human-readable output, but can be changed to "json"</li>
+<li><code>LOG_LEVEL</code>: most commonly used to change from the default <code>info</code> to <code>debug</code> logging</li>
+</ul>
+<h4 id="cli-config"><abbr title="Command-Line Interface">CLI</abbr> config<a class="headerlink" href="#cli-config" title="Permanent link">&para;</a></h4>
+<p>The final way to configure Global config is through <abbr title="Command-Line Interface">CLI</abbr> parameters.
+For example, the <abbr title="Command-Line Interface">CLI</abbr> parameter <code>--platform=gitlab</code> is the same as setting <code>"platform": "gitlab"</code> in File config or <code>RENOVATE_PLATFORM=gitlab</code> in Environment config.</p>
+<p><abbr title="Command-Line Interface">CLI</abbr> config is read last and takes precedence over Environment and File config.
+For example, if you configure conflicting values in Environment, File config and <abbr title="Command-Line Interface">CLI</abbr> config, then the <abbr title="Command-Line Interface">CLI</abbr> config will be merged last and "win" if values conflict.</p>
+<p>It is important that you:</p>
+<ul>
+<li>Always provide a value, even if the field is boolean (e.g. <code>--onboarding=true</code> and <em>not</em> <code>--onboarding</code>), and</li>
+<li>Prefer <code>=</code> notation over spaces, e.g. <code>--onboarding=true</code> instead of <code>--onboarding true</code></li>
+</ul>
+<h3 id="inherited-config">Inherited config<a class="headerlink" href="#inherited-config" title="Permanent link">&para;</a></h3>
+<h4 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h4>
+<p>The primary purpose of Inherited config is to allow for default settings of an organization/group.
+Two main use cases for Inherited config are:</p>
+<ul>
+<li>Controlling onboarding settings within an org (e.g. disabling onboarding, making config optional)</li>
+<li>Defining default config settings for repos within an org</li>
+</ul>
+<p>We recommend that organizations use shared presets instead of Inherited config, if possible.
+But default settings through Inherited config are useful if:</p>
+<ul>
+<li>You want to avoid setting Repository config in each repo, or</li>
+<li>You onboarded many repos prior to having a shared org config, and don't want to retrospectively edit each repo's config</li>
+</ul>
+<h4 id="how-its-found">How it's found<a class="headerlink" href="#how-its-found" title="Permanent link">&para;</a></h4>
+<p>If <code>inheritConfig</code> is <code>true</code> in Global config then Renovate will look for Inherited config before processing each repository.</p>
+<p>The repository and file name which Renovate looks for can be configured using the other <code>inheritConfig*</code> settings documented in Global config.
+Default values are <code>{{parentOrg}}/renovate-config</code> for repository name (<code>inheritConfigRepoName</code>) and <code>org-inherited-config.json</code> for file name (<code>inheritConfigFileName</code>).</p>
+<p>Note: For Azure DevOps, <code>{{parentOrg}}</code> is the Project the repo belongs to, and for Bitbucket, the <code>{{parentOrg}}</code> is the Workspace of the repo, as shown in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Repo</th>
+<th>Inherited config file location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub</td>
+<td>{parentOrg} / renovate-config / org-inherited-config.json</td>
+</tr>
+<tr>
+<td>Bitbucket</td>
+<td>{parentWorkspace} / renovate-config / org-inherited-config.json</td>
+</tr>
+<tr>
+<td>Azure DevOps</td>
+<td>{parentProject} / renovate-config / org-inherited-config.json</td>
+</tr>
+</tbody>
+</table>
+<p>If found, Inherited config will be merged on top (i.e. override) Global config.
+Avoid putting any global-only setting in a Inherited config, as doing so will result in an error.</p>
+<p>Inherited config may use all Repository config settings, and any Global config options which have the "supportsInheritConfig" property in the docs.</p>
+<p>For information on how <abbr title="This means the Mend-hosted GitHub app.">the Mend Renovate App</abbr> supports Inherited config, see the dedicated "Mend Renovate App Config" section toward the end of this page.</p>
+<h4 id="presets-handling">Presets handling<a class="headerlink" href="#presets-handling" title="Permanent link">&para;</a></h4>
+<p>If the inherited config contains <code>extends</code> presets, then Renovate will:</p>
+<ol>
+<li>Resolve the presets</li>
+<li>Add the resolved preset config to the beginning of the inherited config</li>
+<li>Merge the presets on top of the global config</li>
+</ol>
+<h5 id="you-can-not-ignore-presets-from-inherited-config">You can not ignore presets from inherited config<a class="headerlink" href="#you-can-not-ignore-presets-from-inherited-config" title="Permanent link">&para;</a></h5>
+<p>You can <em>not</em> use <code>ignorePresets</code> in your repository config to ignore presets <em>within</em> inherited config.
+This is because inherited config is resolved <em>before</em> the repository config.</p>
+<h3 id="repository-config">Repository config<a class="headerlink" href="#repository-config" title="Permanent link">&para;</a></h3>
+<p>Repository config is the config loaded from a config file in the repository.
+Alternative file names are supported, but the default is <code>renovate.json</code>.
+If Renovate finds more than one configuration file in the same repository, then Renovate will use the <em>first</em> configuration file it finds and ignores the other(s).</p>
+<h3 id="config-precedence">Config precedence<a class="headerlink" href="#config-precedence" title="Permanent link">&para;</a></h3>
+<p>Once Repository config is loaded, it is merged over the top of the previously loaded Global and Inherited config, meaning it takes precedence over them.
+Presets referenced with an "extends" config are resolved first and take lower precedence over regular/raw config in the same file or config object.</p>
+<h2 id="onboarding">Onboarding<a class="headerlink" href="#onboarding" title="Permanent link">&para;</a></h2>
+<p>When Renovate processes a repository, one of the first decisions it makes is "Does this repository need to be onboarded?".
+By default, Renovate will create an "Onboarding PR" with a default config if a repository does not have a Repository config file committed to the default branch.</p>
+<h3 id="onboarding-config">Onboarding Config<a class="headerlink" href="#onboarding-config" title="Permanent link">&para;</a></h3>
+<p>When Renovate creates an Onboarding PR it will propose a Repository config file to be merged.
+By default, it is essentially an empty config with only the Renovate JSON schema referenced, but you can change this behavior if desired.</p>
+<p>If you configure <code>onboardingConfig</code> in either Global config or Inherited config then Renovate will use that config directly instead of the default.</p>
+<p>If you self-host Renovate in GitLab using <a href="https://gitlab.com/gitlab-com/gl-infra/renovate/renovate-runner"><code>renovate-runner</code></a>, the <abbr title="Continuous Integration">CI</abbr> will contain a default <a href="https://gitlab.com/renovate-bot/renovate-runner/-/blob/main/templates/renovate.gitlab-ci.yml#L5">RENOVATE_ONBOARDING_CONFIG</a> that will merge with your own configuration settings. For example, the <abbr title="Continuous Integration">CI</abbr> by default contains:</p>
+<div class="highlight"><pre><span></span><code>RENOVATE_ONBOARDING_CONFIG: &#39;{&quot;$$schema&quot;: &quot;https://docs.renovatebot.com/renovate-schema.json&quot;, &quot;extends&quot;: [&quot;config:recommended&quot;] }&#39;
+</code></pre></div>
+<p>If you want to change the <code>extends</code> in your own configuration, you need to override the variable in your own <code>.gitlab-ci.yml</code>:</p>
+<div class="highlight"><pre><span></span><code>variables:
+  RENOVATE_ONBOARDING_CONFIG: &#39;{&quot;$$schema&quot;:&quot;https://docs.renovatebot.com/renovate-schema.json&quot;,&quot;extends&quot;:[&quot;platform&gt;organization/repo:renovate-config&quot;]}&#39;
+</code></pre></div>
+<p>Your <code>renovate.js</code> where you run Renovate cannot contain any <code>extends</code> definition, it will pick the <code>extends</code> from the <code>RENOVATE_ONBOARDING_CONFIG</code> variable. For example, your config can look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="nx">onboardingConfig</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;argocd&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;fileMatch&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;application\\.yaml$&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">};</span>
+</code></pre></div>
+<p>The resulting onboarding config will be:</p>
+<div class="highlight"><pre><span></span><code>{
+  &#39;$schema&#39;: &#39;https://docs.renovatebot.com/renovate-schema.json&#39;,
+  &#39;argocd&#39;: { &#39;managerFilePatterns&#39;: [&quot;/application\\.yaml$/&quot;] },
+  &#39;extends&#39;: [&#39;platform&gt;organization/repo:renovate-config&#39;],
+}
+</code></pre></div>
+<p>Alternatively if you follow Renovate's naming convention for shared presets then it can automatically detect those instead.
+If the repository <code>{{parentOrg}}/renovate-config</code> has a <code>default.json</code> file then this will be treated as the organization's default preset and included in the Onboarding config.
+Additionally for platforms which support nested Organization/Group hierarchies, Renovate will "hunt" up such hierarchies for a <code>renovate-config</code> repository with default config and stop when it finds the first.</p>
+<!-- prettier-ignore -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Renovate will also check for a <code>renovate.json</code> file if it cannot find a <code>default.json</code> file in a preset, however this option is deprecated and not recommended.</p>
+</div>
+<p>If a default config is not found in a <code>renovate-config</code> repository within the Organization, Renovate will also check for the presence of a <code>renovate-config.json</code> file within a <code>.{{platform}}</code> repository parallel to the current repository.
+For example if the repository being onboarded is <code>abc/def</code> on a GitHub platform then Renovate will look for the existence of an <code>abc/.github</code> repository containing a <code>renovate-config.json</code> file.</p>
+<h3 id="changing-default-behavior">Changing default behavior<a class="headerlink" href="#changing-default-behavior" title="Permanent link">&para;</a></h3>
+<p>Default onboarding behavior for an Organization can be changed either in Global or Inherited config.</p>
+<p>For example, if you set <code>onboarding=false</code> then Renovate will not onboard repositories, and skip any repositories without a Repository config.
+In other words, users need to manually push a valid Repository config file to activate Renovate on the repository.</p>
+<p>If you set <code>onboarding=false</code> plus <code>requireConfig=optional</code> then it means Renovate will skip onboarding and proceed to run on a repository, even if Renovate does not find any Repository config.</p>
+<h2 id="shared-presets">Shared Presets<a class="headerlink" href="#shared-presets" title="Permanent link">&para;</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<p>The concept of shared configuration is covered in detail on the <a href="../key-concepts/presets/">Presets</a> page, so please read that first.</p>
+<h3 id="use-of-presets-in-global-config">Use of Presets in Global config<a class="headerlink" href="#use-of-presets-in-global-config" title="Permanent link">&para;</a></h3>
+<p>Presets should be used cautiously in Global config as they often lead to misunderstandings.</p>
+<h4 id="globalextends">globalExtends<a class="headerlink" href="#globalextends" title="Permanent link">&para;</a></h4>
+<p>Sometimes you may not wish to put all settings within the Global config itself and instead commit it to a repository which is then referenced from the Global config.
+In such cases, use <code>globalExtends</code> instead of <code>extends</code> so that it is resolved immediately and used as part of Global config.</p>
+<h4 id="extends">extends<a class="headerlink" href="#extends" title="Permanent link">&para;</a></h4>
+<p>If you use <code>extends</code> within Global config then it's important to note that these are <em>not</em> resolved/expanded during Global config processing and instead are passed through unresolved to be part of Repository config.
+Passing <code>extends</code> through to be part of Repository config has two major consequences:</p>
+<ul>
+<li>It allows repository users to be able to use <code>ignorePresets</code> to ignore all or part of the <code>extends</code> presets, and</li>
+<li>Presets defined within <code>extends</code> in Global config will take <em>higher</em> precedence that "regular" Global config, because it's resolved later</li>
+</ul>
+<h3 id="using-a-centralized-config">Using a centralized config<a class="headerlink" href="#using-a-centralized-config" title="Permanent link">&para;</a></h3>
+<p>Using "centralized" configs through Renovate presets is important in order to be able to:</p>
+<ul>
+<li>Save time by not repeating yourself in every repo with the same config, and</li>
+<li>Being able to change settings across an entire Organization or groups of repositories in one place</li>
+</ul>
+<p>Once you've created a centralized preset config, there are multiple ways you can pass it through to repositories:</p>
+<ul>
+<li>Defining it in Global config (either <code>globalExtends</code> or <code>extends</code>)</li>
+<li>Using it as your Inherited config, or referencing it from Inherited config using <code>extends</code></li>
+<li>Ensuring it's referenced in Onboarding config so that it's committed as part of the Repository config</li>
+</ul>
+<p>The above possibilities go from least to most transparent when it comes to end users.</p>
+<p>Global config may be invisible to developers without log access, meaning they could be confused by any settings you apply - via presets or directly - within Global config.
+For example the developers wonder why Renovate is behaving differently to its documented default behavior and may even think it's a bug.</p>
+<p>Inherited config is visible to developers (it's within a repository they can see) although it's <em>implicitly</em> applied so without log access and if they're not aware to look for an Inherited config repository then they may again be a little confused as to why default behavior has changed.</p>
+<p>The recommended approach for using a centralized preset is to explicitly "extend" it from every repository, which can be achieved easily if it's part of your <code>onboardingConfig</code>.
+By having your centralized preset part of each Repository config <code>extends</code>, it has these two benefits:</p>
+<ul>
+<li>You still have the ability to change shared settings in a single location</li>
+<li>Any user viewing the repo can see the preset being extended and trace it back to understand which config is applied</li>
+</ul>
+<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
+<p>The below contains edge cases which you should avoid if possible, and likely don't need to use.
+They are included here because they can cause "exceptions" to some of the previously mentioned rules of config.</p>
+<h3 id="optimize-for-disabled">Optimize for Disabled<a class="headerlink" href="#optimize-for-disabled" title="Permanent link">&para;</a></h3>
+<p>The <code>optimizeForDisabled</code> option was designed for an edge case where a large percentage of repos are disabled by config.
+If this option is set to <code>true</code>, Renovate will use a platform API call to see if a <code>renovate.json</code> exists and if it contains <code>"enabled": false</code>.
+If so, the repository will be skipped without a clone necessary.
+If the file is not present or does not disable Renovate, then Renovate continues as before (having "wasted" that extra API call).</p>
+<h3 id="force-config">Force config<a class="headerlink" href="#force-config" title="Permanent link">&para;</a></h3>
+<p>We recommend you avoid the <code>force</code> config option, if possible.</p>
+<p>It can be used to "force" config over the top of other config or rules which might be merged later, so at times can cause confusion - especially if it's defined in Global config and overriding settings in Repository config.</p>
+<!-- Material for MkDocs shows a tooltip when you hover over any abbreviation in this list. -->
+<!-- https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary -->
+
+<!-- Please keep this list sorted from A-Z. -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../troubleshooting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Troubleshooting">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Troubleshooting
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../configuration-options/" class="md-footer__link md-footer__link--next" aria-label="Next: Repository">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Repository
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    Made with
+  <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.prune", "navigation.top", "toc.follow", "navigation.instant", "announce.dismiss", "content.code.copy", "content.action.edit", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

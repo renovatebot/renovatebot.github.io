@@ -1,0 +1,4573 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Renovate documentation.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/presets-default/">
+      
+      
+        <link rel="prev" href="../presets-customManagers/">
+      
+      
+        <link rel="next" href="../presets-docker/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Default Presets - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#approvemajorupdates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+We released a new major version of Renovate. Read the <a href="https://github.com/renovatebot/renovate/releases/tag/43.0.0">Renovate 43 changelog on GitHub</a>.
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Renovate Docs" class="md-header__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renovate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Default Presets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Renovate Docs" class="md-nav__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Renovate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../getting-started/use-cases/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../config-overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mend-hosted/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mend-hosted Apps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../key-concepts/how-renovate-works/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../modules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renovate Modules
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../bazel/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Support
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../dependency-pinning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Dives
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Included Presets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Included Presets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-abandonments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abandonment Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-customManagers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Manager Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Default Presets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Default Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#approvemajorupdates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :approveMajorUpdates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assignandreviewarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :assignAndReview(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assigneearg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :assignee(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergeall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeAll
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergebranch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeBranch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergedigest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeDigest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergedisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeDisabled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergelinters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeLinters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergemajor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeMajor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergeminor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeMinor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergepatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergePatch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergepr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergePr
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergerequireallstatuschecks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeRequireAllStatusChecks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergestablenonmajor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeStableNonMajor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergetesters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeTesters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergetypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeTypes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combinepatchminorreleases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :combinePatchMinorReleases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configmigration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :configMigration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencydashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :dependencyDashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencydashboardapproval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :dependencyDashboardApproval
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledependencydashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableDependencyDashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledevdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableDevDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledigestupdates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableDigestUpdates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledomainarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableDomain(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablehostarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableHost(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablemajorupdates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableMajorUpdates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablepeerdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disablePeerDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disableprcontrols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disablePrControls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disableratelimiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableRateLimiting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablerenovate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableRenovate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablevulnerabilityalerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableVulnerabilityAlerts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :docker
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donotpinpackagearg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :doNotPinPackage(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enableprecommit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :enablePreCommit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablerenovate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :enableRenovate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablevulnerabilityalerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :enableVulnerabilityAlerts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablevulnerabilityalertswithadditionallabelarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :enableVulnerabilityAlertsWithAdditionalLabel(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablevulnerabilityalertswithlabelarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :enableVulnerabilityAlertsWithLabel(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#followtagarg0-arg1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :followTag(&lt;arg0&gt;, &lt;arg1&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubcomtokenarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :githubComToken(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitsignoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :gitSignOff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gomod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :gomod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparg0-arg1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :group(&lt;arg0&gt;, &lt;arg1&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoremodulesandtests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :ignoreModulesAndTests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoreunstable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :ignoreUnstable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#includenodemodules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :includeNodeModules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :label(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelsarg0-arg1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :labels(&lt;arg0&gt;, &lt;arg1&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesdisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :maintainLockFilesDisabled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesmonthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :maintainLockFilesMonthly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesweekly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :maintainLockFilesWeekly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meteor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :meteor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nounscheduledupdates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :noUnscheduledUpdates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :npm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pathsemanticcommittypearg0-arg1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pathSemanticCommitType(&lt;arg0&gt;, &lt;arg1&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinallexceptpeerdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinAllExceptPeerDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindevdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinDevDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindigestsdisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinDigestsDisabled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinonlydevdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinOnlyDevDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinskipci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinSkipCi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinVersions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimit10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prConcurrentLimit10
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimit20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prConcurrentLimit20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimitnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prConcurrentLimitNone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preservesemverranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :preserveSemverRanges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prHourlyLimit1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prHourlyLimit2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prHourlyLimit4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimitnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prHourlyLimitNone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primmediately" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prImmediately
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prnotpending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prNotPending
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebasestaleprs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :rebaseStalePrs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renovateprefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :renovatePrefix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#respectlatest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :respectLatest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reviewerarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :reviewer(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitscopearg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommitScope(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitscopedisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommitScopeDisabled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitsdisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommitsDisabled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommittypearg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommitType(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommittypeallarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommitTypeAll(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixchore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticPrefixChore
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixfix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticPrefixFix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixfixdepschoreothers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticPrefixFixDepsChoreOthers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatemajorreleases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :separateMajorReleases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatemultiplemajorreleases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :separateMultipleMajorReleases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatemultipleminorreleases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :separateMultipleMinorReleases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatepatchreleases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :separatePatchReleases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipartifactsupdate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :skipArtifactsUpdate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipstatuschecks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :skipStatusChecks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezonearg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :timezone(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatenotscheduled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :updateNotScheduled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widenpeerdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :widenPeerDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Config Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-global/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-group/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-helpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Helper Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-mergeConfidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MergeConfidence Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-monorepo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monorepo Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preview Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-replacements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replacement Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets-workarounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workaround Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../user-stories/swissquote/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Other
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing-to-renovate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#approvemajorupdates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :approveMajorUpdates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assignandreviewarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :assignAndReview(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assigneearg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :assignee(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergeall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeAll
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergebranch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeBranch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergedigest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeDigest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergedisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeDisabled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergelinters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeLinters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergemajor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeMajor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergeminor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeMinor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergepatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergePatch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergepr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergePr
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergerequireallstatuschecks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeRequireAllStatusChecks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergestablenonmajor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeStableNonMajor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergetesters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeTesters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automergetypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :automergeTypes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combinepatchminorreleases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :combinePatchMinorReleases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configmigration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :configMigration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencydashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :dependencyDashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencydashboardapproval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :dependencyDashboardApproval
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledependencydashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableDependencyDashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledevdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableDevDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledigestupdates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableDigestUpdates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabledomainarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableDomain(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablehostarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableHost(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablemajorupdates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableMajorUpdates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablepeerdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disablePeerDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disableprcontrols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disablePrControls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disableratelimiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableRateLimiting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablerenovate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableRenovate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disablevulnerabilityalerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :disableVulnerabilityAlerts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :docker
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donotpinpackagearg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :doNotPinPackage(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enableprecommit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :enablePreCommit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablerenovate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :enableRenovate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablevulnerabilityalerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :enableVulnerabilityAlerts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablevulnerabilityalertswithadditionallabelarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :enableVulnerabilityAlertsWithAdditionalLabel(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablevulnerabilityalertswithlabelarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :enableVulnerabilityAlertsWithLabel(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#followtagarg0-arg1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :followTag(&lt;arg0&gt;, &lt;arg1&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubcomtokenarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :githubComToken(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitsignoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :gitSignOff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gomod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :gomod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouparg0-arg1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :group(&lt;arg0&gt;, &lt;arg1&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoremodulesandtests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :ignoreModulesAndTests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoreunstable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :ignoreUnstable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#includenodemodules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :includeNodeModules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :label(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelsarg0-arg1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :labels(&lt;arg0&gt;, &lt;arg1&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesdisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :maintainLockFilesDisabled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesmonthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :maintainLockFilesMonthly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainlockfilesweekly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :maintainLockFilesWeekly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meteor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :meteor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nounscheduledupdates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :noUnscheduledUpdates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :npm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pathsemanticcommittypearg0-arg1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pathSemanticCommitType(&lt;arg0&gt;, &lt;arg1&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinallexceptpeerdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinAllExceptPeerDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindevdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinDevDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pindigestsdisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinDigestsDisabled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinonlydevdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinOnlyDevDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinskipci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinSkipCi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :pinVersions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimit10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prConcurrentLimit10
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimit20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prConcurrentLimit20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prconcurrentlimitnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prConcurrentLimitNone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preservesemverranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :preserveSemverRanges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prHourlyLimit1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prHourlyLimit2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimit4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prHourlyLimit4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prhourlylimitnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prHourlyLimitNone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primmediately" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prImmediately
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prnotpending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :prNotPending
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebasestaleprs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :rebaseStalePrs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renovateprefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :renovatePrefix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#respectlatest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :respectLatest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reviewerarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :reviewer(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitscopearg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommitScope(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitscopedisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommitScopeDisabled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommitsdisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommitsDisabled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommittypearg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommitType(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticcommittypeallarg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticCommitTypeAll(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixchore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticPrefixChore
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixfix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticPrefixFix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semanticprefixfixdepschoreothers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :semanticPrefixFixDepsChoreOthers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatemajorreleases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :separateMajorReleases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatemultiplemajorreleases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :separateMultipleMajorReleases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatemultipleminorreleases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :separateMultipleMinorReleases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separatepatchreleases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :separatePatchReleases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipartifactsupdate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :skipArtifactsUpdate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipstatuschecks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :skipStatusChecks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezonearg0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :timezone(&lt;arg0&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatenotscheduled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :updateNotScheduled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widenpeerdependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :widenPeerDependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/renovatebot/renovate/edit/main/lib/config/presets/internal/default.ts" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Default Presets</h1>
+
+<h3 id="approvemajorupdates">:approveMajorUpdates<a class="headerlink" href="#approvemajorupdates" title="Permanent link">&para;</a></h3>
+<p>Require Dependency Dashboard approval for <code>major</code> updates.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;dependencyDashboardApproval&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchUpdateTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;major&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="assignandreviewarg0">:assignAndReview(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#assignandreviewarg0" title="Permanent link">&para;</a></h3>
+<p>Set <code>arg0</code> as assignee and reviewer of PRs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;:assignee(arg0)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;:reviewer(arg0)&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="assigneearg0">:assignee(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#assigneearg0" title="Permanent link">&para;</a></h3>
+<p>Assign PRs to <code>arg0</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;assignees&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergeall">:automergeAll<a class="headerlink" href="#automergeall" title="Permanent link">&para;</a></h3>
+<p>Automerge all upgrades (including <code>major</code>) if they pass tests.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergebranch">:automergeBranch<a class="headerlink" href="#automergebranch" title="Permanent link">&para;</a></h3>
+<p>If automerging, push the new commit directly to the base branch (no PR).</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;automergeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;branch&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergedigest">:automergeDigest<a class="headerlink" href="#automergedigest" title="Permanent link">&para;</a></h3>
+<p>Automerge <code>digest</code> upgrades if they pass tests.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;digest&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergedisabled">:automergeDisabled<a class="headerlink" href="#automergedisabled" title="Permanent link">&para;</a></h3>
+<p>Disable automerging feature - wait for humans to merge all PRs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergelinters">:automergeLinters<a class="headerlink" href="#automergelinters" title="Permanent link">&para;</a></h3>
+<p>Update lint packages automatically if tests pass.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;packages:linters&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergemajor">:automergeMajor<a class="headerlink" href="#automergemajor" title="Permanent link">&para;</a></h3>
+<p>Automerge all upgrades (including <code>major</code>) if they pass tests.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergeminor">:automergeMinor<a class="headerlink" href="#automergeminor" title="Permanent link">&para;</a></h3>
+<p>Automerge <code>patch</code> and <code>minor</code> upgrades if they pass tests.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;lockFileMaintenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;minor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;patch&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;pin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergepatch">:automergePatch<a class="headerlink" href="#automergepatch" title="Permanent link">&para;</a></h3>
+<p>Automerge <code>patch</code> upgrades if they pass tests.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;lockFileMaintenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;patch&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;pin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;separateMinorPatch&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergepr">:automergePr<a class="headerlink" href="#automergepr" title="Permanent link">&para;</a></h3>
+<p>Raise a PR first before any automerging.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;automergeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pr&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergerequireallstatuschecks">:automergeRequireAllStatusChecks<a class="headerlink" href="#automergerequireallstatuschecks" title="Permanent link">&para;</a></h3>
+<p>Require all status checks to pass before any automerging.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ignoreTests&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergestablenonmajor">:automergeStableNonMajor<a class="headerlink" href="#automergestablenonmajor" title="Permanent link">&para;</a></h3>
+<p>Automerge non-major upgrades for semver stable packages if they pass tests.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchCurrentVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!/^0/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchUpdateTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;minor&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;patch&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergetesters">:automergeTesters<a class="headerlink" href="#automergetesters" title="Permanent link">&para;</a></h3>
+<p>Update testing packages automatically if tests pass.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;packages:test&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="automergetypes">:automergeTypes<a class="headerlink" href="#automergetypes" title="Permanent link">&para;</a></h3>
+<p>Update <code>@types/*</code> packages automatically if tests pass.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;automerge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchPackageNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;@types/**&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="combinepatchminorreleases">:combinePatchMinorReleases<a class="headerlink" href="#combinepatchminorreleases" title="Permanent link">&para;</a></h3>
+<p>Do not separate <code>patch</code> and <code>minor</code> upgrades into separate PRs for the same dependency.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;separateMinorPatch&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="configmigration">:configMigration<a class="headerlink" href="#configmigration" title="Permanent link">&para;</a></h3>
+<p>Enable Renovate configuration migration PRs when needed.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;configMigration&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="dependencydashboard">:dependencyDashboard<a class="headerlink" href="#dependencydashboard" title="Permanent link">&para;</a></h3>
+<p>Enable Renovate Dependency Dashboard creation.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dependencyDashboard&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="dependencydashboardapproval">:dependencyDashboardApproval<a class="headerlink" href="#dependencydashboardapproval" title="Permanent link">&para;</a></h3>
+<p>Enable Renovate Dependency Dashboard approval workflow.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dependencyDashboardApproval&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disabledependencydashboard">:disableDependencyDashboard<a class="headerlink" href="#disabledependencydashboard" title="Permanent link">&para;</a></h3>
+<p>Disable Renovate Dependency Dashboard creation.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dependencyDashboard&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disabledevdependencies">:disableDevDependencies<a class="headerlink" href="#disabledevdependencies" title="Permanent link">&para;</a></h3>
+<p>Do not update development dependencies.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;devDependencies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;dev-dependencies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;dev&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disabledigestupdates">:disableDigestUpdates<a class="headerlink" href="#disabledigestupdates" title="Permanent link">&para;</a></h3>
+<p>Disable <code>digest</code> and Git hash updates.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;digest&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disabledomainarg0">:disableDomain(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#disabledomainarg0" title="Permanent link">&para;</a></h3>
+<p>Disable requests to a particular domain.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disablehostarg0">:disableHost(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#disablehostarg0" title="Permanent link">&para;</a></h3>
+<p>Disable requests to a particular host.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://arg0&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disablemajorupdates">:disableMajorUpdates<a class="headerlink" href="#disablemajorupdates" title="Permanent link">&para;</a></h3>
+<p>Disable <code>major</code> updates.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;major&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disablepeerdependencies">:disablePeerDependencies<a class="headerlink" href="#disablepeerdependencies" title="Permanent link">&para;</a></h3>
+<p>Do not update <code>peerDependencies</code> versions/ranges.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;peerDependencies&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disableprcontrols">:disablePrControls<a class="headerlink" href="#disableprcontrols" title="Permanent link">&para;</a></h3>
+<p>Remove the checkbox controls from PRs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prBodyTemplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{{header}}}{{{table}}}{{{notes}}}{{{changelogs}}}{{{configDescription}}}{{{footer}}}&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disableratelimiting">:disableRateLimiting<a class="headerlink" href="#disableratelimiting" title="Permanent link">&para;</a></h3>
+<p>Remove hourly and concurrent rate limits.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prConcurrentLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;prHourlyLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disablerenovate">:disableRenovate<a class="headerlink" href="#disablerenovate" title="Permanent link">&para;</a></h3>
+<p>Disable Renovate.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="disablevulnerabilityalerts">:disableVulnerabilityAlerts<a class="headerlink" href="#disablevulnerabilityalerts" title="Permanent link">&para;</a></h3>
+<p>Disable vulnerability alerts completely.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;vulnerabilityAlerts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="docker">:docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>Keep Dockerfile <code>FROM</code> sources updated.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;docker-compose&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;dockerfile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="donotpinpackagearg0">:doNotPinPackage(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#donotpinpackagearg0" title="Permanent link">&para;</a></h3>
+<p>Disable version pinning for <code>arg0</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchPackageNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;replace&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="enableprecommit">:enablePreCommit<a class="headerlink" href="#enableprecommit" title="Permanent link">&para;</a></h3>
+<p>Enable the pre-commit manager.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;pre-commit&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="enablerenovate">:enableRenovate<a class="headerlink" href="#enablerenovate" title="Permanent link">&para;</a></h3>
+<p>Enable Renovate.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="enablevulnerabilityalerts">:enableVulnerabilityAlerts<a class="headerlink" href="#enablevulnerabilityalerts" title="Permanent link">&para;</a></h3>
+<p>Raise PR when vulnerability alerts are detected.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;vulnerabilityAlerts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="enablevulnerabilityalertswithadditionallabelarg0">:enableVulnerabilityAlertsWithAdditionalLabel(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#enablevulnerabilityalertswithadditionallabelarg0" title="Permanent link">&para;</a></h3>
+<p>Raise PR when vulnerability alerts are detected with label <code>arg0</code>, in addition to any existing list of PR labels.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;vulnerabilityAlerts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;addLabels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="enablevulnerabilityalertswithlabelarg0">:enableVulnerabilityAlertsWithLabel(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#enablevulnerabilityalertswithlabelarg0" title="Permanent link">&para;</a></h3>
+<p>Raise PR when vulnerability alerts are detected with label <code>arg0</code>, replacing any existing list of PR labels.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;vulnerabilityAlerts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="followtagarg0-arg1">:followTag(<code>&lt;arg0&gt;</code>, <code>&lt;arg1&gt;</code>)<a class="headerlink" href="#followtagarg0-arg1" title="Permanent link">&para;</a></h3>
+<p>For package <code>arg0</code>, strictly follow release tag <code>arg1</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;followTag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arg1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchPackageNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="githubcomtokenarg0">:githubComToken(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#githubcomtokenarg0" title="Permanent link">&para;</a></h3>
+<p>Use provided token for <code>github.com</code> lookups. Do not configure this if you are already running on <code>github.com</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hostRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;encrypted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;hostType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;matchHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="gitsignoff">:gitSignOff<a class="headerlink" href="#gitsignoff" title="Permanent link">&para;</a></h3>
+<p>Append <code>Signed-off-by:</code> to signoff Git commits.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;commitBody&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signed-off-by: {{{gitAuthor}}}&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="gomod">:gomod<a class="headerlink" href="#gomod" title="Permanent link">&para;</a></h3>
+<p>Enable Go modules support.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;gomod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="grouparg0-arg1">:group(<code>&lt;arg0&gt;</code>, <code>&lt;arg1&gt;</code>)<a class="headerlink" href="#grouparg0-arg1" title="Permanent link">&para;</a></h3>
+<p>Group <code>arg1</code> packages into same branch/PR.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;groupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arg1&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="ignoremodulesandtests">:ignoreModulesAndTests<a class="headerlink" href="#ignoremodulesandtests" title="Permanent link">&para;</a></h3>
+<p>Ignore <code>node_modules</code>, <code>bower_components</code>, <code>vendor</code> and various test/tests (except for nuget) directories.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ignorePaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;**/node_modules/**&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;**/bower_components/**&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;**/vendor/**&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;**/examples/**&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;**/__tests__/**&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;**/test/**&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;**/tests/**&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;**/__fixtures__/**&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;nuget&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;ignorePaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;**/node_modules/**&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;**/bower_components/**&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;**/vendor/**&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;**/examples/**&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;**/__fixtures__/**&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="ignoreunstable">:ignoreUnstable<a class="headerlink" href="#ignoreunstable" title="Permanent link">&para;</a></h3>
+<p>Upgrade to unstable versions only if the existing version is unstable.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ignoreUnstable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="includenodemodules">:includeNodeModules<a class="headerlink" href="#includenodemodules" title="Permanent link">&para;</a></h3>
+<p>Include <code>package.json</code> files found within <code>node_modules</code> folders or <code>bower_components</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ignorePaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="labelarg0">:label(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#labelarg0" title="Permanent link">&para;</a></h3>
+<p>Apply label <code>arg0</code> to PRs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="labelsarg0-arg1">:labels(<code>&lt;arg0&gt;</code>, <code>&lt;arg1&gt;</code>)<a class="headerlink" href="#labelsarg0-arg1" title="Permanent link">&para;</a></h3>
+<p>Apply labels <code>arg0</code> and <code>arg1</code> to PRs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;arg0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;arg1&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="maintainlockfilesdisabled">:maintainLockFilesDisabled<a class="headerlink" href="#maintainlockfilesdisabled" title="Permanent link">&para;</a></h3>
+<p>Update existing lock files only when <code>package.json</code> is modified.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;lockFileMaintenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="maintainlockfilesmonthly">:maintainLockFilesMonthly<a class="headerlink" href="#maintainlockfilesmonthly" title="Permanent link">&para;</a></h3>
+<p>Run lock file maintenance (updates) on the first day of each month.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;lockFileMaintenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;schedule:monthly&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="maintainlockfilesweekly">:maintainLockFilesWeekly<a class="headerlink" href="#maintainlockfilesweekly" title="Permanent link">&para;</a></h3>
+<p>Run lock file maintenance (updates) early Monday mornings.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;lockFileMaintenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;schedule:weekly&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="meteor">:meteor<a class="headerlink" href="#meteor" title="Permanent link">&para;</a></h3>
+<p>Keep Meteor Npm.depends packages updated.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;meteor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="nounscheduledupdates">:noUnscheduledUpdates<a class="headerlink" href="#nounscheduledupdates" title="Permanent link">&para;</a></h3>
+<p>Only update branches when scheduled.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;updateNotScheduled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="npm">:npm<a class="headerlink" href="#npm" title="Permanent link">&para;</a></h3>
+<p>Keep <code>package.json</code> npm dependencies updated.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;npm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="pathsemanticcommittypearg0-arg1">:pathSemanticCommitType(<code>&lt;arg0&gt;</code>, <code>&lt;arg1&gt;</code>)<a class="headerlink" href="#pathsemanticcommittypearg0-arg1" title="Permanent link">&para;</a></h3>
+<p>Use semanticCommitType <code>arg1</code> for all package files matching path <code>arg0</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchFileNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;semanticCommitType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arg1&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="pinallexceptpeerdependencies">:pinAllExceptPeerDependencies<a class="headerlink" href="#pinallexceptpeerdependencies" title="Permanent link">&para;</a></h3>
+<p>Pin all dependency versions except <code>peerDependencies</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchPackageNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;*&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pin&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;engines&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;peerDependencies&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="pindependencies">:pinDependencies<a class="headerlink" href="#pindependencies" title="Permanent link">&para;</a></h3>
+<p>Pin dependency versions where <code>depType=dependencies</code>. Usually applies only to non-dev dependencies in <code>package.json</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;dependencies&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pin&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="pindevdependencies">:pinDevDependencies<a class="headerlink" href="#pindevdependencies" title="Permanent link">&para;</a></h3>
+<p>Pin dependency versions for development dependencies.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;devDependencies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;dev-dependencies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;dev&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pin&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="pindigestsdisabled">:pinDigestsDisabled<a class="headerlink" href="#pindigestsdisabled" title="Permanent link">&para;</a></h3>
+<p>Disable pinning of dependency digests.</p>
+<p>Note: This preset does not revert the digest pinning set from within the packageRules, when set at root level or via extends).
+See <a href="../docker/#disable-digest-pinning">Docker - Disable digest pinning</a> for more details.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;pinDigests&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="pinonlydevdependencies">:pinOnlyDevDependencies<a class="headerlink" href="#pinonlydevdependencies" title="Permanent link">&para;</a></h3>
+<p>Pin dependency versions for development dependencies and retain <abbr title="Semantic Versioning">SemVer</abbr> ranges for others.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchPackageNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;*&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;replace&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;devDependencies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;dev-dependencies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;dev&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pin&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;peerDependencies&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;widen&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="pinskipci">:pinSkipCi<a class="headerlink" href="#pinskipci" title="Permanent link">&para;</a></h3>
+<p>Add <code>[skip ci]</code> to commit message body whenever pinning.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;pin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;commitBody&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[skip ci]&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="pinversions">:pinVersions<a class="headerlink" href="#pinversions" title="Permanent link">&para;</a></h3>
+<p>Use version pinning (maintain a single version only and not <abbr title="Semantic Versioning">SemVer</abbr> ranges).</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pin&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="prconcurrentlimit10">:prConcurrentLimit10<a class="headerlink" href="#prconcurrentlimit10" title="Permanent link">&para;</a></h3>
+<p>Limit to maximum 10 open PRs at any time.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prConcurrentLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="prconcurrentlimit20">:prConcurrentLimit20<a class="headerlink" href="#prconcurrentlimit20" title="Permanent link">&para;</a></h3>
+<p>Limit to maximum 20 open PRs at any time.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prConcurrentLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="prconcurrentlimitnone">:prConcurrentLimitNone<a class="headerlink" href="#prconcurrentlimitnone" title="Permanent link">&para;</a></h3>
+<p>Remove limit for open PRs at any time.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prConcurrentLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="preservesemverranges">:preserveSemverRanges<a class="headerlink" href="#preservesemverranges" title="Permanent link">&para;</a></h3>
+<p>Preserve (but continue to upgrade) any existing <abbr title="Semantic Versioning">SemVer</abbr> ranges.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchPackageNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;*&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;replace&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="prhourlylimit1">:prHourlyLimit1<a class="headerlink" href="#prhourlylimit1" title="Permanent link">&para;</a></h3>
+<p>Rate limit PR creation to a maximum of one per hour.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prHourlyLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="prhourlylimit2">:prHourlyLimit2<a class="headerlink" href="#prhourlylimit2" title="Permanent link">&para;</a></h3>
+<p>Rate limit PR creation to a maximum of two per hour.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prHourlyLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="prhourlylimit4">:prHourlyLimit4<a class="headerlink" href="#prhourlylimit4" title="Permanent link">&para;</a></h3>
+<p>Rate limit PR creation to a maximum of four per hour.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prHourlyLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="prhourlylimitnone">:prHourlyLimitNone<a class="headerlink" href="#prhourlylimitnone" title="Permanent link">&para;</a></h3>
+<p>Removes rate limit for PR creation per hour.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prHourlyLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="primmediately">:prImmediately<a class="headerlink" href="#primmediately" title="Permanent link">&para;</a></h3>
+<p>Raise PRs immediately (after branch is created).</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prCreation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;immediate&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="prnotpending">:prNotPending<a class="headerlink" href="#prnotpending" title="Permanent link">&para;</a></h3>
+<p>Wait for branch tests to pass or fail before creating the PR.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prCreation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;not-pending&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="rebasestaleprs">:rebaseStalePrs<a class="headerlink" href="#rebasestaleprs" title="Permanent link">&para;</a></h3>
+<p>Rebase existing PRs any time the base branch has been updated.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;rebaseWhen&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;behind-base-branch&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="renovateprefix">:renovatePrefix<a class="headerlink" href="#renovateprefix" title="Permanent link">&para;</a></h3>
+<p>Add the <code>renovate/</code> prefix to all branch names.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;branchPrefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;renovate/&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="respectlatest">:respectLatest<a class="headerlink" href="#respectlatest" title="Permanent link">&para;</a></h3>
+<p>Upgrade versions up to the "latest" tag in the npm registry.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;respectLatest&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="reviewerarg0">:reviewer(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#reviewerarg0" title="Permanent link">&para;</a></h3>
+<p>Add <code>arg0</code> as reviewer for PRs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;reviewers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="semanticcommits">:semanticCommits<a class="headerlink" href="#semanticcommits" title="Permanent link">&para;</a></h3>
+<p>Use semantic prefixes for commit messages and PR titles.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;semanticCommits&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;enabled&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="semanticcommitscopearg0">:semanticCommitScope(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#semanticcommitscopearg0" title="Permanent link">&para;</a></h3>
+<p>Use semantic commit scope <code>arg0</code> for all commits and PR titles.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;semanticCommitScope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arg0&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="semanticcommitscopedisabled">:semanticCommitScopeDisabled<a class="headerlink" href="#semanticcommitscopedisabled" title="Permanent link">&para;</a></h3>
+<p>Disable semantic commit scope for all commits and PR titles.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;semanticCommitScope&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="semanticcommitsdisabled">:semanticCommitsDisabled<a class="headerlink" href="#semanticcommitsdisabled" title="Permanent link">&para;</a></h3>
+<p>Disable semantic prefixes for commit messages and PR titles.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;semanticCommits&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;disabled&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="semanticcommittypearg0">:semanticCommitType(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#semanticcommittypearg0" title="Permanent link">&para;</a></h3>
+<p>Use <code>arg0</code> as semantic commit type for commit messages and PR titles.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;semanticCommitType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arg0&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="semanticcommittypeallarg0">:semanticCommitTypeAll(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#semanticcommittypeallarg0" title="Permanent link">&para;</a></h3>
+<p>If Renovate detects semantic commits, it will use semantic commit type <code>arg0</code> for all commits.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchFileNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;**/*&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;semanticCommitType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arg0&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="semanticprefixchore">:semanticPrefixChore<a class="headerlink" href="#semanticprefixchore" title="Permanent link">&para;</a></h3>
+<p>Use <code>chore</code> as semantic commit type for commit messages and PR titles.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;:semanticCommitType(chore)&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="semanticprefixfix">:semanticPrefixFix<a class="headerlink" href="#semanticprefixfix" title="Permanent link">&para;</a></h3>
+<p>Use <code>fix</code> as semantic commit type for commit messages and PR titles.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;:semanticCommitType(fix)&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="semanticprefixfixdepschoreothers">:semanticPrefixFixDepsChoreOthers<a class="headerlink" href="#semanticprefixfixdepschoreothers" title="Permanent link">&para;</a></h3>
+<p>Use semantic commit type <code>fix</code> for dependencies and <code>chore</code> for all others if semantic commits are in use.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchPackageNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;*&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;semanticCommitType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chore&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;dependencies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;require&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;semanticCommitType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fix&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDatasources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;maven&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;compile&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;provided&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;runtime&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;system&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;import&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;parent&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;semanticCommitType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fix&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;project.dependencies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;project.optional-dependencies&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;matchManagers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;pep621&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;poetry&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;semanticCommitType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fix&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;dependencies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;extras&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;matchManagers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;poetry&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;semanticCommitType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fix&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchJsonata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;isLockfileUpdate = true&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;semanticCommitType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chore&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="separatemajorreleases">:separateMajorReleases<a class="headerlink" href="#separatemajorreleases" title="Permanent link">&para;</a></h3>
+<p>Separate <code>major</code> versions of dependencies into individual branches/PRs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;separateMajorMinor&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="separatemultiplemajorreleases">:separateMultipleMajorReleases<a class="headerlink" href="#separatemultiplemajorreleases" title="Permanent link">&para;</a></h3>
+<p>Separate each <code>major</code> version of dependencies into individual branches/PRs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;separateMajorMinor&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;separateMultipleMajor&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="separatemultipleminorreleases">:separateMultipleMinorReleases<a class="headerlink" href="#separatemultipleminorreleases" title="Permanent link">&para;</a></h3>
+<p>Separate each <code>minor</code> version of dependencies into individual branches/PRs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;separateMultipleMinor&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="separatepatchreleases">:separatePatchReleases<a class="headerlink" href="#separatepatchreleases" title="Permanent link">&para;</a></h3>
+<p>Separate <code>patch</code> and <code>minor</code> releases of dependencies into separate PRs.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;separateMinorPatch&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="skipartifactsupdate">:skipArtifactsUpdate<a class="headerlink" href="#skipartifactsupdate" title="Permanent link">&para;</a></h3>
+<p>Skips artifact updates.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;skipArtifactsUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="skipstatuschecks">:skipStatusChecks<a class="headerlink" href="#skipstatuschecks" title="Permanent link">&para;</a></h3>
+<p>Skip status checks and automerge right away.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ignoreTests&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="timezonearg0">:timezone(<code>&lt;arg0&gt;</code>)<a class="headerlink" href="#timezonearg0" title="Permanent link">&para;</a></h3>
+<p>Evaluate schedules according to timezone <code>arg0</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;timezone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arg0&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="updatenotscheduled">:updateNotScheduled<a class="headerlink" href="#updatenotscheduled" title="Permanent link">&para;</a></h3>
+<p>Keep existing branches updated even when not scheduled.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;updateNotScheduled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="widenpeerdependencies">:widenPeerDependencies<a class="headerlink" href="#widenpeerdependencies" title="Permanent link">&para;</a></h3>
+<p>Always widen <code>peerDependencies</code> <abbr title="Semantic Versioning">SemVer</abbr> ranges when updating, instead of replacing.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchDepTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;peerDependencies&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;rangeStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;widen&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<!-- Material for MkDocs shows a tooltip when you hover over any abbreviation in this list. -->
+<!-- https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary -->
+
+<!-- Please keep this list sorted from A-Z. -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../presets-customManagers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Custom Manager Presets">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Custom Manager Presets
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../presets-docker/" class="md-footer__link md-footer__link--next" aria-label="Next: Docker Presets">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Docker Presets
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    Made with
+  <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.prune", "navigation.top", "toc.follow", "navigation.instant", "announce.dismiss", "content.code.copy", "content.action.edit", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

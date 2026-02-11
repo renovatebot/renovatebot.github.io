@@ -1,0 +1,2025 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Bazel dependencies support in Renovate">
+      
+      
+      
+        <link rel="canonical" href="https://docs.renovatebot.com/bazel/">
+      
+      
+        <link rel="prev" href="../modules/versioning/unity3d-packages/">
+      
+      
+        <link rel="next" href="../bicep/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Bazel - Renovate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bazel" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+We released a new major version of Renovate. Read the <a href="https://github.com/renovatebot/renovate/releases/tag/43.0.0">Renovate 43 changelog on GitHub</a>.
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Renovate Docs" class="md-header__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renovate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bazel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Renovate Docs" class="md-nav__button md-logo" aria-label="Renovate Docs" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Renovate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/renovatebot/renovate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    renovatebot/renovate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../getting-started/use-cases/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../config-overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mend-hosted/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mend-hosted Apps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../key-concepts/how-renovate-works/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../modules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renovate Modules
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bazel
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bazel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bazel-module-modulebazel-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bazel module (MODULE.bazel) support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bazel module (MODULE.bazel) support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bazel-registry-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bazel registry discovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bazel registry discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-multiple-bazelrc-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: multiple .bazelrc files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-registry-entries-using-bazel-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: registry entries using Bazel configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-bazel-module-declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Bazel module declarations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Bazel module declarations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bazel_dep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bazel_dep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git_override
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single_version_override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        single_version_override
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archive_override-and-local_path_override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        archive_override and local_path_override
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple_version_override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiple_version_override
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git_repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legacy-workspace-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy WORKSPACE files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Legacy WORKSPACE files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git_repository-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git_repository (legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http_archive-and-http_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        http_archive and http_file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven_install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        maven_install
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future work
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bicep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bicep
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../golang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Go (Golang)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javascript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node.js Versions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nuget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NuGet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../php/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ruby/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ruby
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../dependency-pinning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Dives
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../presets-abandonments/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Included Presets
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../user-stories/swissquote/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Other
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing-to-renovate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to Renovate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bazel-module-modulebazel-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bazel module (MODULE.bazel) support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bazel module (MODULE.bazel) support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bazel-registry-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bazel registry discovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bazel registry discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-multiple-bazelrc-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: multiple .bazelrc files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-registry-entries-using-bazel-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: registry entries using Bazel configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-bazel-module-declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Bazel module declarations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Bazel module declarations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bazel_dep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bazel_dep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git_override
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single_version_override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        single_version_override
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archive_override-and-local_path_override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        archive_override and local_path_override
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple_version_override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiple_version_override
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git_repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legacy-workspace-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy WORKSPACE files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Legacy WORKSPACE files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git_repository-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git_repository (legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http_archive-and-http_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        http_archive and http_file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven_install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        maven_install
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future work
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/renovatebot/renovate/edit/main/docs/usage/bazel.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="bazel">Bazel<a class="headerlink" href="#bazel" title="Permanent link">&para;</a></h1>
+<p>Renovate upgrades dependencies in Bazel <code>WORKSPACE</code> files and <code>MODULE.bazel</code> files.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Bazel support is enabled automatically</li>
+<li>Renovate searches the repository for any <code>WORKSPACE</code> and <code>MODULE.bazel</code> files</li>
+<li>Renovate extracts the dependencies it finds from the files (see below for the supported dependency declarations)</li>
+<li>Renovate updates old dependencies to the latest version</li>
+</ol>
+<h2 id="bazel-module-modulebazel-support">Bazel module (<code>MODULE.bazel</code>) support<a class="headerlink" href="#bazel-module-modulebazel-support" title="Permanent link">&para;</a></h2>
+<h3 id="bazel-registry-discovery">Bazel registry discovery<a class="headerlink" href="#bazel-registry-discovery" title="Permanent link">&para;</a></h3>
+<p>Renovate searches <a href="https://bazel.build/external/registry">Bazel registries</a> to find new Bazel module versions.
+You customize the registries your Bazel workspace uses by including <a href="https://bazel.build/reference/command-line-reference#flag--registry"><code>--registry</code></a> entries in your <a href="https://bazel.build/run/bazelrc"><code>.bazelrc</code> files</a>.
+Renovate checks the workspace's <code>.bazelrc</code> files for custom registry entries.
+If no registries are found, Renovate defaults to the <a href="https://bcr.bazel.build/">Bazel Central Registry</a>.</p>
+<p>Here are some important points about Renovate's Bazel registry searches.
+Renovate:</p>
+<ul>
+<li>uses <em>all</em> <code>--registry</code> values found in a workspace's <code>.bazelrc</code> file</li>
+<li>uses any files that are transitively imported by a <code>.bazelrc</code> file</li>
+<li>only uses <code>--registry</code> values that are not associated with <a href="https://bazel.build/run/bazelrc#config">a configuration</a></li>
+<li>queries the registries in the order that they are found in the <code>.bazelrc</code> file</li>
+</ul>
+<h4 id="example-multiple-bazelrc-files">Example: multiple <code>.bazelrc</code> files<a class="headerlink" href="#example-multiple-bazelrc-files" title="Permanent link">&para;</a></h4>
+<p>In this example, there is a <code>.bazelrc</code> file which imports another file called <code>.registry.bazelrc</code>.
+Both files have <code>--registry</code> values:</p>
+<div class="highlight"><span class="filename">.bazelrc</span><pre><span></span><code>import .registry.bazelrc
+build --registry=https://raw.githubusercontent.com/bazelbuild/bazel-central-registry/main
+</code></pre></div>
+<div class="highlight"><span class="filename">.registry.bazelrc</span><pre><span></span><code>build --registry=https://example.com/custom_registry
+</code></pre></div>
+<p>The final registry list is:</p>
+<ol>
+<li><code>&lt;https://example.com/custom_registry&gt;</code></li>
+<li><code>&lt;https://raw.githubusercontent.com/bazelbuild/bazel-central-registry/main&gt;</code></li>
+</ol>
+<h4 id="example-registry-entries-using-bazel-configuration">Example: registry entries using Bazel configuration<a class="headerlink" href="#example-registry-entries-using-bazel-configuration" title="Permanent link">&para;</a></h4>
+<p>In this example, a <code>.bazelrc</code> file has registry values with and without a configuration:</p>
+<div class="highlight"><span class="filename">.bazelrc</span><pre><span></span><code>build:ci --registry=https://internal.server/custom_registry
+build --registry=https://raw.githubusercontent.com/bazelbuild/bazel-central-registry/main
+</code></pre></div>
+<p>In this case the <code>https://internal.server/custom_registry</code> is ignored.
+The final registry list is:</p>
+<ol>
+<li><code>&lt;https://raw.githubusercontent.com/bazelbuild/bazel-central-registry/main&gt;</code></li>
+</ol>
+<h3 id="supported-bazel-module-declarations">Supported Bazel module declarations<a class="headerlink" href="#supported-bazel-module-declarations" title="Permanent link">&para;</a></h3>
+<h4 id="bazel_dep"><code>bazel_dep</code><a class="headerlink" href="#bazel_dep" title="Permanent link">&para;</a></h4>
+<p>Renovate updates the <code>version</code> value for a <a href="https://bazel.build/rules/lib/globals/module#bazel_dep"><code>bazel_dep</code></a> declaration.</p>
+<div class="highlight"><pre><span></span><code><span class="n">bazel_dep</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cgrindel_bazel_starlib&quot;</span><span class="p">,</span> <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;0.15.0&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>In the example above, Renovate evaluates the <code>0.15.0</code> version against the repository's registries.
+If Renovate finds a newer version, it updates <code>0.15.0</code> to match that version.</p>
+<h4 id="git_override"><code>git_override</code><a class="headerlink" href="#git_override" title="Permanent link">&para;</a></h4>
+<p>If Renovate finds a <a href="https://bazel.build/rules/lib/globals/module#git_override"><code>git_override</code></a>, it ignores the related <code>bazel_dep</code> entry and instead evaluates the <code>commit</code> value at the specified <code>remote</code>.
+When using <code>git_override</code>, the <code>version</code> parameter on the <code>bazel_dep</code> is optional.</p>
+<div class="highlight"><pre><span></span><code><span class="n">bazel_dep</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cgrindel_bazel_starlib&quot;</span><span class="p">,</span> <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;0.15.0&quot;</span><span class="p">)</span>
+
+<span class="n">git_override</span><span class="p">(</span>
+    <span class="n">module_name</span> <span class="o">=</span> <span class="s2">&quot;cgrindel_bazel_starlib&quot;</span><span class="p">,</span>
+    <span class="n">commit</span> <span class="o">=</span> <span class="s2">&quot;fb47f0e9f7c376a7700fc9fe3319231ae57880df&quot;</span><span class="p">,</span>
+    <span class="n">remote</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/cgrindel/bazel-starlib.git&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">bazel_dep</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;rules_foo&quot;</span><span class="p">)</span>
+<span class="n">git_override</span><span class="p">(</span>
+    <span class="n">module_name</span> <span class="o">=</span> <span class="s2">&quot;rules_foo&quot;</span><span class="p">,</span>
+    <span class="n">remote</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/foo/rules_foo.git&quot;</span><span class="p">,</span>
+    <span class="n">commit</span> <span class="o">=</span> <span class="s2">&quot;8a1e9abe415eda7cd7f2a744fdac7499ce42cdca&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>If the primary branch has a newer commit than in the list, Renovate updates the <code>commit</code> value.</p>
+<h4 id="single_version_override"><code>single_version_override</code><a class="headerlink" href="#single_version_override" title="Permanent link">&para;</a></h4>
+<p>The <a href="https://bazel.build/rules/lib/globals/module#single_version_override"><code>single_version_override</code></a> is a declaration with many purposes.
+Renovate only evaluates <em>two</em> attributes from this declaration: <code>version</code> and <code>registry</code>.</p>
+<p>If a <code>version</code> is specified, it overrides the version in the <code>bazel_dep</code>.
+In the following example, Renovate notices that the version is pinned to <code>1.2.3</code>.
+This results in <code>rules_foo</code> being ignored for update evaluation.
+When using <code>single_version_override</code>, the <code>version</code> parameter on the <code>bazel_dep</code> is optional.</p>
+<div class="highlight"><pre><span></span><code><span class="n">bazel_dep</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;rules_foo&quot;</span><span class="p">,</span> <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.2.4&quot;</span><span class="p">)</span>
+
+<span class="n">single_version_override</span><span class="p">(</span>
+  <span class="n">module_name</span> <span class="o">=</span> <span class="s2">&quot;rules_foo&quot;</span><span class="p">,</span>
+  <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.2.3&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">bazel_dep</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;rules_bar&quot;</span><span class="p">)</span>
+
+<span class="n">single_version_override</span><span class="p">(</span>
+  <span class="n">module_name</span> <span class="o">=</span> <span class="s2">&quot;rules_bar&quot;</span><span class="p">,</span>
+  <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.2.3&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>If a <code>registry</code> is specified, Renovate uses the specified registry <abbr title="Uniform Resource Locator">URL</abbr> to check for a new version.
+In the following example, Renovate only uses the <code>https://example.com/custom_registry</code> registry to discover <code>rules_foo</code> versions.
+Any registry values specified in the repository's <code>.bazelrc</code> files are ignored for the <code>rules_foo</code> module.</p>
+<div class="highlight"><pre><span></span><code><span class="n">bazel_dep</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;rules_foo&quot;</span><span class="p">,</span> <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.2.3&quot;</span><span class="p">)</span>
+
+<span class="n">single_version_override</span><span class="p">(</span>
+  <span class="n">module_name</span> <span class="o">=</span> <span class="s2">&quot;rules_foo&quot;</span><span class="p">,</span>
+  <span class="n">registry</span> <span class="o">=</span> <span class="s2">&quot;https://example.com/custom_registry&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<h4 id="archive_override-and-local_path_override"><code>archive_override</code> and <code>local_path_override</code><a class="headerlink" href="#archive_override-and-local_path_override" title="Permanent link">&para;</a></h4>
+<p>If Renovate finds an <a href="https://bazel.build/rules/lib/globals/module#archive_override"><code>archive_override</code></a> or a <a href="https://bazel.build/rules/lib/globals/module#local_path_override"><code>local_path_override</code></a>, it ignores the related <code>bazel_dep</code>.
+Because these declarations lack versionable attributes, Renovate does not update them.
+When using <code>archive_override</code> and <code>local_path_override</code>, the <code>version</code> parameter on the <code>bazel_dep</code> is optional.</p>
+<div class="highlight"><pre><span></span><code><span class="n">bazel_dep</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;rules_foo&quot;</span><span class="p">,</span> <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.2.3&quot;</span><span class="p">)</span>
+
+<span class="n">archive_override</span><span class="p">(</span>
+  <span class="n">module_name</span> <span class="o">=</span> <span class="s2">&quot;rules_foo&quot;</span><span class="p">,</span>
+  <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;https://example.com/archive.tar.gz&quot;</span><span class="p">,</span>
+  <span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">bazel_dep</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;rules_bar&quot;</span><span class="p">)</span>
+
+<span class="n">archive_override</span><span class="p">(</span>
+  <span class="n">module_name</span> <span class="o">=</span> <span class="s2">&quot;rules_bar&quot;</span><span class="p">,</span>
+  <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;https://example.com/archive.tar.gz&quot;</span><span class="p">,</span>
+  <span class="p">],</span>
+<span class="p">)</span>
+</code></pre></div>
+<h4 id="multiple_version_override"><code>multiple_version_override</code><a class="headerlink" href="#multiple_version_override" title="Permanent link">&para;</a></h4>
+<p>Renovate ignores <a href="https://bazel.build/rules/lib/globals/module#multiple_version_override"><code>multiple_version_override</code></a>.
+<code>multiple_version_override</code> does not affect the processing of version updates for a module.</p>
+<h3 id="git_repository"><code>git_repository</code><a class="headerlink" href="#git_repository" title="Permanent link">&para;</a></h3>
+<p>If Renovate finds a <a href="https://bazel.build/rules/lib/repo/git#git_repository"><code>git_repository</code></a>, it evaluates the <code>commit</code> value at the specified <code>remote</code>.
+<code>remote</code> is limited to github repos: <code>https://github.com/&lt;owner&gt;/&lt;repo&gt;.git</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">git_repository</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;rules_foo&quot;</span><span class="p">,</span>
+    <span class="n">remote</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/fooexample/rules_foo.git&quot;</span><span class="p">,</span>
+    <span class="n">commit</span> <span class="o">=</span> <span class="s2">&quot;8c94e11c2b05b6f25ced5f23cd07d0cfd36edc1a&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="legacy-workspace-files">Legacy <code>WORKSPACE</code> files<a class="headerlink" href="#legacy-workspace-files" title="Permanent link">&para;</a></h2>
+<p>Renovate extracts dependencies from the following repository rules:</p>
+<ul>
+<li><code>container_pull</code></li>
+<li><code>oci_pull</code></li>
+<li><code>git_repository</code></li>
+<li><code>go_repository</code></li>
+<li><code>maven_install</code></li>
+<li><code>http_archive</code></li>
+<li><code>http_file</code></li>
+</ul>
+<p>It also recognizes when these repository rule names are prefixed with an underscore.
+For example, <code>_http_archive</code> is treated the same as <code>http_archive</code>.</p>
+<h3 id="git_repository-legacy"><code>git_repository</code> (legacy)<a class="headerlink" href="#git_repository-legacy" title="Permanent link">&para;</a></h3>
+<p>Renovate updates any <code>git_repository</code> declaration that has the following:</p>
+<ol>
+<li><code>name</code></li>
+<li><code>remote</code> matching <code>https://github.com/&lt;owner&gt;/&lt;repo&gt;.git</code></li>
+<li><code>tag</code> using a valid <abbr title="Semantic Versioning">SemVer</abbr></li>
+</ol>
+<p>e.g.:</p>
+<div class="highlight"><pre><span></span><code>git_repository(
+    name = &quot;build_bazel_rules_typescript&quot;,
+    remote = &quot;https://github.com/bazelbuild/rules_typescript.git&quot;,
+    tag = &quot;0.6.1&quot;,
+)
+</code></pre></div>
+<p>Renovate uses the list of <strong>tags</strong> on the remote repository (GitHub) to detect a new version.</p>
+<h3 id="http_archive-and-http_file"><code>http_archive</code> and <code>http_file</code><a class="headerlink" href="#http_archive-and-http_file" title="Permanent link">&para;</a></h3>
+<p>Renovate updates any <code>http_archive</code> or <code>http_file</code> declaration that has the following:</p>
+<ol>
+<li><code>name</code></li>
+<li><code>url</code> matching <code>https://github.com/&lt;owner&gt;/&lt;repo&gt;/releases/download/&lt;semver&gt;/&lt;repo&gt;.tar.gz</code></li>
+<li><code>sha256</code></li>
+</ol>
+<p>e.g.:</p>
+<div class="highlight"><pre><span></span><code>http_archive(
+    name = &quot;io_bazel_rules_go&quot;,
+    url = &quot;https://github.com/bazelbuild/rules_go/releases/download/0.7.1/rules_go-0.7.1.tar.gz&quot;,
+    sha256 = &quot;341d5eacef704415386974bc82a1783a8b7ffbff2ab6ba02375e1ca20d9b031c&quot;,
+)
+</code></pre></div>
+<p>Renovate uses the list of <strong>releases</strong> that it finds at the <code>url</code> to detect a new version.</p>
+<h3 id="maven_install"><code>maven_install</code><a class="headerlink" href="#maven_install" title="Permanent link">&para;</a></h3>
+<p>By default, Maven dependencies are extracted in the context of Gradle versioning scheme.
+To change it, configure <code>packageRules</code> like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packageRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matchManagers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bazel&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;matchDatasources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;maven&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;versioning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;maven&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="future-work">Future work<a class="headerlink" href="#future-work" title="Permanent link">&para;</a></h2>
+<p>We welcome contributions or feature requests to support more patterns or use cases.</p>
+<!-- Material for MkDocs shows a tooltip when you hover over any abbreviation in this list. -->
+<!-- https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-a-glossary -->
+
+<!-- Please keep this list sorted from A-Z. -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../modules/versioning/unity3d-packages/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Unity3D Packages">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Unity3D Packages
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../bicep/" class="md-footer__link md-footer__link--next" aria-label="Next: Bicep">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Bicep
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    Made with
+  <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.prune", "navigation.top", "toc.follow", "navigation.instant", "announce.dismiss", "content.code.copy", "content.action.edit", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
